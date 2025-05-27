@@ -27,10 +27,19 @@ public class PlayerController : MonoBehaviour
     private float originalMoveSpeed;
     private Coroutine speedBoostRoutine;
 
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float rotationSmoothSpeed = 10f;
+    [SerializeField] private Animator animator;
+
+    [SerializeField] private float flashDistance = 5f;
+    [SerializeField] private float flashCooldown = 2f;
+
+    private bool canFlash = true;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         originalMoveSpeed = moveSpeed;
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -41,31 +50,46 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+        UpdateAnimation();
     }
 
     private void LateUpdate()
     {
-        if (canLook)
-        {
-        CameraLook();
-        }
+
     }
     void Move()
     {
-        Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        dir *= moveSpeed;
-        dir.y = _rigidbody.velocity.y;
+        if (curMovementInput.sqrMagnitude < 0.01f)
+        {
+            _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            return;
+        }
 
-        _rigidbody.velocity = dir;
-    }
-    void CameraLook()
-    {
-        camCurXRot += mouseDelta.y * lookSensitivity;
-        camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
-        cameraContianer.localEulerAngles = new Vector3(-camCurXRot,0,0);
+        // 카메라 기준 수평 방향 추출
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward.Normalize();
+        camRight.Normalize();
 
-        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+        // 입력 기준으로 이동 방향 계산
+        Vector3 moveDir = camForward * curMovementInput.y + camRight * curMovementInput.x;
+        moveDir.Normalize();
+
+        // 이동 처리
+        Vector3 velocity = moveDir * moveSpeed;
+        velocity.y = _rigidbody.velocity.y;
+        _rigidbody.velocity = velocity;
+
+        // 회전 보간 처리 (부드럽게 방향 전환)
+        if (moveDir != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
+        }
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Performed)
@@ -78,10 +102,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        mouseDelta = context.ReadValue<Vector2>();
-    }
     public void OnJump(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Started && IsGrounded())
@@ -148,5 +168,55 @@ public class PlayerController : MonoBehaviour
     public void SetJumpPower(float value)
     {
         jumpPower = value;
+    }
+    void UpdateAnimation()
+    {
+        // 지면 속도
+        Vector3 flatVelocity = _rigidbody.velocity;
+        flatVelocity.y = 0f;
+        float speed = flatVelocity.magnitude;
+
+        // 지면 체크
+        bool isGrounded = IsGrounded();
+
+        // Animator 파라미터 설정
+        animator.SetFloat("MovingSpeed", speed);
+        animator.SetBool("IsGround", isGrounded);
+    }
+    public void OnFlash(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            Flash();
+        }
+    }
+    void Flash()
+    {
+        if (!canFlash) return;
+
+        Vector3 blinkDir = transform.forward; // 또는 moveDir, camera 기준 등 선택 가능
+        blinkDir.y = 0f;
+        blinkDir.Normalize();
+
+        // 순간 이동 위치 계산
+        Vector3 targetPosition = transform.position + blinkDir * flashDistance;
+
+        // 충돌 체크 (선택)
+        if (Physics.Raycast(transform.position, blinkDir, out RaycastHit hit, flashDistance))
+        {
+            targetPosition = hit.point - blinkDir * 1f; // 벽 앞에 멈추기
+        }
+
+        transform.position = targetPosition;
+
+        // 쿨타임 적용
+        StartCoroutine(FlashCooldownRoutine());
+    }
+
+    IEnumerator FlashCooldownRoutine()
+    {
+        canFlash = false;
+        yield return new WaitForSeconds(flashCooldown);
+        canFlash = true;
     }
 }
