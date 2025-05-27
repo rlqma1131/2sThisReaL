@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public PlayerController controller;
     public Condition condition;
-   // public Equipment equip;
+    public Equipment equip;
 
     public ItemData itemData;
     public Action additem;
