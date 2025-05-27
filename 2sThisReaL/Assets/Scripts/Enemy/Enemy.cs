@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        playerDistance = Vector3.Distance(GameManager.Instance.player.transform.position, transform.position);
+        playerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
 
         animator.SetBool("Moving", aiState != AIState.Idle);
 

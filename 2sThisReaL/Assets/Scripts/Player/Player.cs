@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public ConditionManager _conditionManager;
+    private ConditionManager _conditionManager;
+    public ConditionManager _ConditionManager {  get { return _conditionManager; } set { _conditionManager = value; } }
     public PlayerController controller;
     //public PlayerCondition condition;
    // public Equipment equip;
