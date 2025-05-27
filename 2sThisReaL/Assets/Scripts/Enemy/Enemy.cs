@@ -50,7 +50,8 @@ public class Enemy : MonoBehaviour
     } 
     void Start()
     {
-        SetState(AIState.Wandering);
+        if (agent.isOnNavMesh)
+            SetState(AIState.Wandering);
     }
 
     void Update()
@@ -62,6 +63,9 @@ public class Enemy : MonoBehaviour
         switch(aiState)
         {
             case AIState.Idle:
+                animator.SetBool("Moving", false);
+                PassiveUpdate();
+                break;
             case AIState.Wandering:
                 PassiveUpdate();
                 break;
@@ -108,24 +112,33 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //void WanderToNewLocation()
-    //{
-    //    if (aiState != AIState.Idle) return;
+    void WanderToNewLocation()
+    {
+        if (aiState != AIState.Idle) return;
 
-    //    SetState(AIState.Wandering);
-    //    agent.SetDestination(GetWanderLocation());
-    //}
+        SetState(AIState.Wandering);
+        agent.SetDestination(GetWanderLocation());
+    }
 
-    //Vector3 GetWanderLocation()
-    //{
-    //    NavMeshHit hit;
+    Vector3 GetWanderLocation()
+    {
+        NavMeshHit hit; // 최단거리 경로로 이동할 위치를 담는 변수
 
-    //    NavMesh.SamplePosition(transform.position +
-    //        (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
+        NavMesh.SamplePosition(transform.position +
+            (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
 
-    //    int i = 0;
+        int i = 0;
+        
+        while(Vector3.Distance(transform.position, hit.position) < detectDistance)
+        {
+            NavMesh.SamplePosition(transform.position +
+            (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
+            i++;
+            if (i == 30) break;
+        }
 
-    //}
+        return hit.position;
+    }
 
     void AttackingUpdate()
     {
