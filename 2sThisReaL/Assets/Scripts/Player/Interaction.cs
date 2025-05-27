@@ -7,13 +7,13 @@ using UnityEngineInternal;
 
 public class Interaction : MonoBehaviour
 {
-    /*public float checkRate = 0.05f;
+    public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
     public LayerMask layerMask;
 
     public GameObject curInteractGameObject;
-    public Interactable curInteractable;
+    public IInteractable curInteractable;
 
     public TextMeshProUGUI prompText;
     private Camera camera;
@@ -22,7 +22,6 @@ public class Interaction : MonoBehaviour
     {
         camera = Camera.main;
     }
-
     void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
@@ -37,10 +36,10 @@ public class Interaction : MonoBehaviour
                 if (hit.collider.gameObject != curInteractGameObject)
                 {
                     curInteractGameObject = hit.collider.gameObject;
-                    curInteractable = hit.collider.GetComponent<Interactable>();
+                    curInteractable = hit.collider.GetComponent<IInteractable>();
                     if (curInteractable == null)
                     {
-                        Debug.LogWarning("Hit object에 Interactable이 없습니다: " + hit.collider.gameObject.name);
+                        Debug.LogWarning("Hit object  " + hit.collider.gameObject.name);
                     }
 
                     SetPromptText();
@@ -54,18 +53,15 @@ public class Interaction : MonoBehaviour
             }
         }
     }
-
     private void SetPromptText()
     {
         if (prompText == null || curInteractable == null)
         {
-            Debug.LogWarning("PromptText 또는 curInteractable이 null입니다!");
             return;
         }
         prompText.gameObject.SetActive(true);
         prompText.text = curInteractable.GetInteractPrompt();
     }
-
     public void OnInteractInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && curInteractable != null)
@@ -75,5 +71,5 @@ public class Interaction : MonoBehaviour
             curInteractable = null;
             prompText.gameObject.SetActive(false);
         }
-    }*/
+    }
 }

@@ -5,19 +5,19 @@ using UnityEngine.InputSystem;
 
 public class Equipment : MonoBehaviour
 {
- /*   public Equip curEquip;
+    public Equip curEquip;
     public Transform equipParent;
 
     private PlayerController controller;
-    private PlayerCondition condition;
+    private Condition condition;
 
     void Start()
     {
         controller = GetComponent<PlayerController>();
-        condition = GetComponent<PlayerCondition>();
+        condition = GetComponent<Condition>();
     }
 
-    public void EquipNew(ItemData data)
+/*    public void EquipNew(ItemData data)
     {
         UnEquip();
         curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>();
