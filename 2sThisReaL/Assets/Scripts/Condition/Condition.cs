@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Condition : MonoBehaviour
-{   
+
+{
     [SerializeField] private Image _imageHp;
     [SerializeField] private Image _imageStamina;
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
+
 
     [SerializeField] private ConditionManager gm;
     // Start is called before the first frame update
@@ -19,9 +22,9 @@ public class Condition : MonoBehaviour
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
     }
-    // Update is called once per frame
     void Update()
     {
+        if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
     }
@@ -53,15 +56,15 @@ public class Condition : MonoBehaviour
     #region Hunger
     private void DepletionHunger()
     {
+
         gm.curHunger -= gm.decreasingHunger * Time.deltaTime;
         gm.curHunger = Mathf.Clamp(gm.curHunger, 0, gm.maxHunger);
-
         if (gm.curHunger == 0)
         {
             DeltaHP(gm.decreasingHP);
             if (gm.curHp == 0)
             {
-                //gameManager.player._condition.DIe();
+                //GameManager.player._condition.DIe();
             }
         }
         UpdateHunger();
@@ -100,7 +103,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateThirsty()
     {
-        _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+        if (_imageHunger != null)
+            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion
 }
