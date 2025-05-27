@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     private float lastAttackTime;
     public float attackDistance;
 
-    private float plyerDistance;
+    private float playerDistance;
 
     public float fieldOfView = 120f; // 시야각
 
@@ -53,10 +53,9 @@ public class Enemy : MonoBehaviour
         SetState(AIState.Wandering);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //plyerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
+        playerDistance = Vector3.Distance(GameManager.Instance.player.transform.position, transform.position);
 
         animator.SetBool("Moving", aiState != AIState.Idle);
 
@@ -121,8 +120,8 @@ public class Enemy : MonoBehaviour
     //{
     //    NavMeshHit hit;
 
-    //    NavMesh.SamplePosition(transform.position + 
-    //        (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)),out hit, maxWanderDistance, NavMesh.AllAreas);
+    //    NavMesh.SamplePosition(transform.position +
+    //        (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
 
     //    int i = 0;
 
@@ -130,7 +129,7 @@ public class Enemy : MonoBehaviour
 
     void AttackingUpdate()
     {
-
+        
     }
 
     void Dead()
