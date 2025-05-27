@@ -9,23 +9,23 @@ public class Equipment : MonoBehaviour
     public Transform equipParent;
  
     private PlayerController controller;
-    private Condition condition;
+    //private Condition condition;
 
     void Start()
     {
         controller = GetComponent<PlayerController>();
-        condition = GetComponent<Condition>();
+        //condition = GetComponent<Condition>();
     }
 
-/*    public void EquipNew(ItemData data)
+public void EquipNew(EquipItem data)
     {
         UnEquip();
-        curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>();
+        curEquip = Instantiate(data.equipItem, equipParent).GetComponent<Equip>();
 
-        if (curEquip is EquipTool tool && tool.jumpBoostAmount != 0)
-        {
-            controller.jumpPower += tool.jumpBoostAmount;
-        }
+        //if (curEquip is EquipTool tool && tool.jumpBoostAmount != 0)
+        //{
+        //    controller.jumpPower += tool.jumpBoostAmount;
+        //}
 
     }
 
@@ -33,10 +33,10 @@ public class Equipment : MonoBehaviour
     {
         if (curEquip != null)
         {
-            if (curEquip is EquipTool tool && tool.jumpBoostAmount != 0)
-            {
-                controller.jumpPower -= tool.jumpBoostAmount;
-            }
+            //if (curEquip is EquipTool tool && tool.jumpBoostAmount != 0)
+            //{
+            //    controller.jumpPower -= tool.jumpBoostAmount;
+            //}
 
             Destroy(curEquip.gameObject);
             curEquip = null;
@@ -46,7 +46,7 @@ public class Equipment : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
         {
-            curEquip.OnAttackInput();
+            //curEquip.OnAttackInput();
         }
-    }*/
+    }
 }
