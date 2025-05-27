@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +30,12 @@ public class Condition : MonoBehaviour
     }
 
     #region HP
-    public void DeltaHP(float delta)
+    public void DeltaHP(float delta) // 데미지나 아이템 상호작용으로 인한 hp변화
+    {
+        gm.curHp = Mathf.Clamp(gm.curHp + delta, 0, gm.maxHp);
+        UpdateHP();
+    }
+    private void DepletionHP(float delta) // 배고픔과 갈증이 0일 때 지속적인 감소
     {
         gm.curHp = Mathf.Clamp(gm.curHp + delta * Time.deltaTime, 0, gm.maxHp);
         UpdateHP();
