@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Condition : MonoBehaviour
 {
+
     [SerializeField]
     private ConditionManager _conditionManager;
 
