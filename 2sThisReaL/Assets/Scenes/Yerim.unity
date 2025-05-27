@@ -537,7 +537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10e54a47994a4740b6fd0d96eb0f2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customCursor: {fileID: 2800000, guid: 6dcaeb4d4b41fc84dbc6371b9721c8d3, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 6dcaeb4d4b41fc84dbc6371b9721c8d3, type: 3}
+  attackCursor: {fileID: 2800000, guid: 4106668c0bd0d4746a9df6bcc9eb1f08, type: 3}
+  pickupCursor: {fileID: 2800000, guid: d84149b69ae311d42ab1276fbee07777, type: 3}
+  talkCursor: {fileID: 2800000, guid: 10e04f79c1bc48544912e0454ef52749, type: 3}
   hotSpot: {x: 0, y: 0}
   cursorMode: 0
 --- !u!4 &2058972303
