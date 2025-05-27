@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void Update()
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Ä«¸Ş¶ó ±âÁØ ¼öÆò ¹æÇâ ÃßÃâ
+        // ì¹´ë©”ë¼ ê¸°ì¤€ ìˆ˜í‰ ë°©í–¥ ì¶”ì¶œ
         Vector3 camForward = cameraTransform.forward;
         Vector3 camRight = cameraTransform.right;
         camForward.y = 0f;
@@ -72,16 +72,16 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
         camRight.Normalize();
 
-        // ÀÔ·Â ±âÁØÀ¸·Î ÀÌµ¿ ¹æÇâ °è»ê
+        // ì…ë ¥ ê¸°ì¤€ìœ¼ë¡œ ì´ë™ ë°©í–¥ ê³„ì‚°
         Vector3 moveDir = camForward * curMovementInput.y + camRight * curMovementInput.x;
         moveDir.Normalize();
 
-        // ÀÌµ¿ Ã³¸®
+        // ì´ë™ ì²˜ë¦¬
         Vector3 velocity = moveDir * moveSpeed;
         velocity.y = _rigidbody.velocity.y;
         _rigidbody.velocity = velocity;
 
-        // È¸Àü º¸°£ Ã³¸® (ºÎµå·´°Ô ¹æÇâ ÀüÈ¯)
+        // íšŒì „ ë³´ê°„ ì²˜ë¦¬ (ë¶€ë“œëŸ½ê²Œ ë°©í–¥ ì „í™˜)
         if (moveDir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
@@ -170,15 +170,15 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateAnimation()
     {
-        // Áö¸é ¼Óµµ
+        // ì§€ë©´ ì†ë„
         Vector3 flatVelocity = _rigidbody.velocity;
         flatVelocity.y = 0f;
         float speed = flatVelocity.magnitude;
 
-        // Áö¸é Ã¼Å©
+        // ì§€ë©´ ì²´í¬
         bool isGrounded = IsGrounded();
 
-        // Animator ÆÄ¶ó¹ÌÅÍ ¼³Á¤
+        // Animator íŒŒë¼ë¯¸í„° ì„¤ì •
         animator.SetFloat("MovingSpeed", speed);
         animator.SetBool("IsGround", isGrounded);
     }
@@ -193,22 +193,22 @@ public class PlayerController : MonoBehaviour
     {
         if (!canFlash) return;
 
-        Vector3 blinkDir = transform.forward; // ¶Ç´Â moveDir, camera ±âÁØ µî ¼±ÅÃ °¡´É
+        Vector3 blinkDir = transform.forward; // ë˜ëŠ” moveDir, camera ê¸°ì¤€ ë“± ì„ íƒ ê°€ëŠ¥
         blinkDir.y = 0f;
         blinkDir.Normalize();
 
-        // ¼ø°£ ÀÌµ¿ À§Ä¡ °è»ê
+        // ìˆœê°„ ì´ë™ ìœ„ì¹˜ ê³„ì‚°
         Vector3 targetPosition = transform.position + blinkDir * flashDistance;
 
-        // Ãæµ¹ Ã¼Å© (¼±ÅÃ)
+        // ì¶©ëŒ ì²´í¬ (ì„ íƒ)
         if (Physics.Raycast(transform.position, blinkDir, out RaycastHit hit, flashDistance))
         {
-            targetPosition = hit.point - blinkDir * 1f; // º® ¾Õ¿¡ ¸ØÃß±â
+            targetPosition = hit.point - blinkDir * 1f; // ë²½ ì•ì— ë©ˆì¶”ê¸°
         }
 
         transform.position = targetPosition;
 
-        // ÄğÅ¸ÀÓ Àû¿ë
+        // ì¿¨íƒ€ì„ ì ìš©
         StartCoroutine(FlashCooldownRoutine());
     }
 
