@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     private float originalMoveSpeed;
     private Coroutine speedBoostRoutine;
 
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float rotationSmoothSpeed = 10f;
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -41,31 +45,46 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+        UpdateAnimation();
     }
 
     private void LateUpdate()
     {
-        if (canLook)
-        {
-        CameraLook();
-        }
+
     }
     void Move()
     {
-        Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        dir *= moveSpeed;
-        dir.y = _rigidbody.velocity.y;
+        if (curMovementInput.sqrMagnitude < 0.01f)
+        {
+            _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            return;
+        }
 
-        _rigidbody.velocity = dir;
-    }
-    void CameraLook()
-    {
-        camCurXRot += mouseDelta.y * lookSensitivity;
-        camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
-        cameraContianer.localEulerAngles = new Vector3(-camCurXRot,0,0);
+        // 카메라 기준 수평 방향 추출
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward.Normalize();
+        camRight.Normalize();
 
-        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+        // 입력 기준으로 이동 방향 계산
+        Vector3 moveDir = camForward * curMovementInput.y + camRight * curMovementInput.x;
+        moveDir.Normalize();
+
+        // 이동 처리
+        Vector3 velocity = moveDir * moveSpeed;
+        velocity.y = _rigidbody.velocity.y;
+        _rigidbody.velocity = velocity;
+
+        // 회전 보간 처리 (부드럽게 방향 전환)
+        if (moveDir != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
+        }
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Performed)
@@ -78,10 +97,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        mouseDelta = context.ReadValue<Vector2>();
-    }
     public void OnJump(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Started && IsGrounded())
@@ -148,5 +163,14 @@ public class PlayerController : MonoBehaviour
     public void SetJumpPower(float value)
     {
         jumpPower = value;
+    }
+    void UpdateAnimation()
+    {
+        // 속도의 크기를 기준으로 MovingSpeed 파라미터 업데이트
+        Vector3 flatVelocity = _rigidbody.velocity;
+        flatVelocity.y = 0f; // 수직 속도 제외
+
+        float speed = flatVelocity.magnitude; // 지면 기준 속도 크기
+        animator.SetFloat("MovingSpeed", speed);
     }
 }
