@@ -67,7 +67,7 @@ public class Condition : MonoBehaviour
             DeltaHP(gm.decreasingHP);
             if (gm.curHp == 0)
             {
-                //gameManager.player._condition.DIe();
+                //GameManager.player._condition.DIe();
             }
         }
         UpdateHunger();
