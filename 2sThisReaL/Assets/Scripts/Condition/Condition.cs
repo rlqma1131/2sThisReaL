@@ -28,7 +28,6 @@ public class Condition : MonoBehaviour
         DepletionHunger();
         DepletionThirsty();
     }
-
     #region HP
     public void DeltaHP(float delta) // 데미지나 아이템 상호작용으로 인한 hp변화
     {
@@ -71,7 +70,7 @@ public class Condition : MonoBehaviour
         gm.curHunger = Mathf.Clamp(gm.curHunger, 0, gm.maxHunger);
         if (gm.curHunger == 0)
         {
-            DeltaHP(gm.decreasingHP);
+            DepletionHP(gm.decreasingHP);
             if (gm.curHp == 0)
             {
                 //GameManager.player._condition.DIe();
@@ -103,7 +102,7 @@ public class Condition : MonoBehaviour
 
         if (gm.curThirsty == 0)
         {
-            DeltaHP(gm.decreasingHP);
+            DepletionHP(gm.decreasingHP);
             if (gm.curHp == 0)
             {
                 //gameManager.player._condition.DIe();
