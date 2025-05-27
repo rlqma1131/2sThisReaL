@@ -1,6 +1,5 @@
-using System;
+Ôªøusing System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void Update()
@@ -65,7 +64,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // ƒ´∏ﬁ∂Û ±‚¡ÿ ºˆ∆Ú πÊ«‚ √ﬂ√‚
+        // Ïπ¥Î©îÎùº Í∏∞Ï§Ä ÏàòÌèâ Î∞©Ìñ• Ï∂îÏ∂ú
         Vector3 camForward = cameraTransform.forward;
         Vector3 camRight = cameraTransform.right;
         camForward.y = 0f;
@@ -73,16 +72,16 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
         camRight.Normalize();
 
-        // ¿‘∑¬ ±‚¡ÿ¿∏∑Œ ¿Ãµø πÊ«‚ ∞ËªÍ
+        // ÏûÖÎ†• Í∏∞Ï§ÄÏúºÎ°ú Ïù¥Îèô Î∞©Ìñ• Í≥ÑÏÇ∞
         Vector3 moveDir = camForward * curMovementInput.y + camRight * curMovementInput.x;
         moveDir.Normalize();
 
-        // ¿Ãµø √≥∏Æ
+        // Ïù¥Îèô Ï≤òÎ¶¨
         Vector3 velocity = moveDir * moveSpeed;
         velocity.y = _rigidbody.velocity.y;
         _rigidbody.velocity = velocity;
 
-        // »∏¿¸ ∫∏∞£ √≥∏Æ (∫ŒµÂ∑¥∞‘ πÊ«‚ ¿¸»Ø)
+        // ÌöåÏ†Ñ Î≥¥Í∞Ñ Ï≤òÎ¶¨ (Î∂ÄÎìúÎüΩÍ≤å Î∞©Ìñ• Ï†ÑÌôò)
         if (moveDir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
@@ -92,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed)
+        if (context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
         }
@@ -104,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && IsGrounded())
+        if (context.phase == InputActionPhase.Started && IsGrounded())
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
         }
@@ -119,7 +118,7 @@ public class PlayerController : MonoBehaviour
             new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
         };
 
-        for(int i = 0; i < rays.Length; i++)
+        for (int i = 0; i < rays.Length; i++)
         {
             if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
             {
@@ -141,7 +140,7 @@ public class PlayerController : MonoBehaviour
     void ToggleCousor()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = toggle?CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
     public void ApplySpeedBoost(float multiplier, float duration)
@@ -171,15 +170,15 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateAnimation()
     {
-        // ¡ˆ∏È º”µµ
+        // ÏßÄÎ©¥ ÏÜçÎèÑ
         Vector3 flatVelocity = _rigidbody.velocity;
         flatVelocity.y = 0f;
         float speed = flatVelocity.magnitude;
 
-        // ¡ˆ∏È √º≈©
+        // ÏßÄÎ©¥ Ï≤¥ÌÅ¨
         bool isGrounded = IsGrounded();
 
-        // Animator ∆ƒ∂ÛπÃ≈Õ º≥¡§
+        // Animator ÌååÎùºÎØ∏ÌÑ∞ ÏÑ§Ï†ï
         animator.SetFloat("MovingSpeed", speed);
         animator.SetBool("IsGround", isGrounded);
     }
@@ -194,22 +193,22 @@ public class PlayerController : MonoBehaviour
     {
         if (!canFlash) return;
 
-        Vector3 blinkDir = transform.forward; // ∂«¥¬ moveDir, camera ±‚¡ÿ µÓ º±≈√ ∞°¥…
+        Vector3 blinkDir = transform.forward; // ÎòêÎäî moveDir, camera Í∏∞Ï§Ä Îì± ÏÑ†ÌÉù Í∞ÄÎä•
         blinkDir.y = 0f;
         blinkDir.Normalize();
 
-        // º¯∞£ ¿Ãµø ¿ßƒ° ∞ËªÍ
+        // ÏàúÍ∞Ñ Ïù¥Îèô ÏúÑÏπò Í≥ÑÏÇ∞
         Vector3 targetPosition = transform.position + blinkDir * flashDistance;
 
-        // √Êµπ √º≈© (º±≈√)
+        // Ï∂©Îèå Ï≤¥ÌÅ¨ (ÏÑ†ÌÉù)
         if (Physics.Raycast(transform.position, blinkDir, out RaycastHit hit, flashDistance))
         {
-            targetPosition = hit.point - blinkDir * 1f; // ∫Æ æ’ø° ∏ÿ√ﬂ±‚
+            targetPosition = hit.point - blinkDir * 1f; // Î≤Ω ÏïûÏóê Î©àÏ∂îÍ∏∞
         }
 
         transform.position = targetPosition;
 
-        // ƒ≈∏¿” ¿˚øÎ
+        // Ïø®ÌÉÄÏûÑ Ï†ÅÏö©
         StartCoroutine(FlashCooldownRoutine());
     }
 
