@@ -142,4 +142,14 @@ public class Enemy : MonoBehaviour
         }
         Destroy(gameObject, 3f); // 3초 후에 오브젝트 제거
     }
+
+    void OnMouseEnter()
+    {
+        FindObjectOfType<MouseCursor>().SetAttackCursor();
+    }
+
+    void OnMouseExit()
+    {
+        FindObjectOfType<MouseCursor>().SetDefaultCursor();
+    }
 }
