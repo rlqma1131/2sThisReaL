@@ -218,4 +218,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(flashCooldown);
         canFlash = true;
     }
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            animator.SetBool("IsAttack", true);
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            animator.SetBool("IsAttack", false); // 좌클릭 뗌
+        }
+    }
 }
