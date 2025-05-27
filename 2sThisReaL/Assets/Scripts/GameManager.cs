@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Player player { get; private set; }
+    public Player Player { get; private set; }
 
     private void Awake()
     {
@@ -20,6 +20,6 @@ public class GameManager : MonoBehaviour
 
     public void Init(Player player)
     {
-        this.player = player;
+        this.Player = player;
     }
 }

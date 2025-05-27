@@ -19,7 +19,7 @@ public class Condition : MonoBehaviour
 
     void Start()
     {
-        gm = GameManager.Instance.player._conditionManager;
+        gm = GameManager.Instance.Player._ConditionManager;
 
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
