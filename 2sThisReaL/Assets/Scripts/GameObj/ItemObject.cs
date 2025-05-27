@@ -21,8 +21,8 @@ public class ItemObject : MonoBehaviour
 
     public void OnInteract()
     {
-        GameManager.Instance.player.itemData = data; //플레이어의 아이템 데이터에 해당 아이템 데이터 저장
-        GameManager.Instance.player.additem?.Invoke(); //아이템 획득 이벤트 발생
+        GameManager.Instance.Player.itemData = data; //플레이어의 아이템 데이터에 해당 아이템 데이터 저장
+        GameManager.Instance.Player.additem?.Invoke(); //아이템 획득 이벤트 발생
         Destroy(gameObject); //아이템 오브젝트 삭제
     }
 }

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef1b65f44ddb8d3469776cd921456dbd, type: 3}
-  m_Name: ConsumeItem
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  id: 2000
-  itemName: ConsumeItemSample
+  id: 2001
+  itemName: "\uC0AC\uACFC"
   itemIcon: {fileID: 0}
-  itemDescription: "\uC18C\uBAA8\uD488 \uC544\uC774\uD15C \uC0D8\uD50C\uC785\uB2C8\uB2E4."
-  itemType: 0
+  itemDescription: "\uB098\uBB34\uC5D0\uC11C \uB5A8\uC5B4\uC9C4 \uC0AC\uACFC\uC785\uB2C8\uB2E4.
+    \uB2EC\uCF64\uD560 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+  ItemType: 03000000
   isStackable: 1
   maxStackSize: 20
   dropPrefab: {fileID: 0}
-  isConsumable: 0
   consumableType: 0
-  consumableAmount: 0
+  consumableAmount: 20
   consumableDuration: 0
