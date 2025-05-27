@@ -167,9 +167,9 @@ public class Enemy : MonoBehaviour
             {
                 agent.isStopped = false;
                 NavMeshPath path = new NavMeshPath();
-                if (agent.CalculatePath(GameManager.Instance.player.transform.position, path))
+                if (agent.CalculatePath(GameManager.Instance.Player.transform.position, path))
                 {
-                    agent.SetDestination(GameManager.Instance.player.transform.position);
+                    agent.SetDestination(GameManager.Instance.Player.transform.position);
                 }
             }
             else
@@ -183,7 +183,7 @@ public class Enemy : MonoBehaviour
 
     bool IsPlayerInFieldOfView()
     {
-        Vector3 directionToPlayer = (GameManager.Instance.player.transform.position - transform.position).normalized;
+        Vector3 directionToPlayer = (GameManager.Instance.Player.transform.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
         return angle < fieldOfView * 0.5f;
     }
