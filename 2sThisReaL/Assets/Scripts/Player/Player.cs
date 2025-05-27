@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
-        //condition = GetComponent<PlayerCondition>();
+        condition = GetComponent<Condition>();
         //equip = GetComponent<Equipment>();
     }
     private void Start()

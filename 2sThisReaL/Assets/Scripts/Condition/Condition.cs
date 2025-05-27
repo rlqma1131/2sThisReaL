@@ -15,7 +15,6 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
 
-    // Start is called before the first frame update
     void Start()
     {
         _conditionManager.curHp = _conditionManager.maxHp;
@@ -23,7 +22,6 @@ public class Condition : MonoBehaviour
         _conditionManager.curHunger = _conditionManager.maxHunger;
         _conditionManager.curThirsty = _conditionManager.maxThirsty;
     }
-    // Update is called once per frame
     void Update()
     {
         
