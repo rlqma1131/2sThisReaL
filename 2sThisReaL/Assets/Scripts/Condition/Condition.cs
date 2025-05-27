@@ -10,12 +10,10 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
 
-    private ConditionManager gm;
+    [SerializeField] private ConditionManager gm;
     // Start is called before the first frame update
     void Start()
     {
-        gm = GameManager.Instance.Player._ConditionManager;
-
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
@@ -31,8 +29,8 @@ public class Condition : MonoBehaviour
     #region HP
     public void DeltaHP(float delta)
     {
-        gm.curHp = Mathf.Clamp(gm.curHp + delta, 0, gm.maxHp);
-        Update();
+        gm.curHp = Mathf.Clamp(gm.curHp + delta * Time.deltaTime, 0, gm.maxHp);
+        UpdateHP();
     }
     private void UpdateHP()
     {
@@ -71,11 +69,11 @@ public class Condition : MonoBehaviour
     public void DeltaHunger(float delta)
     {
         gm.curHunger = Mathf.Clamp(gm.curHunger + delta, 0, gm.maxHunger);
-        UpdateStamina();
+        UpdateHunger();
     }
     private void UpdateHunger()
     {
-        _imageStamina.fillAmount = gm.curHunger / gm.maxHunger;
+        _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
