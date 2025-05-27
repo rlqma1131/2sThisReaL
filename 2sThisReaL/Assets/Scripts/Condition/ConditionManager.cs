@@ -24,10 +24,4 @@ public class ConditionManager : MonoBehaviour
     public float maxThirsty;
     public float decreasingThirsty; // 지속적으로 감소하거나 상승
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 }

@@ -17,7 +17,6 @@ public class Condition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
