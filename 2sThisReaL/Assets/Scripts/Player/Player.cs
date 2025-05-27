@@ -6,8 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerController controller;
-    public PlayerCondition condition;
-    public Equipment equip;
+    //public PlayerCondition condition;
+   // public Equipment equip;
 
     public ItemData itemData;
     public Action additem;
@@ -16,10 +16,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         GameManager.Instance.Init(this);
-
-        CharacterManager.Instance.Player = this;
         controller = GetComponent<PlayerController>();
-        condition = GetComponent<PlayerCondition>();
-        equip = GetComponent<Equipment>();
+        //condition = GetComponent<PlayerCondition>();
+        //equip = GetComponent<Equipment>();
     }
 }

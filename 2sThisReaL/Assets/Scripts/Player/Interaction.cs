@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngineInternal;
 
-public class Interaction : MonoBehaviour
+/*public class Interaction : MonoBehaviour
 {
-/*    public float checkRate = 0.05f;
+    public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
     public LayerMask layerMask;
@@ -75,5 +75,5 @@ public class Interaction : MonoBehaviour
             curInteractable = null;
             prompText.gameObject.SetActive(false);
         }
-    }*/
-}
+    }
+}*/
