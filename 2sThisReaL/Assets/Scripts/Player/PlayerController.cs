@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
+            ConditionManager.Instance.Condition.DepletionStamina(-5f);
         }
     }
 
