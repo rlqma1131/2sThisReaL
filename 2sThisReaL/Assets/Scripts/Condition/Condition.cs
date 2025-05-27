@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class Condition : MonoBehaviour
 
 {
-
-    [SerializeField] private ConditionManager _conditionManager;
     [SerializeField] private Image _imageHp;
     [SerializeField] private Image _imageStamina;
     [SerializeField] private Image _imageHunger;
@@ -17,10 +15,12 @@ public class Condition : MonoBehaviour
 
     private ConditionManager gm;
 
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.Player != null && GameManager.Instance.Player._ConditionManager != null);
         gm = GameManager.Instance.Player._ConditionManager;
 
+        // √ ±‚»≠
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
@@ -28,6 +28,7 @@ public class Condition : MonoBehaviour
     }
     void Update()
     {
+        if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
     }
@@ -59,9 +60,9 @@ public class Condition : MonoBehaviour
     #region Hunger
     private void DepletionHunger()
     {
+
         gm.curHunger -= gm.decreasingHunger * Time.deltaTime;
         gm.curHunger = Mathf.Clamp(gm.curHunger, 0, gm.maxHunger);
-
         if (gm.curHunger == 0)
         {
             DeltaHP(gm.decreasingHP);
@@ -79,7 +80,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateHunger()
     {
-        _imageStamina.fillAmount = gm.curHunger / gm.maxHunger;
+        if (_imageHunger != null)
+            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
@@ -106,7 +108,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateThirsty()
     {
-        _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+        if (_imageHunger != null)
+            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion
 }

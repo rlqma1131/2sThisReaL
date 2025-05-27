@@ -759,13 +759,14 @@ GameObject:
   - component: {fileID: 813895884}
   - component: {fileID: 813895891}
   - component: {fileID: 813895890}
-  - component: {fileID: 813895889}
   - component: {fileID: 813895888}
   - component: {fileID: 813895887}
   - component: {fileID: 813895886}
   - component: {fileID: 813895885}
   - component: {fileID: 813895892}
   - component: {fileID: 813895893}
+  - component: {fileID: 813895895}
+  - component: {fileID: 813895894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -864,18 +865,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20897cb4e3685cc4d93db41f2059780b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &813895889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813895883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b48f7c9eb3fef84eb557640a538c564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &813895890
@@ -1051,6 +1040,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f21f125f85685418a428111080ce82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &813895894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813895883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa953ca64e7c2e4889d01c42644f8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHp: 100
+  maxHp: 100
+  deltaHp: 0
+  decreasingHP: 0
+  curStamina: 100
+  maxStamina: 100
+  decreasingStamina: 0
+  curHunger: 100
+  maxHunger: 100
+  decreasingHunger: 2
+  curThirsty: 100
+  maxThirsty: 100
+  decreasingThirsty: 2
+--- !u!114 &813895895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813895883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _conditionManager: {fileID: 813895894}
+  _imageHp: {fileID: 0}
+  _imageStamina: {fileID: 0}
+  _imageHunger: {fileID: 0}
+  _imageThirsty: {fileID: 0}
 --- !u!1001 &915317354
 PrefabInstance:
   m_ObjectHideFlags: 0

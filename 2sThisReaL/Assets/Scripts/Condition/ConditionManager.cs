@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ConditionManager : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class ConditionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(WaitForPlayerReady());
+    }
+
+    IEnumerator WaitForPlayerReady()
+    {
+        yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.Player != null);
         GameManager.Instance.Player._ConditionManager = this;
     }
 }
