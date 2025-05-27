@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*public class Equipment : MonoBehaviour
+public class Equipment : MonoBehaviour
 {
-    public Equip curEquip;
+ /*   public Equip curEquip;
     public Transform equipParent;
 
     private PlayerController controller;
@@ -48,5 +48,5 @@ using UnityEngine.InputSystem;
         {
             curEquip.OnAttackInput();
         }
-    }
-}*/
+    }*/
+}
