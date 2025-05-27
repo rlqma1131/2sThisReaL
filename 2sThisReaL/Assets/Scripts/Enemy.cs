@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        plyerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
+        //plyerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
 
         animator.SetBool("Moving", aiState != AIState.Idle);
 
@@ -109,24 +109,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void WanderToNewLocation()
-    {
-        if (aiState != AIState.Idle) return;
+    //void WanderToNewLocation()
+    //{
+    //    if (aiState != AIState.Idle) return;
 
-        SetState(AIState.Wandering);
-        agent.SetDestination(GetWanderLocation());
-    }
+    //    SetState(AIState.Wandering);
+    //    agent.SetDestination(GetWanderLocation());
+    //}
 
-    Vector3 GetWanderLocation()
-    {
-        NavMeshHit hit;
+    //Vector3 GetWanderLocation()
+    //{
+    //    NavMeshHit hit;
 
-        NavMesh.SamplePosition(transform.position + 
-            (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)),out hit, maxWanderDistance, NavMesh.AllAreas);
+    //    NavMesh.SamplePosition(transform.position + 
+    //        (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)),out hit, maxWanderDistance, NavMesh.AllAreas);
 
-        int i = 0;
+    //    int i = 0;
 
-    }
+    //}
 
     void AttackingUpdate()
     {
