@@ -215,6 +215,7 @@ MonoBehaviour:
   _imageStamina: {fileID: 571619956}
   _imageHunger: {fileID: 2048261211}
   _imageThirsty: {fileID: 826278085}
+  gm: {fileID: 1239215330}
 --- !u!1 &703786077
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ MonoBehaviour:
   _imageStamina: {fileID: 571619956}
   _imageHunger: {fileID: 2048261211}
   _imageThirsty: {fileID: 826278085}
+  gm: {fileID: 1239215330}
 --- !u!1 &826278083
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +563,7 @@ MonoBehaviour:
   _imageStamina: {fileID: 571619956}
   _imageHunger: {fileID: 2048261211}
   _imageThirsty: {fileID: 826278085}
+  gm: {fileID: 1239215330}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,15 +751,15 @@ MonoBehaviour:
   curHp: 0
   maxHp: 200
   deltaHp: 0
-  decreasingHP: 4
+  decreasingHP: -4
   curStamina: 0
   maxStamina: 300
   decreasingStamina: 0
   curHunger: 0
-  maxHunger: 500
-  decreasingHunger: 10
+  maxHunger: 400
+  decreasingHunger: 15
   curThirsty: 0
-  maxThirsty: 400
+  maxThirsty: 500
   decreasingThirsty: 10
 --- !u!1 &1523482000
 GameObject:
@@ -933,7 +936,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c97f60d8e27a149962d92539b68415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conditionManager: {fileID: 1239215330}
   controller: {fileID: 0}
   itemData: {fileID: 0}
   dropPosition: {fileID: 0}
@@ -1044,6 +1046,7 @@ MonoBehaviour:
   _imageStamina: {fileID: 571619956}
   _imageHunger: {fileID: 2048261211}
   _imageThirsty: {fileID: 826278085}
+  gm: {fileID: 1239215330}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
