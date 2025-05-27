@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         originalMoveSpeed = moveSpeed;
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -166,11 +167,16 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateAnimation()
     {
-        // 속도의 크기를 기준으로 MovingSpeed 파라미터 업데이트
+        // 지면 속도
         Vector3 flatVelocity = _rigidbody.velocity;
-        flatVelocity.y = 0f; // 수직 속도 제외
+        flatVelocity.y = 0f;
+        float speed = flatVelocity.magnitude;
 
-        float speed = flatVelocity.magnitude; // 지면 기준 속도 크기
+        // 지면 체크
+        bool isGrounded = IsGrounded();
+
+        // Animator 파라미터 설정
         animator.SetFloat("MovingSpeed", speed);
+        animator.SetBool("IsGround", isGrounded);
     }
 }
