@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:2sThisReaL/Assets/Scripts/UI/ItemSlot.cs.meta
+guid: a7a52b9a5110ecc40b42bf7b3460d4dc
+========
+guid: e8d67f76d4266684793405c82d9b003e
+>>>>>>>> origin/Dev_04:2sThisReaL/Assets/Scripts/Map/BasicPlacementValidator.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

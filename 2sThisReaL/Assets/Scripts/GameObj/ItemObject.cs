@@ -9,7 +9,7 @@ public interface IInteractable
     public void OnInteract(); //상호작용시 데이터
 }
 
-public class ItemObject : MonoBehaviour
+public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemData data; //아이템 데이터
     public string GetInteractPrompt()
@@ -21,6 +21,7 @@ public class ItemObject : MonoBehaviour
 
     public void OnInteract()
     {
+        Debug.Log($"Picked up item: {data.itemName}");
         GameManager.Instance.Player.itemData = data; //플레이어의 아이템 데이터에 해당 아이템 데이터 저장
         GameManager.Instance.Player.additem?.Invoke(); //아이템 획득 이벤트 발생
         Destroy(gameObject); //아이템 오브젝트 삭제

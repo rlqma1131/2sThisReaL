@@ -7,65 +7,89 @@ using UnityEngineInternal;
 
 public class Interaction : MonoBehaviour
 {
-    /*public float checkRate = 0.05f;
+    public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
     public LayerMask layerMask;
 
     public GameObject curInteractGameObject;
-    public Interactable curInteractable;
+    public IInteractable curInteractable;
 
     public TextMeshProUGUI prompText;
-    private Camera camera;
+
+    public Transform rayOrigin;
 
     void Start()
     {
-        camera = Camera.main;
+        if (rayOrigin == null)
+        {
+            CreateRayOrigin();
+        }
     }
-
     void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
         {
             lastCheckTime = Time.time;
 
-            Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+            Ray ray = new Ray(rayOrigin.position, rayOrigin.forward);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
             {
+
                 if (hit.collider.gameObject != curInteractGameObject)
                 {
                     curInteractGameObject = hit.collider.gameObject;
-                    curInteractable = hit.collider.GetComponent<Interactable>();
+                    curInteractable = hit.collider.GetComponent<IInteractable>();
                     if (curInteractable == null)
                     {
-                        Debug.LogWarning("Hit object에 Interactable이 없습니다: " + hit.collider.gameObject.name);
+                        Debug.LogWarning("Hit object  " + hit.collider.gameObject.name);
                     }
 
-                    SetPromptText();
+                    //SetPromptText();
                 }
             }
-            else
+            if (rayOrigin == null)
             {
-                curInteractGameObject = null;
-                curInteractable = null;
-                prompText.gameObject.SetActive(false);
+                Debug.LogWarning("rayOrigin is null!");
+                return;
             }
+            //else
+            //{
+            //    curInteractGameObject = null;
+            //    curInteractable = null;
+            //    prompText.gameObject.SetActive(false);
+            //}
         }
     }
-
-    private void SetPromptText()
+    void CreateRayOrigin()
     {
-        if (prompText == null || curInteractable == null)
-        {
-            Debug.LogWarning("PromptText 또는 curInteractable이 null입니다!");
-            return;
-        }
-        prompText.gameObject.SetActive(true);
-        prompText.text = curInteractable.GetInteractPrompt();
-    }
+        GameObject rayOriginObject = new GameObject("RayOrigin");
+        rayOriginObject.transform.SetParent(transform);
+        rayOriginObject.transform.localPosition = Vector3.zero;
+        rayOriginObject.transform.localRotation = Quaternion.identity;
+        rayOriginObject.transform.localPosition = new Vector3(0, 1.6f, 0);
 
+        rayOrigin = rayOriginObject.transform;
+    }
+    private void OnDrawGizmos()
+    {
+        if (rayOrigin != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(rayOrigin.position, rayOrigin.forward * maxCheckDistance);
+        }
+    }
+    //private void SetPromptText()
+    //{
+    //    if (prompText == null || curInteractable == null)
+    //    {
+    //        return;
+    //    }
+    //    prompText.gameObject.SetActive(true);
+    //    prompText.text = curInteractable.GetInteractPrompt();
+    //}
     public void OnInteractInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && curInteractable != null)
@@ -75,5 +99,5 @@ public class Interaction : MonoBehaviour
             curInteractable = null;
             prompText.gameObject.SetActive(false);
         }
-    }*/
+    }
 }
