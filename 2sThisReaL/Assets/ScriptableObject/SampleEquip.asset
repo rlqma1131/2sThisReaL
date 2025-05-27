@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e813fd3f400bbd242b6627e3f0c0fc75, type: 3}
+  m_Name: SampleEquip
+  m_EditorClassIdentifier: 
+  id: 1000
+  itemName: "\uC0D8\uD50C\uC6A9 \uC7A5\uBE44\uD15C"
+  itemIcon: {fileID: 0}
+  itemDescription: 
+  itemType: 2
+  isStackable: 0
+  maxStackSize: 0
+  dropPrefab: {fileID: 0}
+  isEquipable: 0
+  canGathering: 0
+  canGet: {fileID: 0}
+  attackPower: 0
