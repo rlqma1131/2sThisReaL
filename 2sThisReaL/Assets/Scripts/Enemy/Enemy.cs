@@ -226,4 +226,14 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void OnMouseEnter()
+    {
+        FindObjectOfType<MouseCursor>().SetAttackCursor();
+    }
+
+    void OnMouseExit()
+    {
+        FindObjectOfType<MouseCursor>().SetDefaultCursor();
+    }
+
 }
