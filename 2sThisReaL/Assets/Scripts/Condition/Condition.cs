@@ -35,6 +35,7 @@ public class Condition : MonoBehaviour
     public void DeltaHP(float delta) // 데미지나 아이템 상호작용으로 인한 hp변화
     {
         gm.curHp = Mathf.Clamp(gm.curHp + delta, 0, gm.maxHp);
+        Debug.Log("HP: " + gm.curHp);
         UpdateHP();
     }
     private void DepletionHP(float delta) // 배고픔과 갈증이 0일 때 지속적인 감소

@@ -30,6 +30,16 @@ public class EquipTool : Equip
 
     //콜라이더랑 부딪히면 - 자원 채집 혹은 공격
     //Layer = Resource면 자원 채집, Layer = Enemy면 공격
+    //공격 키를 눌렀을 때 캐릭터의 전방으로 Raycast 혹은 BoxCast를 쏴서 전방에 자원/적이 있는지 확인 ->있다면 자원을 얻거나 적을 공격
+    //Raycast를 구하는 메서드를 생성
+
+
+    private void Start()
+    {
+        player = GetComponentInParent<Player>();
+        //플레이어가 현재 장착하고 있는 도구 아이템을 가져옴
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
