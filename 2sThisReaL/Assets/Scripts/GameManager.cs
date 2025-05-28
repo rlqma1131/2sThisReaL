@@ -1,26 +1,10 @@
-﻿using UnityEngine;
-
-public class GameManager : MonoBehaviour
+﻿public class GameManager
 {
     private static GameManager instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                GameObject go = new GameObject("GameManager");
-                instance = go.AddComponent<GameManager>();
-                DontDestroyOnLoad(go);
-            }
-            return instance;
-        }
-    }
+    public static GameManager Instance => instance ??= new GameManager();
 
-    public Player Player { get; private set; }
+    public Player Player { get; set; }
+    public Enemy Enemy { get; set; }
 
-    public void Init(Player player)
-    {
-        this.Player = player;
-    }
+    private GameManager() { }
 }

@@ -51,9 +51,5 @@ public class CharacterManager : MonoBehaviour
         Debug.Log($"[CharacterManager] Player spawned at {spawnPosition}");
 
         Player player = playerObj.GetComponent<Player>();
-        if (player != null && GameManager.Instance != null)
-        {
-            GameManager.Instance.Init(player);
-        }
     }
 }
