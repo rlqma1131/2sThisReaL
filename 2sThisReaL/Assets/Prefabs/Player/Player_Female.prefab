@@ -2203,6 +2203,7 @@ GameObject:
   - component: {fileID: 692342986075541670}
   - component: {fileID: 6848192745952415755}
   - component: {fileID: 3727589860522424523}
+  - component: {fileID: 6413911649674083004}
   m_Layer: 0
   m_Name: Player_Female
   m_TagString: Player
@@ -2514,6 +2515,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f21f125f85685418a428111080ce82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6413911649674083004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411383444751288691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c02561dfc7391348a106a1e30fcf80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - type: 0
+    cooldown: 5
+    activationKey: 113
+    lastUsedTime: 0
+  fireballPrefab: {fileID: 1545069359907266310, guid: 291a2e9e0cb0e07468ce33192d70d970, type: 3}
+  fireballSpawnPoint: {fileID: 7519365449486594555}
 --- !u!1 &6559436207767563747
 GameObject:
   m_ObjectHideFlags: 0

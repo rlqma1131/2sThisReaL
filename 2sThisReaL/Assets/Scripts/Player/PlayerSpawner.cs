@@ -1,7 +1,6 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -9,17 +8,17 @@ public class PlayerSpawner : MonoBehaviour
 
     IEnumerator Start()
     {
-        // ÇÁ·¹ÀÓ ´ë±â ÈÄ ½ÇÇà (CharacterManager°¡ ¿ÏÀüÈ÷ »ì¾Æ³­ µÚ)
+        // í”„ë ˆìž„ ëŒ€ê¸° í›„ ì‹¤í–‰ (CharacterManagerê°€ ì™„ì „ížˆ ì‚´ì•„ë‚œ ë’¤)
         yield return null;
 
         if (CharacterManager.Instance != null)
         {
             CharacterManager.Instance.SpawnPlayer(spawnPosition);
-            Debug.Log("[PlayerSpawner] SpawnPlayer È£Ãâ ¿Ï·á");
+            Debug.Log("[PlayerSpawner] SpawnPlayer í˜¸ì¶œ ì™„ë£Œ");
         }
         else
         {
-            Debug.LogError("[PlayerSpawner] CharacterManager.Instance°¡ nullÀÔ´Ï´Ù");
+            Debug.LogError("[PlayerSpawner] CharacterManager.Instanceê°€ nullìž…ë‹ˆë‹¤");
         }
     }
 }
