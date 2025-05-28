@@ -2263,6 +2263,9 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  buildingLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
   cameraContianer: {fileID: 2812695338974084913}
   minXLook: -105
   maxXLook: 105
