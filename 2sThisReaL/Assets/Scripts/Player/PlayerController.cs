@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float flashCooldown = 2f;
 
     private bool canFlash = true;
+    private bool isBuildMode = false;
+    
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -50,14 +52,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        UpdateAnimation();
+        if (!isBuildMode)
+        {
+            Move();
+            UpdateAnimation();
+        }
     }
 
-    private void LateUpdate()
+    public void SetBuildMode(bool active)
     {
-
+        isBuildMode = active;    
     }
+    
     void Move()
     {
         if (curMovementInput.sqrMagnitude < 0.01f)
