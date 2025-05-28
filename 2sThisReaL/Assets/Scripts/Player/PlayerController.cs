@@ -43,7 +43,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        canLook = true;
     }
 
     void Update()
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = toggle;  // if toggle == true, visible == true
         canLook = !toggle;
     }
     public void ApplySpeedBoost(float multiplier, float duration)
@@ -217,5 +220,16 @@ public class PlayerController : MonoBehaviour
         canFlash = false;
         yield return new WaitForSeconds(flashCooldown);
         canFlash = true;
+    }
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            animator.SetBool("IsAttack", true);
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            animator.SetBool("IsAttack", false); // 좌클릭 뗌
+        }
     }
 }

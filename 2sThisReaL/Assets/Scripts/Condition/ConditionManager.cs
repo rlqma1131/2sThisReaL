@@ -1,27 +1,40 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 public class ConditionManager : MonoBehaviour
 {
+    public static ConditionManager Instance { get; set; }
+    public Condition Condition { get; set; }
+
     [Header("HP")]
     public float curHp;
     public float maxHp;
-    public float deltaHp; // ÇÑ¹ø¿¡ °¨¼ÒÇÏ°Å³ª »ó½Â
-    public float decreasingHP; // Áö¼ÓÀûÀ¸·Î °¨¼ÒÇÏ°Å³ª »ó½Â
+    public float deltaHp; // í•œë²ˆì— ê°ì†Œí•˜ê±°ë‚˜ ìƒìŠ¹
+    public float decreasingHP; // ì§€ì†ì ìœ¼ë¡œ ê°ì†Œí•˜ê±°ë‚˜ ìƒìŠ¹
 
     [Header("Stamina")]
     public float curStamina;
     public float maxStamina;
-    public float decreasingStamina; // Áö¼ÓÀûÀ¸·Î °¨¼ÒÇÏ°Å³ª »ó½Â
+    public float decreasingStamina; // ì§€ì†ì ìœ¼ë¡œ ê°ì†Œí•˜ê±°ë‚˜ ìƒìŠ¹
 
     [Header("Hunger")]
     public float curHunger;
     public float maxHunger;
-    public float decreasingHunger; // Áö¼ÓÀûÀ¸·Î °¨¼ÒÇÏ°Å³ª »ó½Â
+    public float decreasingHunger; // ì§€ì†ì ìœ¼ë¡œ ê°ì†Œí•˜ê±°ë‚˜ ìƒìŠ¹
 
     [Header("Thirsty")]
     public float curThirsty;
     public float maxThirsty;
-    public float decreasingThirsty; // Áö¼ÓÀûÀ¸·Î °¨¼ÒÇÏ°Å³ª »ó½Â
+    public float decreasingThirsty; // ì§€ì†ì ìœ¼ë¡œ ê°ì†Œí•˜ê±°ë‚˜ ìƒìŠ¹
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 }
