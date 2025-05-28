@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     [Header("AI")]
     private NavMeshAgent agent;
-    private float detectDistance = 20;
+    public float detectDistance = 20;
     private AIState aiState;
 
     [Header("Wandering")]
@@ -47,6 +47,8 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        GameManager.Instance.Enemy = this;
+
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
