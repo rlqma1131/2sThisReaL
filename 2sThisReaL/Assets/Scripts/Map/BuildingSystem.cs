@@ -108,7 +108,6 @@ public class BuildingSystem : MonoBehaviour
                 
                 if (Input.GetMouseButtonDown(0) && _placementValidator.IsValidPosition(position.Value))
                 {
-                    Debug.Log("[BuildSystem] ▶ Left click detected, placing object");
                     var temp = currentPreview;
                     CancelPreview();
                     objectPlacer.PlaceObject(temp, position.Value);

@@ -13,12 +13,9 @@ public class ObjectPlacer : IObjectPlacer
     
     public void PlaceObject(IBuildable buildable, Vector3 position)
     {
-        Debug.Log("[ObjectPlacer] ▶ PlaceObject called");
-
         int cost = buildable.GetCost();
         if (!resourceManager.HasEnoughResources(cost))
         {
-            Debug.Log("Not enough resources to build");
             return;
         }
 
@@ -28,6 +25,5 @@ public class ObjectPlacer : IObjectPlacer
         Quaternion rotation = buildable.GetRotation(); //  회전 정보 받아오기
 
         GameObject final = GameObject.Instantiate(prefab, position, rotation); //  회전 적용
-        Debug.Log($"[ObjectPlacer] ▶ Instantiate result: {final.name} @ {rotation.eulerAngles}");
     }
 }
