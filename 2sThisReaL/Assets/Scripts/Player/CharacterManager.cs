@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,8 @@ public enum GenderType
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
+
+    public Player Player;
 
     public GenderType SelectedGender { get; private set; }
 

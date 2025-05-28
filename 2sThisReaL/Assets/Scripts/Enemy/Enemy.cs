@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                ConditionManager.Instance.Condition.DeltaHP(-damage);
+                //ConditionManager.Instance.Condition.DeltaHP(-damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
             }
