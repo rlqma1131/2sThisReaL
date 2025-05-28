@@ -128,9 +128,15 @@ public class BuildingSystem : MonoBehaviour
     private Vector3? GetMouseWorldPosition()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayer))
+        RaycastHit[] hits = Physics.RaycastAll(ray, 100f, placementLayer);
+    
+        foreach (var hit in hits)
         {
-            return SnapToGrid(hit.point);
+            Debug.Log($"Hit object: {hit.collider.name} on layer {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
+            if (hit.collider != null)
+            {
+                return SnapToGrid(hit.point);
+            }
         }
         return null;
     }
