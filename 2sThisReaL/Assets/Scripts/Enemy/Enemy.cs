@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
     {
         playerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
 
-        animator.SetBool("Moving", aiState != AIState.Idle);
+        animator.SetBool("Moving", aiState != AIState.Idle && playerDistance > attackDistance);
 
         switch (aiState)
         {
@@ -228,12 +228,12 @@ public class Enemy : MonoBehaviour
 
     void OnMouseEnter()
     {
-        FindObjectOfType<MouseCursor>().SetAttackCursor();
+        //FindObjectOfType<MouseCursor>().SetAttackCursor();
     }
 
     void OnMouseExit()
     {
-        FindObjectOfType<MouseCursor>().SetDefaultCursor();
+        //FindObjectOfType<MouseCursor>().SetDefaultCursor();
     }
 
 }

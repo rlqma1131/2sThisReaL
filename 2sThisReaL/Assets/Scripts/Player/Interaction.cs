@@ -92,12 +92,19 @@ public class Interaction : MonoBehaviour
     //}
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && curInteractable != null)
+        if (context.phase == InputActionPhase.Started)
         {
-            curInteractable.OnInteract();
-            curInteractGameObject = null;
-            curInteractable = null;
-            prompText.gameObject.SetActive(false);
+            if (curInteractable == null)
+            {
+                Debug.LogWarning("No interactable object in range.");
+            }
+            else
+            {
+                curInteractable.OnInteract();
+                curInteractGameObject = null;
+                curInteractable = null;
+                prompText?.gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1509586236822320746}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,18 +102,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d216fd62d40e1547abb43e9cbcd5b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 20
   walkSpeed: 2
   runSpeed: 4
   dropOnDeath: []
-  detectDistance: 40
-  minWanderDistance: 5
-  maxWanderDistance: 10
+  detectDistance: 30
+  minWanderDistance: 10
+  maxWanderDistance: 15
   minWanderWaitTime: 1
   maxWanderWaitTime: 5
   damage: 5
   attackRate: 1.5
-  attackDistance: 4
+  attackDistance: 3.8
   fieldOfView: 120
 --- !u!65 &6182763131279219071
 BoxCollider:
@@ -130,7 +130,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
