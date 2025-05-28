@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2715500085728643215}
   - component: {fileID: 6479907473531118283}
   - component: {fileID: -7886016857005033610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stairs-closed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -40.9, y: 0, z: 40.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
