@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     private Vector2 curMovementInput;
     public LayerMask groundLayerMask;
+    public LayerMask buildingLayerMask;
 
     [Header("Look")]
     public Transform cameraContianer;
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
+            ConditionManager.Instance.Condition.DepletionStamina(-5f);
         }
     }
 
@@ -118,21 +120,24 @@ public class PlayerController : MonoBehaviour
     }
     bool IsGrounded()
     {
+        LayerMask totalMask = groundLayerMask | buildingLayerMask;
+
         Ray[] rays = new Ray[4]
         {
-            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+        new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+        new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+        new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+        new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
         };
 
-        for (int i = 0; i < rays.Length; i++)
+        foreach (Ray ray in rays)
         {
-            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            if (Physics.Raycast(ray, 0.1f, totalMask))
             {
                 return true;
             }
         }
+
         return false;
     }
 

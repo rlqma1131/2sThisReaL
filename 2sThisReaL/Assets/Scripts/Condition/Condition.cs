@@ -51,7 +51,7 @@ public class Condition : MonoBehaviour
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta, 0f, gm.maxStamina);
         UpdateStamina();
     }
-    public void DepletionStamina(float delta) // 플레이어의 동장에 따른 지속적인 감소
+    public void DepletionStamina(float delta) // 플레이어의 동작에 따른 지속적인 감소
     {
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta * Time.deltaTime, 0f, gm.maxStamina);
         UpdateStamina();
