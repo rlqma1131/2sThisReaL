@@ -7,6 +7,7 @@ public class BuildableObject : MonoBehaviour, IBuildable
 {
     private float currentRotation = 0;
     [SerializeField] private int cost = 10;
+    [SerializeField] private int itemID;
     [SerializeField] private GameObject finalPrefab;
     
     public void InitializePreview()
@@ -53,6 +54,11 @@ public class BuildableObject : MonoBehaviour, IBuildable
     public int GetCost()
     {
         return cost;
+    }
+
+    public int GetItemID()
+    {
+        return itemID;
     }
 
     public Quaternion GetRotation()
