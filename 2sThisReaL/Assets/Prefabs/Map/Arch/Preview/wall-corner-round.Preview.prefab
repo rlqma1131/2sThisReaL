@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8692322685312914886}
   - component: {fileID: 1287804982009776405}
   - component: {fileID: 3374293228149350057}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall-corner-round.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 16
   finalPrefab: {fileID: 3254773300872960132, guid: 9aad0e2968986324cb3e1519898a23d0, type: 3}

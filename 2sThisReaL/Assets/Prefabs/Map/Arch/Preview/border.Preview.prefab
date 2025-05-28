@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3781248090709337255}
   - component: {fileID: 3411633810757411661}
   - component: {fileID: 7521276409320054588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: border.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 3
   finalPrefab: {fileID: 1689079048089742637, guid: abf18733e3ad5af4ab541444f51177e0, type: 3}

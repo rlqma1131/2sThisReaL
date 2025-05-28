@@ -9,6 +9,7 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private LayerMask placementLayer;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private BuildableObject[] buildablePrefabs;
+    [SerializeField] private BuildMenuUI buildMenuUI;
 
     [Header("Layer Setting")]
     [SerializeField] private LayerMask _placementLayer;
@@ -22,6 +23,7 @@ public class BuildingSystem : MonoBehaviour
     
     private bool isInBuildMode = false;
     private int selectedPrefabIndex = 0;
+    private BuildItemData selectedBuildItem;
     
     void Start()
     {
@@ -45,12 +47,17 @@ public class BuildingSystem : MonoBehaviour
         if (isInBuildMode)
         {
             HandleBuildModeInput();
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                buildMenuUI.ToggleUI();
+            }
         }
     }
 
     private void ToggleBuildMode()
     {
         isInBuildMode = !isInBuildMode;
+        playerController?.SetBuildMode(isInBuildMode);
 
         if (isInBuildMode)
         {
@@ -67,6 +74,7 @@ public class BuildingSystem : MonoBehaviour
         isInBuildMode = true;
         playerController?.SetBuildMode(true);
         Cursor.lockState = CursorLockMode.None; // 커서 자유 이동
+        Cursor.visible = true;
         // UI 활성화
     }
     
@@ -75,21 +83,22 @@ public class BuildingSystem : MonoBehaviour
         isInBuildMode = false;
         playerController?.SetBuildMode(false);
         Cursor.lockState = CursorLockMode.Locked; // FPS 게임인 경우
+        Cursor.visible = false;
         // UI 비활성화
         CancelPreview();
     }
 
     private void HandleBuildModeInput()
     {
-        // 건축물 선택 (1, 2, 3...)
-        for (int i = 0; i < buildablePrefabs.Length; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-            {
-                selectedPrefabIndex = i;
-                StartPlacing(buildablePrefabs[selectedPrefabIndex]);
-            }
-        }
+        // // 건축물 선택 (1, 2, 3...)
+        // for (int i = 0; i < buildablePrefabs.Length; i++)
+        // {
+        //     if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+        //     {
+        //         selectedPrefabIndex = i;
+        //         StartPlacing(buildablePrefabs[selectedPrefabIndex]);
+        //     }
+        // }
 
         if (currentPreview != null)
         {
@@ -110,8 +119,11 @@ public class BuildingSystem : MonoBehaviour
                 {
                     var temp = currentPreview;
                     CancelPreview();
+                    // objectPlacer.PlaceObject(
+                    //     selectedBuildItem.previewPrefab.GetComponent<IBuildable>(), position.Value);
+                    // StartPlacing(buildablePrefabs[selectedPrefabIndex]);
                     objectPlacer.PlaceObject(temp, position.Value);
-                    StartPlacing(buildablePrefabs[selectedPrefabIndex]);
+                    StartPlacing(selectedBuildItem.previewPrefab.GetComponent<IBuildable>());
                 }
             }
 
@@ -178,4 +190,20 @@ public class BuildingSystem : MonoBehaviour
             Mathf.Round(hitPoint.z / gridSize) * gridSize);
     }
 
+    public void CancelCurrentPreview()
+    {
+        currentPreview?.CancelPreview();
+        currentPreview = null;
+    }
+
+    public void OnObjectPlaced()
+    {
+        buildMenuUI.RefreshMenu();
+    }
+
+    public void SetSelectedBuildItem(BuildItemData item)
+    {
+        selectedBuildItem = item;
+        StartPlacing(item.previewPrefab.GetComponent<IBuildable>());
+    }
 }

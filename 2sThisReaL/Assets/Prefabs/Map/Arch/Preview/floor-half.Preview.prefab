@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3998803639541049764}
   - component: {fileID: 4359397863393099754}
   - component: {fileID: 4128825890342680769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: floor-half.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 10
   finalPrefab: {fileID: 6064342041491292079, guid: 53b0475ca14981942a7ebd5cddfe1674, type: 3}

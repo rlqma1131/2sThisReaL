@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7198859446505648058}
   - component: {fileID: 4683293998886166246}
   - component: {fileID: 8507111570351077218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3278760150708317010}
   - component: {fileID: 2762096556344763748}
   - component: {fileID: 2493742461907375348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,5 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 5
   finalPrefab: {fileID: 1269604038912404574, guid: 0abcee66920c55945a5a11d3bd90d63b, type: 3}

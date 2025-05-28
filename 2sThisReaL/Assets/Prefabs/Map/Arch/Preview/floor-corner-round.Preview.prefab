@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 9
   finalPrefab: {fileID: 3239833615479324472, guid: 1960c649632f298499f27f7a44035e2e, type: 3}
 --- !u!64 &740210923005885067
 MeshCollider:

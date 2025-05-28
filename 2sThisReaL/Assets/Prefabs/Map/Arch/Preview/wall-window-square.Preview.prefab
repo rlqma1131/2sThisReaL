@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4402647181268569037}
   - component: {fileID: 3127168630587940690}
   - component: {fileID: 7303886815826873369}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: (%ignore)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1833338755688393909}
   - component: {fileID: 5155940021719578660}
   - component: {fileID: 8551501437536134555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall-window-square.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,5 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 21
   finalPrefab: {fileID: 1453399751988289543, guid: b91a6930dc4ecc84d820c856157b23fc, type: 3}

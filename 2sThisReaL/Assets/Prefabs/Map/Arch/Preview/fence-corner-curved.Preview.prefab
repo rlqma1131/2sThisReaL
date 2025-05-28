@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5009271332812909884}
   - component: {fileID: 42373929892871842}
   - component: {fileID: 4533046333222265587}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-corner-curved.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 6
   finalPrefab: {fileID: 4303733237659772584, guid: 3074d16a40c538c42a452f92b6fe3cc0, type: 3}

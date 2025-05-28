@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4433130053746960925}
   - component: {fileID: 4209552568045861609}
   - component: {fileID: 8756049256342655879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall-window-wide-square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8227029877797962108}
   - component: {fileID: 4483836193337979431}
   - component: {fileID: 9083658248888035856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: (%ignore)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

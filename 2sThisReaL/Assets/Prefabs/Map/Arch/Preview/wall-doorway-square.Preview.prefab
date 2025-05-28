@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3125566558127694957}
   - component: {fileID: 1756454754996039658}
   - component: {fileID: 985950593762801859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall-doorway-square.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 18
   finalPrefab: {fileID: 1932202178256424538, guid: 850cbcd69ff3b1444a18f4dd83a6f224, type: 3}
