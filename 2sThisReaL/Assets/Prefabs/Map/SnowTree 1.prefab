@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511106408445082710}
   - component: {fileID: 1711094899757051508}
+  - component: {fileID: 498479651028398122}
   m_Layer: 0
   m_Name: SnowTree 1
   m_TagString: Untagged
@@ -54,6 +55,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.425966, z: 1}
   m_Center: {x: 0, y: 0.7129826, z: 0}
+--- !u!114 &498479651028398122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136922759654540835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d80d63e9083d734caa1e6d62c52e13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6001369451888809547
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,4 +193,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
   quantityPerHit: 1
   capacity: 10
+  respawnTime: 30
   gatherType: 0
