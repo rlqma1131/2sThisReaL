@@ -15,6 +15,9 @@ public class BuildingSystem : MonoBehaviour
     private IResourceManager resourceManager;
     private IObjectPlacer objectPlacer;
     
+    private bool isInBuildMode = false;
+    private int selectedPrefabIndex = 0;
+    
     void Start()
     {
         placementValidator = new BasicPlacementValidator();
@@ -24,6 +27,60 @@ public class BuildingSystem : MonoBehaviour
     
     void Update()
     {
+        // B키로 건축 모드 토글
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleBuildMode();
+        }
+
+        // 건축 모드에서만 작동하는 로직
+        if (isInBuildMode)
+        {
+            HandleBuildModeInput();
+        }
+    }
+
+    private void ToggleBuildMode()
+    {
+        isInBuildMode = !isInBuildMode;
+
+        if (isInBuildMode)
+        {
+            EnterBuildMode();
+        }
+        else
+        {
+            ExitBuildMode();
+        }
+    }
+
+    private void EnterBuildMode()
+    {
+        // 기본 프리팹 선택
+        selectedPrefabIndex = 0;
+        StartPlacing(buildablePrefabs[selectedPrefabIndex]);
+        Debug.Log("건축 모드 활성화");
+    }
+
+    private void ExitBuildMode()
+    {
+        CancelPreview();
+        Debug.Log("건축 모드 비활성화");
+    }
+
+    private void HandleBuildModeInput()
+    {
+        // 건축물 선택 (1, 2, 3... 숫자 키)
+        for (int i = 0; i < buildablePrefabs.Length; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                selectedPrefabIndex = i;
+                StartPlacing(buildablePrefabs[selectedPrefabIndex]);
+            }
+        }
+
+        // 프리뷰 업데이트 및 상호작용
         if (currentPreview != null)
         {
             Vector3? position = GetMouseWorldPosition();
@@ -34,6 +91,8 @@ public class BuildingSystem : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && placementValidator.IsValidPosition(position.Value))
                 {
                     objectPlacer.PlaceObject(currentPreview, position.Value);
+                    // 새 프리뷰 자동 생성 (계속 건축할 수 있도록)
+                    StartPlacing(buildablePrefabs[selectedPrefabIndex]);
                 }
             }
 
@@ -42,9 +101,9 @@ public class BuildingSystem : MonoBehaviour
                 currentPreview.RotatePreview();
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
             {
-                CancelPreview();
+                ToggleBuildMode(); // 우클릭 또는 ESC로 건축 모드 종료
             }
         }
     }
@@ -69,9 +128,15 @@ public class BuildingSystem : MonoBehaviour
     private Vector3? GetMouseWorldPosition()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayer))
+        RaycastHit[] hits = Physics.RaycastAll(ray, 100f, placementLayer);
+    
+        foreach (var hit in hits)
         {
-            return SnapToGrid(hit.point);
+            Debug.Log($"Hit object: {hit.collider.name} on layer {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
+            if (hit.collider != null)
+            {
+                return SnapToGrid(hit.point);
+            }
         }
         return null;
     }

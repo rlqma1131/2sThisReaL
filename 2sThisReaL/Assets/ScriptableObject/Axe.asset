@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e813fd3f400bbd242b6627e3f0c0fc75, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  id: 1001
+  itemID: 1001
   itemName: "\uB3C4\uB07C"
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 1953463997, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
   itemDescription: "\uB098\uBB34\uB97C \uBCA8 \uC218 \uC788\uB294 \uB3C4\uB07C\uC785\uB2C8\uB2E4."
   ItemType: 02000000
   isStackable: 1
   maxStackSize: 20
   dropPrefab: {fileID: 525511288822688072, guid: fa1af385122efaf4f902004ae34dd0d2, type: 3}
-  attackRate: 0
-  attackDistance: 0
   isEquipable: 1
-  equipItem: {fileID: 1102677316180861271, guid: a9c743ba05f16d04a9612c98f990ab0b, type: 3}
+  equipItem: {fileID: 2762492727754164679, guid: a9c743ba05f16d04a9612c98f990ab0b, type: 3}
   canGathering: 1
   attackPower: 3
+  attackRate: 5
+  attackDistance: 0

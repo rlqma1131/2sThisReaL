@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Equip : MonoBehaviour
 {
-    public virtual void OnAttackInupt()
+    public virtual void OnAttackInput()
     {
 
     }

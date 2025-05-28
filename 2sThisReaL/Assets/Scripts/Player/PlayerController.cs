@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float flashCooldown = 2f;
 
     private bool canFlash = true;
+    private bool isBuildMode = false;
+    
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -43,19 +45,25 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        canLook = true;
     }
 
     void Update()
     {
-        Move();
-        UpdateAnimation();
+        if (!isBuildMode)
+        {
+            Move();
+            UpdateAnimation();
+        }
     }
 
-    private void LateUpdate()
+    public void SetBuildMode(bool active)
     {
-
+        isBuildMode = active;    
     }
+    
     void Move()
     {
         if (curMovementInput.sqrMagnitude < 0.01f)
@@ -141,6 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = toggle;  // if toggle == true, visible == true
         canLook = !toggle;
     }
     public void ApplySpeedBoost(float multiplier, float duration)
