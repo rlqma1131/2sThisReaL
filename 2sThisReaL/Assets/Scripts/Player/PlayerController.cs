@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
 
     private bool canFlash = true;
     private bool isBuildMode = false;
-    
+
+    private bool isRecovering = false;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -59,7 +61,9 @@ public class PlayerController : MonoBehaviour
             {
                 curMovementInput = Vector2.zero;
                 Debug.Log("스테미나가 바닥이라 움직일 수 없습니다.");
-                ConditionManager.Instance.Condition.DeltaStamina(10f);
+                StartCoroutine(MoveCoroutine(3, 10));
+                // 밑에 함수 2 ~ 5초 후에 실행 되게끔
+                
             }
             else
             {
@@ -73,7 +77,17 @@ public class PlayerController : MonoBehaviour
     {
         isBuildMode = active;    
     }
-    
+    IEnumerator MoveCoroutine(float delay, float amount)
+    {
+        if (isRecovering) yield break;
+
+        isRecovering = true;
+
+        yield return new WaitForSeconds(delay);
+
+        ConditionManager.Instance.Condition.DeltaStamina(amount);
+        isRecovering = false;
+    }
     void Move()
     {
         if (curMovementInput.sqrMagnitude < 0.01f)

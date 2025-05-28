@@ -19,7 +19,7 @@ public class Condition : MonoBehaviour
     void Start()
     {
         ConditionManager.Instance.Condition = this;
-
+        gm = ConditionManager.Instance;
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
