@@ -43,7 +43,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        canLook = true;
     }
 
     void Update()
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = toggle;  // if toggle == true, visible == true
         canLook = !toggle;
     }
     public void ApplySpeedBoost(float multiplier, float duration)
