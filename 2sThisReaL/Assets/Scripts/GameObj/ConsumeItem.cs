@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum ConsumableType
 {
-    // 허기, 갈증
-    Health,
+    // 허기, 갈증, 체력
     Hunger,
-    Thirst
+    Thirst,
+    Health
 }
 
 [CreateAssetMenu(fileName = "ConsumableItem", menuName = "New Item/Consumable")]

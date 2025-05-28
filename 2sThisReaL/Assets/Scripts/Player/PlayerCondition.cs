@@ -10,21 +10,37 @@ public interface IDamagable
 
 public class PlayerCondition : MonoBehaviour, IDamagable
 {
-    [SerializeField] private Condition health;
-    [SerializeField] private Condition hunger;
-
-    public float noHungerHealthDecay;
+    private ConditionManager gm;
+    public float noHungerHealthDecay; // 배고픔이 0일 때 체력 감소 속도
     public event Action onTakeDamage;
 
-    void Update()
+    private void Awake()
     {
-        hunger.Subtract(hunger.passiveValue * Time.deltaTime * 0.1f);
-
-        if (hunger.curValue <= 0f)
+        gm = ConditionManager.Instance;
+        if (gm == null)
         {
-            health.Subtract(noHungerHealthDecay * Time.deltaTime);
+            enabled = false;
+            return;
         }
-        if (health.curValue <= 0f)
+    }
+
+    private void Update()
+    {
+        // 배고픔 지속 감소
+        gm.curHunger -= gm.decreasingHunger * Time.deltaTime;
+        gm.curHunger = Mathf.Clamp(gm.curHunger, 0, gm.maxHunger);
+        gm.Condition?.HealHunger(0); // UI 업데이트
+
+        // 배고픔이 0이면 체력 감소
+        if (gm.curHunger <= 0f)
+        {
+            gm.curHp -= noHungerHealthDecay * Time.deltaTime;
+            gm.curHp = Mathf.Clamp(gm.curHp, 0, gm.maxHp);
+            gm.Condition?.HealHP(0);
+        }
+
+        // 체력 0이 되면 사망
+        if (gm.curHp <= 0f)
         {
             Die();
         }
@@ -37,12 +53,27 @@ public class PlayerCondition : MonoBehaviour, IDamagable
 
     public void Heal(float amount)
     {
-        health.DeltaHP(amount);
+        gm.curHp = Mathf.Clamp(gm.curHp + amount, 0, gm.maxHp);
+        gm.Condition.HealHP(0);
     }
 
-    public void eat(float amount)
+    public void HealThirsty(float value)
     {
-        hunger.DeltaHunger(amount);
+        gm.curThirsty = Mathf.Clamp(gm.curThirsty + value, 0, gm.maxThirsty);
+        gm.Condition.HealThirsty(0);
+    }
+
+    public void Eat(float amount)
+    {
+        gm.curHunger = Mathf.Clamp(gm.curHunger + amount, 0, gm.maxHunger);
+        gm.Condition.HealHunger(0);
+    }
+
+    public void TakePhygicalDamage(int damage)
+    {
+        gm.curHp = Mathf.Clamp(gm.curHp - damage, 0, gm.maxHp);
+        gm.Condition.HealHP(0);
+        onTakeDamage?.Invoke();
     }
     public void SpeedBoost(float multiplier, float duration)
     {
@@ -55,11 +86,5 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     public void Die()
     {
         Debug.Log("사망");
-    }
-
-    public void TakePhygicalDamage(int damage)
-    {
-        health.Subtract(damage);
-        onTakeDamage?.Invoke();
     }
 }

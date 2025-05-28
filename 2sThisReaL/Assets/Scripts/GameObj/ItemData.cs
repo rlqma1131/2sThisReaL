@@ -13,8 +13,9 @@ public enum ItemType
 }
 
 [Serializable]
-public class ItemDataConsumbale
+public class ItemDataConsumable
 {
+    public enum ItemType { Resource, Crafting, Equipable, Consumable, Etc }
     public ConsumableType type;
     public float value;
 }
@@ -42,6 +43,6 @@ public class ItemData : ScriptableObject
     public int maxStackAmount; // 슬롯 하나에 쌓을 수 있는 최대 개수
 
     [Header("Consumable")]
-    public ItemDataConsumbale[] consumables; // 아이템 소모 효과 정보 배열 (아이템이 가지고 있는 여러 효과들)
+    public ItemDataConsumable[] consumables; // 아이템 소모 효과 정보 배열 (아이템이 가지고 있는 여러 효과들)
 }
 

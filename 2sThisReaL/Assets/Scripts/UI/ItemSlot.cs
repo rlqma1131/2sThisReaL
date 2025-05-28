@@ -27,7 +27,8 @@ public class ItemSlot : MonoBehaviour
 
     private void OnEnable()
     {
-        outline.enabled = equipped;
+        if (outline != null)
+            outline.enabled = equipped;
     }
 
     // UI 업데이트 함수 - 아이템 데이터에서 필요한 정보를 각 UI에 표시

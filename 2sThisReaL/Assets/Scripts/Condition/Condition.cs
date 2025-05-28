@@ -12,9 +12,20 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image _imageThirsty;
 
     [SerializeField] private ConditionManager gm;
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        gm = ConditionManager.Instance;
+    }
+
     void Start()
     {
+        if (gm == null)
+        {
+            enabled = false;
+            return;
+        }
+
         ConditionManager.Instance.Condition = this;
 
         gm.curHp = gm.maxHp;
@@ -29,19 +40,20 @@ public class Condition : MonoBehaviour
         DepletionThirsty();
     }
     #region HP
-    public void DeltaHP(float delta) // 데미지나 아이템 상호작용으로 인한 hp변화
+    public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
     {
-        gm.curHp = Mathf.Clamp(gm.curHp + delta, 0, gm.maxHp);
+        gm.curHp = Mathf.Clamp(gm.curHp + value, 0, gm.maxHp);
         UpdateHP();
     }
-    private void DepletionHP(float delta) // 배고픔과 갈증이 0일 때 지속적인 감소
+    private void DepletionHP(float value) // 배고픔과 갈증이 0일 때 지속적인 감소
     {
-        gm.curHp = Mathf.Clamp(gm.curHp + delta * Time.deltaTime, 0, gm.maxHp);
+        gm.curHp = Mathf.Clamp(gm.curHp + value * Time.deltaTime, 0, gm.maxHp);
         UpdateHP();
     }
     private void UpdateHP()
     {
-        _imageHp.fillAmount = gm.curHp / gm.maxHp;
+        if (_imageHp != null)
+            _imageHp.fillAmount = gm.curHp / gm.maxHp;
     }
     #endregion
 
@@ -58,7 +70,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateStamina()
     {
-        _imageStamina.fillAmount = gm.curStamina / gm.maxStamina;
+        if (_imageStamina != null)
+            _imageStamina.fillAmount = gm.curStamina / gm.maxStamina;
     }
     #endregion
 
@@ -68,6 +81,7 @@ public class Condition : MonoBehaviour
 
         gm.curHunger -= gm.decreasingHunger * Time.deltaTime;
         gm.curHunger = Mathf.Clamp(gm.curHunger, 0, gm.maxHunger);
+
         if (gm.curHunger == 0)
         {
             DepletionHP(gm.decreasingHP);
@@ -78,21 +92,22 @@ public class Condition : MonoBehaviour
         }
         UpdateHunger();
     }
-    public void DeltaHunger(float delta)
+    public void HealHunger(float value)
     {
-        gm.curHunger = Mathf.Clamp(gm.curHunger + delta, 0, gm.maxHunger);
+        gm.curHunger = Mathf.Clamp(gm.curHunger + value, 0, gm.maxHunger);
         UpdateHunger();
     }
     private void UpdateHunger()
     {
-        _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
+        if (_imageHunger != null)
+            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
     #region Thirsty
-    public void DeltaThirsty(float delta)
+    public void HealThirsty(float value)
     {
-        gm.curThirsty = Mathf.Clamp(gm.curThirsty + delta, 0, gm.maxThirsty);
+        gm.curThirsty = Mathf.Clamp(gm.curThirsty + value, 0, gm.maxThirsty);
         UpdateThirsty();
     }
     private void DepletionThirsty()
@@ -112,7 +127,7 @@ public class Condition : MonoBehaviour
     }
     private void UpdateThirsty()
     {
-        if (_imageHunger != null)
+        if (_imageThirsty != null)
             _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion

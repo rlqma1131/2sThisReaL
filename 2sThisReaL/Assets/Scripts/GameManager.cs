@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            // 에디터에서 직접 호출하지 못하게 방어
+            // 에디터 방어코드
             if (_instance == null)
             {
                 _instance = new GameObject("GameManager").AddComponent<GameManager>();
