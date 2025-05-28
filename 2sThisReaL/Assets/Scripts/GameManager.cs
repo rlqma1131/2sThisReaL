@@ -2,24 +2,44 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    // 싱글톤
+    private static GameManager _instance;
 
-    public Player Player { get; private set; }
-    
+    public static GameManager Instance
+    {
+        get
+        {
+            // 에디터에서 직접 호출하지 못하게 방어
+            if (_instance == null)
+            {
+                _instance = new GameObject("GameManager").AddComponent<GameManager>();
+            }
+            return _instance;
+        }
+    }
 
+    // Player 참조
+    private Player _player;
+    public Player Player
+    {
+        get {  return _player; }
+        set {  _player = value; }
+    }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (_instance != this)
         {
             Destroy(gameObject);
-            return;
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
+    // 초기화
     public void Init(Player player)
     {
         this.Player = player;

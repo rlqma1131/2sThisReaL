@@ -5,6 +5,7 @@ using UnityEngine;
 public enum ConsumableType
 {
     // 허기, 갈증
+    Health,
     Hunger,
     Thirst
 }

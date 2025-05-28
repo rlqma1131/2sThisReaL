@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<PlayerController>();
         condition = GetComponent<Condition>();
         equip = GetComponent<Equipment>();
+        CharacterManager.Instance.Player = this;
     }
     private void Start()
     {
