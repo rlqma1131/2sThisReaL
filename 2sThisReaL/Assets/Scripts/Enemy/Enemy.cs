@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     [Header("AI")]
     private NavMeshAgent agent;
-    public float detectDistance;
+    private float detectDistance = 20;
     private AIState aiState;
 
     [Header("Wandering")]

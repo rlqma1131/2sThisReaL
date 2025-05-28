@@ -10,7 +10,7 @@ public class SpawnerZone : MonoBehaviour
     [SerializeField] private float intervalReductionPerDay = 0.5f;
     [SerializeField] private float minSpawnInterval = 5f;
     [SerializeField] private int maxSpawnCount = 3;
-    [SerializeField] private float spawnRadius = 8f; // 스폰 
+    [SerializeField] private float spawnRadius = 30f; // 스폰 
     [SerializeField] private float obstacleCheckRadius = 2f;
     [SerializeField] private float minPlayerDistance = 10f;
     [SerializeField] private float minFOVAngle = 45f;
