@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                //GameManager.Instance.player.controller.GetComponent<IDamagalbe>().TakePhygicalDamage(damage);
+                ConditionManager.Instance.Condition.DeltaHP(-damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
             }
