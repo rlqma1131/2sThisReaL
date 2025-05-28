@@ -55,7 +55,16 @@ public class PlayerController : MonoBehaviour
     {
         if (!isBuildMode)
         {
-            Move();
+            if (ConditionManager.Instance.curStamina == 0)
+            {
+                curMovementInput = Vector2.zero;
+                Debug.Log("스테미나가 바닥이라 움직일 수 없습니다.");
+                ConditionManager.Instance.Condition.DeltaStamina(10f);
+            }
+            else
+            {
+                Move();
+            }
             UpdateAnimation();
         }
     }
@@ -70,6 +79,10 @@ public class PlayerController : MonoBehaviour
         if (curMovementInput.sqrMagnitude < 0.01f)
         {
             _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            if(IsGrounded())
+            {
+                ConditionManager.Instance.Condition.DepletionStamina(15f);
+            }
             return;
         }
 
@@ -97,6 +110,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
             ConditionManager.Instance.Condition.DepletionStamina(-5f);
         }
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -115,8 +129,19 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            if (ConditionManager.Instance.curStamina == 0)
+            {
+                Debug.Log("점프할 힘이 없슈");
+                _rigidbody.AddForce(Vector2.up * 0, ForceMode.Impulse);
+            }
+            else
+            {
+                ConditionManager.Instance.Condition.DeltaStamina(-5f);
+                _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            }
+
         }
+        
     }
     bool IsGrounded()
     {

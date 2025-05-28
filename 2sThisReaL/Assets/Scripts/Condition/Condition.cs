@@ -50,12 +50,12 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Stamina
-    public void AddStamina(float delta) // 아이템으로 인한 회복
+    public void DeltaStamina(float delta) // 회복 및 감소
     {
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta, 0f, gm.maxStamina);
         UpdateStamina();
     }
-    public void DepletionStamina(float delta) // 플레이어의 동작에 따른 지속적인 감소
+    public void DepletionStamina(float delta) // 플레이어의 동작에 따른 지속적인 감소 , 움직임이 없을 때 지속적인 증가
     {
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta * Time.deltaTime, 0f, gm.maxStamina);
         UpdateStamina();
