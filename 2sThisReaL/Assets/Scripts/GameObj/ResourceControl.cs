@@ -24,6 +24,20 @@ public class ResourceControl : MonoBehaviour
         //시간 측정 디버그
 
         yield return new WaitForSeconds(delay);
+
+        // 리스폰 Area는 ResourceObject의 부모 빈 오브젝트에 box콜라이더로 설정되어있음
+        ResourceArea resourceArea = resource.GetComponentInParent<ResourceArea>();
+        while (resourceArea != null && resourceArea.IsBlocked)
+        {
+            //지역이 차단되어 있다면 시간 지연을 함 (테스트용으로 1초씩 추가 체크, 벗어나면 원래 지연 시간만큼 기다릴 예정.)
+            yield return new WaitForSeconds(1f);
+            if (resourceArea.IsBlocked == false)
+            {
+                yield return new WaitForSeconds(delay); // 지역이 차단되지 않았다면 원래 지연 시간만큼 기다림. 중간에 또 차단되면 다시 10초씩 기다림
+            }
+
+        }
+
         resource.Initialize(); // 자원 초기화
         resource.gameObject.SetActive(true); // 자원 오브젝트 활성화
 
