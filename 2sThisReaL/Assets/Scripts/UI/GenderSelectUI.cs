@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GenderSelectUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnSelectMale()
     {
-        
+        CharacterManager.Instance.SetGender(GenderType.Male);
+        Debug.Log("[UI] Male selected");
+        SceneManager.LoadScene("Donghyun"); // 실제 게임 씬 이름
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnSelectFemale()
     {
-        
+        CharacterManager.Instance.SetGender(GenderType.Female);
+        Debug.Log("[UI] Female selected");
+        SceneManager.LoadScene("Donghyun"); // 실제 게임 씬 이름
     }
 }
