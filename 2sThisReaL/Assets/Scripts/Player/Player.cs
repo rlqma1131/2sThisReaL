@@ -6,7 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerController controller;
-    public Condition condition;
     public Equipment equip;
 
     public ItemData itemData;
@@ -16,7 +15,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
-        condition = GetComponent<Condition>();
         equip = GetComponent<Equipment>();
     }
     private void Start()
