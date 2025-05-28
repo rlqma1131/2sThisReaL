@@ -20,9 +20,9 @@ MonoBehaviour:
   isStackable: 1
   maxStackSize: 20
   dropPrefab: {fileID: 525511288822688072, guid: fa1af385122efaf4f902004ae34dd0d2, type: 3}
-  attackRate: 0
+  attackRate: 5
   attackDistance: 0
   isEquipable: 1
-  equipItem: {fileID: 1102677316180861271, guid: a9c743ba05f16d04a9612c98f990ab0b, type: 3}
+  equipItem: {fileID: 2762492727754164679, guid: a9c743ba05f16d04a9612c98f990ab0b, type: 3}
   canGathering: 1
   attackPower: 3

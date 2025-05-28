@@ -46,7 +46,7 @@ public void EquipNew(EquipItem data)
     {
         if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
         {
-            //curEquip.OnAttackInput();
+            curEquip.OnAttackInput();
         }
     }
 }

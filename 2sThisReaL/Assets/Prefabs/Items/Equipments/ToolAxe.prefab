@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6930584621040494182}
   - component: {fileID: 1789157281499152548}
+  - component: {fileID: 30206370324038840}
   m_Layer: 0
   m_Name: ToolAxe
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 2762492727754164679}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7197214, y: -0.68844205, z: -0.08896334, w: 0.011588561}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.0013, z: -0.001}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,3 +152,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1.2, z: 0.1}
   m_Center: {x: 0.13, y: 0.6, z: 0}
+--- !u!114 &30206370324038840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762492727754164679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45d8b177cd119e418f680852978f15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipData: {fileID: 11400000, guid: 5823da71d2c81aa49b3567aafb725501, type: 2}
