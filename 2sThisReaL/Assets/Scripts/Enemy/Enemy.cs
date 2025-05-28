@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     [Header("AI")]
     private NavMeshAgent agent;
-    public float detectDistance;
+    private float detectDistance = 20;
     private AIState aiState;
 
     [Header("Wandering")]
@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                //GameManager.Instance.player.controller.GetComponent<IDamagalbe>().TakePhygicalDamage(damage);
+                ConditionManager.Instance.Condition.DeltaHP(-damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
             }
@@ -191,13 +191,35 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        StartCoroutine(DamageFlash());
 
         if (health <= 0 && aiState != AIState.Dead)
         {
             SetState(AIState.Dead);
         }
     }
+    // 몬스터가 데미지 입을 시 반짝임
+    IEnumerator DamageFlash()
+    {
+        foreach (var renderer in meshRenderers)
+        {
+            foreach (var mat in renderer.materials)
+            {
+                mat.EnableKeyword("_EMISSION");
+                mat.SetColor("_EmissionColor", Color.red * 2f);
+            }
+        }
 
+        yield return new WaitForSeconds(0.1f);
+
+        foreach (var renderer in meshRenderers)
+        {
+            foreach (var mat in renderer.materials)
+            {
+                mat.SetColor("_EmissionColor", Color.black);
+            }
+        }
+    }
     void Dead()
     {
         agent.isStopped = true;
