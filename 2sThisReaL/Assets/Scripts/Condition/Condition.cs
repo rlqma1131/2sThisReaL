@@ -194,7 +194,7 @@ public class Condition : MonoBehaviour
     private void UpdateHunger()
     {
         if (_imageHunger != null)
-            _imageHunger.fillAmount = 1f - (gm.curHunger / gm.maxHunger);
+            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
@@ -219,7 +219,7 @@ public class Condition : MonoBehaviour
     private void UpdateThirsty()
     {
         if (_imageThirsty != null)
-            _imageThirsty.fillAmount = 1f - (gm.curThirsty / gm.maxThirsty);
+            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion
 
@@ -240,7 +240,7 @@ public class Condition : MonoBehaviour
     private void UpdateTemperature()
     {
         if (_imageTemperature != null)
-            _imageTemperature.fillAmount = 1f - (gm.curTemperature / gm.maxTemperature);
+            _imageTemperature.fillAmount = gm.curTemperature / gm.maxTemperature;
     }
     #endregion
 }
