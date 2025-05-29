@@ -2329,12 +2329,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpTop: {fileID: 0}
-  _hpMiddle: {fileID: 0}
-  _hpBottom: {fileID: 0}
-  _staminaTop: {fileID: 0}
-  _staminaMiddle: {fileID: 0}
-  _staminaBottom: {fileID: 0}
+  _hpTop: {fileID: 159299314}
+  _hpMiddle: {fileID: 1869185933}
+  _hpBottom: {fileID: 1612633632}
+  _staminaTop: {fileID: 1919378439}
+  _staminaMiddle: {fileID: 388066930}
+  _staminaBottom: {fileID: 1826831220}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 0}
@@ -2945,12 +2945,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpTop: {fileID: 0}
-  _hpMiddle: {fileID: 0}
-  _hpBottom: {fileID: 0}
-  _staminaTop: {fileID: 0}
-  _staminaMiddle: {fileID: 0}
-  _staminaBottom: {fileID: 0}
+  _hpTop: {fileID: 159299314}
+  _hpMiddle: {fileID: 1869185933}
+  _hpBottom: {fileID: 1612633632}
+  _staminaTop: {fileID: 1919378439}
+  _staminaMiddle: {fileID: 388066930}
+  _staminaBottom: {fileID: 1826831220}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 0}
@@ -3257,6 +3257,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.34
       objectReference: {fileID: 0}
+    - target: {fileID: 552642465236714483, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: DropPosition
+      value: 
+      objectReference: {fileID: 1854870363}
     - target: {fileID: 552642465236714483, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: dropPosition
       value: 
