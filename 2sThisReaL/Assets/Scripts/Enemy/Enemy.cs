@@ -157,9 +157,10 @@ public class Enemy : MonoBehaviour
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                ConditionManager.Instance.Condition.HealHP(-damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
+                if (attackDistance <= 5f)
+                    ConditionManager.Instance.Condition.HealHP(-damage);
             }
         }
         else
