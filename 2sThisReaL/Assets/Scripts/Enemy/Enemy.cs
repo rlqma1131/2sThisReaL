@@ -153,27 +153,14 @@ public class Enemy : MonoBehaviour
     {
         if (playerDistance < attackDistance && IsPlayerInFieldOfView())
         {
-            if (attackDistance <= 5f)
+            agent.isStopped = true;
+            if (Time.time - lastAttackTime > attackRate)
             {
-                agent.isStopped = true;
-                if (Time.time - lastAttackTime > attackRate)
-                {
-                    lastAttackTime = Time.time;
+                lastAttackTime = Time.time;
+                animator.speed = 1;
+                animator.SetTrigger("Attack");
+                if (attackDistance <= 5f)
                     ConditionManager.Instance.Condition.HealHP(-damage);
-                    animator.speed = 1;
-                    animator.SetTrigger("Attack");
-                }
-            }
-            else
-            {
-                agent.isStopped = true;
-                if (Time.time - lastAttackTime > attackRate)
-                {
-                    lastAttackTime = Time.time;
-                    ConditionManager.Instance.Condition.HealHP(-damage);
-                    animator.speed = 1;
-                    animator.SetTrigger("Attack");
-                }
             }
         }
         else
