@@ -27,27 +27,11 @@ public class UIInventory : MonoBehaviour
 
     private PlayerController controller;
     private Condition Condition;
+    private GameManager gameManager;
 
     void Start()
     {
-        controller = GameManager.Instance.Player.controller;
-        Condition = ConditionManager.Instance.Condition;
-        dropPosition = GameManager.Instance.Player.dropPosition;
-        GameManager.Instance.Player.additem += AddItem;
-
-        inventoryWindow.SetActive(false);
-        controller.inventory += Toggle;
-        slots = new ItemSlot[slotPanel.childCount];
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
-            slots[i].index = i;
-            slots[i].inventory = this;
-            slots[i].Clear();
-        }
-
-        ClearSelectedItemWindow();
+        StartCoroutine(WaitForGameManager());
     }
 
     // 선택한 아이템 표시할 정보창 Clear 함수
@@ -255,5 +239,31 @@ public class UIInventory : MonoBehaviour
     {
         slots[index].equipped = false;
         UpdateUI();
+    }
+    IEnumerator WaitForGameManager()
+    {
+        while (GameManager.Instance == null || GameManager.Instance.Player == null)
+        {
+            yield return null;
+        }
+
+        controller = GameManager.Instance.Player.controller;
+        Condition = ConditionManager.Instance.Condition;
+        dropPosition = GameManager.Instance.Player.dropPosition;
+        GameManager.Instance.Player.additem += AddItem;
+
+        inventoryWindow.SetActive(false);
+        controller.inventory += Toggle;
+
+        slots = new ItemSlot[slotPanel.childCount];
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
+            slots[i].index = i;
+            slots[i].inventory = this;
+            slots[i].Clear();
+        }
+
+        ClearSelectedItemWindow();
     }
 }

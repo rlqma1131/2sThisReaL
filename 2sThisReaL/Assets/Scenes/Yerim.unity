@@ -2339,10 +2339,10 @@ MonoBehaviour:
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2011816474}
   deathUI: {fileID: 0}
   MuzicPlayer: {fileID: 0}
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 1122418467}
   fadeDuration: 2
 --- !u!222 &276203964
 CanvasRenderer:
@@ -2955,10 +2955,10 @@ MonoBehaviour:
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2011816474}
   deathUI: {fileID: 0}
   MuzicPlayer: {fileID: 0}
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 1122418467}
   fadeDuration: 2
 --- !u!222 &387260851
 CanvasRenderer:
@@ -6741,10 +6741,10 @@ MonoBehaviour:
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2011816474}
   deathUI: {fileID: 0}
   MuzicPlayer: {fileID: 0}
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 1122418467}
   fadeDuration: 2
 --- !u!222 &855305005
 CanvasRenderer:
@@ -9742,10 +9742,10 @@ MonoBehaviour:
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2011816474}
   deathUI: {fileID: 0}
   MuzicPlayer: {fileID: 0}
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 1122418467}
   fadeDuration: 2
 --- !u!222 &1341561346
 CanvasRenderer:
@@ -9899,10 +9899,10 @@ MonoBehaviour:
   _imageThirsty: {fileID: 855305003}
   _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2011816474}
   deathUI: {fileID: 0}
   MuzicPlayer: {fileID: 0}
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 1122418467}
   fadeDuration: 2
 --- !u!114 &1361426847
 MonoBehaviour:
@@ -16086,6 +16086,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
   m_PrefabInstance: {fileID: 414557095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011816474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3727589860522424523, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+  m_PrefabInstance: {fileID: 414557095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f21f125f85685418a428111080ce82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2020305461
 PrefabInstance:
   m_ObjectHideFlags: 0
