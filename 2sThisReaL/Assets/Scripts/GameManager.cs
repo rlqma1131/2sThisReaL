@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    public void Init(Player player)
-    {
-        this.Player = player;
-    }
+
 
     public void Init(Player player)
     {
