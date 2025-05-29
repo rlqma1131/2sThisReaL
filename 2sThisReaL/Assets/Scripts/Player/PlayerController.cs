@@ -36,12 +36,24 @@ public class PlayerController : MonoBehaviour
 
     private bool canFlash = true;
     private bool isBuildMode = false;
-    
+
+    private bool isCrouching = false;
+    private float originalHeight;
+    private Vector3 originalCenter;
+    private CapsuleCollider capsuleCollider;
+
+    [SerializeField] private float crouchHeight = 1.5f;
+    [SerializeField] private Vector3 crouchCenter = new Vector3(0f, 1f, 0f);
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        originalMoveSpeed = moveSpeed;
         animator = GetComponentInChildren<Animator>();
+
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        originalHeight = capsuleCollider.height;
+        originalCenter = capsuleCollider.center;
+
+        originalMoveSpeed = moveSpeed;
     }
 
     void Start()
@@ -243,4 +255,24 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsAttack", false); // 좌클릭 뗌
         }
     }
+
+    public void OnCrouch(InputAction.CallbackContext context)
+{
+    if (context.phase == InputActionPhase.Started)
+    {
+        isCrouching = true;
+        capsuleCollider.height = crouchHeight;
+        capsuleCollider.center = crouchCenter;
+        moveSpeed *= 0.5f; // 속도 느려짐
+        animator.SetBool("IsCrouch", true);
+    }
+    else if (context.phase == InputActionPhase.Canceled)
+    {
+        isCrouching = false;
+        capsuleCollider.height = originalHeight;
+        capsuleCollider.center = originalCenter;
+        moveSpeed = originalMoveSpeed;
+        animator.SetBool("IsCrouch", false);
+    }
+}
 }
