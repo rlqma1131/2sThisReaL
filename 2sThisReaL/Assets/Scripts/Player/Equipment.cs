@@ -46,6 +46,7 @@ public void EquipNew(EquipItem data)
     {
         if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
         {
+            if (ConditionManager.Instance.curStamina <= 0) return;
             curEquip.OnAttackInput();
         }
     }

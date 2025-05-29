@@ -13,6 +13,7 @@ public class ResourceObject : MonoBehaviour
     public int capacity; //해당 오브젝트에서 획득할 수 있는 총량
     private int baseCapacity; // 외부에서 설정한 기본값을 저장하는 변수
     [SerializeField] private float respawnTime = 30f; // 자원 오브젝트 재생성 시간(초 단위)
+    [SerializeField] private float decayStamina; //아이템을 획득할 때마다 감소하는 스태미나 양(기본값 0)
 
     //GatherType 설정
     public GatherType gatherType; //해당 리소스가 요구하는 GatherType
@@ -34,6 +35,12 @@ public class ResourceObject : MonoBehaviour
         //일단 현재는 상관없이 획득한다고 함
         for (int i = 0; i < quantityPerHit; i++)
         {
+
+            ConditionManager.Instance.Condition.DeltaStamina(decayStamina); // 아이템을 획득할 때마다 스태미나 감소
+            if (ConditionManager.Instance.curStamina <= 0) break;
+
+            Debug.Log($"스태미나 감소: {decayStamina} ");
+
             if (capacity <= 0) break; // 용량이 0 이하일 경우 더 이상 획득하지 않음
             // 아이템을 랜덤으로 선택
             ItemData itemToGive = itemsToGive[Random.Range(0, itemsToGive.Length)];
@@ -42,6 +49,7 @@ public class ResourceObject : MonoBehaviour
             capacity--; // 획득할 때마다 용량 감소
             Instantiate(itemToGive.dropPrefab, hitPoint+Vector3.up, Quaternion.LookRotation(hitNormal, Vector3.up));
         }
+
 
         if(capacity <= 0)
         {            

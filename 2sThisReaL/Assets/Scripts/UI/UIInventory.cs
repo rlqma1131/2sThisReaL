@@ -165,7 +165,7 @@ public class UIInventory : MonoBehaviour
         selectedItemIndex = index;
 
         selectedItemName.text = selectedItem.item.itemName;
-        selectedItemDescription.text = selectedItem.item.description;
+        selectedItemDescription.text = selectedItem.item.itemDescription;
 
         selectedItemStatName.text = "";
         selectedItemStatValue.text = "";
