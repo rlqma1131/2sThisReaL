@@ -32,11 +32,6 @@ public class ConditionManager : MonoBehaviour
     public float maxTemperature;
     public float minTemperature;
     public float decreasingTemperature;
-
-    [Header("Thermometer")] // 맵의 온도계
-    public float curThermometer;
-    public float maxThermometer;
-    public float minThermometer;
     
     private void Awake()
     {

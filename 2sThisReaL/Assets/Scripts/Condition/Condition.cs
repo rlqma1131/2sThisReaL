@@ -48,7 +48,6 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
-        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
@@ -232,13 +231,26 @@ public class Condition : MonoBehaviour
         {
             gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
         }
+        else
+        {
+            gm.curTemperature += gm.decreasingTemperature * Time.deltaTime;
+        }
+        if (gm.curTemperature == 0)
+        {
+            // die
+        }
+        if (gm.curTemperature == gm.maxTemperature)
+        {
+            // die
+        }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
         UpdateTemperature();
     }
     public void DeltaTemperature(float delta)
     {
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature + delta, 0, gm.maxTemperature);
+        gm.curTemperature += (gm.decreasingTemperature + delta) * Time.deltaTime;
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
         UpdateTemperature();
     }
     private void UpdateTemperature()
