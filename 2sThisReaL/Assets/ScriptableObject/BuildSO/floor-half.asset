@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505473c290851814a99dd269179660c6, type: 3}
+  m_Name: floor-half
+  m_EditorClassIdentifier: 
+  name: floor-half
+  icon: {fileID: 21300000, guid: ffce1180379a6604b9fe5c7383eb5e70, type: 3}
+  previewPrefab: {fileID: 3677733830230040300, guid: 28c69bb3ff13e6442aaf12959ea3c85c, type: 3}
+  itemID: 10

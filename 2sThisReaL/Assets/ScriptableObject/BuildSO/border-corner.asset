@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505473c290851814a99dd269179660c6, type: 3}
+  m_Name: border-corner
+  m_EditorClassIdentifier: 
+  name: border-corner
+  icon: {fileID: 21300000, guid: 8b0b026866e585848b83de96d21d2c20, type: 3}
+  previewPrefab: {fileID: 3273839316211666157, guid: 86c36fe1470f8bc42a5b7a376d0957ad, type: 3}
+  itemID: 2
