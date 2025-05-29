@@ -2498,9 +2498,41 @@ MonoBehaviour:
     m_ActionId: 7344370e-35e4-4976-9172-7ab5a08769b0
     m_ActionName: Player/Flash[/Keyboard/leftShift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8969179526132694136}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b98bf047-6f4c-4596-953f-eb3bac63c568
     m_ActionName: Player/Crouch[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 46ee4f0b-55ec-4744-855b-fbdc65f55f17
+    m_ActionName: Player/fireball[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a9dece3-949d-42e9-8797-bd5ea13693ee
+    m_ActionName: Player/dashAttack[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2532,11 +2564,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skills:
   - type: 0
+    inputAction: {fileID: 0}
     cooldown: 5
-    activationKey: 113
-    lastUsedTime: 0
   fireballPrefab: {fileID: 1545069359907266310, guid: 291a2e9e0cb0e07468ce33192d70d970, type: 3}
   fireballSpawnPoint: {fileID: 7519365449486594555}
+  dashDistance: 10
+  dashDuration: 0.2
+  dashCooldown: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6559436207767563747
 GameObject:
   m_ObjectHideFlags: 0
