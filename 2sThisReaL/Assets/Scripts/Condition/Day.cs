@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Day : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class Day : MonoBehaviour
     public float dayLength; // 현실 시간 기준으로 게임 내의 하루가 몇 초일지 설정
     private float timeRate; //시간대
     public Vector3 noon; // 정오를 정하는 값 vecor3 90,0,0
+
+    public TextMeshProUGUI dayText;
+
+    private float dayCount = 0;
+    private float prevTime = 0f;
+    private bool isTextUi = false;
 
     [Header("Sun")]
     public Light sun;
@@ -42,6 +50,8 @@ public class Day : MonoBehaviour
         //하루 진행 속도 (1초당 몇 퍼센트 진행?)
         timeRate = 1.0f / dayLength;
         time = startTime;
+
+        StartCoroutine(StartDayCoroutin(3));
     }
 
     // Update is called once per frame
@@ -56,6 +66,20 @@ public class Day : MonoBehaviour
         RenderSettings.ambientIntensity = lightIntensityMultiplier.Evaluate(time);
         RenderSettings.reflectionIntensity = reflectionIntensityMultiplier.Evaluate(time);
 
+        if (time < prevTime)
+        {
+            Debug.Log("하루가 지남");
+            dayCount++;
+
+            UpdataDay(dayCount);
+
+            if (isTextUi == false)
+            {
+                isTextUi = true;
+                StartCoroutine(DayTextCoroutin(3));
+            }
+        }
+        prevTime = time;
     }
 
     private void UpdateLight(Light _lightSourec , Gradient _gradient , AnimationCurve _curve)
@@ -74,8 +98,28 @@ public class Day : MonoBehaviour
         else if (_lightSourec.intensity > 0 && !go.activeInHierarchy)
         {
             go.SetActive(true);
-        }
-    
-    
+        }    
+    }
+    private IEnumerator StartDayCoroutin(float _tiem)
+    {
+        UpdataDay(dayCount);
+        dayText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(_tiem);
+
+        dayText.gameObject.SetActive(false);
+    }
+    private IEnumerator DayTextCoroutin(float tiem)
+    {
+        dayText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(tiem);
+
+        dayText.gameObject.SetActive(false);
+        isTextUi = false;
+    }
+    private void UpdataDay(float day)
+    {
+        dayText.text = $"Day : {day.ToString()}";
     }
 }
