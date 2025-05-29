@@ -3239,11 +3239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.09500548
+      value: 0.095005445
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011193893
+      value: -0.01119389
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3287,11 +3287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0950055
+      value: 0.09500542
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011193895
+      value: -0.011193887
       objectReference: {fileID: 0}
     - target: {fileID: 2350605173776671826, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9566,13 +9566,10 @@ MonoBehaviour:
   curThirsty: 0
   maxThirsty: 500
   decreasingThirsty: 10
-  curTemperature: 80
+  curTemperature: 60
   maxTemperature: 100
   minTemperature: 0
-  decreasingTemperature: 1
-  curThermometer: 0
-  maxThermometer: 0
-  minThermometer: 0
+  decreasingTemperature: 0.5
 --- !u!222 &1302158159
 CanvasRenderer:
   m_ObjectHideFlags: 0
