@@ -47,8 +47,6 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Instance.Enemy = this;
-
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();

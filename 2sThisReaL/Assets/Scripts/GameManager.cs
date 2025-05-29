@@ -5,7 +5,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public Player Player { get; set; }
-    public Enemy Enemy { get; set; }
 
     private void Awake()
     {
@@ -18,5 +17,10 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject); // 씬 이동 시 유지하고 싶으면
+    }
+
+    public void Init(Player player)
+    {
+        Player = player;
     }
 }
