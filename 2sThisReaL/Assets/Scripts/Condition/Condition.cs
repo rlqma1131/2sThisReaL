@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public interface idamagable
 {
@@ -9,17 +10,28 @@ public interface idamagable
 }
 public class Condition : MonoBehaviour
 {
-    [SerializeField] private Image _imageHp;
-    [SerializeField] private Image _imageStamina;
+    [SerializeField] private Image _hpTop;
+    [SerializeField] private Image _hpMiddle;
+    [SerializeField] private Image _hpBottom;
+    [SerializeField] private Image _staminaTop;
+    [SerializeField] private Image _staminaMiddle;
+    [SerializeField] private Image _staminaBottom;
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
-    [SerializeField] private Image _imageTemprerature;
+    [SerializeField] private Image _imageTemperature;
 
     [SerializeField] private ConditionManager gm;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject MuzicPlayer;
+    [SerializeField] private Image fadePanel;
+    [SerializeField] private float fadeDuration = 2f;
 
+    private bool isDead = false;
     void Awake()
     {
         gm = ConditionManager.Instance;
+        gameManager = GameManager.Instance;
     }
 
     void Start()
@@ -36,13 +48,13 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
+        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
-        DepletionTemperature();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -55,10 +67,70 @@ public class Condition : MonoBehaviour
         gm.curHp = Mathf.Clamp(gm.curHp + value * Time.deltaTime, 0, gm.maxHp);
         UpdateHP();
     }
+    public void IsDie()
+    {
+        if (isDead) return; // 중복 호출 방지
+
+        isDead = true;
+
+        if (MuzicPlayer != null)
+        MuzicPlayer.SetActive(false);
+        // 사망 UI 활성화
+        StartCoroutine(FadeToBlack());
+    }
+    private IEnumerator FadeToBlack()
+    {
+        float elapsed = 0f;
+        Color color = fadePanel.color;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.unscaledDeltaTime; // 시간 멈춰도 fade는 계속
+            float alpha = Mathf.Clamp01(elapsed / fadeDuration);
+            fadePanel.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+
+        fadePanel.color = new Color(color.r, color.g, color.b, 1f);
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        SceneManager.LoadScene("EndingScene");
+        // 마지막에 시간 정지
+        Time.timeScale = 0f;
+
+        // UI 등 추가 처리 가능
+    }
     private void UpdateHP()
     {
-        if (_imageHp != null)
-            _imageHp.fillAmount = gm.curHp / gm.maxHp;
+        float hpPerBar = gm.maxHp / 3f;
+        float curHp = gm.curHp;
+
+        // 3분할 HP바
+        if (_hpTop != null)
+        {
+            float topFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpTop.fillAmount = topFill;
+            curHp -= hpPerBar;
+        }
+
+        if (_hpMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpMiddle.fillAmount = middleFill;
+            curHp -= hpPerBar;
+        }
+
+        if (_hpBottom != null)
+        {
+            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpBottom.fillAmount = bottomFill;
+        }
+
+        if(gm.curHp == 0)
+        {
+            IsDie();
+        }
     }
     #endregion
 
@@ -75,8 +147,29 @@ public class Condition : MonoBehaviour
     }
     private void UpdateStamina()
     {
-        if (_imageStamina != null)
-            _imageStamina.fillAmount = gm.curStamina / gm.maxStamina;
+        float staminaPerBar = gm.maxStamina / 3f;
+        float curStamina = gm.curStamina;
+
+        // 3분할 Stamina 바
+        if (_staminaTop != null)
+        {
+            float topFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaTop.fillAmount = topFill;
+            curStamina -= staminaPerBar;
+        }
+
+        if (_staminaMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaMiddle.fillAmount = middleFill;
+            curStamina -= staminaPerBar;
+        }
+
+        if (_staminaBottom != null)
+        {
+            float bottomFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaBottom.fillAmount = bottomFill;
+        }
     }
     #endregion
 
@@ -90,10 +183,6 @@ public class Condition : MonoBehaviour
         if (gm.curHunger == 0)
         {
             DepletionHP(gm.decreasingHP);
-            if (gm.curHp == 0)
-            {
-                //GameManager.player._condition.DIe();
-            }
         }
         UpdateHunger();
     }
@@ -105,7 +194,7 @@ public class Condition : MonoBehaviour
     private void UpdateHunger()
     {
         if (_imageHunger != null)
-            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
+            _imageHunger.fillAmount = 1f - (gm.curHunger / gm.maxHunger);
     }
     #endregion
 
@@ -123,32 +212,25 @@ public class Condition : MonoBehaviour
         if (gm.curThirsty == 0)
         {
             DepletionHP(gm.decreasingHP);
-            if (gm.curHp == 0)
-            {
-                //gameManager.player._condition.DIe();
-            }
+
         }
         UpdateThirsty();
     }
     private void UpdateThirsty()
     {
         if (_imageThirsty != null)
-            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+            _imageThirsty.fillAmount = 1f - (gm.curThirsty / gm.maxThirsty);
     }
     #endregion
 
-    #region Player Temperature
+    #region Temperature
     private void DepletionTemperature() // 플레이어의 온도
     {
-        Rigidbody rb = GameManager.Instance.Player.GetComponent<Rigidbody>();
+        // 여기에 플레이어의 움직임이 0일 때라는게 필요
+        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
-        if (rb.velocity.magnitude < 0.1f)
-        {
-            gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
-
-            gm.curTemperature = Mathf.Clamp(gm.curTemperature, gm.minTemperature, gm.maxTemperature);
-            UpdateTemperature();
-        }
+        UpdateTemperature();
     }
     public void DeltaTemperature(float delta)
     {
@@ -157,8 +239,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateTemperature()
     {
-        _imageTemprerature.fillAmount = (gm.curTemperature - gm.minTemperature) / (gm.maxTemperature - gm.minTemperature);
-        // _imageTemprerature.fillAmount = Mathf.InverseLerp(gm.minTemperature, gm.maxTemperature, gm.curTemperature);
+        if (_imageTemperature != null)
+            _imageTemperature.fillAmount = 1f - (gm.curTemperature / gm.maxTemperature);
     }
     #endregion
 }

@@ -453,7 +453,7 @@ MonoBehaviour:
     m_Radius: 9
   - m_Height: 2.5
     m_Radius: 9
-  - m_Height: 0.4
+  - m_Height: -2
     m_Radius: 9
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675709197670262024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11701424, y: 0.00000001708818, z: -0.000000002013392, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: -0.000000017088176, z: 0.0000000020133915, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1657,8 +1657,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5214348875965561635}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.117014244, y: 0.00000003417636, z: -0.000000004026784, w: 0.99313027}
-  m_LocalPosition: {x: 0, y: 5.5, z: -9}
+  m_LocalRotation: {x: 0.117014244, y: -0.00000003417636, z: 0.000000004026784, w: 0.99313027}
+  m_LocalPosition: {x: 0, y: 9.5, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2242,11 +2242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c97f60d8e27a149962d92539b68415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8969179526132694136}
-  condition: {fileID: 0}
-  equip: {fileID: 0}
   itemData: {fileID: 0}
-  dropPosition: {fileID: 0}
+  DropPosition: {fileID: 0}
 --- !u!114 &8969179526132694136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,6 +2274,8 @@ MonoBehaviour:
   animator: {fileID: 4783122851325494133}
   flashDistance: 5
   flashCooldown: 2
+  crouchHeight: 1.5
+  crouchCenter: {x: 0, y: 1, z: 0}
 --- !u!114 &4694051424407660970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2498,6 +2497,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7344370e-35e4-4976-9172-7ab5a08769b0
     m_ActionName: Player/Flash[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b98bf047-6f4c-4596-953f-eb3bac63c568
+    m_ActionName: Player/Crouch[/Keyboard/ctrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3090,7 +3093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049824968909877541}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: -0.000000008560947, z: 8.5152807e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
