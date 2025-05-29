@@ -9566,10 +9566,13 @@ MonoBehaviour:
   curThirsty: 0
   maxThirsty: 500
   decreasingThirsty: 10
-  curTemperature: 0
-  maxTemperature: 0
-  decreasingTemperature: 0
+  curTemperature: 80
+  maxTemperature: 100
+  minTemperature: 0
+  decreasingTemperature: 3
   curThermometer: 0
+  maxThermometer: 0
+  minThermometer: 0
 --- !u!222 &1302158159
 CanvasRenderer:
   m_ObjectHideFlags: 0

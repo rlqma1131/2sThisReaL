@@ -55,6 +55,7 @@ public class Condition : MonoBehaviour
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
+        //DepletionTemperature();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -226,8 +227,11 @@ public class Condition : MonoBehaviour
     #region Temperature
     private void DepletionTemperature() // 플레이어의 온도
     {
-        // 여기에 플레이어의 움직임이 0일 때라는게 필요
-        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
+        if (rb.velocity.magnitude < 0.1f)
+        {
+            gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
         UpdateTemperature();
