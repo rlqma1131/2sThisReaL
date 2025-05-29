@@ -19,10 +19,11 @@ public class SpawnerZone : MonoBehaviour
 
     private Transform player;
     private Coroutine spawnRoutine;
-
+    
     void Start()
     {
-        player = GameManager.Instance.Player.transform;
+        if(GameManager.Instance.Player != null)
+            player = GameManager.Instance.Player.transform;
     }
 
     private void OnTriggerEnter(Collider other)
