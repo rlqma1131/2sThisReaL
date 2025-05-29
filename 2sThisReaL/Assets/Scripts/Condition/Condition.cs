@@ -10,10 +10,15 @@ public interface idamagable
 }
 public class Condition : MonoBehaviour
 {
-    [SerializeField] private Image _imageHp;
-    [SerializeField] private Image _imageStamina;
+    [SerializeField] private Image _hpTop;
+    [SerializeField] private Image _hpMiddle;
+    [SerializeField] private Image _hpBottom;
+    [SerializeField] private Image _staminaTop;
+    [SerializeField] private Image _staminaMiddle;
+    [SerializeField] private Image _staminaBottom;
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
+    [SerializeField] private Image _imageTemperature;
 
     [SerializeField] private ConditionManager gm;
     [SerializeField] private GameManager gameManager;
@@ -98,8 +103,30 @@ public class Condition : MonoBehaviour
     }
     private void UpdateHP()
     {
-        if (_imageHp != null)
-            _imageHp.fillAmount = gm.curHp / gm.maxHp;
+        float hpPerBar = gm.maxHp / 3f;
+        float curHp = gm.curHp;
+
+        // 3분할 HP바
+        if (_hpTop != null)
+        {
+            float topFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpTop.fillAmount = topFill;
+            curHp -= hpPerBar;
+        }
+
+        if (_hpMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpMiddle.fillAmount = middleFill;
+            curHp -= hpPerBar;
+        }
+
+        if (_hpBottom != null)
+        {
+            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpBottom.fillAmount = bottomFill;
+        }
+
         if(gm.curHp == 0)
         {
             IsDie();
@@ -120,8 +147,29 @@ public class Condition : MonoBehaviour
     }
     private void UpdateStamina()
     {
-        if (_imageStamina != null)
-            _imageStamina.fillAmount = gm.curStamina / gm.maxStamina;
+        float staminaPerBar = gm.maxStamina / 3f;
+        float curStamina = gm.curStamina;
+
+        // 3분할 Stamina 바
+        if (_staminaTop != null)
+        {
+            float topFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaTop.fillAmount = topFill;
+            curStamina -= staminaPerBar;
+        }
+
+        if (_staminaMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaMiddle.fillAmount = middleFill;
+            curStamina -= staminaPerBar;
+        }
+
+        if (_staminaBottom != null)
+        {
+            float bottomFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaBottom.fillAmount = bottomFill;
+        }
     }
     #endregion
 
@@ -146,7 +194,7 @@ public class Condition : MonoBehaviour
     private void UpdateHunger()
     {
         if (_imageHunger != null)
-            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
+            _imageHunger.fillAmount = 1f - (gm.curHunger / gm.maxHunger);
     }
     #endregion
 
@@ -171,7 +219,7 @@ public class Condition : MonoBehaviour
     private void UpdateThirsty()
     {
         if (_imageThirsty != null)
-            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+            _imageThirsty.fillAmount = 1f - (gm.curThirsty / gm.maxThirsty);
     }
     #endregion
 
@@ -191,7 +239,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateTemperature()
     {
-        _imageHp.fillAmount = gm.curTemperature / gm.maxTemperature;
+        if (_imageTemperature != null)
+            _imageTemperature.fillAmount = 1f - (gm.curTemperature / gm.maxTemperature);
     }
     #endregion
 }
