@@ -55,7 +55,7 @@ public class Condition : MonoBehaviour
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
-        DepletionTemperature();
+        DepletionTemperature(0);
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -239,11 +239,11 @@ public class Condition : MonoBehaviour
         }
         if (gm.curTemperature == 0)
         {
-            // die
+            //IsDie();
         }
         if (gm.curTemperature == gm.maxTemperature)
         {
-            // die
+            //IsDie();
         }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
