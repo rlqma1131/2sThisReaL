@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8782226474971536578}
   - component: {fileID: 2933068204521541497}
   - component: {fileID: 900999374327128310}
+  - component: {fileID: -5640723004745504083}
   m_Layer: 0
   m_Name: cliff_steps_stone
   m_TagString: Untagged
@@ -84,3 +85,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5640723004745504083
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765421374538449026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1262392607889497173, guid: d58ec991bd9b8e848822c6f7a38a733d, type: 3}
