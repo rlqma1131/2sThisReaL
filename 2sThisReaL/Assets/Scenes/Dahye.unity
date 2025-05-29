@@ -174,14 +174,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2450125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -406,14 +400,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &34257119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -486,14 +474,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &35515772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -566,14 +548,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &40296586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -861,14 +837,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &78965882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1047,14 +1017,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &109306468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1127,14 +1091,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &119213156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1363,14 +1321,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &143473338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1549,14 +1501,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &161770338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1629,14 +1575,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &189503055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1709,14 +1649,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &193545879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1918,6 +1852,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1864822591359316569, guid: f929929f1fe29b74e8ff20d5136ce5b2, type: 3}
   m_PrefabInstance: {fileID: 196367415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &199210212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199210213}
+  m_Layer: 0
+  m_Name: SnowBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199210213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199210212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &205319063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,14 +2036,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &213601217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2225,14 +2184,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &219813792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2379,14 +2332,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &250081618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2639,14 +2586,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &272047879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2729,11 +2670,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageHp: {fileID: 1965850960}
-  _imageStamina: {fileID: 514302304}
+  _hpTop: {fileID: 0}
+  _hpMiddle: {fileID: 0}
+  _hpBottom: {fileID: 0}
+  _staminaTop: {fileID: 0}
+  _staminaMiddle: {fileID: 0}
+  _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 284491400}
   _imageThirsty: {fileID: 1958761183}
+  _imageTemperature: {fileID: 0}
   gm: {fileID: 51145606}
+  gameManager: {fileID: 0}
+  deathUI: {fileID: 0}
+  MuzicPlayer: {fileID: 0}
+  fadePanel: {fileID: 0}
+  fadeDuration: 2
 --- !u!222 &284491402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2918,14 +2869,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &306731074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2998,14 +2943,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &341935511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3184,14 +3123,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &362209130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3264,14 +3197,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &367657652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3344,14 +3271,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &377957790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3604,14 +3525,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &420747096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3790,14 +3705,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &429813791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3870,14 +3779,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &443101299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3950,14 +3853,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &450312983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4030,14 +3927,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &450501433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4184,14 +4075,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &479511397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4264,14 +4149,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &485376566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4722,11 +4601,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageHp: {fileID: 1965850960}
-  _imageStamina: {fileID: 514302304}
+  _hpTop: {fileID: 0}
+  _hpMiddle: {fileID: 0}
+  _hpBottom: {fileID: 0}
+  _staminaTop: {fileID: 0}
+  _staminaMiddle: {fileID: 0}
+  _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 284491400}
   _imageThirsty: {fileID: 1958761183}
+  _imageTemperature: {fileID: 0}
   gm: {fileID: 51145606}
+  gameManager: {fileID: 0}
+  deathUI: {fileID: 0}
+  MuzicPlayer: {fileID: 0}
+  fadePanel: {fileID: 0}
+  fadeDuration: 2
 --- !u!222 &514302306
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4883,14 +4772,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &528439035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5069,14 +4952,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &542771491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5204,6 +5081,108 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549694946}
   m_Mesh: {fileID: 2452805846047165633, guid: 224b4d6d3c816764aaebe36b3560cbab, type: 3}
+--- !u!1 &562793711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562793712}
+  - component: {fileID: 562793715}
+  - component: {fileID: 562793714}
+  - component: {fileID: 562793713}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &562793712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562793711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1317301969}
+  m_Father: {fileID: 1224031880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &562793713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562793711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &562793714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562793711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &562793715
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562793711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &578373557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5407,14 +5386,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &587990787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5487,14 +5460,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &608987686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5751,14 +5718,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &650580281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5831,14 +5792,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &683837420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5911,14 +5866,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &696691713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6085,14 +6034,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &733214354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6345,14 +6288,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &774135558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6535,14 +6472,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &794328335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6783,14 +6714,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &809197204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6863,14 +6788,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &814638500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7049,14 +6968,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &865211613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7578,14 +7491,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &937235141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7658,14 +7565,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &945007741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7989,14 +7890,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &961003355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8161,14 +8056,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &976012047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8347,14 +8236,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1042904437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8578,14 +8461,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1132069791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8692,14 +8569,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1148143293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8772,14 +8643,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1149017203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8852,14 +8717,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1149329111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8932,14 +8791,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1160570478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9012,14 +8865,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1173489627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9092,14 +8939,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1173730466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9172,14 +9013,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1177413581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9252,14 +9087,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1182928109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9406,14 +9235,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1201112808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9623,6 +9446,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6694312165042693214, guid: 08828e9400b662342b06d9c542a83aac, type: 3}
   m_PrefabInstance: {fileID: 1208674888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1224031879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1224031880}
+  m_Layer: 0
+  m_Name: Udie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1224031880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224031879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 562793712}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1233013370
 GameObject:
   m_ObjectHideFlags: 0
@@ -9674,14 +9529,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1233013373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9754,14 +9603,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1240363665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9878,14 +9721,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1258886316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10064,14 +9901,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1277036522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10250,14 +10081,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1287092276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10431,6 +10256,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 877760985191588811, guid: 1178a3dbe692ae44ca0b5271e64730e5, type: 3}
   m_PrefabInstance: {fileID: 1299835678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1317301968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317301969}
+  - component: {fileID: 1317301971}
+  - component: {fileID: 1317301970}
+  m_Layer: 5
+  m_Name: FadePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1317301969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317301968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 562793712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1317301970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317301968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1317301971
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317301968}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1323375496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10556,14 +10456,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1325274429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10816,14 +10710,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1361967105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10929,23 +10817,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6361724
+      value: -0.1273627
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.074956164
+      value: -0.0150063345
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.762622
+      value: 0.9849297
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.08985493
+      value: -0.11604799
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78.5
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10953,7 +10841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10985,7 +10873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.854095
+      value: 2.2893257
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10993,27 +10881,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6139908
+      value: 8.703964
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6361725
+      value: -0.1273627
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07495618
+      value: -0.015006333
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.762622
+      value: 0.9849297
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.08985493
+      value: -0.116048016
       objectReference: {fileID: 0}
     - target: {fileID: 2812695338974084913, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.854095
+      value: 2.2893257
       objectReference: {fileID: 0}
     - target: {fileID: 2812695338974084913, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11021,23 +10909,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2812695338974084913, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6139908
+      value: 8.703964
       objectReference: {fileID: 0}
     - target: {fileID: 3495093857509655085, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6374276
+      value: -0.12761398
       objectReference: {fileID: 0}
     - target: {fileID: 3495093857509655085, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06340275
+      value: -0.0126933195
       objectReference: {fileID: 0}
     - target: {fileID: 3495093857509655085, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7641266
+      value: 0.98687285
       objectReference: {fileID: 0}
     - target: {fileID: 3495093857509655085, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.07600506
+      value: -0.09816084
       objectReference: {fileID: 0}
     - target: {fileID: 4690474672866768623, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11049,19 +10937,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690474672866768623, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.63470376
+      value: -0.12706868
       objectReference: {fileID: 0}
     - target: {fileID: 4690474672866768623, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08651543
+      value: -0.017320516
       objectReference: {fileID: 0}
     - target: {fileID: 4690474672866768623, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7608614
+      value: 0.9826559
       objectReference: {fileID: 0}
     - target: {fileID: 4690474672866768623, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10371177
+      value: -0.13394418
       objectReference: {fileID: 0}
     - target: {fileID: 6411383444751288691, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_Name
@@ -11198,14 +11086,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1391837760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11321,14 +11203,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1415715097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11401,14 +11277,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1420706959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11481,14 +11351,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1435394327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11823,14 +11687,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1503956695
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12009,14 +11867,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1514356783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12089,14 +11941,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1518249378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12169,14 +12015,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1522984425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12249,14 +12089,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1525251309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12329,14 +12163,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1525596506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12409,14 +12237,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1525982190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12775,14 +12597,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1562188640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12961,14 +12777,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1568009847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13041,14 +12851,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1577531410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13121,14 +12925,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1582966262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13435,14 +13233,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1610696037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13515,14 +13307,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1610818539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13595,14 +13381,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1630678393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14035,14 +13815,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1670281600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14115,14 +13889,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1681587666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14195,14 +13963,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1686767145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14275,14 +14037,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1712000856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14641,14 +14397,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1770927872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14934,14 +14684,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1913526735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15088,14 +14832,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1934916419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15167,11 +14905,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageHp: {fileID: 1965850960}
-  _imageStamina: {fileID: 514302304}
+  _hpTop: {fileID: 0}
+  _hpMiddle: {fileID: 0}
+  _hpBottom: {fileID: 0}
+  _staminaTop: {fileID: 0}
+  _staminaMiddle: {fileID: 0}
+  _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 284491400}
   _imageThirsty: {fileID: 1958761183}
+  _imageTemperature: {fileID: 0}
   gm: {fileID: 51145606}
+  gameManager: {fileID: 0}
+  deathUI: {fileID: 0}
+  MuzicPlayer: {fileID: 0}
+  fadePanel: {fileID: 1317301970}
+  fadeDuration: 2
 --- !u!114 &1958761183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15345,11 +15093,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2fd27ae1ab00479ea02a8a81235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageHp: {fileID: 1965850960}
-  _imageStamina: {fileID: 514302304}
+  _hpTop: {fileID: 0}
+  _hpMiddle: {fileID: 0}
+  _hpBottom: {fileID: 0}
+  _staminaTop: {fileID: 0}
+  _staminaMiddle: {fileID: 0}
+  _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 284491400}
   _imageThirsty: {fileID: 1958761183}
+  _imageTemperature: {fileID: 0}
   gm: {fileID: 51145606}
+  gameManager: {fileID: 0}
+  deathUI: {fileID: 0}
+  MuzicPlayer: {fileID: 0}
+  fadePanel: {fileID: 0}
+  fadeDuration: 2
 --- !u!222 &1965850962
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15740,14 +15498,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &1997638133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15858,14 +15610,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2020487570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15938,14 +15684,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2036068131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16018,14 +15758,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2037239019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16098,14 +15832,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2037369745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16178,14 +15906,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2041573381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16258,14 +15980,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2052069062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16338,14 +16054,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2060359554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16418,14 +16128,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2063166933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16764,14 +16468,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2104992760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16844,14 +16542,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2106897595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16924,14 +16616,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2110642775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17004,14 +16690,8 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60
 --- !u!65 &2120443649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17208,3 +16888,5 @@ SceneRoots:
   - {fileID: 1832926510}
   - {fileID: 808853256509834657}
   - {fileID: 1669876036}
+  - {fileID: 199210213}
+  - {fileID: 1224031880}
