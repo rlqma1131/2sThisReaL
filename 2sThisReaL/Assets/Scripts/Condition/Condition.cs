@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public interface idamagable
 {
@@ -15,10 +16,15 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image _imageThirsty;
 
     [SerializeField] private ConditionManager gm;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject muzicPlayer;
 
+    private bool isDead = false;
     void Awake()
     {
         gm = ConditionManager.Instance;
+        gameManager = GameManager.Instance;
     }
 
     void Start()
@@ -54,10 +60,30 @@ public class Condition : MonoBehaviour
         gm.curHp = Mathf.Clamp(gm.curHp + value * Time.deltaTime, 0, gm.maxHp);
         UpdateHP();
     }
+    public void IsDie()
+    {
+        if (isDead) return; // 중복 호출 방지
+
+        isDead = true;
+
+        // 시간 정지
+        Time.timeScale = 0f;
+
+        // 사망 UI 활성화
+        SceneManager.LoadScene("Ending");
+        
+
+        //if (muzicPlayer != null)
+        //    muzicPlayer.SetActive(false);
+    }
     private void UpdateHP()
     {
         if (_imageHp != null)
             _imageHp.fillAmount = gm.curHp / gm.maxHp;
+        if(gm.curHp == 0)
+        {
+            IsDie();
+        }
     }
     #endregion
 
@@ -89,10 +115,6 @@ public class Condition : MonoBehaviour
         if (gm.curHunger == 0)
         {
             DepletionHP(gm.decreasingHP);
-            if (gm.curHp == 0)
-            {
-                //GameManager.player._condition.DIe();
-            }
         }
         UpdateHunger();
     }
@@ -122,10 +144,7 @@ public class Condition : MonoBehaviour
         if (gm.curThirsty == 0)
         {
             DepletionHP(gm.decreasingHP);
-            if (gm.curHp == 0)
-            {
-                //gameManager.player._condition.DIe();
-            }
+
         }
         UpdateThirsty();
     }
