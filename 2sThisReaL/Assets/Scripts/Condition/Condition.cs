@@ -18,7 +18,9 @@ public class Condition : MonoBehaviour
     [SerializeField] private ConditionManager gm;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject deathUI;
-    [SerializeField] private GameObject muzicPlayer;
+    [SerializeField] private GameObject MuzicPlayer;
+    [SerializeField] private Image fadePanel;
+    [SerializeField] private float fadeDuration = 2f;
 
     private bool isDead = false;
     void Awake()
@@ -66,15 +68,33 @@ public class Condition : MonoBehaviour
 
         isDead = true;
 
-        // 시간 정지
+        if (MuzicPlayer != null)
+        MuzicPlayer.SetActive(false);
+        // 사망 UI 활성화
+        StartCoroutine(FadeToBlack());
+    }
+    private IEnumerator FadeToBlack()
+    {
+        float elapsed = 0f;
+        Color color = fadePanel.color;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.unscaledDeltaTime; // 시간 멈춰도 fade는 계속
+            float alpha = Mathf.Clamp01(elapsed / fadeDuration);
+            fadePanel.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+
+        fadePanel.color = new Color(color.r, color.g, color.b, 1f);
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        SceneManager.LoadScene("EndingScene");
+        // 마지막에 시간 정지
         Time.timeScale = 0f;
 
-        // 사망 UI 활성화
-        SceneManager.LoadScene("Ending");
-        
-
-        //if (muzicPlayer != null)
-        //    muzicPlayer.SetActive(false);
+        // UI 등 추가 처리 가능
     }
     private void UpdateHP()
     {
