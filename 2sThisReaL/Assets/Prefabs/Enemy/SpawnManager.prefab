@@ -71,7 +71,7 @@ MonoBehaviour:
   - {fileID: 686767075193954329, guid: 5d7dcc73ae483d64890a5e111d7d8624, type: 3}
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
-  - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
+  - {fileID: 1271827250683606631, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
   baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
