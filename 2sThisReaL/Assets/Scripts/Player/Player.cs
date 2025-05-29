@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Instance.Player = this;
+        if (GameManager.Instance != null)
+            GameManager.Instance.Init(this);
 
         controller = GetComponent<PlayerController>();
         Equip = GetComponent<Equipment>();
