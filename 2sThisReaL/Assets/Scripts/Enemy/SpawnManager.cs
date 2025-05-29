@@ -7,7 +7,7 @@ public class SpawnerZone : MonoBehaviour
 {
     [SerializeField] private GameObject[] monsterPrefabs;
 
-    [SerializeField] private float baseSpawnInterval = 10f;
+    [SerializeField] private float baseSpawnInterval;
     [SerializeField] private float intervalReductionPerDay = 1f;
     [SerializeField] private float minSpawnInterval = 8f;
     [SerializeField] private int maxSpawnCount = 5;
@@ -109,7 +109,7 @@ public class SpawnerZone : MonoBehaviour
     int GetMonsterIndex()
     {
         float FromCenter = Vector3.Distance(Vector3.zero, transform.position);
-        float maxDistance = 450f;
+        float maxDistance = 300f;
 
         int distanceLevel = Mathf.Clamp(
         (int)(FromCenter / maxDistance * monsterPrefabs.Length),
