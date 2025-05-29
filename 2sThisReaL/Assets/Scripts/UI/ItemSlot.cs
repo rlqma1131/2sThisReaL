@@ -22,6 +22,7 @@ public class ItemSlot : MonoBehaviour
 
     private void Awake()
     {
+        button.onClick.AddListener(OnClickButton);
         outline = GetComponent<Outline>();
     }
 
@@ -50,11 +51,19 @@ public class ItemSlot : MonoBehaviour
         item = null;
         itemicon.gameObject.SetActive(false);
         quatityText.text = string.Empty;
+        quantity = 0;
+        equipped = false;
+
+        if (outline != null)
+        {
+            outline.enabled = false;
+        }
     }
 
     // 슬롯을 클릭했을 때
     public void OnClickButton()
     {
-        inventory.SelectItem(index);
+        if (inventory != null)
+            inventory.SelectItem(index);
     }
 }
