@@ -368,7 +368,6 @@ GameObject:
   - component: {fileID: 964385388368936423}
   - component: {fileID: 4480522273327078803}
   - component: {fileID: 5865870716712774680}
-  - component: {fileID: 372968007555268482}
   - component: {fileID: 3676708738044219411}
   - component: {fileID: 409982646118052531}
   m_Layer: 0
@@ -443,22 +442,6 @@ MonoBehaviour:
   attackRate: 1.5
   attackDistance: 20
   fieldOfView: 120
---- !u!114 &372968007555268482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4825891124374161140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c785f9a2ea4a5f4e9df1a8620ab6966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SnowballPrefab: {fileID: 0}
-  speed: 12
-  lifeTime: 3
-  damage: 20
 --- !u!65 &3676708738044219411
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class SnowballProjectile : MonoBehaviour
 
     public void OnShoot()
     {
-        Instantiate(SnowballPrefab, transform.forward, transform.rotation);
+        Instantiate(SnowballPrefab, transform.position + new Vector3(0, 10, 52), transform.rotation);
     }
 
 
