@@ -12,6 +12,24 @@ public interface IInteractable
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemData data; //아이템 데이터
+
+    private MouseCursor mouseCursor; // 마우스 커서
+
+    void Start()
+    {
+        mouseCursor = FindObjectOfType<MouseCursor>();
+    }
+
+    void OnMouseEnter()
+    {
+        mouseCursor.SetPickupCursor();
+    }
+
+    void OnMouseExit()
+    {
+        mouseCursor.SetDefaultCursor();
+    }
+
     public string GetInteractPrompt()
     {
         return $"[E] {data.itemName}\n{data.itemDescription}"; //상호작용 프롬프트
