@@ -35,6 +35,7 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
+        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
@@ -61,12 +62,12 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Stamina
-    public void AddStamina(float delta) // 아이템으로 인한 회복
+    public void DeltaStamina(float delta) // 회복 및 감소
     {
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta, 0f, gm.maxStamina);
         UpdateStamina();
     }
-    public void DepletionStamina(float delta) // 플레이어의 동작에 따른 지속적인 감소
+    public void DepletionStamina(float delta) // 플레이어의 동작에 따른 지속적인 감소 , 움직임이 없을 때 지속적인 증가
     {
         gm.curStamina = Mathf.Clamp(gm.curStamina + delta * Time.deltaTime, 0f, gm.maxStamina);
         UpdateStamina();
@@ -132,6 +133,26 @@ public class Condition : MonoBehaviour
     {
         if (_imageThirsty != null)
             _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+    }
+    #endregion
+
+    #region Temperature
+    private void DepletionTemperature() // 플레이어의 온도
+    {
+        // 여기에 플레이어의 움직임이 0일 때라는게 필요
+        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
+
+        UpdateTemperature();
+    }
+    public void DeltaTemperature(float delta)
+    {
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature + delta, 0, gm.maxTemperature);
+        UpdateTemperature();
+    }
+    private void UpdateTemperature()
+    {
+        _imageHp.fillAmount = gm.curTemperature / gm.maxTemperature;
     }
     #endregion
 }

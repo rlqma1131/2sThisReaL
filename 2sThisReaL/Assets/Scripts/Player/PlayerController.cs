@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
 
     private bool canFlash = true;
     private bool isBuildMode = false;
-    
+
+    private bool isRecovering = false;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -55,7 +57,18 @@ public class PlayerController : MonoBehaviour
     {
         if (!isBuildMode)
         {
-            Move();
+            if (ConditionManager.Instance.curStamina == 0)
+            {
+                curMovementInput = Vector2.zero;
+                Debug.Log("스테미나가 바닥이라 움직일 수 없습니다.");
+                StartCoroutine(MoveCoroutine(3, 10));
+                // 밑에 함수 2 ~ 5초 후에 실행 되게끔
+                
+            }
+            else
+            {
+                Move();
+            }
             UpdateAnimation();
         }
     }
@@ -64,12 +77,26 @@ public class PlayerController : MonoBehaviour
     {
         isBuildMode = active;    
     }
-    
+    IEnumerator MoveCoroutine(float delay, float amount)
+    {
+        if (isRecovering) yield break;
+
+        isRecovering = true;
+
+        yield return new WaitForSeconds(delay);
+
+        ConditionManager.Instance.Condition.DeltaStamina(amount);
+        isRecovering = false;
+    }
     void Move()
     {
         if (curMovementInput.sqrMagnitude < 0.01f)
         {
             _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            if(IsGrounded())
+            {
+                ConditionManager.Instance.Condition.DepletionStamina(15f);
+            }
             return;
         }
 
@@ -97,6 +124,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
             ConditionManager.Instance.Condition.DepletionStamina(-5f);
         }
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -115,8 +143,19 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            if (ConditionManager.Instance.curStamina == 0)
+            {
+                Debug.Log("점프할 힘이 없슈");
+                _rigidbody.AddForce(Vector2.up * 0, ForceMode.Impulse);
+            }
+            else
+            {
+                ConditionManager.Instance.Condition.DeltaStamina(-5f);
+                _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            }
+
         }
+        
     }
     bool IsGrounded()
     {
