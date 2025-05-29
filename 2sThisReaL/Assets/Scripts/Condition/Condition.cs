@@ -235,6 +235,14 @@ public class Condition : MonoBehaviour
         {
             gm.curTemperature += gm.decreasingTemperature * Time.deltaTime;
         }
+        if (gm.curTemperature == 0)
+        {
+            // die
+        }
+        if (gm.curTemperature == gm.maxTemperature)
+        {
+            // die
+        }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
         UpdateTemperature();
