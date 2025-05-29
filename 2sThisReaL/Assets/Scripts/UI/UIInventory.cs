@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
+
 
 public class UIInventory : MonoBehaviour
 {
@@ -37,6 +36,7 @@ public class UIInventory : MonoBehaviour
         GameManager.Instance.Player.additem += AddItem;
 
         inventoryWindow.SetActive(false);
+        controller.inventory += Toggle;
         slots = new ItemSlot[slotPanel.childCount];
 
         for (int i = 0; i < slots.Length; i++)
@@ -55,10 +55,10 @@ public class UIInventory : MonoBehaviour
     {
         selectedItem = null;
 
-        selectedItemName.text = "";
-        selectedItemDescription.text = "";
-        selectedItemStatName.text = "";
-        selectedItemStatValue.text = "";
+        selectedItemName.text = string.Empty;
+        selectedItemDescription.text = string.Empty;
+        selectedItemStatName.text = string.Empty;
+        selectedItemStatValue.text = string.Empty; ;
 
         useButton.SetActive(false);
         equipButton.SetActive(false);
@@ -222,6 +222,10 @@ public class UIInventory : MonoBehaviour
         ThrowItem(selectedItem.item);
         RemoveSelectedItem();
     }
+    public bool HasItem(ItemData item, int quantity)
+    {
+        return false;
+    }
 
     void RemoveSelectedItem()
     {
@@ -230,33 +234,26 @@ public class UIInventory : MonoBehaviour
         // 아이템 수량이 0일 때 삭제
         if (selectedItem.quantity <= 0)
         {
-            if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
+            if (slots[selectedItemIndex].equipped)
             {
-                if (slots[selectedItemIndex].equipped)
-                {
-                    UnEquip(selectedItemIndex);
-                }
-                selectedItem.item = null;
-                ClearSelectedItemWindow();
+                UnEquip(selectedItemIndex);
             }
-            else
+
+            slots[selectedItemIndex].item = null;
+            slots[selectedItemIndex].quantity = 0;
+            slots[selectedItemIndex].Clear();
+            selectedItem = null;
+            ClearSelectedItemWindow();
+        }
+        else
             {
                 // 장비는 수량이 0이 되어도 삭제하지 않음
                 selectedItem.quantity = 1;
             }
         }
-
-        UpdateUI();
-    }
-
     public void UnEquip(int index)
     {
         slots[index].equipped = false;
         UpdateUI();
-    }
-
-    public bool HasItem(ItemData item, int quantity)
-    {
-        return false;
     }
 }

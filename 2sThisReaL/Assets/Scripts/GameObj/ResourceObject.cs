@@ -28,7 +28,7 @@ public class ResourceObject : MonoBehaviour
     {
         // 장착한 장비의 canGathering이 true일 때 획득 가능한 자원과 아닐 때의 자원 분리
 
-        //만약 장착한 장비의 canGatheringd이 false라면 획득할 수 없는 아이템이 있음
+        //만약 장착한 장비의 canGathering이 false라면 획득할 수 없는 아이템이 있음
         // 각 리소스마다 GatherType을 다르게 설정할 수 있고, 그렇게 설정된 GatherType과 현재 장비중인 EquipItem의 getType이 일치할 때만 획득 가능
 
         //일단 현재는 상관없이 획득한다고 함
