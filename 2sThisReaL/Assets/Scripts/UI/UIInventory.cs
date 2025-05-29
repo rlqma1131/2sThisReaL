@@ -31,8 +31,8 @@ public class UIInventory : MonoBehaviour
     void Start()
     {
         controller = GameManager.Instance.Player.controller;
-        dropPosition = GameManager.Instance.Player.dropPosition;
         Condition = ConditionManager.Instance.Condition;
+        dropPosition = GameManager.Instance.Player.dropPosition;
         GameManager.Instance.Player.additem += AddItem;
 
         inventoryWindow.SetActive(false);
