@@ -7,23 +7,30 @@ public class SpawnerZone : MonoBehaviour
 {
     [SerializeField] private GameObject[] monsterPrefabs;
 
-    [SerializeField] private float baseSpawnInterval;
+    private float baseSpawnInterval;
     [SerializeField] private float intervalReductionPerDay = 1f;
     [SerializeField] private float minSpawnInterval = 8f;
-    [SerializeField] private int maxSpawnCount = 5;
+    private int maxMonsterCount = 3;
 
-    [SerializeField] private float spawnRadius = 30; // 스폰영역 반지름
-    [SerializeField] private float obstacleCheckRadius = 2f;
-    [SerializeField] private float minPlayerDistance = 10f;
-    [SerializeField] private float minFOVAngle = 45f;
+    private float spawnRadius = 30; // 스폰영역 반지름
+    private float obstacleCheckRadius = 2f;
+    private float minPlayerDistance = 25f;
+    private float minFOVAngle = 45f;
+
+    private int maxTotalSpawnCount = 3;
+    private int totalSpawnCount = 0;
 
     private Transform player;
     private Coroutine spawnRoutine;
-    
-    void Start()
+
+    IEnumerator Start()
     {
-        if(GameManager.Instance != null)
-            player = GameManager.Instance.Player.transform;
+        while (GameManager.Instance == null || GameManager.Instance.Player == null)
+        {
+            yield return null;
+        }
+        player = GameManager.Instance.Player.transform;
+        Debug.Log("플레이어 할당됨");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +52,7 @@ public class SpawnerZone : MonoBehaviour
     {
         while (true)
         {
-            float adjustedInterval = 15f;
+            float adjustedInterval = 5f;
             // 생존날짜 구현되면 수정
             //    = Mathf.Max(minSpawnInterval,
             //baseSpawnInterval - GameManager.Instance.Day.SurvivedDays * intervalReductionPerDay);
@@ -57,17 +64,22 @@ public class SpawnerZone : MonoBehaviour
 
     void TrySpawnMonster()
     {
-        for (int i = 0; i < maxSpawnCount; i++)
+        for (int i = 0; i < maxMonsterCount; i++)
         {
+            if (totalSpawnCount >= maxTotalSpawnCount)
+                return;
+
             Vector3 spawnPoint = GetValidSpawnPoint();
 
             if (spawnPoint != Vector3.zero)
             {
                 int index = GetMonsterIndex();
                 Instantiate(monsterPrefabs[index], spawnPoint, Quaternion.identity);
+                totalSpawnCount++;
             }
         }
     }
+
 
     Vector3 GetValidSpawnPoint()
     {

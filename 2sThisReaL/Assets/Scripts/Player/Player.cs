@@ -15,10 +15,16 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if (GameManager.Instance != null)
-            GameManager.Instance.Init(this);
-
         controller = GetComponent<PlayerController>();
         equip = GetComponent<Equipment>();
+    }
+
+    IEnumerator Start()
+    {
+        while (GameManager.Instance == null)
+        {
+            yield return null;
+        }
+        GameManager.Instance.Init(this);
     }
 }
