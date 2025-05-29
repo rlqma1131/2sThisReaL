@@ -6716,13 +6716,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC0AC\uB78C\uC774 \uC5B8\uC81C \uC8FD\uB294\uB2E4\uACE0 \uC0DD\uAC01\uD558\uB098?\n\uC2EC\uC7A5\uC5D0
-    \uCD1D\uC54C\uC774 \uB6AB\uB838\uC744 \uB54C?, \uBD88\uCE58\uBCD1\uC5D0 \uAC78\uB838\uC744
-    \uB54C?\n\uC544\uB2C8\n\uC720\uC800\uB4E4\uC5D0\uAC8C \uC78A\uD600\uC84C\uC744
+  m_text: "\uD50C\uB808\uC774\uC5B4\uAC00 \uC5B8\uC81C \uC8FD\uB294\uB2E4\uACE0 \uC0DD\uAC01\uD558\uB098?\n\uC2EC\uC7A5
+    \uCD1D\uC54C\uC774 \uB6AB\uB838\uC744 \uB54C?, \uBAAC\uC2A4\uD130\uC5D0\uAC8C
+    \uB9DE\uC558 \uB54C?\n\uC544\uB2C8\n\uC720\uC800\uB4E4\uC5D0\uAC8C \uC78A\uD600\uC84C\uC744
     \uB54C\uB2E4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c84c75089a11a784a9c2b925e5f531dc, type: 2}
-  m_sharedMaterial: {fileID: 3877352613055616889, guid: c84c75089a11a784a9c2b925e5f531dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3ac04499d4375754788135bcb733c424, type: 2}
+  m_sharedMaterial: {fileID: 4738044356633808736, guid: 3ac04499d4375754788135bcb733c424, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
