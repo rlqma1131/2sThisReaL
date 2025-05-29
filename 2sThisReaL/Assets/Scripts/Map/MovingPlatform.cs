@@ -8,8 +8,9 @@ public class MovingPlatform : MonoBehaviour
     public class WaypointData
     {
         public Transform waypoint;
-        public bool pauseAtPoint = false;
-        public float pauseDistance = 2f;
+        public float stopDistance;
+        public bool waitForPlayer = false;
+        public bool returnOnExit = false;
     }
     
     public WaypointData[] waypoints;
@@ -28,34 +29,34 @@ public class MovingPlatform : MonoBehaviour
     
     void Update()
     {
-        // 플레잉어 대기모드, 활성화 x
-        if(waitForPlayer && !isMovementAciving) return;
-        
-        // 일시정지 상태
-        if (isPaused)
-        {
-            pauseTimer -= Time.deltaTime;
-            if(pauseTimer <= 0f) isPaused = false;
-            return;
-        }
-        
-        //이동
-        if(waypoints.Length == 0 || isPaused) return;
-        
-        Transform target = waypoints[currentIndex].waypoint;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        
-        //도착 확인
-        if (Vector3.Distance(transform.position, target.position) < 0.05f)
-        {
-            WaypointData currentData = waypoints[currentIndex];
-            if (currentData.pauseAtPoint)
-            {
-                PauseAtCurrentWaypoint(currentData.pauseDistance);
-            }
-            
-            currentIndex = (currentIndex + 1) % waypoints.Length;
-        }
+        // // 플레잉어 대기모드, 활성화 x
+        // if(waitForPlayer && !isMovementAciving) return;
+        //
+        // // 일시정지 상태
+        // if (isPaused)
+        // {
+        //     pauseTimer -= Time.deltaTime;
+        //     if(pauseTimer <= 0f) isPaused = false;
+        //     return;
+        // }
+        //
+        // //이동
+        // if(waypoints.Length == 0 || isPaused) return;
+        //
+        // Transform target = waypoints[currentIndex].waypoint;
+        // transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        //
+        // //도착 확인
+        // if (Vector3.Distance(transform.position, target.position) < 0.05f)
+        // {
+        //     WaypointData currentData = waypoints[currentIndex];
+        //     if (currentData.pauseAtPoint)
+        //     {
+        //         PauseAtCurrentWaypoint(currentData.pauseDistance);
+        //     }
+        //     
+        //     currentIndex = (currentIndex + 1) % waypoints.Length;
+        // }
     }
 
     private void PauseAtCurrentWaypoint(float duration)
