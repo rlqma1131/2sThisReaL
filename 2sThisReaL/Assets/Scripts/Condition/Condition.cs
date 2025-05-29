@@ -19,11 +19,12 @@ public class Condition : MonoBehaviour
     void Start()
     {
         ConditionManager.Instance.Condition = this;
-        gm = ConditionManager.Instance;
+
         gm.curHp = gm.maxHp;
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
+        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
@@ -118,6 +119,26 @@ public class Condition : MonoBehaviour
     {
         if (_imageHunger != null)
             _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
+    }
+    #endregion
+
+    #region Temperature
+    private void DepletionTemperature() // 플레이어의 온도
+    {
+        // 여기에 플레이어의 움직임이 0일 때라는게 필요
+        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
+
+        UpdateTemperature();
+    }
+    public void DeltaTemperature(float delta)
+    {
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature + delta, 0, gm.maxTemperature);
+        UpdateTemperature();
+    }
+    private void UpdateTemperature()
+    {
+        _imageHp.fillAmount = gm.curTemperature / gm.maxTemperature;
     }
     #endregion
 }

@@ -27,6 +27,15 @@ public class ConditionManager : MonoBehaviour
     public float maxThirsty;
     public float decreasingThirsty; // 지속적으로 감소하거나 상승
 
+    [Header("Temperature")] // 플레이어의 온도
+    public float curTemperature;
+    public float maxTemperature;
+    public float decreasingTemperature;
+
+    [Header("Thermometer")] // 맵의 온도계
+    public float curThermometer;
+    public float random = Random.Range(1,2);
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
