@@ -242,7 +242,8 @@ public class Condition : MonoBehaviour
     }
     public void DeltaTemperature(float delta)
     {
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature + delta, 0, gm.maxTemperature);
+        gm.curTemperature += (gm.decreasingTemperature + delta) * Time.deltaTime;
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
         UpdateTemperature();
     }
     private void UpdateTemperature()

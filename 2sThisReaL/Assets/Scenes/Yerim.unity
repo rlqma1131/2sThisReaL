@@ -9569,7 +9569,7 @@ MonoBehaviour:
   curTemperature: 80
   maxTemperature: 100
   minTemperature: 0
-  decreasingTemperature: 3
+  decreasingTemperature: 1
   curThermometer: 0
   maxThermometer: 0
   minThermometer: 0
