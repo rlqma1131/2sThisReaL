@@ -30,11 +30,11 @@ public class ConditionManager : MonoBehaviour
     [Header("Temperature")] // 플레이어의 온도
     public float curTemperature;
     public float maxTemperature;
+    public float minTemperature;
     public float decreasingTemperature;
+    public float limitTemperature;
 
-    [Header("Thermometer")] // 맵의 온도계
-    public float curThermometer;
-    
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

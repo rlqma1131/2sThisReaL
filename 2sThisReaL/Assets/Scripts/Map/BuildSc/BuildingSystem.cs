@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -11,6 +11,8 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private BuildableObject[] buildablePrefabs;
     [SerializeField] private BuildMenuUI buildMenuUI;
+    [SerializeField] private BuildUIController buildUIController;
+    [SerializeField] private MouseCursor mouseCursor;
 
     [Header("Layer Setting")]
     [SerializeField] private LayerMask _placementLayer;
@@ -61,6 +63,8 @@ public class BuildingSystem : MonoBehaviour
                 currentSubMode = BuildSubMode.Destroying;
                 buildMenuUI.ToggleUI(false);
                 CancelPreview();
+
+                buildUIController.SetDestroyCursor();
             }
         }
         
@@ -88,7 +92,10 @@ public class BuildingSystem : MonoBehaviour
         playerController?.SetBuildMode(true);
         Cursor.lockState = CursorLockMode.None; // 커서 자유 이동
         Cursor.visible = true;
+
         // UI 활성화
+        buildUIController.ShowBuildModeUI();
+        buildUIController.SetDefaultCursor();
     }
     
     private void ExitBuildMode()
@@ -98,6 +105,9 @@ public class BuildingSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; // FPS 게임인 경우
         Cursor.visible = false;
         // UI 비활성화
+        buildUIController.ShowGameModeUI();
+        buildUIController.SetDefaultCursor();
+
         CancelPreview();
     }
 
@@ -179,6 +189,8 @@ public class BuildingSystem : MonoBehaviour
             ToggleOutline(lastHoveredObject, false);
             lastHoveredObject = null;
             currentSubMode = BuildSubMode.None;
+
+            mouseCursor.SetDestroyCursor();
         }
     }
 
@@ -260,5 +272,15 @@ public class BuildingSystem : MonoBehaviour
     {
         selectedBuildItem = item;
         StartPlacing(item.previewPrefab.GetComponent<IBuildable>());
+    }
+
+    public void SetDefaultCursor()
+    {
+        mouseCursor.SetDefaultCursor();
+    }
+
+    public void SetDestroyCursor()
+    {
+        mouseCursor.SetDestroyCursor();
     }
 }

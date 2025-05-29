@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEditor.PlayerSettings;
 
 public interface idamagable
 {
@@ -48,13 +49,13 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
-        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
+        DepletionTemperature();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -74,7 +75,7 @@ public class Condition : MonoBehaviour
         isDead = true;
 
         if (MuzicPlayer != null)
-        MuzicPlayer.SetActive(false);
+            MuzicPlayer.SetActive(false);
         // 사망 UI 활성화
         StartCoroutine(FadeToBlack());
     }
@@ -127,7 +128,7 @@ public class Condition : MonoBehaviour
             _hpBottom.fillAmount = bottomFill;
         }
 
-        if(gm.curHp == 0)
+        if(gm.curHp <= 0)
         {
             IsDie();
         }
@@ -194,7 +195,7 @@ public class Condition : MonoBehaviour
     private void UpdateHunger()
     {
         if (_imageHunger != null)
-            _imageHunger.fillAmount = 1f - (gm.curHunger / gm.maxHunger);
+            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
@@ -219,28 +220,39 @@ public class Condition : MonoBehaviour
     private void UpdateThirsty()
     {
         if (_imageThirsty != null)
-            _imageThirsty.fillAmount = 1f - (gm.curThirsty / gm.maxThirsty);
+            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion
 
     #region Temperature
-    private void DepletionTemperature() // 플레이어의 온도
+    private void DepletionTemperature(float delta) // 플레이어의 온도
     {
-        // 여기에 플레이어의 움직임이 0일 때라는게 필요
-        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
+        if (rb.velocity.magnitude < 0.1f)
+        {
+            gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        }
+        else
+        {
+            gm.curTemperature += (gm.decreasingTemperature - gm.limitTemperature + delta) * Time.deltaTime;
+            // 움직일 때 상승하는 온도를 너무 빨리 상승하지 않게 limitTemperature변수로 제한을 해주고 불에 너무 가까이가거나 뜨거울 때 delta로 추가 상승
+        }
+        if (gm.curTemperature == 0)
+        {
+            // die
+        }
+        if (gm.curTemperature == gm.maxTemperature)
+        {
+            // die
+        }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
-        UpdateTemperature();
-    }
-    public void DeltaTemperature(float delta)
-    {
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature + delta, 0, gm.maxTemperature);
         UpdateTemperature();
     }
     private void UpdateTemperature()
     {
         if (_imageTemperature != null)
-            _imageTemperature.fillAmount = 1f - (gm.curTemperature / gm.maxTemperature);
+            _imageTemperature.fillAmount = gm.curTemperature / gm.maxTemperature;
     }
     #endregion
 }
