@@ -2337,7 +2337,7 @@ MonoBehaviour:
   _staminaBottom: {fileID: 1826831220}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
-  _imageTemperature: {fileID: 0}
+  _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
   gameManager: {fileID: 0}
   deathUI: {fileID: 0}
@@ -2953,7 +2953,7 @@ MonoBehaviour:
   _staminaBottom: {fileID: 1826831220}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
-  _imageTemperature: {fileID: 0}
+  _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
   gameManager: {fileID: 0}
   deathUI: {fileID: 0}
@@ -6723,7 +6723,7 @@ MonoBehaviour:
   _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
-  _imageTemperature: {fileID: 0}
+  _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
   gameManager: {fileID: 0}
   deathUI: {fileID: 0}
@@ -9650,7 +9650,7 @@ MonoBehaviour:
   _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 1341561344}
   _imageThirsty: {fileID: 855305003}
-  _imageTemperature: {fileID: 0}
+  _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
   gameManager: {fileID: 0}
   deathUI: {fileID: 0}
@@ -9806,8 +9806,8 @@ MonoBehaviour:
   _staminaMiddle: {fileID: 0}
   _staminaBottom: {fileID: 0}
   _imageHunger: {fileID: 1341561344}
-  _imageThirsty: {fileID: 1361426847}
-  _imageTemperature: {fileID: 0}
+  _imageThirsty: {fileID: 855305003}
+  _imageTemperature: {fileID: 1361426847}
   gm: {fileID: 1302158157}
   gameManager: {fileID: 0}
   deathUI: {fileID: 0}
