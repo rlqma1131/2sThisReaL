@@ -26,13 +26,13 @@ public class UIInventory : MonoBehaviour
     public GameObject dropButton;
 
     private PlayerController controller;
-    private PlayerCondition playerCondition;
+    private Condition Condition;
 
     void Start()
     {
         controller = GameManager.Instance.Player.controller;
-        playerCondition = GameManager.Instance.Player.GetComponent<PlayerCondition>();
         dropPosition = GameManager.Instance.Player.dropPosition;
+        Condition = ConditionManager.Instance.Condition;
         GameManager.Instance.Player.additem += AddItem;
 
         inventoryWindow.SetActive(false);
@@ -191,13 +191,13 @@ public class UIInventory : MonoBehaviour
                 switch (c.type)
                 {
                     case ConsumableType.Health:
-                        playerCondition.Heal(c.value);
+                        Condition.HealHP(c.value);
                         break;
                     case ConsumableType.Hunger:
-                        playerCondition.Eat(c.value);
+                        Condition.HealHunger(c.value);
                         break;
                     case ConsumableType.Thirst:
-                        playerCondition.HealThirsty(c.value);
+                        Condition.HealThirsty(c.value);
                         break;
                 }
             }
