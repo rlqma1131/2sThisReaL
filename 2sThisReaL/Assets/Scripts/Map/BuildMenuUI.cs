@@ -52,18 +52,23 @@ public class BuildMenuUI : MonoBehaviour
         }
     }
 
-    public void ToggleUI()
+    public void ToggleUI(bool? forceState = null)
     {
         bool isActive = buildPanel.activeSelf;
-        buildPanel.SetActive(!isActive);
+        bool newState = forceState ?? !isActive;
 
-        if (!isActive)
+        buildPanel.SetActive(newState);
+
+        if (newState)
         {
             buildingSystem.CancelCurrentPreview();
             PopulateMenu();
+            Debug.Log("[BuildMenuUI] UI opened");
         }
-        
-        Debug.Log($"[BuildMenuUI] UI {(isActive ? "closed" : "opened")}");
+        else
+        {
+            Debug.Log("[BuildMenuUI] UI closed");
+        }
     }
 
     public void RefreshMenu()

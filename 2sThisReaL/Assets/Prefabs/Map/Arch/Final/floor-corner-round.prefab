@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1897762257890685621}
   - component: {fileID: 6845667261894816402}
   - component: {fileID: 740210923005885067}
+  - component: {fileID: -6246736872078615559}
+  - component: {fileID: 784851271283491548}
   m_Layer: 10
   m_Name: floor-corner-round
   m_TagString: Untagged
@@ -106,3 +108,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3880672674179041519, guid: 8709a1c64f1900d45846f08289d8ffa4, type: 3}
+--- !u!114 &-6246736872078615559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239833615479324472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &784851271283491548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239833615479324472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37f4b5143188484c8a42bb0aac964a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
