@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 30266407}
   - component: {fileID: 30266406}
   - component: {fileID: 30266405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 118291982}
   - component: {fileID: 118291981}
   - component: {fileID: 118291980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: block-snow-large-slope-narrow (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1188,7 +1188,7 @@ GameObject:
   - component: {fileID: 156506192}
   - component: {fileID: 156506191}
   - component: {fileID: 156506190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 368652817}
   - component: {fileID: 368652816}
   - component: {fileID: 368652815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,7 +2153,7 @@ GameObject:
   - component: {fileID: 431502748}
   - component: {fileID: 431502747}
   - component: {fileID: 431502746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: block-snow-large-slope-narrow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2259,7 @@ GameObject:
   - component: {fileID: 445625802}
   - component: {fileID: 445625801}
   - component: {fileID: 445625800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2505,7 @@ GameObject:
   - component: {fileID: 474867494}
   - component: {fileID: 474867493}
   - component: {fileID: 474867492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,7 +2611,7 @@ GameObject:
   - component: {fileID: 501465462}
   - component: {fileID: 501465461}
   - component: {fileID: 501465460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2830,7 @@ GameObject:
   - component: {fileID: 530996729}
   - component: {fileID: 530996728}
   - component: {fileID: 530996727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2936,7 +2936,7 @@ GameObject:
   - component: {fileID: 533724677}
   - component: {fileID: 533724676}
   - component: {fileID: 533724675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3042,7 +3042,7 @@ GameObject:
   - component: {fileID: 538522490}
   - component: {fileID: 538522489}
   - component: {fileID: 538522488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,11 +3156,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017088176
+      value: 0.00000001708818
       objectReference: {fileID: 0}
     - target: {fileID: 234184928204530814, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000020133915
+      value: -0.000000002013392
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3168,7 +3168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 455937920813895658, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3204,11 +3204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000003417636
+      value: 0.00000003417636
       objectReference: {fileID: 0}
     - target: {fileID: 2127747239394593250, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004026784
+      value: -0.000000004026784
       objectReference: {fileID: 0}
     - target: {fileID: 3495093857509655085, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3233,6 +3233,46 @@ PrefabInstance:
     - target: {fileID: 6411383444751288691, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: b98bf047-6f4c-4596-953f-eb3bac63c568
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Player/Crouch[/Keyboard/ctrl]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1584557367}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848192745952415755, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3496,7 +3536,7 @@ GameObject:
   - component: {fileID: 660501091}
   - component: {fileID: 660501090}
   - component: {fileID: 660501089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tent_detailedOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4427,7 +4467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858806436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4754,7 +4794,7 @@ GameObject:
   - component: {fileID: 949849270}
   - component: {fileID: 949849269}
   - component: {fileID: 949849268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6350,7 +6390,7 @@ GameObject:
   - component: {fileID: 1268385912}
   - component: {fileID: 1268385911}
   - component: {fileID: 1268385910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7526,7 +7566,7 @@ GameObject:
   - component: {fileID: 1440823861}
   - component: {fileID: 1440823860}
   - component: {fileID: 1440823859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7866,6 +7906,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 877760985191588811, guid: 1178a3dbe692ae44ca0b5271e64730e5, type: 3}
   m_PrefabInstance: {fileID: 305777714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584557367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8969179526132694136, guid: 1aa19c57784f85740a7dd6867565bacd, type: 3}
+  m_PrefabInstance: {fileID: 562798185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80971ec381ec09438c08fdfbe7dd595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1590015386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1955575031607412517, guid: 1194e4e17ecdd624dbea89209a5895fe, type: 3}
@@ -9334,7 +9385,7 @@ GameObject:
   - component: {fileID: 1868356682}
   - component: {fileID: 1868356681}
   - component: {fileID: 1868356680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9810,7 +9861,7 @@ GameObject:
   - component: {fileID: 1965483362}
   - component: {fileID: 1965483361}
   - component: {fileID: 1965483360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: snowTree_small (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
