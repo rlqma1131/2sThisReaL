@@ -74,7 +74,7 @@ public class Condition : MonoBehaviour
         isDead = true;
 
         if (MuzicPlayer != null)
-        MuzicPlayer.SetActive(false);
+            MuzicPlayer.SetActive(false);
         // 사망 UI 활성화
         StartCoroutine(FadeToBlack());
     }
@@ -127,7 +127,7 @@ public class Condition : MonoBehaviour
             _hpBottom.fillAmount = bottomFill;
         }
 
-        if(gm.curHp == 0)
+        if(gm.curHp <= 0)
         {
             IsDie();
         }
