@@ -1693,7 +1693,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f8bb291b3ef8748a2bcddaf01b3368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentResources: 100
+  startingResources:
+  - itemID: 1
+    amount: 1
+  - itemID: 2
+    amount: 1
+  - itemID: 3
+    amount: 1
+  - itemID: 4
+    amount: 1
+  - itemID: 5
+    amount: 1
+  - itemID: 6
+    amount: 1
+  - itemID: 7
+    amount: 1
+  - itemID: 8
+    amount: 1
+  - itemID: 9
+    amount: 1
+  - itemID: 10
+    amount: 1
+  - itemID: 11
+    amount: 1
+  - itemID: 12
+    amount: 1
+  - itemID: 13
+    amount: 1
+  - itemID: 14
+    amount: 1
+  - itemID: 15
+    amount: 1
+  - itemID: 16
+    amount: 1
+  - itemID: 17
+    amount: 1
+  - itemID: 18
+    amount: 1
+  - itemID: 19
+    amount: 1
+  - itemID: 20
+    amount: 1
+  - itemID: 21
+    amount: 1
+  - itemID: 22
+    amount: 1
+  - itemID: 23
+    amount: 1
 --- !u!4 &829101409
 Transform:
   m_ObjectHideFlags: 0

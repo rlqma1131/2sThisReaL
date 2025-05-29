@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour, IResourceManager
 {
-    [SerializeField] private int currentResources;
+    [SerializeField] private List<ResourceEntry> startingResources = new List<ResourceEntry>();
     private Dictionary<int, int> itemCounts = new Dictionary<int, int>();
 
     private void Start()
     {
-        AddResource(1, 5);
-        AddResource(2, 5);
-        AddResource(3, 5);
-        AddResource(4, 5);
-        AddResource(5, 5);
-        AddResource(6, 5);
+        foreach (var entry in startingResources)
+        {
+            AddResource(entry.itemID, entry.amount);
+        }
     }
 
     public bool HasEnoughResources(int itemID, int required)
