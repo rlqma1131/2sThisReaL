@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 1
   itemName: "\uD1B5\uB098\uBB34"
-  itemIcon: {fileID: 21300000, guid: 35b4832daca644640817603e360b2063, type: 3}
+  description: 
+  itemIcon: {fileID: -1850690624, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
   itemDescription: "\uB098\uBB34\uC5D0\uC11C \uAD6C\uD55C \uD1B5\uB098\uBB34.\n\uAC00\uACF5\uD574\uC11C
     \uC0AC\uC6A9\uD560 \uC218 \uC788\uB2E4."
   ItemType: 00000000
   isStackable: 1
   maxStackSize: 20
   dropPrefab: {fileID: 6242495026772200637, guid: 32ea8f6fb1c73f04f98895ce6412b83f, type: 3}
+  canStack: 0
+  maxStackAmount: 0
+  consumables: []
