@@ -14,12 +14,14 @@ public class ObjectPlacer : IObjectPlacer
     public void PlaceObject(IBuildable buildable, Vector3 position)
     {
         int cost = buildable.GetCost();
-        if (!resourceManager.HasEnoughResources(cost))
+        int itemID = buildable.GetItemID();
+        if (!resourceManager.HasEnoughResources(itemID, cost))
         {
+            Debug.Log("Not enough resources to build");
             return;
         }
 
-        resourceManager.SpendResources(cost);
+        resourceManager.SpendResources(itemID, cost);
 
         GameObject prefab = buildable.GetFinalPrefab();
         Quaternion rotation = buildable.GetRotation(); //  회전 정보 받아오기

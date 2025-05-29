@@ -14,11 +14,9 @@ public class Player : MonoBehaviour
     public Transform dropPosition;
     private void Awake()
     {
+        GameManager.Instance.Player = this;
+        
         controller = GetComponent<PlayerController>();
         equip = GetComponent<Equipment>();
-    }
-    private void Start()
-    {
-        GameManager.Instance.Init(this);
     }
 }

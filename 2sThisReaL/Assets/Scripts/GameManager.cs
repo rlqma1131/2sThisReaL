@@ -2,25 +2,25 @@
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                GameObject go = new GameObject("GameManager");
-                instance = go.AddComponent<GameManager>();
-                DontDestroyOnLoad(go);
-            }
-            return instance;
-        }
-    }
+    public static GameManager Instance { get; private set; }
 
-    public Player Player { get; private set; }
+    public Player Player { get; set; }
+
+    private void Awake()
+    {
+        // 싱글톤 패턴
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // 중복 제거
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // 씬 이동 시 유지하고 싶으면
+    }
 
     public void Init(Player player)
     {
-        this.Player = player;
+        Player = player;
     }
 }

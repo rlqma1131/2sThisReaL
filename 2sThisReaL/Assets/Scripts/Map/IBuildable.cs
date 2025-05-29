@@ -10,6 +10,6 @@ using UnityEngine;
         void CancelPreview();
         GameObject GetFinalPrefab();
         int GetCost();
-        
+        int GetItemID();
         Quaternion GetRotation();
     }

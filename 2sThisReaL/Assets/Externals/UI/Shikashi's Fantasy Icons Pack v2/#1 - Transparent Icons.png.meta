@@ -186,7 +186,7 @@ TextureImporter:
         width: 31
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,6 +194,90 @@ TextureImporter:
       bones: []
       spriteID: c1b8b299bc38271458dd9b21bdb4a34d
       internalID: 1953463997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 292
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f576d9d8a5cbd844b55420f1a07677e
+      internalID: -1850690624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leather
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 290
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41357fd39e7d08449ba294871c06859f
+      internalID: -207861583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stone
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 292
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e469f1f4987d2ae448cf33a8c879951a
+      internalID: 954521095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pickax
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 516
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0628a49f213e9fa4a88c4fe897bf1934
+      internalID: -1008186695
       vertices: []
       indices: 
       edges: []
@@ -211,7 +295,11 @@ TextureImporter:
     nameFileIdTable:
       Arrow: -1893851795
       Axe: 1953463997
+      Leather: -207861583
+      Pickax: -1008186695
+      Stone: 954521095
       Sword: -1231064183
+      Wood: -1850690624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

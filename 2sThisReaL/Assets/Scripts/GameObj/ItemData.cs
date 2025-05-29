@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum ItemType
@@ -11,6 +12,13 @@ public enum ItemType
     Etc
 }
 
+[Serializable]
+public class ItemDataConsumable
+{
+    public enum ItemType { Resource, Crafting, Equipable, Consumable, Etc }
+    public ConsumableType type;
+    public float value;
+}
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
 public class ItemData : ScriptableObject
@@ -19,6 +27,7 @@ public class ItemData : ScriptableObject
     // 고유 ID를 추가하면 아이템 관리 및 저장/불러오기에 유용 (확장성 고려)
     public string itemID; // 아이템의 고유 식별자
     public string itemName; // 아이템 이름
+    public string description; // 아이템 설명
     public Sprite itemIcon; // 아이템 아이콘
     [TextArea(3, 5)] // 인스펙터에서 여러 줄로 입력 가능
     public string itemDescription; // 아이템 설명
@@ -29,5 +38,11 @@ public class ItemData : ScriptableObject
     public int maxStackSize = 20; // 최대 겹침 개수 (기본값 20)
     public GameObject dropPrefab; // 월드에 떨어뜨렸을 때 생성될 프리팹 (선택 사항)
 
+    [Header("Stacking")]
+    public bool canStack; // 아이템이 인벤토리에 겹칠 수 있는지 여부
+    public int maxStackAmount; // 슬롯 하나에 쌓을 수 있는 최대 개수
+
+    [Header("Consumable")]
+    public ItemDataConsumable[] consumables; // 아이템 소모 효과 정보 배열 (아이템이 가지고 있는 여러 효과들)
 }
 

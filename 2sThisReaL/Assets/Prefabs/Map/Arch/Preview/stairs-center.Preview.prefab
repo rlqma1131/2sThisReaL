@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3455454605259650785}
   - component: {fileID: -2045263250208191726}
   - component: {fileID: 8296333052099227694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stairs-center.Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -36.56, y: 0, z: 40.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea844e10a75944efa97be5aa4eae4117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 1
+  itemID: 13
   finalPrefab: {fileID: 2319109999595902783, guid: 671f64e7afd815d41ace7b0dfa500131, type: 3}
 --- !u!64 &8296333052099227694
 MeshCollider:

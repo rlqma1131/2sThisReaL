@@ -14,9 +14,9 @@ public class ItemObject : MonoBehaviour, IInteractable
     public ItemData data; //아이템 데이터
     public string GetInteractPrompt()
     {
-        string prompt = $"Press E to pick up\n{data.itemName}\n{data.itemDescription}"; //상호작용 프롬프트
+        return $"[E] {data.itemName}\n{data.itemDescription}"; //상호작용 프롬프트
         // 내용은 차후 변경
-        return prompt;
+
     }
 
     public void OnInteract()

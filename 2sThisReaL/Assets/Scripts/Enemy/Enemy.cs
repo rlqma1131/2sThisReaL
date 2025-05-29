@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     [Header("AI")]
     private NavMeshAgent agent;
-    public float detectDistance;
+    public float detectDistance = 20;
     private AIState aiState;
 
     [Header("Wandering")]
@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                ConditionManager.Instance.Condition.DeltaHP(-damage);
+                ConditionManager.Instance.Condition.HealHP(-damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
             }
