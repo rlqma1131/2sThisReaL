@@ -18,9 +18,9 @@ public class EquipItem : ItemData
     public GameObject equipItem; // 장착할 때 사용할 프리팹 (선택 사항, 도구나 무기 아이템에 사용)
     public bool canGathering; // 자원 채집 가능 여부 (true면 해당하는 아이템을 채집 가능)
     public GatherType getType; // 자원 채집 타입 (벌목, 채광 등)
-    public int attackPower; // 무기가 아니라도 공격력이 있는 아이템은 공격력 설정 가능 (기본값 0)
 
     [Header("공격 설정")]
-    public float attackRate; // 공격 속도
+
+    public int attackPower; // 무기가 아니라도 공격력이 있는 아이템은 공격력 설정 가능 (기본값 0)
     public float attackDistance; // 공격 거리
 }

@@ -86,7 +86,7 @@ public class BuildingSystem : MonoBehaviour
         }
     }
 
-    private void EnterBuildMode()
+    public void EnterBuildMode()
     {
         isInBuildMode = true;
         playerController?.SetBuildMode(true);
@@ -94,11 +94,12 @@ public class BuildingSystem : MonoBehaviour
         Cursor.visible = true;
 
         // UI 활성화
-        buildUIController.ShowBuildModeUI();
-        buildUIController.SetDefaultCursor();
+        buildUIController.ShowBuildModeUI(); // UI전환
+        mouseCursor?.SetBuildCursor(); // 커서 설정
+        currentSubMode = BuildSubMode.Placing;
     }
     
-    private void ExitBuildMode()
+    public void ExitBuildMode()
     {
         isInBuildMode = false;
         playerController?.SetBuildMode(false);
@@ -106,7 +107,7 @@ public class BuildingSystem : MonoBehaviour
         Cursor.visible = false;
         // UI 비활성화
         buildUIController.ShowGameModeUI();
-        buildUIController.SetDefaultCursor();
+        mouseCursor?.SetDefaultCursor();
 
         CancelPreview();
     }
@@ -188,9 +189,9 @@ public class BuildingSystem : MonoBehaviour
         {
             ToggleOutline(lastHoveredObject, false);
             lastHoveredObject = null;
-            currentSubMode = BuildSubMode.None;
+            currentSubMode = BuildSubMode.Placing;
 
-            mouseCursor.SetDestroyCursor();
+            mouseCursor.SetBuildCursor();
         }
     }
 

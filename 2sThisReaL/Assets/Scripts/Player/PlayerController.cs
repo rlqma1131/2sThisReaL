@@ -287,9 +287,17 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
+
         if (context.phase == InputActionPhase.Started)
         {
             animator.SetBool("IsAttack", true);
+            if (ConditionManager.Instance.curStamina <= 0)
+            {
+                Debug.Log("스태미나가 부족하여 공격할 수 없습니다.");
+                animator.SetBool("IsAttack", false); // 좌클릭 뗌
+                return; // 스태미나가 없으면 공격 불가
+            }
+            return;
         }
         else if (context.phase == InputActionPhase.Canceled)
         {

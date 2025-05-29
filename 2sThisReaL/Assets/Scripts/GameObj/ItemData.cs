@@ -27,7 +27,6 @@ public class ItemData : ScriptableObject
     // 고유 ID를 추가하면 아이템 관리 및 저장/불러오기에 유용 (확장성 고려)
     public string itemID; // 아이템의 고유 식별자
     public string itemName; // 아이템 이름
-    public string description; // 아이템 설명
     public Sprite itemIcon; // 아이템 아이콘
     [TextArea(3, 5)] // 인스펙터에서 여러 줄로 입력 가능
     public string itemDescription; // 아이템 설명
