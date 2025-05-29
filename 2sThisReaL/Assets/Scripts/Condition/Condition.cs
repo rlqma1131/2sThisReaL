@@ -55,7 +55,7 @@ public class Condition : MonoBehaviour
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
-        //DepletionTemperature();
+        DepletionTemperature();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -231,6 +231,10 @@ public class Condition : MonoBehaviour
         if (rb.velocity.magnitude < 0.1f)
         {
             gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+        }
+        else
+        {
+            gm.curTemperature += gm.decreasingTemperature * Time.deltaTime;
         }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
