@@ -34,7 +34,7 @@ public class ConditionManager : MonoBehaviour
 
     [Header("Thermometer")] // 맵의 온도계
     public float curThermometer;
-    public float random = Random.Range(1,2);
+    public float random = Random.Range(1,2); // 랜덤으로 맵의 온도가 낮아지거나 높아짐 숫자는 따로 변경
 
     private void Awake()
     {
