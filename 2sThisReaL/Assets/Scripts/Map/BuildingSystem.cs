@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class BuildingSystem : MonoBehaviour
 {
@@ -21,9 +22,12 @@ public class BuildingSystem : MonoBehaviour
     private IResourceManager resourceManager;
     private IObjectPlacer objectPlacer;
     
-    private bool isInBuildMode = false;
     private int selectedPrefabIndex = 0;
     private BuildItemData selectedBuildItem;
+    private bool isInBuildMode = false;
+    private GameObject lastHoveredObject;
+    private enum BuildSubMode {None, Placing, Destroying}
+    private BuildSubMode currentSubMode = BuildSubMode.None;
     
     void Start()
     {
@@ -46,12 +50,21 @@ public class BuildingSystem : MonoBehaviour
         // 건축 모드에서만 작동하는 로직
         if (isInBuildMode)
         {
-            HandleBuildModeInput();
             if (Input.GetKeyDown(KeyCode.N))
             {
+                currentSubMode = BuildSubMode.Placing;
                 buildMenuUI.ToggleUI();
             }
+
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                currentSubMode = BuildSubMode.Destroying;
+                buildMenuUI.ToggleUI(false);
+                CancelPreview();
+            }
         }
+        
+        HandleBuildModeInput();
     }
 
     private void ToggleBuildMode()
@@ -90,50 +103,92 @@ public class BuildingSystem : MonoBehaviour
 
     private void HandleBuildModeInput()
     {
-        // // 건축물 선택 (1, 2, 3...)
-        // for (int i = 0; i < buildablePrefabs.Length; i++)
-        // {
-        //     if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-        //     {
-        //         selectedPrefabIndex = i;
-        //         StartPlacing(buildablePrefabs[selectedPrefabIndex]);
-        //     }
-        // }
-
-        if (currentPreview != null)
+        switch (currentSubMode)
         {
-            Vector3? position = GetMouseWorldPosition();
-            if (position.HasValue)
+            case BuildSubMode.Placing:
+                HandlePlacementMode();
+                break;
+            case BuildSubMode.Destroying:
+                HandleDestroyMode();
+                break;
+        }
+    }
+
+    private void HandlePlacementMode()
+    {
+        if(currentPreview == null) return;
+        
+        Vector3? position = GetMouseWorldPosition();
+        if(!position.HasValue) return;
+        
+        currentPreview.SetPreviewPosition(position.Value);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            currentPreview.RotatePreview();
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0) && _placementValidator.IsValidPosition(position.Value))
+        {
+            var temp = currentPreview;
+            CancelPreview();
+            objectPlacer.PlaceObject(temp, position.Value);
+            StartPlacing(selectedBuildItem.previewPrefab.GetComponent<IBuildable>());
+        }
+
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            CancelPreview();
+            currentSubMode = BuildSubMode.None;
+        }
+    }
+
+    private void HandleDestroyMode()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        {
+            GameObject target = hit.collider.gameObject;
+            if (lastHoveredObject != target)
             {
-                currentPreview.SetPreviewPosition(position.Value);
-
-                
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    currentPreview.RotatePreview();
-                    return; // 회전했을 경우 그 프레임에서는 배치하지 않음
-                }
-
-                
-                if (Input.GetMouseButtonDown(0) && _placementValidator.IsValidPosition(position.Value))
-                {
-                    var temp = currentPreview;
-                    CancelPreview();
-                    // objectPlacer.PlaceObject(
-                    //     selectedBuildItem.previewPrefab.GetComponent<IBuildable>(), position.Value);
-                    // StartPlacing(buildablePrefabs[selectedPrefabIndex]);
-                    objectPlacer.PlaceObject(temp, position.Value);
-                    StartPlacing(selectedBuildItem.previewPrefab.GetComponent<IBuildable>());
-                }
+                ToggleOutline(lastHoveredObject, false);
+                lastHoveredObject = target;
+                ToggleOutline(target, true);
             }
 
-            // 건축 모드 취소
-            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetMouseButtonDown(0))
             {
-                CancelPreview();
-                ToggleBuildMode();
+                var destructible = target.GetComponent<IDestructible>();
+                if (destructible != null)
+                {
+                    destructible.DestroySelf();
+                    Debug.Log("[DestroyMode] 파괴됨: " + target.name);
+                }
             }
         }
+        else if (lastHoveredObject != null)
+        {
+            ToggleOutline(lastHoveredObject, false);
+            lastHoveredObject = null;
+        }
+
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleOutline(lastHoveredObject, false);
+            lastHoveredObject = null;
+            currentSubMode = BuildSubMode.None;
+        }
+    }
+
+    private void ToggleOutline(GameObject obj, bool enabled)
+    {
+        if (obj == null) return;
+        
+        var outline = obj.GetComponent<Outline>();
+        if(outline != null)
+            outline.enabled = enabled;
     }
 
     public void StartPlacing(IBuildable buildablePrefab)
