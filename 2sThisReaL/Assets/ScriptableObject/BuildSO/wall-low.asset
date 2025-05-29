@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505473c290851814a99dd269179660c6, type: 3}
+  m_Name: wall-low
+  m_EditorClassIdentifier: 
+  name: wall-low
+  icon: {fileID: 21300000, guid: f2290246a99afcf4e970df83bca97e37, type: 3}
+  previewPrefab: {fileID: 4510486770922133572, guid: bb70227972446f44aa0d6890727c2601, type: 3}
+  itemID: 20

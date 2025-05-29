@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505473c290851814a99dd269179660c6, type: 3}
+  m_Name: wall-doorway-square
+  m_EditorClassIdentifier: 
+  name: wall-doorway-square
+  icon: {fileID: 21300000, guid: fc7c1d025dce7ec49953b5d98a661afc, type: 3}
+  previewPrefab: {fileID: 1315406849016310310, guid: 7d98e027265ea9e4783bc57853ae6812, type: 3}
+  itemID: 18

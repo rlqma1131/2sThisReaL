@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505473c290851814a99dd269179660c6, type: 3}
+  m_Name: stairs-closed-short
+  m_EditorClassIdentifier: 
+  name: stairs-closed-short
+  icon: {fileID: 21300000, guid: 09010c2ddb59eef43b3b010c2127d1c0, type: 3}
+  previewPrefab: {fileID: 2183738819237119451, guid: b5f32fc0b2084c047b2af2282ed5f55e, type: 3}
+  itemID: 14
