@@ -4,19 +4,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Player Player { get; set; }
-    public Enemy Enemy { get; set; }
+    public Player Player { get; private set; }
+
+
 
     private void Awake()
     {
-        // 싱글톤 패턴
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // 중복 제거
+            Destroy(gameObject);
             return;
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // 씬 이동 시 유지하고 싶으면
+        DontDestroyOnLoad(gameObject);
+    }
+    public void Init(Player player)
+    {
+        this.Player = player;
     }
 }
