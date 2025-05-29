@@ -32,7 +32,9 @@ public class ConditionManager : MonoBehaviour
     public float maxTemperature;
     public float minTemperature;
     public float decreasingTemperature;
-    
+    public float limitTemperature;
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

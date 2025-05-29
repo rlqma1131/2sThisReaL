@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEditor.PlayerSettings;
 
 public interface idamagable
 {
@@ -224,7 +225,7 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Temperature
-    private void DepletionTemperature() // 플레이어의 온도
+    private void DepletionTemperature(float delta) // 플레이어의 온도
     {
         Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
         if (rb.velocity.magnitude < 0.1f)
@@ -233,7 +234,8 @@ public class Condition : MonoBehaviour
         }
         else
         {
-            gm.curTemperature += gm.decreasingTemperature * Time.deltaTime;
+            gm.curTemperature += (gm.decreasingTemperature - gm.limitTemperature + delta) * Time.deltaTime;
+            // 움직일 때 상승하는 온도를 너무 빨리 상승하지 않게 limitTemperature변수로 제한을 해주고 불에 너무 가까이가거나 뜨거울 때 delta로 추가 상승
         }
         if (gm.curTemperature == 0)
         {
@@ -245,12 +247,6 @@ public class Condition : MonoBehaviour
         }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
-        UpdateTemperature();
-    }
-    public void DeltaTemperature(float delta)
-    {
-        gm.curTemperature += (gm.decreasingTemperature + delta) * Time.deltaTime;
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
         UpdateTemperature();
     }
     private void UpdateTemperature()
