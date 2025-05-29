@@ -10,6 +10,8 @@ public class Day : MonoBehaviour
     public float dayLength; // 현실 시간 기준으로 게임 내의 하루가 몇 초일지 설정
     private float timeRate; //시간대
     public Vector3 noon; // 정오를 정하는 값 vecor3 90,0,0
+    private float dayCount = 0;
+    private float prevTime = 0f;
 
     [Header("Sun")]
     public Light sun;
@@ -56,6 +58,12 @@ public class Day : MonoBehaviour
         RenderSettings.ambientIntensity = lightIntensityMultiplier.Evaluate(time);
         RenderSettings.reflectionIntensity = reflectionIntensityMultiplier.Evaluate(time);
 
+        if (time < prevTime)
+        {
+            dayCount++;
+            Debug.Log($"Day : {dayCount}");
+        }
+        prevTime = time;
     }
 
     private void UpdateLight(Light _lightSourec , Gradient _gradient , AnimationCurve _curve)

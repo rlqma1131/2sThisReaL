@@ -13,6 +13,7 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image _imageStamina;
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
+    [SerializeField] private Image _imageTemprerature;
 
     [SerializeField] private ConditionManager gm;
 
@@ -35,13 +36,13 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
-        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
+        DepletionTemperature();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -136,14 +137,18 @@ public class Condition : MonoBehaviour
     }
     #endregion
 
-    #region Temperature
+    #region Player Temperature
     private void DepletionTemperature() // 플레이어의 온도
     {
-        // 여기에 플레이어의 움직임이 0일 때라는게 필요
-        gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
+        Rigidbody rb = GameManager.Instance.Player.GetComponent<Rigidbody>();
 
-        UpdateTemperature();
+        if (rb.velocity.magnitude < 0.1f)
+        {
+            gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
+
+            gm.curTemperature = Mathf.Clamp(gm.curTemperature, gm.minTemperature, gm.maxTemperature);
+            UpdateTemperature();
+        }
     }
     public void DeltaTemperature(float delta)
     {
@@ -152,7 +157,8 @@ public class Condition : MonoBehaviour
     }
     private void UpdateTemperature()
     {
-        _imageHp.fillAmount = gm.curTemperature / gm.maxTemperature;
+        _imageTemprerature.fillAmount = (gm.curTemperature - gm.minTemperature) / (gm.maxTemperature - gm.minTemperature);
+        // _imageTemprerature.fillAmount = Mathf.InverseLerp(gm.minTemperature, gm.maxTemperature, gm.curTemperature);
     }
     #endregion
 }

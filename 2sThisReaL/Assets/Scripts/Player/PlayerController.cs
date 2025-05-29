@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float jumpPower;
-    private Vector2 curMovementInput;
+    public Vector2 curMovementInput;
     public LayerMask groundLayerMask;
     public LayerMask buildingLayerMask;
 
