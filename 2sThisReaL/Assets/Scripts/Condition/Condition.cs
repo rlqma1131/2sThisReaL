@@ -48,7 +48,6 @@ public class Condition : MonoBehaviour
         gm.curStamina = gm.maxStamina;
         gm.curHunger = gm.maxHunger;
         gm.curThirsty = gm.maxThirsty;
-        gm.curTemperature = gm.maxTemperature;
     }
     void Update()
     {
