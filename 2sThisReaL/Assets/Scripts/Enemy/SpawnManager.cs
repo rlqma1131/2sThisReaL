@@ -7,7 +7,7 @@ public class SpawnerZone : MonoBehaviour
 {
     [SerializeField] private GameObject[] monsterPrefabs;
 
-    [SerializeField] private float baseSpawnInterval = 20f;
+    [SerializeField] private float baseSpawnInterval = 10f;
     [SerializeField] private float intervalReductionPerDay = 1f;
     [SerializeField] private float minSpawnInterval = 8f;
     [SerializeField] private int maxSpawnCount = 5;
@@ -22,7 +22,7 @@ public class SpawnerZone : MonoBehaviour
     
     void Start()
     {
-        if(GameManager.Instance.Player != null)
+        if(GameManager.Instance != null)
             player = GameManager.Instance.Player.transform;
     }
 
