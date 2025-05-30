@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3291531355580268655}
   m_Layer: 10
   m_Name: wall-low
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

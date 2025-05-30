@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1570182694464203308}
   m_Layer: 10
   m_Name: stairs-closed-short
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
