@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,13 +9,13 @@ public class GenderSelectUI : MonoBehaviour
     {
         CharacterManager.Instance.SetGender(GenderType.Male);
         Debug.Log("[UI] Male selected");
-        SceneManager.LoadScene("Donghyun"); // ½ÇÁ¦ °ÔÀÓ ¾À ÀÌ¸§
+        SceneManager.LoadScene("MainScene"); // ì‹¤ì œ ê²Œì„ ì”¬ ì´ë¦„
     }
 
     public void OnSelectFemale()
     {
         CharacterManager.Instance.SetGender(GenderType.Female);
         Debug.Log("[UI] Female selected");
-        SceneManager.LoadScene("Donghyun"); // ½ÇÁ¦ °ÔÀÓ ¾À ÀÌ¸§
+        SceneManager.LoadScene("MainScene"); // ì‹¤ì œ ê²Œì„ ì”¬ ì´ë¦„
     }
 }

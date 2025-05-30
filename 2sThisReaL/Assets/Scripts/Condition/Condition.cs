@@ -108,6 +108,17 @@ public class Condition : MonoBehaviour
         float curHp = gm.curHp;
 
         // 3분할 HP바
+        if (_hpBottom != null)
+        {
+            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpBottom.fillAmount = bottomFill;
+        }
+        if (_hpMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpMiddle.fillAmount = middleFill;
+            curHp -= hpPerBar;
+        }
         if (_hpTop != null)
         {
             float topFill = Mathf.Clamp01(curHp / hpPerBar);
@@ -115,18 +126,9 @@ public class Condition : MonoBehaviour
             curHp -= hpPerBar;
         }
 
-        if (_hpMiddle != null)
-        {
-            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
-            _hpMiddle.fillAmount = middleFill;
-            curHp -= hpPerBar;
-        }
 
-        if (_hpBottom != null)
-        {
-            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
-            _hpBottom.fillAmount = bottomFill;
-        }
+
+
 
         if(gm.curHp <= 0)
         {
