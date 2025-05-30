@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5586124241811308006}
   - component: {fileID: 5801153046297486223}
   - component: {fileID: 6226461473069605342}
-  - component: {fileID: 3100865687816082140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3100865687816082140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2478762540930649567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec38a52bddecf07418df6f259b96628a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 5823da71d2c81aa49b3567aafb725501, type: 2}
 --- !u!1 &2762492727754164679
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,7 @@ GameObject:
   - component: {fileID: 6930584621040494182}
   - component: {fileID: 1789157281499152548}
   - component: {fileID: 30206370324038840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ToolAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
