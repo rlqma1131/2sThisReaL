@@ -28,8 +28,8 @@ public class Condition : MonoBehaviour
     private bool isDead = false;
     void Awake()
     {
-        gm = ConditionManager.Instance;
-        gameManager = GameManager.Instance;
+        //gm = ConditionManager.Instance;
+        //gameManager = GameManager.Instance;
     }
 
     void Start()
