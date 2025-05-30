@@ -7270,6 +7270,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789765126}
   m_Mesh: {fileID: -6896433232256404893, guid: 993bb466ca5d7374199b0ded2c5d009b, type: 3}
+--- !u!1 &1791137263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791137265}
+  - component: {fileID: 1791137264}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1791137264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791137263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10e54a47994a4740b6fd0d96eb0f2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 6dcaeb4d4b41fc84dbc6371b9721c8d3, type: 3}
+  attackCursor: {fileID: 2800000, guid: 4106668c0bd0d4746a9df6bcc9eb1f08, type: 3}
+  pickupCursor: {fileID: 2800000, guid: d84149b69ae311d42ab1276fbee07777, type: 3}
+  talkCursor: {fileID: 2800000, guid: 10e04f79c1bc48544912e0454ef52749, type: 3}
+  destroyCursor: {fileID: 2800000, guid: 5d901e70235e0214dab008ef0cc5c11e, type: 3}
+  buildCursor: {fileID: 2800000, guid: 40ab665f9b600174db4a97180c0f6341, type: 3}
+  hotSpot: {x: 0, y: 0}
+  cursorMode: 0
+--- !u!4 &1791137265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791137263}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1824640601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7466,7 +7518,6 @@ GameObject:
   - component: {fileID: 1869023606}
   - component: {fileID: 1869023605}
   - component: {fileID: 1869023604}
-  - component: {fileID: 1869023609}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7578,26 +7629,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1869023609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869023603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10e54a47994a4740b6fd0d96eb0f2a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 0}
-  attackCursor: {fileID: 0}
-  pickupCursor: {fileID: 0}
-  talkCursor: {fileID: 0}
-  destroyCursor: {fileID: 0}
-  buildCursor: {fileID: 0}
-  hotSpot: {x: 0, y: 0}
-  cursorMode: 0
 --- !u!1 &1872408954
 GameObject:
   m_ObjectHideFlags: 0
@@ -14665,3 +14696,4 @@ SceneRoots:
   - {fileID: 5408893030917152112}
   - {fileID: 1869023608}
   - {fileID: 1913381677}
+  - {fileID: 1791137265}
