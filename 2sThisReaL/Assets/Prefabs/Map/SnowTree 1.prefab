@@ -191,7 +191,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
   baseItemsToGive:
   - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
+  - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
   quantityPerHit: 1
   capacity: 10
   respawnTime: 30
+  decayStamina: 0
   gatherType: 0
