@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 379855621007554520}
   - component: {fileID: 3176371517116287089}
   - component: {fileID: 8767125518576731951}
+  - component: {fileID: -200858388910900406}
   m_Layer: 0
   m_Name: snowTree_small
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5166205679428473394, guid: 92f27243acf067748999ded14e674a5f, type: 3}
+--- !u!208 &-200858388910900406
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168627701952505876}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47400004, y: 0.998, z: 0.47400004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.998, z: 0}
+  m_TimeToStationary: 0.5
