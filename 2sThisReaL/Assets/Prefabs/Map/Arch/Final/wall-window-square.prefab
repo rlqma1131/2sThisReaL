@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 383991735615456981}
   - component: {fileID: 6387122311400910567}
   - component: {fileID: -443361244395558534}
+  - component: {fileID: 3022398452691826849}
   m_Layer: 10
   m_Name: wall-window-square
   m_TagString: Untagged
@@ -136,6 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37f4b5143188484c8a42bb0aac964a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &3022398452691826849
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453399751988289543}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.1, y: 1.2, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.2, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6723109737170759447
 GameObject:
   m_ObjectHideFlags: 0

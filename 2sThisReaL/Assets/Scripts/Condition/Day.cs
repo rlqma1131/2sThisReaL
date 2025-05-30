@@ -54,6 +54,7 @@ public class Day : MonoBehaviour
         time = startTime;
 
         _coditionManager = ConditionManager.Instance;
+        _coditionManager.count = 0;
 
         StartCoroutine(StartDayCoroutin(3));
     }
@@ -72,7 +73,7 @@ public class Day : MonoBehaviour
         if (time < prevTime)
         {
             Debug.Log("하루가 지남");
-            _coditionManager.count =  dayCount++;
+            _coditionManager.count++;
 
             UpdataDay(_coditionManager.count);
 
@@ -105,7 +106,7 @@ public class Day : MonoBehaviour
     }
     private IEnumerator StartDayCoroutin(float _tiem)
     {
-        UpdataDay(dayCount);
+        UpdataDay(_coditionManager.count);
         dayText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(_tiem);

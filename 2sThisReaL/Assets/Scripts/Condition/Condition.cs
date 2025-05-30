@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static UnityEditor.PlayerSettings;
-using DG.Tweening;
 
 public interface idamagable
 {
@@ -57,8 +56,6 @@ public class Condition : MonoBehaviour
         DepletionHunger();
         DepletionThirsty();
         DepletionTemperature(0);
-        UpdateHP();
-        UpdateStamina();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -108,30 +105,32 @@ public class Condition : MonoBehaviour
     private void UpdateHP()
     {
         float hpPerBar = gm.maxHp / 3f;
-        float remainHp = gm.curHp;
+        float curHp = gm.curHp;
 
         // 3분할 HP바
-        if (_hpTop != null)
-        {
-            float topHp = Mathf.Clamp(remainHp, 0, hpPerBar);
-            _hpTop.DOFillAmount(topHp / hpPerBar, 0.3f);
-            remainHp -= topHp;
-        }
-
-        if (_hpMiddle != null)
-        {
-            float middleHp = Mathf.Clamp(remainHp, 0, hpPerBar);
-            _hpMiddle.DOFillAmount(middleHp / hpPerBar, 0.3f);
-            remainHp -= middleHp;
-        }
-
         if (_hpBottom != null)
         {
-            float bottomHp = Mathf.Clamp(remainHp, 0, hpPerBar);
-            _hpBottom.DOFillAmount(bottomHp / hpPerBar, 0.3f);
+            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpBottom.fillAmount = bottomFill;
+        }
+        if (_hpMiddle != null)
+        {
+            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpMiddle.fillAmount = middleFill;
+            curHp -= hpPerBar;
+        }
+        if (_hpTop != null)
+        {
+            float topFill = Mathf.Clamp01(curHp / hpPerBar);
+            _hpTop.fillAmount = topFill;
+            curHp -= hpPerBar;
         }
 
-        if (gm.curHp <= 0)
+
+
+
+
+        if(gm.curHp <= 0)
         {
             IsDie();
         }
@@ -152,27 +151,27 @@ public class Condition : MonoBehaviour
     private void UpdateStamina()
     {
         float staminaPerBar = gm.maxStamina / 3f;
-        float remainStamina = gm.curStamina;
+        float curStamina = gm.curStamina;
 
         // 3분할 Stamina 바
         if (_staminaTop != null)
         {
-            float topFill = Mathf.Clamp01(remainStamina / staminaPerBar);
-            _staminaTop.DOFillAmount(topFill / staminaPerBar, 0.3f);
-            remainStamina -= staminaPerBar;
+            float topFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaTop.fillAmount = topFill;
+            curStamina -= staminaPerBar;
         }
 
         if (_staminaMiddle != null)
         {
-            float middleFill = Mathf.Clamp01(remainStamina / staminaPerBar);
-            _staminaMiddle.DOFillAmount(middleFill / staminaPerBar, 0.3f);
-            remainStamina -= staminaPerBar;
+            float middleFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaMiddle.fillAmount = middleFill;
+            curStamina -= staminaPerBar;
         }
 
         if (_staminaBottom != null)
         {
-            float bottomFill = Mathf.Clamp01(remainStamina / staminaPerBar);
-            _staminaBottom.DOFillAmount(bottomFill / staminaPerBar, 0.3f);
+            float bottomFill = Mathf.Clamp01(curStamina / staminaPerBar);
+            _staminaBottom.fillAmount = bottomFill;
         }
     }
     #endregion
@@ -198,7 +197,7 @@ public class Condition : MonoBehaviour
     private void UpdateHunger()
     {
         if (_imageHunger != null)
-            _imageHunger.DOFillAmount(gm.curHunger / gm.maxHunger, 0.3f);
+            _imageHunger.fillAmount = gm.curHunger / gm.maxHunger;
     }
     #endregion
 
@@ -223,7 +222,7 @@ public class Condition : MonoBehaviour
     private void UpdateThirsty()
     {
         if (_imageThirsty != null)
-            _imageThirsty.DOFillAmount(gm.curThirsty / gm.maxThirsty, 0.3f);
+            _imageThirsty.fillAmount = gm.curThirsty / gm.maxThirsty;
     }
     #endregion
 
@@ -260,7 +259,7 @@ public class Condition : MonoBehaviour
     private void UpdateTemperature()
     {
         if (_imageTemperature != null)
-            _imageTemperature.DOFillAmount(gm.curTemperature / gm.maxTemperature, 0.3f);
+            _imageTemperature.fillAmount = gm.curTemperature / gm.maxTemperature;
     }
     #endregion
 }
