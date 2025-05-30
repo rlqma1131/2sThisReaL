@@ -20,6 +20,7 @@ MonoBehaviour:
   ItemType: 00000000
   isStackable: 1
   maxStackSize: 20
-  dropPrefab: {fileID: 146338651581954216, guid: bc86d8c5c78e63d4e962644264b5ab2f, type: 3}
-  canStack: 1
-  maxStackAmount: 20
+  dropPrefab: {fileID: 0}
+  canStack: 0
+  maxStackAmount: 0
+  consumables: []

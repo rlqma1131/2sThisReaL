@@ -14,7 +14,6 @@ public enum AIState
 
 public class Enemy : MonoBehaviour
 {
-
     [Header("Stats")]
     public int health;
     public float walkSpeed;
@@ -39,8 +38,9 @@ public class Enemy : MonoBehaviour
     public float attackDistance;
 
     private float playerDistance;
-
     public float fieldOfView = 120f; // 시야각
+
+    [SerializeField] public SnowballProjectile snowballProjectile;
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        
     }
     void Start()
     {
@@ -160,7 +161,9 @@ public class Enemy : MonoBehaviour
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
                 if (attackDistance <= 5f)
+                {
                     ConditionManager.Instance.Condition.HealHP(-damage);
+                }
             }
         }
         else
@@ -250,6 +253,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OnAttack()
+    {
+        if (snowballProjectile != null)
+            snowballProjectile.Shoot(transform);
+    }
     void OnMouseEnter()
     {
         //FindObjectOfType<MouseCursor>().SetAttackCursor();

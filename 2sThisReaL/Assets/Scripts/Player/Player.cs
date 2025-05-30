@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public PlayerController controller { get; private set; }
     public Equipment Equip { get; private set; }
 
-
     public Action additem;
 
     public ItemData itemData;

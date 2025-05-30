@@ -1,24 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NPCInteract : MonoBehaviour
 {
     private MouseCursor mouseCursor;
+
+    [Header("Item")]
+    [SerializeField] private ItemData itemToGive;
+    
+    private bool hasInteracted = false;
 
     void Start()
     {
         mouseCursor = FindObjectOfType<MouseCursor>();
     }
 
-    void Update()
-    {
-        
-    }
-
     void OnMouseEnter()
     {
-        if (mouseCursor != null)
+        if (!hasInteracted && mouseCursor != null)
             mouseCursor.SetTalkCursor();
     }
 
@@ -26,5 +24,21 @@ public class NPCInteract : MonoBehaviour
     {
         if (mouseCursor != null)
             mouseCursor.SetDefaultCursor();
+    }
+
+    void OnMouseDown()
+    {
+        if (hasInteracted) return;
+
+        Player player = GameManager.Instance.Player;
+        if (player != null && itemToGive != null)
+        {
+
+            hasInteracted = true;
+
+            // UIManager.Instance.ShowMessage(interactionMessage);
+
+            player.additem?.Invoke();
+        }
     }
 }

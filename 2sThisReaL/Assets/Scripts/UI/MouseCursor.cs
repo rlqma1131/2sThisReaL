@@ -12,16 +12,7 @@ public class MouseCursor : MonoBehaviour
     public Texture2D buildCursor;
     public Vector2 hotSpot = Vector2.zero; // 커서 좌표
     public CursorMode cursorMode = CursorMode.Auto; // 커서 모드 설정 (기본값 사용)
-    void Awake()
-    {
-        if (FindObjectsOfType<MouseCursor>().Length > 1)
-        {
-            Destroy(gameObject); // 중복 방지
-            return;
-        }
 
-        DontDestroyOnLoad(gameObject);
-    }
     void Start()
     {
         SetDefaultCursor(); // 해당되는 마우스 커서 활성화
