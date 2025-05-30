@@ -4,26 +4,21 @@ using UnityEngine;
 public class SnowballProjectile : MonoBehaviour
 {
     public GameObject SnowballPrefab;
-
-    public float speed = 12f;
+    public float power;
     public float lifeTime = 3f;
     public int damage = 20;
-
-    void Update()
+    public void Shoot(Transform EnemyTransform)
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        Debug.Log("Shoot Snowball Projectile");
+        Vector3 spawnOffset = EnemyTransform.forward * 1f + Vector3.up * 5.2f;
+        GameObject snowball = Instantiate(SnowballPrefab, EnemyTransform.position + spawnOffset, transform.rotation);
+        Debug.Log("Snowball Spawned at: " + (EnemyTransform.position + spawnOffset));
+        Rigidbody rb = snowball.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.AddForce(EnemyTransform.forward * power, ForceMode.Impulse);
+        }
     }
-
-    public void Shoot()
-    {
-        Vector3 spawnOffset = transform.up * 5.2f + transform.forward * 1f; // 머리 위 + 살짝 앞
-        Vector3 spawnPos = transform.position + spawnOffset;
-
-        Instantiate(SnowballPrefab, spawnPos, Quaternion.LookRotation(transform.forward));
-        Debug.Log("Snowball shot!");
-    }
-
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -34,10 +29,9 @@ public class SnowballProjectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Obstacle") || other.CompareTag("Enemy") || other.CompareTag("Untagged"))
+        else if (other.CompareTag("Obstacle") || other.CompareTag("Ground"))
         {
             Destroy(gameObject);
-            Debug.Log("Snowball hit an obstacle or enemy!");
         }
     }
 }
