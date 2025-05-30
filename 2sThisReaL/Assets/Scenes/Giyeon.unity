@@ -703,7 +703,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1079,6 +1079,75 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Center: {x: 0, y: 0.49999997, z: 0}
+--- !u!1001 &1141877413
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 159.88399
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 191.39613
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
+      propertyPath: m_Name
+      value: workbench
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1d3ed3d47bec2946a992b9abc78a1d9, type: 3}
 --- !u!1001 &1491957960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1767,7 +1836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2463925157101455653, guid: 511be31261decba40b5996887e9c5c8d, type: 3}
       propertyPath: m_Name
-      value: Item_Banch
+      value: Item_Branch
       objectReference: {fileID: 0}
     - target: {fileID: 3395352774387137506, guid: 511be31261decba40b5996887e9c5c8d, type: 3}
       propertyPath: m_LocalScale.x
@@ -2275,3 +2344,4 @@ SceneRoots:
   - {fileID: 8824929852651428885}
   - {fileID: 4901833927096993206}
   - {fileID: 3417240481250030704}
+  - {fileID: 1141877413}
