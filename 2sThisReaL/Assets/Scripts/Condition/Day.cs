@@ -50,13 +50,13 @@ public class Day : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //하루 진행 속도 (1초당 몇 퍼센트 진행?)
         timeRate = 1.0f / dayLength;
         time = startTime;
 
+        _coditionManager = ConditionManager.Instance;
+
         StartCoroutine(StartDayCoroutin(3));
     }
-
     // Update is called once per frame
     void Update()
     {
