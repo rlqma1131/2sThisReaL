@@ -51,10 +51,9 @@ public class SpawnerZone : MonoBehaviour
     {
         while (true)
         {
-            float adjustedInterval = 2f;
-            // 생존날짜 구현되면 수정
-            //    = Mathf.Max(minSpawnInterval,
-            //baseSpawnInterval - GameManager.Instance.Day.SurvivedDays * intervalReductionPerDay);
+            float adjustedInterval
+            = Mathf.Max(minSpawnInterval, baseSpawnInterval - ConditionManager.Instance.count * intervalReductionPerDay);
+            Debug.Log($"{ConditionManager.Instance.count}");
 
             yield return new WaitForSeconds(adjustedInterval);
             TrySpawnMonster();

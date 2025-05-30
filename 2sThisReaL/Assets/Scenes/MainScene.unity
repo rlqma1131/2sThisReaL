@@ -6359,6 +6359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3344219050316582948, guid: 97d004295f180cb46955d2c9662cbb01, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8782286769457212774, guid: 97d004295f180cb46955d2c9662cbb01, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
