@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6174352959408441548}
   - component: {fileID: -5199847710471343868}
   - component: {fileID: 4423006956144821603}
+  - component: {fileID: 6358924772974023061}
   m_Layer: 10
   m_Name: wall-half
   m_TagString: Untagged
@@ -135,3 +136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37f4b5143188484c8a42bb0aac964a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &6358924772974023061
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4071399962102608715}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 1.2, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.2, z: 0}
+  m_TimeToStationary: 0.5
