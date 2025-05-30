@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:2sThisReaL/Assets/Prefabs/Items/CampFire.meta
 guid: 9da499e5ef9f9fc4d81a61d021ab5eba
+========
+guid: 1de2c5550738e8949b95ed835412ef0d
+>>>>>>>> Dev_09:2sThisReaL/Assets/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

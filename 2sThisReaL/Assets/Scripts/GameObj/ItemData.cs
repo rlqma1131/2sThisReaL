@@ -12,14 +12,6 @@ public enum ItemType
     Etc
 }
 
-[Serializable]
-public class ItemDataConsumable
-{
-    public enum ItemType { Resource, Crafting, Equipable, Consumable, Etc }
-    public ConsumableType type;
-    public float value;
-}
-
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
 public class ItemData : ScriptableObject
 {
@@ -40,8 +32,5 @@ public class ItemData : ScriptableObject
     [Header("Stacking")]
     public bool canStack; // 아이템이 인벤토리에 겹칠 수 있는지 여부
     public int maxStackAmount; // 슬롯 하나에 쌓을 수 있는 최대 개수
-
-    [Header("Consumable")]
-    public ItemDataConsumable[] consumables; // 아이템 소모 효과 정보 배열 (아이템이 가지고 있는 여러 효과들)
 }
 
