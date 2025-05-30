@@ -9922,9 +9922,7 @@ MonoBehaviour:
   maxTemperature: 100
   minTemperature: 0
   decreasingTemperature: 3
-  curThermometer: 6
-  maxThermometer: 12
-  minThermometer: -12
+  limitTemperature: 0
 --- !u!1 &1307489531
 GameObject:
   m_ObjectHideFlags: 0
@@ -10725,7 +10723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1437364708
 Transform:
   m_ObjectHideFlags: 0

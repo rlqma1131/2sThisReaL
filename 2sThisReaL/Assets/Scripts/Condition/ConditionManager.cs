@@ -5,7 +5,7 @@ public class ConditionManager : MonoBehaviour
 {
     public static ConditionManager Instance { get; set; }
     public Condition Condition { get; set; }
-    public float count;
+
     [Header("HP")]
     public float curHp;
     public float maxHp;
