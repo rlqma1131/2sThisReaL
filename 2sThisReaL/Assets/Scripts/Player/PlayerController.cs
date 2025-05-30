@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool isFire = false; // 불속이 아님
+    private bool isHeat = false;
+    private Coroutine fireCoroutine;
+    private Coroutine heatCoroutine;
+
     [Header("Movement")]
     public float moveSpeed;
     public float jumpPower;
@@ -324,45 +329,111 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsCrouch", false);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        //// Distance거리 계산 :transform.position플레이어 위치랑 other.transform.position CampFire위치사이의 거릭계산
-        //float distance = Vector3.Distance(transform.position, other.transform.position);
-        //float range = 5f;
-
-        //if (distance <= range)
-        //{
-        //    float intensity = 1f - (distance / range); // 가까울수록 1, 멀수록 0
-        //    float heatGain = intensity * ConditionManager.Instance.maxTemperature;
-
-        //    ConditionManager.Instance.curTemperature = heatGain;
-
-        //    ConditionManager.Instance.Condition.DeltaTemperature(ConditionManager.Instance.curTemperature * Time.deltaTime);
-        //}
-
+        if (other.CompareTag("Collider"))
+        {
+            isHeat = true;
+            if (heatCoroutine == null)
+                heatCoroutine = StartCoroutine(HeatCoroutine());
+        }
         if (other.CompareTag("CampFire"))
         {
-            // Distance거리 계산 :transform.position플레이어 위치랑 other.transform.position CampFire위치사이의 거릭계산
-            float distance = Vector3.Distance(transform.position, other.transform.position);
-            
-            // 열이 퍼지는 최대 거리 ex : 거리가 5면 온도가1 상승 거리가1이면 온도가10상승
-            float range = 5f;
-
-            // 가장 많이 오르는 체온이 10
-            float max = 10f;
-
-            if (distance <= range)
-            {
-                // Clamp01: 0.0f ~ 1.0f 범위만 유효할 때, 가까울수록 1, 멀수록 0
-                float intensity = Mathf.Clamp01(1f - (distance / range));
-
-                float heatGain = intensity * max;
-
-                ConditionManager.Instance.Condition.AddTemperature(heatGain * Time.deltaTime);
-            }
-            // 불에 타면 현재 체온이 최고 최온으로 바뀌며 deltaHp(데미지 10?)
-            ConditionManager.Instance.curTemperature = ConditionManager.Instance.maxTemperature;
-            ConditionManager.Instance.Condition.HealHP(ConditionManager.Instance.deltaHp);
+            isFire = true; // 불 쏙임
+            if (fireCoroutine == null)
+                fireCoroutine = StartCoroutine(FireCoroutine(9999f));
         }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Collider"))
+            isHeat = false;
+
+        if (other.CompareTag("CampFire"))
+            isFire = false;
+    }
+    private IEnumerator HeatCoroutine()
+    {
+        float time = 0;
+        float maxtime = 1;
+        float deltaTime = 0;
+
+        bool heat = false;
+
+        while (true)
+        {
+            time += Time.deltaTime;
+            deltaTime += Time.deltaTime;
+            if (!isHeat)
+            {
+                if (!heat)
+                {
+                    heat = true;
+                    break;
+                }
+            }
+
+            if (time > maxtime)
+            {
+                float dynamicDeltaHp = Mathf.Clamp(deltaTime * ConditionManager.Instance.deltaTemperature, 0f, 4f);
+                ConditionManager.Instance.Condition.AddTemperature(dynamicDeltaHp);
+
+                time = 0;
+            }
+
+
+            yield return null;
+        }
+        heatCoroutine = null;
+    }
+  
+    private IEnumerator FireCoroutine(float duration)
+    {
+        float elapsed = 0f;      // 데미지가 들어간 후에 누적 시간
+        float healTickTime = 1f; // 1초마다 데미지 발생
+        float tickCounter = 0f;  // 1이 되면 데미지를 주고 0이 되면 안줌
+
+        float triggerExitElapsed = 0f; // 플레이어가 불에서 벗어난 후 시간
+        bool triggerExited = false;    // 플레이어가 불에서 벗어났는지 여부
+
+        while (elapsed < duration) // 지정된 시간 동안 반복
+        {
+            tickCounter += Time.deltaTime;
+            elapsed += Time.deltaTime;     // 데미지가 들어간 시간 누적
+
+            if (!isFire) // 불 속이아니라면
+            {
+                if(!triggerExited) // 처음 불에서 벗어 났다면
+                {
+                    triggerExited = true; // 불에서 벗어남
+                    triggerExitElapsed = 0f; // 불나는 시간 초기화
+                }
+                triggerExitElapsed += Time.deltaTime; // 불에서 벗어난 시간 증가
+
+                if (triggerExitElapsed > 4f) // 불에서 벗어난 시간이 4초가 지나면
+                {
+                    Debug.Log("불꺼짐"); 
+                    break;
+                }
+            }
+            else
+            {
+                triggerExited = false; // 불 안으로 들어왔을 때
+            }
+            if (tickCounter >= healTickTime) // 1초가 지나면 데미지 발생
+            {
+                // elapsed : 경과 시간(초)만큼, 시간이 흐를수록 데미지 증가(최대 20으로 제한)
+                float dynamicDeltaHp = Mathf.Clamp(elapsed * 0.5f, 1f, 20f);
+
+                // 데미지 받는거 실제로 적용
+                ConditionManager.Instance.Condition.HealHP(-dynamicDeltaHp);
+                Debug.Log("데미지");
+                // 
+                tickCounter = 0f;
+            }
+
+            yield return null;
+        }
+        fireCoroutine = null;    
     }
 }

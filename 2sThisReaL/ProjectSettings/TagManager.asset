@@ -10,6 +10,7 @@ TagManager:
   - Buildable
   - Collider
   - CompFire
+  - CampFire
   layers:
   - Default
   - TransparentFX
