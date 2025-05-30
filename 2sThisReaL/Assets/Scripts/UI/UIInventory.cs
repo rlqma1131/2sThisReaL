@@ -154,11 +154,18 @@ public class UIInventory : MonoBehaviour
         selectedItemStatName.text = "";
         selectedItemStatValue.text = "";
 
-        foreach (var c in selectedItem.item.consumables)
+        if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
         {
-            selectedItemStatName.text += c.type + "\n";
-            selectedItemStatValue.text += c.value + "\n";
+            ConsumeItem item = selectedItem.item as ConsumeItem;
+
+            foreach (var c in item.consumableData)
+            {
+                selectedItemStatName.text += c.consumableType + "\n";
+                selectedItemStatValue.text += c.consumableAmount + "\n";
+            }
         }
+
+
 
         useButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Consumable));
         equipButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Equipable) && !slots[index].equipped);
@@ -170,21 +177,25 @@ public class UIInventory : MonoBehaviour
     {
         if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
         {
-            foreach (ItemDataConsumable c in selectedItem.item.consumables)
+            ConsumeItem item = selectedItem.item as ConsumeItem;
+            if (item == null) return;
+
+            foreach(ItemDataConsumable c in item.consumableData)
             {
-                switch (c.type)
+                switch (c.consumableType)
                 {
                     case ConsumableType.Health:
-                        Condition.HealHP(c.value);
+                        Condition.HealHP(c.consumableAmount);
                         break;
                     case ConsumableType.Hunger:
-                        Condition.HealHunger(c.value);
+                        Condition.HealHunger(c.consumableAmount);
                         break;
                     case ConsumableType.Thirst:
-                        Condition.HealThirsty(c.value);
+                        Condition.HealThirsty(c.consumableAmount);
                         break;
                 }
             }
+
             RemoveSelectedItem();
         }
     }
