@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 4301987573351377652}
   - component: {fileID: 5133348969250384618}
   - component: {fileID: 2429468926795453947}
+  - component: {fileID: 5388450975081678473}
   m_Layer: 5
   m_Name: ResourceSlot
   m_TagString: Untagged
@@ -244,6 +245,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &5388450975081678473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5906675652208096971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f19428592ab87418f7e6fdbbf95570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 2776564644491282222}
+  makeCountText: {fileID: 550678900389392999}
+  resourceIcon: {fileID: 4147071888666660389}
 --- !u!1 &9193259158559146902
 GameObject:
   m_ObjectHideFlags: 0
