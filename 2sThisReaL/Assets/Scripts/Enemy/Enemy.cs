@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
+    public SnowballProjectile snowballProjectile;
 
     private void Awake()
     {
@@ -247,6 +248,12 @@ public class Enemy : MonoBehaviour
         transform.position = endPos;
 
         Destroy(gameObject);
+    }
+
+    public void OnAttack()
+    {
+        if (snowballProjectile != null)
+            snowballProjectile.Shoot(transform);
     }
 
     void OnMouseEnter()

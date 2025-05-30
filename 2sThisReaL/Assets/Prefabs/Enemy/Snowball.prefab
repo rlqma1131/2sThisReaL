@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5328389604177208658}
   - component: {fileID: 4512950286048783769}
   - component: {fileID: 4050325202804940910}
+  - component: {fileID: -4823395320219847856}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SnowballPrefab: {fileID: 8311235917399358264}
-  speed: 12
+  power: 20
   lifeTime: 3
   damage: 20
 --- !u!33 &725993789503722048
@@ -117,7 +118,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -131,7 +132,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8311235917399358264}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -146,7 +147,23 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4823395320219847856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311235917399358264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c785f9a2ea4a5f4e9df1a8620ab6966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnowballPrefab: {fileID: 8311235917399358264}
+  power: 20
+  lifeTime: 3
+  damage: 20
