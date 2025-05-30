@@ -32,23 +32,6 @@ public class BuildingSystem : MonoBehaviour
     private enum BuildSubMode {None, Placing, Destroying}
     private BuildSubMode currentSubMode = BuildSubMode.None;
 
-    private void Awake()
-    {
-        if (playerController == null)
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            if (player != null)
-            {
-                playerController = player.GetComponent<PlayerController>();
-                mainCamera = player.GetComponentInChildren<Camera>();
-            }
-            else
-            {
-                Debug.LogWarning("플레이어 어디 갔음;");
-            }
-        }
-    }
-
     void Start()
     {
         _placementValidator = new BasicPlacementValidator(
@@ -57,6 +40,37 @@ public class BuildingSystem : MonoBehaviour
             verticalCheckDistance: 1f);
         resourceManager = FindObjectOfType<ResourceManager>();
         objectPlacer = new ObjectPlacer(resourceManager);
+        
+        StartCoroutine(WaitForPlayer());
+    }
+    
+    private IEnumerator WaitForPlayer()
+    {
+        GameObject player = null;
+
+        // 최대 5초 동안 플레이어 생성 대기
+        float timeout = 5f;
+        float timer = 0f;
+
+        while (player == null && timer < timeout)
+        {
+            player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerController = player.GetComponent<PlayerController>();
+                mainCamera = player.GetComponentInChildren<Camera>();
+                if (playerController != null && mainCamera != null)
+                {
+                    Debug.Log("플레이어와 카메라를 성공적으로 할당했습니다.");
+                    yield break;
+                }
+            }
+
+            timer += Time.deltaTime;
+            yield return null; // 다음 프레임까지 대기
+        }
+
+        Debug.LogWarning("플레이어를 찾을 수 없거나 카메라/컨트롤러가 없습니다.");
     }
     
     void Update()
