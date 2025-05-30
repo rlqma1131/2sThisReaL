@@ -2562,8 +2562,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: -3255036404317050594}
-  fireballClip: {fileID: 8300000, guid: 56b6d8d44f19d0e4a87839724c1c70e1, type: 3}
-  dashClip: {fileID: 8300000, guid: 47e8d5ea0f77e264b97f82ab4465f1f0, type: 3}
+  fireballClip: {fileID: 8300000, guid: b3dea2a0a70dccf42a76995e5ff836fa, type: 3}
+  dashClip: {fileID: 8300000, guid: 2b0bc9423c9f5b74d8de5cc546bd2dc2, type: 3}
 --- !u!82 &-3255036404317050594
 AudioSource:
   m_ObjectHideFlags: 0
