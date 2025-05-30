@@ -227,6 +227,11 @@ public class Condition : MonoBehaviour
     #region Temperature
     private void DepletionTemperature(float delta) // 플레이어의 온도
     {
+        if (gameManager == null || gameManager.Player == null)
+        {
+            Debug.LogWarning("GameManager 또는 Player가 null입니다.");
+            return;
+        }
         Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
         if (rb.velocity.magnitude < 0.1f)
         {
@@ -239,11 +244,11 @@ public class Condition : MonoBehaviour
         }
         if (gm.curTemperature == 0)
         {
-            // die
+            //IsDie();
         }
         if (gm.curTemperature == gm.maxTemperature)
         {
-            // die
+            //IsDie();
         }
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
 
