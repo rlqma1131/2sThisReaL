@@ -18,9 +18,9 @@ public class EndingDoorController : MonoBehaviour
     {
         if (!hasOpened && other.CompareTag("Player"))
         {
+            Debug.Log("플레이어 충돌 감지됨!");
             hasOpened = true;
             animator.SetTrigger("Open");
-            
             Invoke(nameof(TriggerFadeOut), delayBeforeFade);
         }
     }
