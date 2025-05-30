@@ -14,7 +14,6 @@ public enum AIState
 
 public class Enemy : MonoBehaviour
 {
-
     [Header("Stats")]
     public int health;
     public float walkSpeed;
