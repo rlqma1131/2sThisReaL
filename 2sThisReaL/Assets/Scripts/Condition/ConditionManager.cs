@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ConditionManager : MonoBehaviour
 {
@@ -44,5 +45,28 @@ public class ConditionManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(gameObject);
+        
+    }
+
+    void Start()
+    {
+        SceneManager.sceneLoaded += OnEndingScene;
+    }
+    private void OnEndingScene(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "EndingScene")
+        {
+            GameObject conditionObj = GameObject.Find("Condition");
+            if (conditionObj != null)
+            {
+                conditionObj.SetActive(false);
+                Debug.Log("Condition 오브젝트를 비활성화했습니다.");
+            }
+            else
+            {
+                Debug.LogWarning("Condition 오브젝트를 찾을 수 없습니다.");
+            }
+        }
     }
 }
