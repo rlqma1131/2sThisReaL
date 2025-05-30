@@ -26,11 +26,6 @@ public class PlayerSkillController : MonoBehaviour
     [SerializeField] private float dashCooldown = 3f;
     [SerializeField] private LayerMask enemyLayer;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip fireballClip;
-    [SerializeField] private AudioClip dashClip;
-
     private bool isDashing = false;
     private bool canDash = true;
     void Update()
@@ -65,7 +60,6 @@ public class PlayerSkillController : MonoBehaviour
     void CastFireball()
     {
         GameObject fireball = Instantiate(fireballPrefab, fireballSpawnPoint.position, transform.rotation);
-        audioSource.PlayOneShot(fireballClip);
         Debug.Log("Fireball Cast!");
     }
     IEnumerator DashAttack()
@@ -73,14 +67,15 @@ public class PlayerSkillController : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        audioSource.PlayOneShot(dashClip);
+        Vector3 dashDir = transform.forward;
+        dashDir.y = 0;
+        dashDir.Normalize();
 
-        Vector3 dashDir = Camera.main.transform.forward.normalized;
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + dashDir * dashDistance;
+        Debug.Log($"Dashing from {startPos} to {targetPos} (dir: {dashDir}, dist: {dashDistance})");
 
-        // 대시 시작 시 적 탐지
-        RaycastHit[] hits = Physics.SphereCastAll(startPos, 1f, dashDir, dashDistance, enemyLayer);
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 1f, dashDir, dashDistance);
         foreach (var hit in hits)
         {
             if (hit.collider.CompareTag("Enemy"))
@@ -93,39 +88,16 @@ public class PlayerSkillController : MonoBehaviour
         }
 
         float elapsed = 0f;
-        float checkRadius = 0.5f;
-        float capsuleHeight = 2.0f;
-        float offsetY = 3.0f; // 캡슐 중심이 캐릭터 중앙쯤 되도록
-
-        Vector3 lastValidPosition = transform.position;
-
         while (elapsed < dashDuration)
         {
-            float t = elapsed / dashDuration;
-            Vector3 nextPos = Vector3.Lerp(startPos, targetPos, t);
-
-            // CheckCapsule 충돌 검사
-            Vector3 capsuleBottom = nextPos + Vector3.up * (offsetY - capsuleHeight / 2f);
-            Vector3 capsuleTop = nextPos + Vector3.up * (offsetY + capsuleHeight / 2f);
-
-            bool hitWall = Physics.CheckCapsule(capsuleBottom, capsuleTop, checkRadius, LayerMask.GetMask("Ground", "Building"));
-
-            if (hitWall)
-            {
-                Debug.Log("벽에 닿아서 대시 중단됨");
-                break;
-            }
-
-            lastValidPosition = nextPos;
-            transform.position = nextPos;
-
+            transform.position = Vector3.Lerp(startPos, targetPos, elapsed / dashDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = lastValidPosition;
-
+        transform.position = targetPos;
         isDashing = false;
+
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }

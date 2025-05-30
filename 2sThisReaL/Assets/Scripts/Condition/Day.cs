@@ -6,8 +6,6 @@ using static UnityEditor.Progress;
 
 public class Day : MonoBehaviour
 {
-    ConditionManager _coditionManager;
-
     [Range(0.0f, 1.0f)]
     public float time;
     public float startTime; // 게임을 시작할 때 몇시부터 시작할지
@@ -20,7 +18,6 @@ public class Day : MonoBehaviour
     private float dayCount = 0;
     private float prevTime = 0f;
     private bool isTextUi = false;
-
 
     [Header("Sun")]
     public Light sun;
@@ -72,9 +69,9 @@ public class Day : MonoBehaviour
         if (time < prevTime)
         {
             Debug.Log("하루가 지남");
-            _coditionManager.count =  dayCount++;
+            dayCount++;
 
-            UpdataDay(_coditionManager.count);
+            UpdataDay(dayCount);
 
             if (isTextUi == false)
             {

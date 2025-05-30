@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:2sThisReaL/Assets/Prefabs/Items/CampFire/FireParticleAddMat.mat.meta
 guid: 4d013014c63f66349b847f12173289d2
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
-========
-guid: 86eea5523d915684faf491a0629f79a3
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
->>>>>>>> Dev_09:2sThisReaL/Assets/ScriptableObject/Resources/Branch.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

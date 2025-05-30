@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum GenderType
 {
@@ -30,8 +29,6 @@ public class CharacterManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void SetGender(GenderType gender)
@@ -53,22 +50,10 @@ public class CharacterManager : MonoBehaviour
         GameObject playerObj = Instantiate(prefab, spawnPosition, Quaternion.identity);
         Debug.Log($"[CharacterManager] Player spawned at {spawnPosition}");
 
-        Player = playerObj.GetComponent<Player>();
-
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // 특정 씬에서만 파괴 (예: "MainMenu", "EndingScene" 등)
-        if (scene.name == "MainMenu" || scene.name == "EndingScene")
+        Player player = playerObj.GetComponent<Player>();
+        if (player != null && GameManager.Instance != null)
         {
-            Destroy(gameObject);
+            GameManager.Instance.Init(player);
         }
-    }
-
-    private void OnDestroy()
-    {
-        // 씬 로딩 이벤트 해제 (메모리 누수 방지)
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
