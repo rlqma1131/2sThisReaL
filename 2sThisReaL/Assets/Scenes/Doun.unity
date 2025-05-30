@@ -18431,7 +18431,7 @@ GameObject:
   - component: {fileID: 3992960974328327201}
   - component: {fileID: 3519442190603897908}
   - component: {fileID: 443262837221766986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18522,7 +18522,7 @@ GameObject:
   - component: {fileID: 7368921776505980036}
   - component: {fileID: 5756013227644502515}
   - component: {fileID: 7867238553237838202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: (%ignore)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18572,8 +18572,8 @@ GameObject:
   - component: {fileID: 5980615020898476800}
   - component: {fileID: 6463994776339659195}
   - component: {fileID: 6463994776339659197}
-  - component: {fileID: 6463994776339659196}
-  m_Layer: 0
+  - component: {fileID: 6463994776339659198}
+  m_Layer: 10
   m_Name: door-rotate-round-d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18601,8 +18601,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &6463994776339659196
-MeshCollider:
+--- !u!114 &6463994776339659197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463994776339659194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be52bc2bfea3b8a4d87b235c2d0b6392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeFade: 1.5
+--- !u!65 &6463994776339659198
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18619,23 +18632,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &6463994776339659197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6463994776339659194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be52bc2bfea3b8a4d87b235c2d0b6392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayBeforeFade: 1.5
+  serializedVersion: 3
+  m_Size: {x: 0.20000002, y: 2.1102462, z: 0.92650354}
+  m_Center: {x: 0, y: 1.0551231, z: 0.46325177}
 --- !u!4 &7019798679067624080
 Transform:
   m_ObjectHideFlags: 0
@@ -18678,7 +18677,7 @@ GameObject:
   - component: {fileID: 8199622565568276967}
   - component: {fileID: 2239119178725871576}
   - component: {fileID: 2922437564129229441}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
