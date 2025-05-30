@@ -28,9 +28,5 @@ public class ItemData : ScriptableObject
     public bool isStackable = true; // 겹치기 가능 여부 (기본값 true), 도구나 무기에서는 false로 변경
     public int maxStackSize = 20; // 최대 겹침 개수 (기본값 20)
     public GameObject dropPrefab; // 월드에 떨어뜨렸을 때 생성될 프리팹 (선택 사항)
-
-    [Header("Stacking")]
-    public bool canStack; // 아이템이 인벤토리에 겹칠 수 있는지 여부
-    public int maxStackAmount; // 슬롯 하나에 쌓을 수 있는 최대 개수
 }
 

@@ -112,7 +112,7 @@ public class UIInventory : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].item == data && slots[i].quantity < data.maxStackAmount)
+            if (slots[i].item == data && slots[i].quantity < data.maxStackSize)
             {
                 return slots[i];
             }
