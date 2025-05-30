@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class CountText : MonoBehaviour
 {
-    [SerializeField] private ConditionManager conditionManager;
-
     public TextMeshProUGUI dayText;
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdataDay(conditionManager.count);
+        if (ConditionManager.Instance != null)
+        {
+            UpdataDay(ConditionManager.Instance.count);
+        }
+        else
+        {
+            Debug.LogWarning("ConditionManager.Instance is null");
+        }
     }
     private void UpdataDay(float day)
     {
