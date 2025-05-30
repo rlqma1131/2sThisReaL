@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -30,7 +31,24 @@ public class BuildingSystem : MonoBehaviour
     private GameObject lastHoveredObject;
     private enum BuildSubMode {None, Placing, Destroying}
     private BuildSubMode currentSubMode = BuildSubMode.None;
-    
+
+    private void Awake()
+    {
+        if (playerController == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerController = player.GetComponent<PlayerController>();
+                mainCamera = player.GetComponentInChildren<Camera>();
+            }
+            else
+            {
+                Debug.LogWarning("플레이어 어디 갔음;");
+            }
+        }
+    }
+
     void Start()
     {
         _placementValidator = new BasicPlacementValidator(
