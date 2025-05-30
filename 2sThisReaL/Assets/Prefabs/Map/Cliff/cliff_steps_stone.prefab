@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2933068204521541497}
   - component: {fileID: 900999374327128310}
   - component: {fileID: -5640723004745504083}
-  - component: {fileID: 4893229574502265938}
   m_Layer: 0
   m_Name: cliff_steps_stone
   m_TagString: Untagged
@@ -108,19 +107,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1262392607889497173, guid: d58ec991bd9b8e848822c6f7a38a733d, type: 3}
---- !u!208 &4893229574502265938
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765421374538449026}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.52500004}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: 0.025}
-  m_TimeToStationary: 0.5

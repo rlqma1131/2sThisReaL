@@ -17,6 +17,7 @@ public class SnowballProjectile : MonoBehaviour
     public void OnShoot()
     {
         Instantiate(SnowballPrefab, transform.position + new Vector3(0, 10, 52), transform.rotation);
+        Debug.Log("Snowball shot!");
     }
 
 
@@ -33,6 +34,7 @@ public class SnowballProjectile : MonoBehaviour
         else if (other.CompareTag("Obstacle") || other.CompareTag("Enemy") || other.CompareTag("Untagged"))
         {
             Destroy(gameObject);
+            Debug.Log("Snowball hit an obstacle or enemy!");
         }
     }
 }

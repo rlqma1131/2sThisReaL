@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3134862547657586210}
   - component: {fileID: 2808602940117576881}
   - component: {fileID: 8166297227491578721}
-  - component: {fileID: -2280161455265592723}
   m_Layer: 0
   m_Name: snow-curve-low
   m_TagString: Untagged
@@ -107,19 +106,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5361052050597327684, guid: 5100c96aee6c3534f9e80d1ab414f8ca, type: 3}
---- !u!208 &-2280161455265592723
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167210588202469213}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1, y: 0.25, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.25, z: 0}
-  m_TimeToStationary: 0.5

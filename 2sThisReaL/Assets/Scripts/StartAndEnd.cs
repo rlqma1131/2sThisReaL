@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartAndEnd : MonoBehaviour
 {
-    public void RestartButtonClicked()
+    public void OnRestartButtonClicked()
     {
         SceneManager.LoadScene("MainScene");
     }

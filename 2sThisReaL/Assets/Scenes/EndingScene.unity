@@ -3185,7 +3185,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 731129249}
         m_TargetAssemblyTypeName: StartAndEnd, Assembly-CSharp
-        m_MethodName: RestartButtonClicked
+        m_MethodName: OnRestartButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

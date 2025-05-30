@@ -60,7 +60,7 @@ public class CharacterManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // 특정 씬에서만 파괴 (예: "MainMenu", "EndingScene" 등)
-        if (scene.name == "MainMenu" || scene.name == "EndingScene")
+        if (scene.name == "StartScene")
         {
             Destroy(gameObject);
         }
