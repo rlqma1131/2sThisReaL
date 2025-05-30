@@ -31,6 +31,8 @@ public class BuildingSystem : MonoBehaviour
     private GameObject lastHoveredObject;
     private enum BuildSubMode {None, Placing, Destroying}
     private BuildSubMode currentSubMode = BuildSubMode.None;
+    
+    private Vector3? lastMouseWorldPos = null; // 이전 프레임 마우스 위치 저장용 변수
 
     void Start()
     {
@@ -159,24 +161,44 @@ public class BuildingSystem : MonoBehaviour
 
     private void HandlePlacementMode()
     {
-        if(currentPreview == null) return;
-        
+        if (currentPreview == null) return;
+
         Vector3? position = GetMouseWorldPosition();
-        if(!position.HasValue) return;
-        
-        currentPreview.SetPreviewPosition(position.Value);
+        if (!position.HasValue) return;
+
+        // 마우스 위치가 바뀌었을 때만 스냅 수행
+        if (lastMouseWorldPos == null || Vector3.Distance(lastMouseWorldPos.Value, position.Value) > 0.01f)
+        {
+            lastMouseWorldPos = position;
+
+            currentPreview.SetPreviewPosition(position.Value);
+
+            Collider col = ((MonoBehaviour)currentPreview).GetComponent<Collider>();
+            if (col != null)
+            {
+                Bounds previewBounds = col.bounds;
+                Vector3? snapped = SnapToNearestSurface(previewBounds);
+
+                // 스냅 대상이 있을 경우에만 위치 보정
+                if (snapped.HasValue)
+                {
+                    currentPreview.SetPreviewPosition(snapped.Value);
+                }
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             currentPreview.RotatePreview();
+            lastMouseWorldPos = null; // 회전 시 위치 재계산
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) && _placementValidator.IsValidPosition(position.Value))
+        if (Input.GetMouseButtonDown(0) && _placementValidator.IsValidPosition(currentPreview.GetCurrentPosition()))
         {
             var temp = currentPreview;
             CancelPreview();
-            objectPlacer.PlaceObject(temp, position.Value);
+            objectPlacer.PlaceObject(temp, temp.GetCurrentPosition());
             StartPlacing(selectedBuildItem.previewPrefab.GetComponent<IBuildable>());
         }
 
@@ -185,6 +207,53 @@ public class BuildingSystem : MonoBehaviour
             CancelPreview();
             currentSubMode = BuildSubMode.None;
         }
+    }
+    
+    private Vector3? SnapToNearestSurface(Bounds previewBounds)
+    {
+        GameObject[] placedObjects = GameObject.FindGameObjectsWithTag("Buildable");
+        float minDistance = float.MaxValue;
+        Vector3? bestSnapPosition = null;
+
+        foreach (GameObject obj in placedObjects)
+        {
+            if (!obj.TryGetComponent<Collider>(out var col)) continue;
+
+            Bounds placedBounds = col.bounds;
+
+            Vector3[] placedFaces =
+            {
+                placedBounds.center + new Vector3(placedBounds.extents.x, 0, 0),
+                placedBounds.center - new Vector3(placedBounds.extents.x, 0, 0),
+                placedBounds.center + new Vector3(0, 0, placedBounds.extents.z),
+                placedBounds.center - new Vector3(0, 0, placedBounds.extents.z),
+                placedBounds.center + new Vector3(0, placedBounds.extents.y, 0),
+                placedBounds.center - new Vector3(0, placedBounds.extents.y, 0),
+            };
+
+            Vector3[] previewFaces =
+            {
+                previewBounds.center - new Vector3(previewBounds.extents.x, 0, 0),
+                previewBounds.center + new Vector3(previewBounds.extents.x, 0, 0),
+                previewBounds.center - new Vector3(0, 0, previewBounds.extents.z),
+                previewBounds.center + new Vector3(0, 0, previewBounds.extents.z),
+                previewBounds.center - new Vector3(0, previewBounds.extents.y, 0),
+                previewBounds.center + new Vector3(0, previewBounds.extents.y, 0),
+            };
+
+            for (int i = 0; i < 6; i++)
+            {
+                float dist = Vector3.Distance(placedFaces[i], previewFaces[i]);
+                if (dist < minDistance && dist < 1f)
+                {
+                    minDistance = dist;
+                    Vector3 offset = placedFaces[i] - previewFaces[i];
+                    bestSnapPosition = previewBounds.center + offset;
+                }
+            }
+        }
+
+        return bestSnapPosition;
     }
 
     private void HandleDestroyMode()

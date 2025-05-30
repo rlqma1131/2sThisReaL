@@ -33,21 +33,6 @@ public class BuildableObject : MonoBehaviour, IBuildable
 
     public GameObject GetFinalPrefab()
     {
-        // // 프리뷰 오브젝트 대신 최종 프리팹을 인스턴스화하여 반환
-        // GameObject finalObject = Instantiate(finalPrefab, transform.position, transform.rotation);
-        //
-        // foreach (var renderer in finalObject.GetComponentsInChildren<Renderer>())
-        // {
-        //     foreach (var mat in renderer.materials)
-        //     {
-        //         mat.shader = Shader.Find("Standard");
-        //         Color c = mat.color;
-        //         c.a = 1;
-        //         mat.color = c;
-        //     }
-        // }
-        //
-        // Destroy(gameObject); // 프리뷰 오브젝트 제거
         return finalPrefab;
     }
 
@@ -64,6 +49,11 @@ public class BuildableObject : MonoBehaviour, IBuildable
     public Quaternion GetRotation()
     {
         return transform.rotation;
+    }
+    
+    public Vector3 GetCurrentPosition()
+    {
+        return transform.position;
     }
 
     private void SetTransparent(bool transparent)

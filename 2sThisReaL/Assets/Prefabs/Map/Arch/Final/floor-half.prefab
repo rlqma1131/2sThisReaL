@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 218604468481146627}
   - component: {fileID: -6991661555703805733}
   - component: {fileID: 6426246359725882514}
+  - component: {fileID: -8905271159397665457}
   m_Layer: 10
   m_Name: floor-half
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,3 +136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37f4b5143188484c8a42bb0aac964a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &-8905271159397665457
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064342041491292079}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.05, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
+  m_TimeToStationary: 0.5

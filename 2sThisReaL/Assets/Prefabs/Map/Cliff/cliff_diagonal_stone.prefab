@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 607154166516260867}
   - component: {fileID: 639827375908422603}
   - component: {fileID: 8055660577979988262}
+  - component: {fileID: -1909010079571402033}
   m_Layer: 0
   m_Name: cliff_diagonal_stone
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 547719538949060585, guid: 5151454eadadd1943a8bb7d8de2eb972, type: 3}
+--- !u!208 &-1909010079571402033
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031031760208364884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58400005, y: 0.5, z: 0.58400005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.08400001, y: 0.5, z: 0.08400001}
+  m_TimeToStationary: 0.5

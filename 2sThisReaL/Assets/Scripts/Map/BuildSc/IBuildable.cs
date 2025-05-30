@@ -12,4 +12,5 @@ using UnityEngine;
         int GetCost();
         int GetItemID();
         Quaternion GetRotation();
+        Vector3 GetCurrentPosition();
     }
