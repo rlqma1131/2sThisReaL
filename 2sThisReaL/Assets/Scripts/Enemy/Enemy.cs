@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
+    public SnowballProjectile snowballProjectile;
 
     private void Awake()
     {
@@ -80,6 +82,8 @@ public class Enemy : MonoBehaviour
                 Dead();
                 break;
         }
+
+        TooFarfromPlayer();
     }
 
     public void SetState(AIState state)
@@ -151,7 +155,7 @@ public class Enemy : MonoBehaviour
 
     void AttackingUpdate()
     {
-        if (playerDistance < attackDistance && IsPlayerInFieldOfView())
+        if (playerDistance < attackDistance && CanSeePlayer())
         {
             agent.isStopped = true;
 
@@ -182,7 +186,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    bool IsPlayerInFieldOfView()
+    bool CanSeePlayer()
     {
         Vector3 directionToPlayer = (GameManager.Instance.Player.transform.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
@@ -207,7 +211,7 @@ public class Enemy : MonoBehaviour
             foreach (var mat in renderer.materials)
             {
                 mat.EnableKeyword("_EMISSION");
-                mat.SetColor("_EmissionColor", Color.red * 2f);
+                mat.SetColor("_EmissionColor", UnityEngine.Color.red * 2f);
             }
         }
 
@@ -217,7 +221,7 @@ public class Enemy : MonoBehaviour
         {
             foreach (var mat in renderer.materials)
             {
-                mat.SetColor("_EmissionColor", Color.black);
+                mat.SetColor("_EmissionColor", UnityEngine.Color.black);
             }
         }
     }
@@ -247,6 +251,18 @@ public class Enemy : MonoBehaviour
         transform.position = endPos;
 
         Destroy(gameObject);
+    }
+
+    public void OnAttack()
+    {
+        if (snowballProjectile != null)
+            snowballProjectile.Shoot(transform);
+    }
+
+    void TooFarfromPlayer()
+    {
+        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) < 150f)
+            Destroy(gameObject);
     }
 
     void OnMouseEnter()
