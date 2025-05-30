@@ -1,39 +1,39 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CampFire : MonoBehaviour
 {
-    public int damage;
-    public float damageRate;
+    //public int damage;
+    //public float damageRate;
 
-    List<IDamageable> things = new List<IDamageable>();
-    void Start()
-    {
-        InvokeRepeating("DealDamage", 0, damageRate);   // ¹Ù·Î ½ÃÀÛÇØ¼­ damageRate °£°ÝÀ¸·Î ¹Ýº¹ È£Ãâ
-    }
+    ////List<IDamageable> things = new List<IDamageable>();
+    //void Start()
+    //{
+    //    InvokeRepeating("DealDamage", 0, damageRate);   // ë°”ë¡œ ì‹œìž‘í•´ì„œ damageRate ê°„ê²©ìœ¼ë¡œ ë°˜ë³µ í˜¸ì¶œ
+    //}
 
-    void DealDamage()
-    {
-        for(int i = 0; i < things.Count; i++)
-        {
-            things[i].TakePhysicalDamage(damage);
-        }
-    }
+    //void DealDamage()
+    //{
+    //    for(int i = 0; i < things.Count; i++)
+    //    {
+    //        things[i].TakePhysicalDamage(damage);
+    //    }
+    //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.TryGetComponent(out IDamageable damageable)) // IDamageable ÄÄÆ÷³ÍÆ®¸¦ °®°í ÀÖ´Ù¸é Ãæµ¹ÇßÀ» ¶§ things ¸®½ºÆ®¿¡ Ãß°¡
-        {
-            things.Add(damageable);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.TryGetComponent(out IDamageable damageable)) // IDamageable ì»´í¬ë„ŒíŠ¸ë¥¼ ê°–ê³  ìžˆë‹¤ë©´ ì¶©ëŒí–ˆì„ ë•Œ things ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+    //    {
+    //        things.Add(damageable);
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)  // IDamageable ÄÄÆ÷³ÍÆ®¸¦ °®°í ÀÖ´Ù¸é Ãæµ¹ÀÌ ³¡³µÀ» ¶§ things ¸®½ºÆ®¿¡¼­ Á¦°Å
-    {
-        if(other.TryGetComponent(out IDamageable damageable))
-        {
-            things.Remove(damageable);
-        }
-    }
+    //private void OnTriggerExit(Collider other)  // IDamageable ì»´í¬ë„ŒíŠ¸ë¥¼ ê°–ê³  ìžˆë‹¤ë©´ ì¶©ëŒì´ ëë‚¬ì„ ë•Œ things ë¦¬ìŠ¤íŠ¸ì—ì„œ ì œê±°
+    //{
+    //    if(other.TryGetComponent(out IDamageable damageable))
+    //    {
+    //        things.Remove(damageable);
+    //    }
+    //}
 }
