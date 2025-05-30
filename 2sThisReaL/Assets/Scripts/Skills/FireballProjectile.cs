@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class FireballProjectile : MonoBehaviour
@@ -29,10 +29,6 @@ public class FireballProjectile : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
 
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("Obstacle"))
-        {
             Destroy(gameObject);
         }
     }

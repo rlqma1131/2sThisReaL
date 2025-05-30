@@ -30,6 +30,7 @@ public class SpawnerZone : MonoBehaviour
             yield return null;
         }
         player = GameManager.Instance.Player.transform;
+        Debug.Log("플레이어 할당됨");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,9 +52,10 @@ public class SpawnerZone : MonoBehaviour
     {
         while (true)
         {
-            float adjustedInterval
-            = Mathf.Max(minSpawnInterval, baseSpawnInterval - ConditionManager.Instance.count * intervalReductionPerDay);
-            Debug.Log($"{ConditionManager.Instance.count}");
+            float adjustedInterval = 5f;
+            // 생존날짜 구현되면 수정
+            //    = Mathf.Max(minSpawnInterval,
+            //baseSpawnInterval - GameManager.Instance.Day.SurvivedDays * intervalReductionPerDay);
 
             yield return new WaitForSeconds(adjustedInterval);
             TrySpawnMonster();
@@ -72,8 +74,7 @@ public class SpawnerZone : MonoBehaviour
             if (spawnPoint != Vector3.zero)
             {
                 int index = GetMonsterIndex();
-                Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0f);
-                Instantiate(monsterPrefabs[index], spawnPoint, randomRotation);
+                Instantiate(monsterPrefabs[index], spawnPoint, Quaternion.identity);
                 totalSpawnCount++;
             }
         }
