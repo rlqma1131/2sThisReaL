@@ -6811,7 +6811,6 @@ GameObject:
   - component: {fileID: 264868730}
   - component: {fileID: 264868729}
   - component: {fileID: 264868728}
-  - component: {fileID: 264868732}
   m_Layer: 5
   m_Name: Conditions
   m_TagString: Untagged
@@ -6902,37 +6901,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &264868732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264868727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa953ca64e7c2e4889d01c42644f8f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0
-  curHp: 0
-  maxHp: 0
-  deltaHp: 0
-  decreasingHP: 0
-  curStamina: 0
-  maxStamina: 0
-  decreasingStamina: 0
-  curHunger: 0
-  maxHunger: 0
-  decreasingHunger: 0
-  curThirsty: 0
-  maxThirsty: 0
-  decreasingThirsty: 0
-  curTemperature: 0
-  maxTemperature: 0
-  minTemperature: 0
-  decreasingTemperature: 0
-  limitTemperature: 0
 --- !u!1 &270009332
 GameObject:
   m_ObjectHideFlags: 0
@@ -22764,7 +22732,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700695047}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fa953ca64e7c2e4889d01c42644f8f3, type: 3}
   m_Name: 
