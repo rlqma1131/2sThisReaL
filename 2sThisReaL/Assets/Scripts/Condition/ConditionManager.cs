@@ -51,22 +51,51 @@ public class ConditionManager : MonoBehaviour
 
     void Start()
     {
-        SceneManager.sceneLoaded += OnEndingScene;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    private void OnEndingScene(Scene scene, LoadSceneMode mode)
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "EndingScene")
+        if (scene.name == "EndingScene")
         {
             GameObject conditionObj = GameObject.Find("Condition");
             if (conditionObj != null)
             {
                 conditionObj.SetActive(false);
-                Debug.Log("Condition 오브젝트를 비활성화했습니다.");
             }
-            else
+        }
+
+        if (scene.name == "MainScene")
+        {
+            GameObject conditionObj = GameObject.Find("Condition");
+            if (conditionObj != null)
             {
-                Debug.LogWarning("Condition 오브젝트를 찾을 수 없습니다.");
+                conditionObj.SetActive(true);
             }
+
+            // 초기화도 여기서 안전하게 가능
+            ResetCondition();
+        }
+    }
+    public void ResetCondition()
+    {
+        count = 0;
+
+        curHp = maxHp;
+        curStamina = maxStamina;
+        curHunger = maxHunger;
+        curThirsty = maxThirsty;
+        curTemperature = Mathf.Clamp((maxTemperature + minTemperature) / 2f, minTemperature, maxTemperature);
+
+        if (Condition != null)
+        {
+            Condition.gameObject.SetActive(true); // UI가 꺼져있다면 켬
+        }
+
+        GameObject conditionUI = GameObject.Find("Condition");
+        if (conditionUI != null)
+        {
+            conditionUI.SetActive(true); // UI 트리 복구
         }
     }
 }
