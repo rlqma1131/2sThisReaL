@@ -154,34 +154,33 @@ public class Enemy : MonoBehaviour
         if (playerDistance < attackDistance && IsPlayerInFieldOfView())
         {
             agent.isStopped = true;
+
+            Vector3 dir = GameManager.Instance.Player.transform.position - transform.position;
+            dir.y = 0f;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 5f);
+
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
+                
                 if (attackDistance <= 5f)
                     ConditionManager.Instance.Condition.HealHP(-damage);
             }
         }
+        else if (playerDistance < detectDistance)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(GameManager.Instance.Player.transform.position);
+        }
         else
         {
-            if (playerDistance < detectDistance)
-            {
-                agent.isStopped = false;
-                NavMeshPath path = new NavMeshPath();
-                if (agent.CalculatePath(GameManager.Instance.Player.transform.position, path))
-                {
-                    agent.SetDestination(GameManager.Instance.Player.transform.position);
-                }
-            }
-            else
-            {
-                agent.SetDestination(transform.position);
-                agent.isStopped = true;
-                SetState(AIState.Wandering);
-            }
+            agent.isStopped = true;
+            SetState(AIState.Wandering);
         }
     }
+
 
     bool IsPlayerInFieldOfView()
     {
