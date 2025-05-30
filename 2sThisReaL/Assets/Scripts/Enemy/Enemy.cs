@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
+    public SnowballProjectile snowballProjectilePrefab;
 
     private void Awake()
     {
@@ -249,6 +250,10 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OnAttack()
+    {
+        snowballProjectilePrefab.Shoot();
+    }
     void OnMouseEnter()
     {
         //FindObjectOfType<MouseCursor>().SetAttackCursor();

@@ -14,9 +14,12 @@ public class SnowballProjectile : MonoBehaviour
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 
-    public void OnShoot()
+    public void Shoot()
     {
-        Instantiate(SnowballPrefab, transform.position + new Vector3(0, 10, 52), transform.rotation);
+        Vector3 spawnOffset = transform.up * 5.2f + transform.forward * 1f; // 머리 위 + 살짝 앞
+        Vector3 spawnPos = transform.position + spawnOffset;
+
+        Instantiate(SnowballPrefab, spawnPos, Quaternion.LookRotation(transform.forward));
         Debug.Log("Snowball shot!");
     }
 
