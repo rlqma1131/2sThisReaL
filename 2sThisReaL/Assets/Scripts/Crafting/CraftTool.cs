@@ -1,18 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftTool : MonoBehaviour
+public class CraftTool : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    //제작대에 다가가서 상호작용을 하면 
+    public string GetInteractPrompt()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnInteract()
     {
-        
+        //제작대 상호작용> 제작 UI 띄우기
+
     }
 }
