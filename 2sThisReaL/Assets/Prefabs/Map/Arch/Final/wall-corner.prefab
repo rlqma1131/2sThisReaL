@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5572690127807051875}
   m_Layer: 10
   m_Name: wall-corner
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
