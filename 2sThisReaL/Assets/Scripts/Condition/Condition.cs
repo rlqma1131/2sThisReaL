@@ -189,6 +189,10 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Temperature
+    public void AddTemperature(float delta)
+    {
+        gm.curTemperature += delta * Time.deltaTime;
+    }
     private void DepletionTemperature(float delta) // 플레이어의 온도
     {
         if (gameManager == null || gameManager.Player == null)

@@ -6933,6 +6933,7 @@ MonoBehaviour:
   minTemperature: 0
   decreasingTemperature: 0.5
   limitTemperature: 0.2
+  deltaTemperature: -2
 --- !u!1 &270009332
 GameObject:
   m_ObjectHideFlags: 0

@@ -306,22 +306,61 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
-{
-    if (context.phase == InputActionPhase.Started)
     {
-        isCrouching = true;
-        capsuleCollider.height = crouchHeight;
-        capsuleCollider.center = crouchCenter;
-        moveSpeed *= 0.5f; // 속도 느려짐
-        animator.SetBool("IsCrouch", true);
+        if (context.phase == InputActionPhase.Started)
+        {
+            isCrouching = true;
+            capsuleCollider.height = crouchHeight;
+            capsuleCollider.center = crouchCenter;
+            moveSpeed *= 0.5f; // 속도 느려짐
+            animator.SetBool("IsCrouch", true);
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isCrouching = false;
+            capsuleCollider.height = originalHeight;
+            capsuleCollider.center = originalCenter;
+            moveSpeed = originalMoveSpeed;
+            animator.SetBool("IsCrouch", false);
+        }
     }
-    else if (context.phase == InputActionPhase.Canceled)
+    private void OnTriggerEnter(Collider other)
     {
-        isCrouching = false;
-        capsuleCollider.height = originalHeight;
-        capsuleCollider.center = originalCenter;
-        moveSpeed = originalMoveSpeed;
-        animator.SetBool("IsCrouch", false);
+        //// Distance거리 계산 :transform.position플레이어 위치랑 other.transform.position CampFire위치사이의 거릭계산
+        //float distance = Vector3.Distance(transform.position, other.transform.position);
+        //float range = 5f;
+
+        //if (distance <= range)
+        //{
+        //    float intensity = 1f - (distance / range); // 가까울수록 1, 멀수록 0
+        //    float heatGain = intensity * ConditionManager.Instance.maxTemperature;
+
+        //    ConditionManager.Instance.curTemperature = heatGain;
+
+        //    ConditionManager.Instance.Condition.DeltaTemperature(ConditionManager.Instance.curTemperature * Time.deltaTime);
+        //}
+
+        if (other.CompareTag("CampFire"))
+        {
+            // Distance거리 계산 :transform.position플레이어 위치랑 other.transform.position CampFire위치사이의 거릭계산
+            float distance = Vector3.Distance(transform.position, other.transform.position);
+            
+            // 열이 퍼지는 최대 거리 ex : 거리가 5면 온도가1 상승 거리가1이면 온도가10상승
+            float range = 5f;
+            float max = 10f;
+
+            if (distance <= range)
+            {
+                // Clamp01: 0.0f ~ 1.0f 범위만 유효할 때, 가까울수록 1, 멀수록 0
+                float intensity = Mathf.Clamp01(1f - (distance / range));
+
+                float heatGain = intensity * max;
+
+                ConditionManager.Instance.Condition.AddTemperature(heatGain * Time.deltaTime);
+            }
+            // 불에 타면 현재 체온이 최고 최온으로 바뀌며 deltaHp(데미지 10?)
+            ConditionManager.Instance.curTemperature = ConditionManager.Instance.maxTemperature;
+            ConditionManager.Instance.Condition.HealHP(ConditionManager.Instance.deltaHp);
+        }
     }
-}
 }

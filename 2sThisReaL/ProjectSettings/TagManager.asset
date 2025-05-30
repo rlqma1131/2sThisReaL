@@ -8,6 +8,8 @@ TagManager:
   - Projectile
   - Obstacle
   - Buildable
+  - Collider
+  - CompFire
   layers:
   - Default
   - TransparentFX
