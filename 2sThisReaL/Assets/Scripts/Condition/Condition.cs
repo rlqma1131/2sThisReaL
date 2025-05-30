@@ -25,13 +25,8 @@ public class Condition : MonoBehaviour
     [SerializeField] private Image fadePanel;
     [SerializeField] private float fadeDuration = 2f;
 
-    private float time = 0;
     private bool isDead = false;
-    void Awake()
-    {
-        gm = ConditionManager.Instance;
-        gameManager = GameManager.Instance;
-    }
+    
 
     void Start()
     {
@@ -56,7 +51,7 @@ public class Condition : MonoBehaviour
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
-        DepletionTemperature();
+        DepletionTemperature(3, 0);
         UpdateHP();
         UpdateStamina();
     }
@@ -190,61 +185,30 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Temperature
-    public void AddTemperature(float delta)
+    private IEnumerator DepletionTemperature(float Delay, float delta) // 플레이어의 온도
     {
-        gm.curTemperature += delta;
-        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
-        Debug.Log($"온도상승 : {gm.curTemperature}");
-        DepletionTemperature();
-        UpdateTemperature();
-    }
-    private void DepletionTemperature() // 플레이어의 온도
-    {
-        if (gameManager == null || gameManager.Player == null)
-        {
-            Debug.LogWarning("GameManager 또는 Player가 null입니다.");
-            return;
-        }
+        yield return new WaitForSeconds(Delay);
         Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
-        if (rb.velocity.magnitude < 0.5f)
+        if (rb.velocity.magnitude < 0.1f)
         {
             gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
-            Debug.Log($"온도가 내려감 : {gm.curTemperature}");
-            if (gm.curTemperature <= 0f)
-            {
-                IsDie();
-            }
-            gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
-
-            UpdateTemperature();
         }
         else
         {
-            
-            gm.curTemperature += (gm.decreasingTemperature - gm.limitTemperature) * Time.deltaTime;
-            // 움직일 때 상승하는 온도를 너무 빨리 상승하지 않게 limitTemperature변수로 제한
-            Debug.Log($"온도가 내려감 : {gm.curTemperature}");
-
-            if (gm.curTemperature == gm.maxTemperature)
-            {
-                gm.curHp -= gm.deltaHp * Time.deltaTime;
-
-                
-                time += Time.deltaTime;
-                Debug.Log($"시간체크 : {time}");
-                if (time >= 6)
-                {
-                    IsDie();
-                }
-            }
-            else
-            {
-                time = 0;
-            }
-            gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
-
-            UpdateTemperature();
+            gm.curTemperature += (gm.decreasingTemperature - gm.limitTemperature + delta) * Time.deltaTime;
+            // 움직일 때 상승하는 온도를 너무 빨리 상승하지 않게 limitTemperature변수로 제한을 해주고 불에 너무 가까이가거나 뜨거울 때 delta로 추가 상승
         }
+        if (gm.curTemperature == 0)
+        {
+            //IsDie();
+        }
+        if (gm.curTemperature == gm.maxTemperature)
+        {
+            //IsDie();
+        }
+        gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
+
+        UpdateTemperature();
     }
     private void UpdateTemperature()
     {
