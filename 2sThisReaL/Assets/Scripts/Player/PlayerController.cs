@@ -347,6 +347,8 @@ public class PlayerController : MonoBehaviour
             
             // 열이 퍼지는 최대 거리 ex : 거리가 5면 온도가1 상승 거리가1이면 온도가10상승
             float range = 5f;
+
+            // 가장 많이 오르는 체온이 10
             float max = 10f;
 
             if (distance <= range)
