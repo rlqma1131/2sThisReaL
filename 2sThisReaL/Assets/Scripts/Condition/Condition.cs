@@ -26,11 +26,7 @@ public class Condition : MonoBehaviour
     [SerializeField] private float fadeDuration = 2f;
 
     private bool isDead = false;
-    void Awake()
-    {
-        //gm = ConditionManager.Instance;
-        //gameManager = GameManager.Instance;
-    }
+    
 
     void Start()
     {
@@ -55,7 +51,7 @@ public class Condition : MonoBehaviour
         if (gm == null) return;
         DepletionHunger();
         DepletionThirsty();
-        DepletionTemperature(0);
+        DepletionTemperature(3, 0);
         UpdateHP();
         UpdateStamina();
     }
@@ -189,8 +185,9 @@ public class Condition : MonoBehaviour
     #endregion
 
     #region Temperature
-    private void DepletionTemperature(float delta) // 플레이어의 온도
+    private IEnumerator DepletionTemperature(float Delay, float delta) // 플레이어의 온도
     {
+        yield return new WaitForSeconds(Delay);
         Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
         if (rb.velocity.magnitude < 0.1f)
         {
