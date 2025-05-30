@@ -4,19 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static UnityEditor.PlayerSettings;
+using UnityEngine.Serialization;
 
 public interface idamagable
 {
-  void takephygicaldamage(int damage);
+    void takephygicaldamage(int damage);
 }
 public class Condition : MonoBehaviour
 {
-    [SerializeField] private Image _hpTop;
-    [SerializeField] private Image _hpMiddle;
-    [SerializeField] private Image _hpBottom;
-    [SerializeField] private Image _staminaTop;
-    [SerializeField] private Image _staminaMiddle;
-    [SerializeField] private Image _staminaBottom;
+    [SerializeField] private Image _imageHp;
+    [SerializeField] private Image _imageStamina;
     [SerializeField] private Image _imageHunger;
     [SerializeField] private Image _imageThirsty;
     [SerializeField] private Image _imageTemperature;
@@ -37,6 +34,9 @@ public class Condition : MonoBehaviour
 
     void Start()
     {
+        gm = ConditionManager.Instance;
+        gameManager = GameManager.Instance;
+
         if (gm == null)
         {
             enabled = false;
@@ -56,6 +56,8 @@ public class Condition : MonoBehaviour
         DepletionHunger();
         DepletionThirsty();
         DepletionTemperature(0);
+        UpdateHP();
+        UpdateStamina();
     }
     #region HP
     public void HealHP(float value) // 데미지나 아이템 상호작용으로 인한 hp변화
@@ -104,33 +106,12 @@ public class Condition : MonoBehaviour
     }
     private void UpdateHP()
     {
-        float hpPerBar = gm.maxHp / 3f;
-        float curHp = gm.curHp;
+        float remainHp = gm.curHp;
+        float maxHp = gm.maxHp;
 
-        // 3분할 HP바
-        if (_hpBottom != null)
-        {
-            float bottomFill = Mathf.Clamp01(curHp / hpPerBar);
-            _hpBottom.fillAmount = bottomFill;
-        }
-        if (_hpMiddle != null)
-        {
-            float middleFill = Mathf.Clamp01(curHp / hpPerBar);
-            _hpMiddle.fillAmount = middleFill;
-            curHp -= hpPerBar;
-        }
-        if (_hpTop != null)
-        {
-            float topFill = Mathf.Clamp01(curHp / hpPerBar);
-            _hpTop.fillAmount = topFill;
-            curHp -= hpPerBar;
-        }
+        _imageHp.fillAmount = remainHp / maxHp;
 
-
-
-
-
-        if(gm.curHp <= 0)
+        if (gm.curHp <= 0)
         {
             IsDie();
         }
@@ -150,29 +131,10 @@ public class Condition : MonoBehaviour
     }
     private void UpdateStamina()
     {
-        float staminaPerBar = gm.maxStamina / 3f;
-        float curStamina = gm.curStamina;
+        float remainStamina = gm.curStamina;
+        float maxStamina = gm.maxStamina;
 
-        // 3분할 Stamina 바
-        if (_staminaTop != null)
-        {
-            float topFill = Mathf.Clamp01(curStamina / staminaPerBar);
-            _staminaTop.fillAmount = topFill;
-            curStamina -= staminaPerBar;
-        }
-
-        if (_staminaMiddle != null)
-        {
-            float middleFill = Mathf.Clamp01(curStamina / staminaPerBar);
-            _staminaMiddle.fillAmount = middleFill;
-            curStamina -= staminaPerBar;
-        }
-
-        if (_staminaBottom != null)
-        {
-            float bottomFill = Mathf.Clamp01(curStamina / staminaPerBar);
-            _staminaBottom.fillAmount = bottomFill;
-        }
+        _imageStamina.fillAmount = remainStamina / maxStamina;
     }
     #endregion
 
