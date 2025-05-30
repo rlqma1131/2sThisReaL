@@ -7703,9 +7703,7 @@ MonoBehaviour:
   maxTemperature: 100
   minTemperature: 0
   decreasingTemperature: 3
-  curThermometer: 6
-  maxThermometer: 12
-  minThermometer: -12
+  limitTemperature: 0
 --- !u!1 &1307489531
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3528406884813988251}
   - component: {fileID: 8245772744772106637}
   - component: {fileID: -8638040259688690725}
-  - component: {fileID: -9080443781993396727}
   m_Layer: 0
   m_Name: cliff_blockHalf_stone
   m_TagString: Untagged
@@ -108,19 +107,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8493314787843356468, guid: e756388e0d560964d8f6556ce70fe906, type: 3}
---- !u!208 &-9080443781993396727
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187789186056692465}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.25, z: 0}
-  m_TimeToStationary: 0.5

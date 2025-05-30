@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4397200862133697804}
   - component: {fileID: 3395999023386047718}
   - component: {fileID: -2037697220423566122}
-  - component: {fileID: 6551251206171049918}
   m_Layer: 0
   m_Name: cliff_blockSlope_stone
   m_TagString: Untagged
@@ -108,19 +107,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1587000209464358305, guid: 5e7a4c64f84559749849f44dd070ebf4, type: 3}
---- !u!208 &6551251206171049918
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660401936180039847}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.6, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
-  m_TimeToStationary: 0.5

@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 235472077989102521}
   - component: {fileID: 5166444056373199420}
   - component: {fileID: 4052581540017737224}
-  - component: {fileID: 2507050108967889099}
   m_Layer: 8
   m_Name: snowTree
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,26 +122,5 @@ MonoBehaviour:
   itemsToGive:
   - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
   - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
-  itemsToGatherType: []
-  baseItemsToGive: []
   quantityPerHit: 1
   capacity: 10
-  respawnTime: 30
-  decayStamina: 0
-  gatherType: 0
---- !u!208 &2507050108967889099
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4025406811860243202}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.47400004, y: 0.998, z: 0.47400004}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.998, z: 0}
-  m_TimeToStationary: 0.5

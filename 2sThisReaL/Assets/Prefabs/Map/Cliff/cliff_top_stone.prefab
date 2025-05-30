@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5503135318776868044}
   - component: {fileID: 398291981867523385}
   - component: {fileID: -6381329667788284766}
-  - component: {fileID: 5232575058473685316}
   m_Layer: 0
   m_Name: cliff_top_stone
   m_TagString: Untagged
@@ -108,19 +107,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8811086433849598861, guid: d794e51a3f5df2a4183fe7291b5e6dc1, type: 3}
---- !u!208 &5232575058473685316
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4677408933022109088}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.134}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: -0.36600003}
-  m_TimeToStationary: 0.5
