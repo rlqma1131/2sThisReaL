@@ -30,7 +30,6 @@ public class SpawnerZone : MonoBehaviour
             yield return null;
         }
         player = GameManager.Instance.Player.transform;
-        Debug.Log("플레이어 할당됨");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,7 +73,8 @@ public class SpawnerZone : MonoBehaviour
             if (spawnPoint != Vector3.zero)
             {
                 int index = GetMonsterIndex();
-                Instantiate(monsterPrefabs[index], spawnPoint, Quaternion.identity);
+                Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0f);
+                Instantiate(monsterPrefabs[index], spawnPoint, randomRotation);
                 totalSpawnCount++;
             }
         }
