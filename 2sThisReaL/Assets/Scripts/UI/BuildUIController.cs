@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BuildUIController : MonoBehaviour
 {
+    [Header("모드 안내")]
+    [SerializeField] private GameObject buildControlsGroup; // N, V
+    [SerializeField] private TextMeshProUGUI modeText;
+
     [Header("UI 버튼")]
     [SerializeField] private Button gameModeButton; // 게임 중일 때 건축 전환
     [SerializeField] private Button buildModeButton; // 건축 중일 때 게임 전환
@@ -29,19 +34,23 @@ public class BuildUIController : MonoBehaviour
             buildingSystem.ExitBuildMode();
         });
 
-        ShowBuildModeUI();
+        ShowGameModeUI();
     }
 
     public void ShowBuildModeUI()
     {
         gameModeButton.gameObject.SetActive(false);
         buildModeButton.gameObject.SetActive(true);
+        buildControlsGroup.SetActive(true);
+        modeText.text = "게임";
     }
 
     public void ShowGameModeUI()
     {
         buildModeButton.gameObject.SetActive(false);
         gameModeButton.gameObject.SetActive(true);
+        buildControlsGroup.SetActive(false);
+        modeText.text = "건축";
     }
 
     public void SetDestroyCursor()
