@@ -51,7 +51,7 @@ public class SpawnerZone : MonoBehaviour
     {
         while (true)
         {
-            float adjustedInterval = 5f;
+            float adjustedInterval = 2f;
             // 생존날짜 구현되면 수정
             //    = Mathf.Max(minSpawnInterval,
             //baseSpawnInterval - GameManager.Instance.Day.SurvivedDays * intervalReductionPerDay);
