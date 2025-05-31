@@ -208,7 +208,7 @@ public class Condition : MonoBehaviour
         if (rb.velocity.magnitude < 0.5f)
         {
             gm.curTemperature -= gm.decreasingTemperature * Time.deltaTime;
-            Debug.Log($"온도가 내려감 : {gm.curTemperature}");
+            //Debug.Log($"온도가 내려감 : {gm.curTemperature}");
             if (gm.curTemperature <= 0f)
             {
                 IsDie();
@@ -222,7 +222,7 @@ public class Condition : MonoBehaviour
             
             gm.curTemperature += (gm.decreasingTemperature - gm.limitTemperature) * Time.deltaTime;
             // 움직일 때 상승하는 온도를 너무 빨리 상승하지 않게 limitTemperature변수로 제한
-            Debug.Log($"온도가 내려감 : {gm.curTemperature}");
+            //Debug.Log($"온도가 내려감 : {gm.curTemperature}");
 
             if (gm.curTemperature == gm.maxTemperature)
             {

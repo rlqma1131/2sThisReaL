@@ -74,6 +74,7 @@ public class SpawnerZone : MonoBehaviour
                 int index = GetMonsterIndex();
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0f);
                 Instantiate(monsterPrefabs[index], spawnPoint, randomRotation);
+                Debug.Log($"Spawned {monsterPrefabs[index].name} at {spawnPoint}");
                 totalSpawnCount++;
             }
         }
