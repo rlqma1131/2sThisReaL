@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour, idamagable
 
     private float playerDistance;
     private float fieldOfView = 120f; // 시야각
+    private bool isDead = false;
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
@@ -67,6 +68,11 @@ public class Enemy : MonoBehaviour, idamagable
         if (GameManager.Instance.Player == null) return;
         playerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
 
+        if(playerDistance > 500f)
+        {
+            Destroy(gameObject);
+        }
+
         animator.SetBool("Moving", aiState != AIState.Idle && playerDistance > attackDistance);
 
         switch (aiState)
@@ -85,8 +91,6 @@ public class Enemy : MonoBehaviour, idamagable
                 Dead();
                 break;
         }
-
-        TooFarfromPlayer();
     }
 
     public void SetState(AIState state)
@@ -240,6 +244,18 @@ public class Enemy : MonoBehaviour, idamagable
     }
     void Dead()
     {
+        if (isDead) return;
+        isDead = true;
+
+        for (int i = 0; i < dropOnDeath.Length; i++)
+        {
+            ItemData item = dropOnDeath[i];
+            if (dropOnDeath[i] != null)
+            {
+                Instantiate(item.dropPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                Debug.Log($"아이템 {item.itemName} 드랍됨");
+            }
+        }
         agent.isStopped = true;
         animator.SetTrigger("Dead");
         StartCoroutine(SinkIntoGround());   // 스르륵 땅 속으로 가라앉기
@@ -270,13 +286,6 @@ public class Enemy : MonoBehaviour, idamagable
     {
         if (snowballProjectile != null)
             snowballProjectile.Shoot(transform);
-    }
-
-    void TooFarfromPlayer()
-    {
-        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 500f)
-            Destroy(gameObject);
-        Debug.Log($"너무 멀어서 사라지겠습니다 슝");
     }
 
     public void OnSpawn()
