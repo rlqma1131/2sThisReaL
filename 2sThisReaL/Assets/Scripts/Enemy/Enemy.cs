@@ -13,7 +13,7 @@ public enum AIState
     Dead
 }
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, idamagable
 {
 
     [Header("Stats")]
@@ -201,6 +201,16 @@ public class Enemy : MonoBehaviour
         health -= damage;
         StartCoroutine(DamageFlash());
 
+        if (health <= 0 && aiState != AIState.Dead)
+        {
+            SetState(AIState.Dead);
+        }
+    }
+    public void takephygicaldamage(int damage)
+    {
+        Debug.Log($"피해 {damage} 입음");
+        health -= damage;
+        StartCoroutine(DamageFlash());
         if (health <= 0 && aiState != AIState.Dead)
         {
             SetState(AIState.Dead);

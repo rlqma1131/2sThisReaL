@@ -421,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 1563151245501508910}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5190215, y: 7.4503927, z: 5.091962}
+  m_LocalPosition: {x: 7.519022, y: 7.4503927, z: 5.091962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -560,7 +560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675709197670262024}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09753459, y: 0.86404, z: -0.18384703, w: -0.4583908}
+  m_LocalRotation: {x: -0.09753458, y: 0.86404, z: -0.18384701, w: -0.45839083}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1838,8 +1838,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5214348875965561635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0008175903, y: 0.6446163, z: 0.00068937795, w: 0.7645055}
-  m_LocalPosition: {x: 96.15263, y: 2.4491377, z: -9.282368}
+  m_LocalRotation: {x: -0.10466986, y: 0.8610685, z: -0.19729659, w: -0.45681438}
+  m_LocalPosition: {x: 7.519022, y: 7.4503927, z: 5.091962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2250,7 +2250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6051756537759194680}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.105856344, y: 0.86055297, z: -0.19953303, w: -0.4565409}
+  m_LocalRotation: {x: -0.105856344, y: 0.86055297, z: -0.19953303, w: -0.45654094}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2696,13 +2696,13 @@ MonoBehaviour:
     m_ActionName: Player/Flash[/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 8969179526132694136}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2757,7 +2757,7 @@ MonoBehaviour:
   dashCooldown: 3
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   audioSource: {fileID: -3255036404317050594}
   fireballClip: {fileID: 8300000, guid: 56b6d8d44f19d0e4a87839724c1c70e1, type: 3}
   dashClip: {fileID: 8300000, guid: ff382ab75326cb341ac9d5c53d3da2ca, type: 3}
@@ -3548,8 +3548,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049824968909877541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08920265, y: 0.867233, z: -0.16814175, w: -0.4600849}
-  m_LocalPosition: {x: 0.00000047683716, y: 0, z: 0}
+  m_LocalRotation: {x: -0.08920266, y: 0.8672331, z: -0.1681418, w: -0.4600849}
+  m_LocalPosition: {x: -0.00000047683716, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
