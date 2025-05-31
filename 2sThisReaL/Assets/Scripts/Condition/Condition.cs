@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static UnityEditor.PlayerSettings;
 using UnityEngine.Serialization;
 
 public interface idamagable

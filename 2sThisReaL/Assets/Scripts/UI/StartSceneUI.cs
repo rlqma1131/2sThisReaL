@@ -13,4 +13,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("GenderSelect");
     }
+    public void LoadSettingScene()
+    {
+        SceneManager.LoadScene("SettingScene");
+    }
 }
