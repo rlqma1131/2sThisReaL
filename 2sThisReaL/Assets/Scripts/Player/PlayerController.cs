@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     public Action inventory;
+    public Action setting;
     private Rigidbody _rigidbody;
 
     private float originalMoveSpeed;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float crouchHeight = 1.5f;
     [SerializeField] private Vector3 crouchCenter = new Vector3(0f, 1f, 0f);
+
 
     private void Awake()
     {
@@ -207,7 +209,15 @@ public class PlayerController : MonoBehaviour
             ToggleCousor();
         }
     }
-
+    public void OnSetting(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            setting?.Invoke();
+           
+            ToggleCousor();
+        }
+    }
     void ToggleCousor()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;

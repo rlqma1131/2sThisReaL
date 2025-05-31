@@ -10,6 +10,7 @@ public class SettingSceneUI : MonoBehaviour
     public Slider volumeSlider;
     public TMP_InputField volumeInputField;
     public GameObject SettingPanel;
+    public GameObject StartPanel;
 
     private bool isUpdating = false;
 
@@ -53,5 +54,9 @@ public class SettingSceneUI : MonoBehaviour
     public void BacktoNormalState()
     {
         SettingPanel.SetActive(false);
+        if(StartPanel != null)
+        {
+            StartPanel.SetActive(true);
+        }
     }
 }

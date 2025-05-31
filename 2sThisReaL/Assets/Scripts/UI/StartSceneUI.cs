@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject startPanel;
+    public GameObject settingPanel;
     // 전환할 씬 이름 (인스펙터에서 설정)
     public string GenderSelect;
 
@@ -15,6 +17,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadSettingScene()
     {
-        SceneManager.LoadScene("SettingScene");
+        settingPanel.SetActive(true);
+        startPanel.SetActive(false);
     }
 }
