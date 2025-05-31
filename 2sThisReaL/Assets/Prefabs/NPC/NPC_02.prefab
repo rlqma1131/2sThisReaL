@@ -908,6 +908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7647802275229486842}
+  - component: {fileID: 7515785088134315402}
   - component: {fileID: 2929960491866973852}
   - component: {fileID: 5802440629525550347}
   - component: {fileID: 4182746453035344834}
@@ -935,6 +936,27 @@ Transform:
   - {fileID: 3948174867426961296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -92.38, y: 0, z: 0}
+--- !u!114 &7515785088134315402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671900959078553268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99ff93e320ad844493d5f49f36cd780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+  - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
+  - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
 --- !u!208 &2929960491866973852
 NavMeshObstacle:
   m_ObjectHideFlags: 0
