@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Buildable
   - Ground
+  - CampFire
+  - Collider
   layers:
   - Default
   - TransparentFX

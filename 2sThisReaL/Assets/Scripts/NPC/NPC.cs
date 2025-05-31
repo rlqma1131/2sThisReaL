@@ -2,39 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractable
 {
     [Header("NPC Item")]
     [SerializeField] private ItemData[] itemData;
 
     private Animator anim;
     private Collider npcCollider;
+    private bool hasTalked = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         npcCollider = GetComponent<Collider>();
     }
-    public void OnRobbery() // 강탈했을 때 호출해주세용
+
+    public string GetInteractPrompt()
     {
-        for(int i = 0; i < 3; i++)
+        return "[E] 확인하기";
+    }
+
+    public void OnInteract()
+    {
+        if (!hasTalked)
+        {
+            TalkUI.Instance?.OpenDialogue(this);
+        }
+        else
+        {
+            TalkUI.Instance?.ShowDeadDialogue();
+        }
+    }
+    public void MarkAsTalked()
+    {
+        hasTalked = true;
+    }
+
+    public void OnRobbery() // 주머니 뒤져서 강탈했을 때 호출
+    {
+        for (int i = 0; i < 3 && i < itemData.Length; i++)
         {
             if (itemData[i] != null)
             {
-                ItemData data = itemData[i];
-                GameManager.Instance.Player.itemQueue.Add(data);
+                GameManager.Instance.Player.itemQueue.Add(itemData[i]);
                 GameManager.Instance.Player.additem?.Invoke();
             }
         }
     }
 
-    public void OnTalk() // 대화했을 때 호출해주세용
+    public void OnTalk() // 대화했을 때 호출
     {
-        for(int i = 0; i < itemData.Length; i++)
+        foreach (ItemData data in itemData)
         {
-            if (itemData[i] != null)
+            if (data != null)
             {
-                ItemData data = itemData[i];
                 GameManager.Instance.Player.itemQueue.Add(data);
                 GameManager.Instance.Player.additem?.Invoke();
             }

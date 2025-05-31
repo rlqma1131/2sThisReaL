@@ -4,61 +4,252 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class TalkUI : MonoBehaviour
 {
-    [SerializeField] private RectTransform dialoguePanel; // 대화 판넬
-    [SerializeField] private float slideDuration = 0.5f;   // 지속 시간
-    [SerializeField] private RectTransform playerImage;
-    [SerializeField] private RectTransform npcImage;
-    [SerializeField] private float characterEnterDuration = 0.5f;
-    [SerializeField] private TextMeshProUGUI dialogueText; // 텍스트 효과
-    [SerializeField] private float typingDuration = 1.5f; // 길이 조절
+    public static TalkUI Instance; // 싱글톤
 
-    private Vector2 hiddenPosition = new Vector2(0, -900); // 화면 밖
-    private Vector2 visiblePosition = new Vector2(0, -500); // 기존 위치
+    [Header("UI 구성 요소")]
+    [SerializeField] private CanvasGroup dialoguePanel;
+    [SerializeField] private Button[] choiceButtons;
+    [SerializeField] private RectTransform cursor;
+    [SerializeField] private DialogueText dialogueText;
 
-    private Vector2 playerHiddenPos = new Vector2(-1000, 0);
-    private Vector2 npcHiddenPos = new Vector2(1000, 0);
-    private Vector2 visiblePos = Vector2.zero;
-    private Vector2 targetScale = Vector2.zero;
-    Vector2 offScreenLeft = new Vector2(-Screen.width, 0);
+    [Header("캐릭터 네임텍")]
+    [SerializeField] private GameObject playerNameTag;
+    [SerializeField] private GameObject npcNameTag;
 
+    [Header("캐릭터 애니메이션")]
+    [SerializeField] private Transform playerModel;
+    [SerializeField] private Image playerSpriteImage;
+    [SerializeField] private Transform npcCharacterModel;
+    [SerializeField] private Image npcSpriteImage;
 
-    private void Start()
+    private NPC currentTarget;
+    private bool isNpcTalking = false;
+
+    private void Awake()
     {
-        playerImage.anchoredPosition = offScreenLeft;
-        dialoguePanel.DOAnchorPos(Vector2.zero, 0.5f)
-    .SetEase(Ease.OutBack)
-    .SetUpdate(true); // 시간 정지 상태에서도 작동
-        npcImage.anchoredPosition = npcHiddenPos;
-        dialoguePanel.anchoredPosition = hiddenPosition;
+        Instance = this;
+
+        dialoguePanel.alpha = 0;
+        dialoguePanel.gameObject.SetActive(false);
+
+        // 초기에 선택지off
+        foreach (var btn in choiceButtons)
+            btn.gameObject.SetActive(false);
+        cursor.gameObject.SetActive(false);
     }
 
-    public void PlayDialogue(string dialogue)
+    public void OpenDialogue(NPC npc)
     {
-        ShowCharacters();         // 캐릭터 양쪽 등장
+        currentTarget = npc;
+
+        dialoguePanel.gameObject.SetActive(true);
+        dialoguePanel.alpha = 0;
+
+        SetIdleVisual();
+        UpdateNameTagVisibility(true); // 나레이션 시작
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        dialoguePanel.DOFade(1f, 0.4f).SetEase(Ease.OutQuad).OnComplete(() =>
+        {
+            dialogueText.StartDialogue(new string[]
+            {
+                "[안색이 창백한 사람이다. 어떻게 할까?]"
+            });
+            StartCoroutine(WaitThenShowChoices());
+        });
     }
 
-    public void ShowCharacters()
+    private IEnumerator WaitThenShowChoices()
     {
-        playerImage.DOAnchorPos(visiblePos, characterEnterDuration).SetEase(Ease.OutBack);
-        playerImage.transform.DOScale(targetScale, 3).SetEase(Ease.InOutBack);
-        npcImage.DOAnchorPos(visiblePos, characterEnterDuration).SetEase(Ease.OutBack);
+        yield return new WaitUntil(() => dialogueText.IsFinished);
+        yield return new WaitForSeconds(0.2f);
+        ShowChoices();
     }
 
-    public void ShowDialogue()
+    public void ShowChoices()
     {
-        dialoguePanel.DOAnchorPos(visiblePosition, slideDuration).SetEase(Ease.OutCubic);
+        for (int i = 0; i < choiceButtons.Length; i++)
+        {
+            var btn = choiceButtons[i];
+            btn.gameObject.SetActive(true);
+            btn.transform.localScale = Vector3.zero;
+            btn.transform.DOScale(1f, 0.3f).SetDelay(i * 0.1f);
+
+            EventTrigger trigger = btn.GetComponent<EventTrigger>() ?? btn.gameObject.AddComponent<EventTrigger>();
+            trigger.triggers.Clear();
+            AddPointerEnter(trigger, btn.transform as RectTransform);
+
+            int index = i;
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(() => OnChoiceSelected(index));
+        }
     }
 
-    public void HideDialogue()
+    private void AddPointerEnter(EventTrigger trigger, RectTransform target)
     {
-        dialoguePanel.DOAnchorPos(hiddenPosition, slideDuration).SetEase(Ease.InCubic);
+        var entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
+        entry.callback.AddListener((_) =>
+        {
+            cursor.gameObject.SetActive(true);
+            cursor.DOMoveY(target.position.y, 0.2f);
+        });
+        trigger.triggers.Add(entry);
     }
 
-    void Update()
+    private void OnChoiceSelected(int index)
     {
-        
+        HideChoices();
+        SetTalkingState(true);
+
+        string[] dialogueLines;
+
+        if (index == 0) // 대화
+        {
+            dialogueLines = new string[]
+            {
+                "[다가가자 남자가 겨우 고개를 든다]",
+                "... 거기.. 사람인가?",
+                "하... 다행이다...",
+                "제발... 이걸... 받아줘...",
+                "난... 더는 못 가...",
+                "[남자가 힘겹게 소지품이 든 가방을 건낸다.]",
+                "..저 성 뒤편... 거긴 아무도 가지 않았지...",
+                "너무 좁고... 괜히 돌아가면 시간 낭비 같았거든...",
+                "하지만.. 난 봤어...",
+                "누군가 그 구석에... 뭔가를 숨기는 걸...",
+                "뭐냐고 물었더니 '세상의 끝'이라고 하더군...",
+                "자네는 꼭..'세상의 끝'에 다다르기를...",
+                "[남자는 말을 마치고 조용히 눈을 감는다]",
+                "...평안하기를"
+            };
+
+            currentTarget.OnTalk();
+        }
+        else // 강탈
+        {
+            dialogueLines = new string[]
+            {
+                "[그의 소지품을 몰래 가져왔다.]"
+            };
+
+            currentTarget.OnRobbery();
+        }
+
+        dialogueText.StartDialogue(dialogueLines);
+
+        StartCoroutine(CloseAfterDialogue());
+    }
+
+    private IEnumerator CloseAfterDialogue()
+    {
+        yield return new WaitUntil(() => dialogueText.IsFinished);
+        yield return new WaitForSeconds(0.3f);
+
+        currentTarget?.MarkAsTalked();
+        CloseDialogue();
+    }
+
+    private void HideChoices()
+    {
+        foreach (var btn in choiceButtons)
+        {
+            btn.gameObject.SetActive(false);
+            btn.onClick.RemoveAllListeners();
+        }
+
+        cursor.gameObject.SetActive(false);
+    }
+
+    public void CloseDialogue()
+    {
+        SetTalkingState(false);
+        SetIdleVisual();
+
+        dialoguePanel.DOFade(0f, 0.3f).OnComplete(() =>
+        {
+            dialoguePanel.gameObject.SetActive(false);
+        });
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void SetTalkingState(bool isTalking)
+    {
+        isNpcTalking = isTalking;
+    }
+
+    private void PlayPlayerTalkingVisual()
+    {
+        playerModel?.DOScale(1.2f, 0.2f);
+        playerSpriteImage?.DOColor(Color.white, 0.2f);
+
+        npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+    }
+
+    private void PlayNpcTalkingVisual()
+    {
+        npcCharacterModel?.DOScale(1.2f, 0.2f);
+        npcSpriteImage?.DOColor(Color.white, 0.2f);
+
+        playerSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+    }
+
+    private void SetIdleVisual()
+    {
+        npcCharacterModel?.DOScale(1f, 0.2f);
+        npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+
+        playerModel?.DOScale(1f, 0.2f);
+        playerSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+    }
+    public void ShowDeadDialogue()
+    {
+        dialoguePanel.gameObject.SetActive(true);
+        dialoguePanel.alpha = 0;
+
+        SetIdleVisual();
+        UpdateNameTagVisibility(true);
+
+        npcCharacterModel?.gameObject.SetActive(false);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        dialoguePanel.DOFade(1f, 0.4f).OnComplete(() =>
+        {
+            dialogueText.StartDialogue(new string[]
+            {
+            "[싸늘하다. 이미 늦었다. 숨소리가 멎어있다.]"
+            });
+
+            StartCoroutine(CloseAfterDialogue());
+        });
+    }
+
+    public void UpdateNameTagVisibility(bool isNarration, bool isPlayerSpeaking = false)
+    {
+        if (isNarration)
+        {
+            playerNameTag.SetActive(false);
+            npcNameTag.SetActive(false);
+            SetIdleVisual();
+        }
+        else
+        {
+            playerNameTag.SetActive(isPlayerSpeaking);
+            npcNameTag.SetActive(!isPlayerSpeaking);
+
+            if (isPlayerSpeaking)
+                PlayPlayerTalkingVisual();
+            else
+                PlayNpcTalkingVisual();
+        }
     }
 }
