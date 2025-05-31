@@ -5508,6 +5508,7 @@ MonoBehaviour:
   minTemperature: 0
   decreasingTemperature: 0.5
   limitTemperature: 0.2
+  deltaTemperature: 0
 --- !u!222 &1361095187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5609,12 +5610,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717f0fda453b6a04dad2e499dc908b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipes: []
+  recipes:
+  - {fileID: 11400000, guid: d2f57e0204556ea47a0dad69ccd6fc0e, type: 2}
   buildCraftRecipes:
   - {fileID: 11400000, guid: d2f57e0204556ea47a0dad69ccd6fc0e, type: 2}
   curRecipe: {fileID: 0}
+  recipeSlotPrefab: {fileID: 3643379946263925724, guid: 53f8b344fe127764b9d70a81267cc81a, type: 3}
+  resourceSlotPrefab: {fileID: 5906675652208096971, guid: 3b7d4bd2fcee8ef4886741d8b2c2bf3b, type: 3}
   recipeSlotParent: {fileID: 1030914995}
   ResourcesParent: {fileID: 933139342}
+  resultIcon: {fileID: 0}
+  resourceIcon: {fileID: 0}
 --- !u!1 &1396724706
 GameObject:
   m_ObjectHideFlags: 0
