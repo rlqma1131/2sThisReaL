@@ -34,4 +34,12 @@ public class SceneLoader : MonoBehaviour
         creditPanel.SetActive(false);
         startPanel.SetActive(true);
     }
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+                    Application.Quit();
+#endif
+    }
 }
