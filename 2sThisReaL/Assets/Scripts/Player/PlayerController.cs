@@ -209,15 +209,6 @@ public class PlayerController : MonoBehaviour
             ToggleCousor();
         }
     }
-    public void OnSetting(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Started)
-        {
-            setting?.Invoke();
-           
-            ToggleCousor();
-        }
-    }
     void ToggleCousor()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
