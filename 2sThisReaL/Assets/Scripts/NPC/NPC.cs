@@ -21,7 +21,8 @@ public class NPC : MonoBehaviour
         {
             if (itemData[i] != null)
             {
-                GameManager.Instance.Player.itemData = itemData[i];
+                ItemData data = itemData[i];
+                GameManager.Instance.Player.itemQueue.Add(data);
                 GameManager.Instance.Player.additem?.Invoke();
             }
         }
@@ -33,7 +34,8 @@ public class NPC : MonoBehaviour
         {
             if (itemData[i] != null)
             {
-                GameManager.Instance.Player.itemData = itemData[i];
+                ItemData data = itemData[i];
+                GameManager.Instance.Player.itemQueue.Add(data);
                 GameManager.Instance.Player.additem?.Invoke();
             }
         }
