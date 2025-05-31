@@ -41,6 +41,8 @@ public class CraftingSystem : MonoBehaviour
     [Header("결과물 아이콘")]
     [SerializeField] private Image resultIcon; // 결과물 아이콘
 
+    UIInventory inventory; // UI 인벤토리 참조
+
     // 레시피를 선택하면 해당 레시피에 맞는 재료 슬롯을 생성하고 UI를 업데이트
     public void SelectRecipe(RecipeBase recipe)
     {
@@ -49,18 +51,11 @@ public class CraftingSystem : MonoBehaviour
 
         // 슬롯을 누르면, 해당 슬롯에 할당된 레시피데이터를 업데이트
         curRecipe = recipe;
-
-        // 현재 선택된 레시피에 따라 UI 업데이트
         UpdateRecipeUI();
     }
 
     public void SetRecipeUI()
     {
-        // recipeSlotParent의 자식들을 모두 제거
-        foreach (Transform child in recipeSlotParent)
-        {
-            Destroy(child.gameObject);
-        }
 
         // 레시피 목록을 순회하며 UI에 레시피 슬롯을 생성. 어떤 버튼을 눌렀느냐에 따라 나타나는 Recipe가 달라짐.
         foreach (RecipeBase recipe in recipes)
@@ -78,13 +73,11 @@ public class CraftingSystem : MonoBehaviour
     // 현재 선택된 레시피에 따라 UI를 업데이트
     public void UpdateRecipeUI()
     {
-        // 선택된 레시피가 null이면 재료 슬롯을 비우고 결과 아이콘을 초기화
-        // 기존 재료의 슬롯을 정리 (이전 레시피의 재료 슬롯을 제거)
+
         foreach (Transform child in ResourcesParent)
         {
             Destroy(child.gameObject);
         }
-
 
         // 현재 선택된 레시피가 null이 아니면 UI 업데이트
         // curRecipe가 null이 아니니까 여기로 왔잖아
@@ -104,7 +97,7 @@ public class CraftingSystem : MonoBehaviour
                 int requiredCount = curRecipe.requiredItemAmounts[i];
 
                 Debug.LogWarning(Equals(itemData, null) ? "아이템 데이터가 null입니다." : $"{i}아이템: {itemData.itemName}, 필요 개수: {requiredCount}");
-
+                //StartCoroutine("ResetResourceSlot"); // 재료 슬롯 초기화
                 //재료 슬롯 생성(개수가 늘어날 때마다 추가 생성)
                 Instantiate(resourceSlotPrefab, ResourcesParent);
                 //생성된 슬롯에 지정된 재료들의 아이콘과 개수를 설정
@@ -112,9 +105,7 @@ public class CraftingSystem : MonoBehaviour
                 // 슬롯 0번에 0번 아이템 데이터의 아이콘과 개수를 설정
                 // 재료 슬롯을 생성하거나 업데이트하는 로직
                 ResourceSlot slot = ResourcesParent.GetChild(i).GetComponent<ResourceSlot>();
-                slot.SetItem(itemData, requiredCount);
-
-                
+                slot.SetItem(itemData, requiredCount);           
 
 
             }
@@ -143,6 +134,8 @@ public class CraftingSystem : MonoBehaviour
 
         if (curRecipe is BuildCraftRecipe buildRecipe)
         {
+            inventory = GameManager.Instance.uiInventory;
+
             // 빌드 레시피인 경우, ResourceManager에 추가
             // ResourceManager에 빌드 아이템 데이터와 개수를 추가
             // 리소스 매니저가 필요
@@ -153,6 +146,19 @@ public class CraftingSystem : MonoBehaviour
                 // 리소스 매니저에 빌드 아이템 데이터와 개수를 추가
                 resourceManager.AddResource(buildRecipe.buildItemData.itemID, buildRecipe.buildItemAmount);
                 Debug.Log($"[CraftingSystem] 빌드 레시피 완료: {buildRecipe.buildItemData.name} x{buildRecipe.buildItemAmount}");
+
+                // 빌드 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
+                // 재료 아이템은 UIInventory에서 관리되며, resourceManager에는 제작된 오브젝트만 추가됨
+
+                for(int i = 0; i < buildRecipe.requiredItems.Length; i++)
+                {
+                    ItemData itemData = buildRecipe.requiredItems[i];
+                    int requiredCount = buildRecipe.requiredItemAmounts[i];
+                    //UIInventory에서 해당 아이템의 개수를 가져와서 소모
+                    inventory.RemoveItem(itemData, requiredCount);
+                }
+
+
             }
 
         }
@@ -176,18 +182,21 @@ public class CraftingSystem : MonoBehaviour
     {
         // 빌드 레시피 버튼을 클릭할 경우, 빌드 레시피배열을 레시피에 할당하고 SetRecipeUI를 호출
         curRecipe = null; // 현재 선택된 레시피 초기화
+        recipes.Clear(); // 레시피 목록 초기화
+
         recipes = buildCraftRecipes.Cast<RecipeBase>().ToList(); // 빌드 레시피를 레시피 목록에 할당
         SetRecipeUI(); // 레시피 UI 업데이트
     }
 
-    void OnCookButton()
+    public void OnCookButton()
     {
         // 요리 레시피 버튼을 클릭할 경우, 요리 레시피를 레시피에 할당하고 SetRecipeUI를 호출
     }
 
-    void OnToolButton()
+    public void OnToolButton()
     {
         // 도구 레시피 버튼을 클릭할 경우, 도구 레시피를 레시피에 할당하고 SetRecipeUI를 호출
     }
+
 
 }

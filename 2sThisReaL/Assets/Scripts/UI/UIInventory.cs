@@ -36,7 +36,7 @@ public class UIInventory : MonoBehaviour
     }
 
     // 선택한 아이템 표시할 정보창 Clear 함수
-    void ClearSelectedItemWindow()
+   void ClearSelectedItemWindow()
     {
         selectedItem = null;
 
@@ -264,6 +264,33 @@ public class UIInventory : MonoBehaviour
         }
         UpdateUI();
     }
+
+    //외부에서 아이템을 제거하기 위한 함수
+    public void RemoveItem(ItemData data, int count)
+    {
+        //data에 해당하는 아이템을 가진 슬롯 찾기
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == data)
+            {
+                slots[i].quantity -= count;
+                // 수량이 0 이하가 되면 아이템 제거
+                if (slots[i].quantity <= 0)
+                {
+                    if (slots[i].equipped)
+                    {
+                        UnEquip(i);
+                    }
+                    slots[i].Clear();
+                }
+                UpdateUI();
+                return;
+            }
+        }
+    }
+
+
     public void UnEquip(int index)
     {
         slots[index].equipped = false;
