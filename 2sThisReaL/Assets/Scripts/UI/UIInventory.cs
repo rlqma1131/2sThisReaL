@@ -28,6 +28,7 @@ public class UIInventory : MonoBehaviour
     private PlayerController controller;
     private Condition Condition;
     private GameManager gameManager;
+    private Equipment equipment;
 
     void Start()
     {
@@ -64,37 +65,39 @@ public class UIInventory : MonoBehaviour
 
     public void AddItem()
     {
-        ItemData data = GameManager.Instance.Player.itemData;
+        List<ItemData> queue = GameManager.Instance.Player.itemQueue;
 
         // 여러개 가질 수 있는 아이템인 경우
-        if (data.isStackable)
+        foreach (ItemData data in queue)
         {
-            ItemSlot stackSlot = GetItemStack(data);
-            if (stackSlot != null)
+            if (data.isStackable)
             {
-                stackSlot.quantity++;
-                UpdateUI();
-                GameManager.Instance.Player.itemData = null;
-                return;
+                ItemSlot stackSlot = GetItemStack(data);
+                if (stackSlot != null)
+                {
+                    stackSlot.quantity++;
+                    continue;
+                }
             }
+
+            // 빈 슬롯 찾기
+            ItemSlot emptySlot = GetEmptySlot();
+
+            // 빈 슬롯이 있을 때
+            if (emptySlot != null)
+            {
+                emptySlot.item = data;
+                emptySlot.quantity = 1;
+                UpdateUI();
+                continue;
+            }
+
+            // 빈 슬롯 마저 없을 때
+            ThrowItem(data);
+
         }
-
-        // 빈 슬롯 찾기
-        ItemSlot emptySlot = GetEmptySlot();
-
-        // 빈 슬롯이 있을 때
-        if (emptySlot != null)
-        {
-            emptySlot.item = data;
-            emptySlot.quantity = 1;
-            UpdateUI();
-            GameManager.Instance.Player.itemData = null;
-            return;
-        }
-
-        // 빈 슬롯 마저 없을 때
-        ThrowItem(data);
-        GameManager.Instance.Player.itemData = null;
+        queue.Clear();
+        UpdateUI();
     }
 
     // UI 정보 새로고침
@@ -154,7 +157,7 @@ public class UIInventory : MonoBehaviour
         selectedItemStatName.text = "";
         selectedItemStatValue.text = "";
 
-        if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
+        if (selectedItem.item.itemType.Contains(ItemType.Consumable))
         {
             ConsumeItem item = selectedItem.item as ConsumeItem;
 
@@ -165,17 +168,16 @@ public class UIInventory : MonoBehaviour
             }
         }
 
-
-
-        useButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Consumable));
-        equipButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Equipable) && !slots[index].equipped);
-        unEquipButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Equipable) && slots[index].equipped);
-        dropButton.SetActive(true);
+        bool isEquipable = selectedItem.item.itemType.Contains(ItemType.Equipable);
+        useButton.SetActive(selectedItem.item.itemType.Contains(ItemType.Consumable));
+        equipButton.SetActive(isEquipable && !selectedItem.equipped);
+        unEquipButton.SetActive(isEquipable && selectedItem.equipped);
+        dropButton.SetActive(!selectedItem.equipped);
     }
 
     public void OnUseButton()
     {
-        if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
+        if (selectedItem.item.itemType.Contains(ItemType.Consumable))
         {
             ConsumeItem item = selectedItem.item as ConsumeItem;
             if (item == null) return;
@@ -203,13 +205,27 @@ public class UIInventory : MonoBehaviour
     public void OnEquipButton()
     {
         selectedItem.equipped = true;
+        slots[selectedItemIndex].equipped = true;
+
+        if (selectedItem.item is EquipItem equipItem)
+        {
+            equipment.EquipNew(equipItem);
+        }
+
         UpdateUI();
+        SelectItem(selectedItemIndex);
     }
 
     public void OnUnEquipButton()
     {
         selectedItem.equipped = false;
+        slots[selectedItemIndex].equipped = false;
+        if (selectedItem.item is EquipItem equipItem)
+        {
+            equipment.UnEquip();
+        }
         UpdateUI();
+        SelectItem(selectedItemIndex);
     }
 
     public void OnDropButton()
@@ -224,6 +240,7 @@ public class UIInventory : MonoBehaviour
 
     void RemoveSelectedItem()
     {
+
         selectedItem.quantity--;
 
         // 아이템 수량이 0일 때 삭제
@@ -240,12 +257,13 @@ public class UIInventory : MonoBehaviour
             selectedItem = null;
             ClearSelectedItemWindow();
         }
-        else
-            {
-                // 장비는 수량이 0이 되어도 삭제하지 않음
-                selectedItem.quantity = 1;
-            }
+        if (!selectedItem.item.isStackable)
+        {
+            // 장비는 수량 유지
+            selectedItem.quantity = 1;
         }
+        UpdateUI();
+    }
     public void UnEquip(int index)
     {
         slots[index].equipped = false;
@@ -261,7 +279,10 @@ public class UIInventory : MonoBehaviour
         controller = GameManager.Instance.Player.controller;
         Condition = ConditionManager.Instance.Condition;
         dropPosition = GameManager.Instance.Player.dropPosition;
+        GameManager.Instance.Player.additem -= AddItem; // 중복 등록 방지
         GameManager.Instance.Player.additem += AddItem;
+
+        equipment = GameManager.Instance.Player.GetComponent<Equipment>();
 
         inventoryWindow.SetActive(false);
         controller.inventory += Toggle;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8601817723279365761}
   - component: {fileID: 3321886784221644100}
   - component: {fileID: 6737452142576827155}
+  - component: {fileID: 405783001829696366}
   m_Layer: 7
   m_Name: DropsAxe
   m_TagString: Untagged
@@ -82,6 +83,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &405783001829696366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525511288822688072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec38a52bddecf07418df6f259b96628a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5823da71d2c81aa49b3567aafb725501, type: 2}
 --- !u!1 &5390341773081908976
 GameObject:
   m_ObjectHideFlags: 0
