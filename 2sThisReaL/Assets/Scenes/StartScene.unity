@@ -3313,6 +3313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicA: {fileID: 8300000, guid: d338d0ccf3ffec144913e32146d9da56, type: 3}
   musicB: {fileID: 8300000, guid: 1715b412ed5534f45b755dec66514ed0, type: 3}
+  musicC: {fileID: 8300000, guid: 7773e5da72be75d49bac9a96ab3b7061, type: 3}
 --- !u!1 &1951975606
 GameObject:
   m_ObjectHideFlags: 0

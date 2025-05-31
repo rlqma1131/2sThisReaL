@@ -68,7 +68,7 @@ public class BGMManager : MonoBehaviour
         Vector3 pos = player.position;
 
         // 특정 위치 범위 (예: x:5~10, z:10~15)
-        bool isInZone = pos.x >= -394 && pos.x <= -34 && pos.z >= 334 && pos.z <= 600;
+        bool isInZone = pos.x >= -206 && pos.x <= 138 && pos.z >= 187 && pos.z <= 600;
 
         if (isInZone && !isInMusicZone)
         {
