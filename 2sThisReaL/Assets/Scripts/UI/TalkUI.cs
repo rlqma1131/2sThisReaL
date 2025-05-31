@@ -24,7 +24,7 @@ public class TalkUI : MonoBehaviour
 
     [Header("캐릭터 애니메이션 이미지")]
     [SerializeField] private Transform playerModel;
-    [SerializeField] private Transform npcCharacterModel;
+    [SerializeField] private Transform npcModel;
     [SerializeField] private Image playerSpriteImage;
     [SerializeField] private Image npcSpriteImage;
 
@@ -224,7 +224,7 @@ public class TalkUI : MonoBehaviour
 
     private void PlayPlayerTalkingVisual()
     {
-        playerModel?.DOScale(1.2f, 0.2f);
+        playerModel?.DOScale(1.1f, 0.2f);
         playerSpriteImage?.DOColor(Color.white, 0.2f);
 
         npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
@@ -232,7 +232,7 @@ public class TalkUI : MonoBehaviour
 
     private void PlayNpcTalkingVisual()
     {
-        npcCharacterModel?.DOScale(1.2f, 0.2f);
+        npcModel?.DOScale(1.1f, 0.2f);
         npcSpriteImage?.DOColor(Color.white, 0.2f);
 
         playerSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
@@ -240,7 +240,7 @@ public class TalkUI : MonoBehaviour
 
     private void SetIdleVisual()
     {
-        npcCharacterModel?.DOScale(1f, 0.2f);
+        npcModel?.DOScale(1f, 0.2f);
         npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
 
         playerModel?.DOScale(1f, 0.2f);
@@ -254,7 +254,7 @@ public class TalkUI : MonoBehaviour
         SetIdleVisual();
         UpdateNameTagVisibility(true);
 
-        npcCharacterModel?.gameObject.SetActive(false);
+        npcModel?.gameObject.SetActive(false);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
