@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         if (agent.isOnNavMesh)
-            animator.SetTrigger("Spawn");
             SetState(AIState.Wandering);
     }
 
