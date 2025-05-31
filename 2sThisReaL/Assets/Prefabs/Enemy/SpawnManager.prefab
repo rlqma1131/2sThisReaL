@@ -48,7 +48,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -72,11 +72,5 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  baseSpawnInterval: 3
   intervalReductionPerDay: 0.5
   minSpawnInterval: 5
-  maxSpawnCount: 3
-  spawnRadius: 50
-  obstacleCheckRadius: 2
-  minPlayerDistance: 10
-  minFOVAngle: 60

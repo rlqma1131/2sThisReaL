@@ -13,7 +13,7 @@ public enum AIState
     Dead
 }
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, idamagable
 {
 
     [Header("Stats")]
@@ -206,6 +206,16 @@ public class Enemy : MonoBehaviour
             SetState(AIState.Dead);
         }
     }
+    public void takephygicaldamage(int damage)
+    {
+        Debug.Log($"피해 {damage} 입음");
+        health -= damage;
+        StartCoroutine(DamageFlash());
+        if (health <= 0 && aiState != AIState.Dead)
+        {
+            SetState(AIState.Dead);
+        }
+    }
     // 몬스터가 데미지 입을 시 반짝임
     IEnumerator DamageFlash()
     {
@@ -264,7 +274,7 @@ public class Enemy : MonoBehaviour
 
     void TooFarfromPlayer()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 150f)
+        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 500f)
             Destroy(gameObject);
         Debug.Log($"너무 멀어서 사라지겠습니다 슝");
     }
@@ -279,12 +289,12 @@ public class Enemy : MonoBehaviour
 
     void OnMouseEnter()
     {
-        //FindObjectOfType<MouseCursor>().SetAttackCursor();
+        FindObjectOfType<MouseCursor>().SetAttackCursor();
     }
 
     void OnMouseExit()
     {
-        //FindObjectOfType<MouseCursor>().SetDefaultCursor();
+        FindObjectOfType<MouseCursor>().SetDefaultCursor();
     }
 
 }

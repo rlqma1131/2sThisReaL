@@ -49,6 +49,7 @@ public class BGMManager : MonoBehaviour
                 break;
 
             case "EndingScene":
+            case "HappyEndingScene":
                 StopMusic();
                 break;
         }
