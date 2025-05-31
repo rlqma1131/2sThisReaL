@@ -274,7 +274,7 @@ public class Enemy : MonoBehaviour, idamagable
 
     void TooFarfromPlayer()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 150f)
+        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 500f)
             Destroy(gameObject);
         Debug.Log($"너무 멀어서 사라지겠습니다 슝");
     }
@@ -289,12 +289,12 @@ public class Enemy : MonoBehaviour, idamagable
 
     void OnMouseEnter()
     {
-        //FindObjectOfType<MouseCursor>().SetAttackCursor();
+        FindObjectOfType<MouseCursor>().SetAttackCursor();
     }
 
     void OnMouseExit()
     {
-        //FindObjectOfType<MouseCursor>().SetDefaultCursor();
+        FindObjectOfType<MouseCursor>().SetDefaultCursor();
     }
 
 }
