@@ -27,12 +27,19 @@ public class TalkUI : MonoBehaviour
     [SerializeField] private Image npcSpriteImage;
 
     private NPC currentTarget;
+    private bool isNpcTalking = false;
 
     private void Awake()
     {
         Instance = this;
+
         dialoguePanel.alpha = 0;
         dialoguePanel.gameObject.SetActive(false);
+
+        // 초기에 선택지off
+        foreach (var btn in choiceButtons)
+            btn.gameObject.SetActive(false);
+        cursor.gameObject.SetActive(false);
     }
 
     public void OpenDialogue(NPC npc)
@@ -42,8 +49,11 @@ public class TalkUI : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
         dialoguePanel.alpha = 0;
 
-        SetTalkingState(true);
-        SetIdleVisual(); // 초기 상태
+        SetIdleVisual();
+        UpdateNameTagVisibility(true); // 나레이션 시작
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         dialoguePanel.DOFade(1f, 0.4f).SetEase(Ease.OutQuad).OnComplete(() =>
         {
@@ -95,39 +105,43 @@ public class TalkUI : MonoBehaviour
     private void OnChoiceSelected(int index)
     {
         HideChoices();
-        PlayTalkingVisual();
+        SetTalkingState(true);
 
-        switch (index)
+        string[] dialogueLines;
+
+        if (index == 0) // 대화
         {
-            case 0: // 대화한다
-                dialogueText.StartDialogue(new string[]
-                {
+            dialogueLines = new string[]
+            {
                 "[다가가자 남자가 겨우 고개를 든다]",
-                "..... 거기... 사람인가?",
+                "... 거기.. 사람인가?",
                 "하... 다행이다...",
                 "제발... 이걸... 받아줘...",
                 "난... 더는 못 가...",
                 "[남자가 힘겹게 소지품이 든 가방을 건낸다.]",
                 "..저 성 뒤편... 거긴 아무도 가지 않았지...",
                 "너무 좁고... 괜히 돌아가면 시간 낭비 같았거든...",
-                "하지만... 난 봤어...",
-                "누군가 그 구석에... 뭔가를 숨기는 걸.....",
+                "하지만.. 난 봤어...",
+                "누군가 그 구석에... 뭔가를 숨기는 걸...",
                 "뭐냐고 물었더니 '세상의 끝'이라고 하더군...",
                 "자네는 꼭..'세상의 끝'에 다다르기를...",
                 "[남자는 말을 마치고 조용히 눈을 감는다]",
-                "평안하기를"
-           });
-                currentTarget.OnTalk();
-                break;
+                "...평안하기를"
+            };
 
-            case 1: // 주머니를 뒤진다
-                dialogueText.StartDialogue(new string[]
-                {
-                    "[그의 소지품을 가져왔다.]"
-                });
-                currentTarget.OnRobbery();
-                break;
+            currentTarget.OnTalk();
         }
+        else // 강탈
+        {
+            dialogueLines = new string[]
+            {
+                "[그의 소지품을 몰래 가져왔다.]"
+            };
+
+            currentTarget.OnRobbery();
+        }
+
+        dialogueText.StartDialogue(dialogueLines);
 
         StartCoroutine(CloseAfterDialogue());
     }
@@ -136,6 +150,8 @@ public class TalkUI : MonoBehaviour
     {
         yield return new WaitUntil(() => dialogueText.IsFinished);
         yield return new WaitForSeconds(0.3f);
+
+        currentTarget?.MarkAsTalked();
         CloseDialogue();
     }
 
@@ -159,20 +175,29 @@ public class TalkUI : MonoBehaviour
         {
             dialoguePanel.gameObject.SetActive(false);
         });
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void SetTalkingState(bool isTalking)
     {
-        playerNameTag.SetActive(!isTalking);
-        npcNameTag.SetActive(isTalking);
+        isNpcTalking = isTalking;
     }
 
-    private void PlayTalkingVisual()
+    private void PlayPlayerTalkingVisual()
     {
-        npcCharacterModel?.DOScale(1.1f, 0.2f);
-        npcSpriteImage.DOColor(Color.white, 0.2f);
+        playerModel?.DOScale(1.2f, 0.2f);
+        playerSpriteImage?.DOColor(Color.white, 0.2f);
 
-        playerModel?.DOScale(0.9f, 0.2f);
+        npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+    }
+
+    private void PlayNpcTalkingVisual()
+    {
+        npcCharacterModel?.DOScale(1.2f, 0.2f);
+        npcSpriteImage?.DOColor(Color.white, 0.2f);
+
         playerSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
     }
 
@@ -182,6 +207,49 @@ public class TalkUI : MonoBehaviour
         npcSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
 
         playerModel?.DOScale(1f, 0.2f);
-        playerSpriteImage?.DOColor(Color.white, 0.2f);
+        playerSpriteImage?.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.2f);
+    }
+    public void ShowDeadDialogue()
+    {
+        dialoguePanel.gameObject.SetActive(true);
+        dialoguePanel.alpha = 0;
+
+        SetIdleVisual();
+        UpdateNameTagVisibility(true);
+
+        npcCharacterModel?.gameObject.SetActive(false);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        dialoguePanel.DOFade(1f, 0.4f).OnComplete(() =>
+        {
+            dialogueText.StartDialogue(new string[]
+            {
+            "[싸늘하다. 이미 늦었다. 숨소리가 멎어있다.]"
+            });
+
+            StartCoroutine(CloseAfterDialogue());
+        });
+    }
+
+    public void UpdateNameTagVisibility(bool isNarration, bool isPlayerSpeaking = false)
+    {
+        if (isNarration)
+        {
+            playerNameTag.SetActive(false);
+            npcNameTag.SetActive(false);
+            SetIdleVisual();
+        }
+        else
+        {
+            playerNameTag.SetActive(isPlayerSpeaking);
+            npcNameTag.SetActive(!isPlayerSpeaking);
+
+            if (isPlayerSpeaking)
+                PlayPlayerTalkingVisual();
+            else
+                PlayNpcTalkingVisual();
+        }
     }
 }

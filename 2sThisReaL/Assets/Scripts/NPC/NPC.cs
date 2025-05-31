@@ -9,6 +9,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     private Animator anim;
     private Collider npcCollider;
+    private bool hasTalked = false;
 
     private void Start()
     {
@@ -23,8 +24,18 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        Debug.Log("NPC와 상호작용 발생");
-        TalkUI.Instance?.OpenDialogue(this);
+        if (!hasTalked)
+        {
+            TalkUI.Instance?.OpenDialogue(this);
+        }
+        else
+        {
+            TalkUI.Instance?.ShowDeadDialogue();
+        }
+    }
+    public void MarkAsTalked()
+    {
+        hasTalked = true;
     }
 
     public void OnRobbery() // 주머니 뒤져서 강탈했을 때 호출

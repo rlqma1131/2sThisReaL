@@ -13,11 +13,17 @@ public class DialogueText : MonoBehaviour
 
     public bool IsFinished { get; private set; } = false;
 
+    private int currentIndex = 0;
+    private int totalLines = 0;
+
     public void StartDialogue(string[] lines)
     {
         dialogueLines.Clear();
         foreach (string line in lines)
             dialogueLines.Enqueue(line);
+
+        currentIndex = 0;
+        totalLines = lines.Length;
 
         IsFinished = false;
         DisplayNextLine();
@@ -41,14 +47,27 @@ public class DialogueText : MonoBehaviour
 
     private IEnumerator TypeLine(string line)
     {
+        bool isNarration = line.StartsWith("[");
+        bool isPlayerSpeaking = false;
+
+        if (!isNarration && currentIndex == totalLines - 1) // 마지막은 플레이어 대사
+            isPlayerSpeaking = true;
+
+        TalkUI.Instance?.UpdateNameTagVisibility(isNarration, isPlayerSpeaking);
+
+        string content = isNarration ? line : line;
+
         dialogueText.text = "";
-        foreach (char c in line)
+        foreach (char c in content)
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        currentIndex++;
+
+        yield return new WaitUntil(() =>
+        Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0));
         DisplayNextLine();
     }
 }
