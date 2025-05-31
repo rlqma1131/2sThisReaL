@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum NpcType
+{
+    Type1,
+    Type2
+}
+
 public class NPC : MonoBehaviour, IInteractable
 {
     [Header("NPC Item")]
@@ -10,6 +16,7 @@ public class NPC : MonoBehaviour, IInteractable
     private Animator anim;
     private Collider npcCollider;
     private bool hasTalked = false;
+    public NpcType npcType;
 
     private void Start()
     {

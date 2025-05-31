@@ -49,12 +49,18 @@ public class MouseCursor : MonoBehaviour
 
     public void SetBuildCursor()
     {
-        Cursor.SetCursor(buildCursor, Vector2.zero, CursorMode.Auto);
+        if (TalkUI.Instance != null && !TalkUI.Instance.IsDialogueOpen)
+        {
+            Cursor.SetCursor(buildCursor, Vector2.zero, CursorMode.Auto);
+        }
     }
 
     public void SetDestroyCursor()
     {
-        Cursor.SetCursor(destroyCursor, Vector2.zero, CursorMode.Auto);
+        if (TalkUI.Instance != null && !TalkUI.Instance.IsDialogueOpen)
+        {
+            Cursor.SetCursor(destroyCursor, Vector2.zero, CursorMode.Auto);
+        }
     }
 
 }
