@@ -34,6 +34,7 @@ public class ConditionManager : MonoBehaviour
     public float minTemperature;
     public float decreasingTemperature;
     public float limitTemperature;
+    public float deltaTemperature;
 
 
     private void Awake()
