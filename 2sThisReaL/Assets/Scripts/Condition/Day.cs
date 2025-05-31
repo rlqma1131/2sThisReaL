@@ -53,7 +53,7 @@ public class Day : MonoBehaviour
         time = startTime;
 
         _coditionManager = ConditionManager.Instance;
-        _coditionManager.count = 0;
+        _coditionManager.count = 1;
 
         StartCoroutine(StartDayCoroutin(3));
     }
