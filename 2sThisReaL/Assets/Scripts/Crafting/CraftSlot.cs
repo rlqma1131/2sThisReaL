@@ -39,9 +39,12 @@ public class CraftSlot : MonoBehaviour
         {
             // 레시피 데이터가 있다면 레시피의 아이콘과 현재 제작 가능한 개수를 표시
             iconImage.sprite = curRecipeData.recipeIcon;
+            iconImage.gameObject.SetActive(true); // 아이콘 활성화
+
             //제작 가능한 개수 계산 필요
             maxCount = GetMaxCount(); // 현재 레시피에 따라 제작 가능한 최대 개수 계산
-            makeCountText.text = maxCount >= 1 ? maxCount.ToString() : string.Empty;
+            makeCountText.text = maxCount >= 1
+                ? maxCount.ToString() : string.Empty;
 
             if(maxCount > 0)
             {
@@ -79,7 +82,9 @@ public class CraftSlot : MonoBehaviour
         if(curRecipeData == null)
            return 0; // 레시피가 없으면 제작 불가능
         if(inventory == null)
-            inventory = GameObject.Find("UIInventory").GetComponent<UIInventory>(); //만약 UIInventory가 할당되지 않았다면 찾아서 할당
+            inventory = GameManager.Instance.uiInventory; // UIInventory가 할당되지 않았다면 GameManager에서 가져옴
+
+                                                          //inventory = GameObject.Find("UIInventory").GetComponent<UIInventory>(); //만약 UIInventory가 할당되지 않았다면 찾아서 할당
 
 
         // 현재 레시피의 requiredItems와 requiredItemAmounts를 사용하여 제작 가능한 최대 개수를 계산
@@ -108,9 +113,6 @@ public class CraftSlot : MonoBehaviour
             if (possibleCount < maxCount)
                 maxCount = possibleCount;
         }
-
-
-
         return maxCount;
 
     }
@@ -126,6 +128,7 @@ public class CraftSlot : MonoBehaviour
             if (craftingSystem != null)
             {
                 craftingSystem.SelectRecipe(curRecipeData);
+                craftingSystem.UpdateRecipeUI();
             }
         }
     }

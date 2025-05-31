@@ -41,18 +41,13 @@ public class CraftingSystem : MonoBehaviour
     [Header("결과물 아이콘")]
     [SerializeField] private Image resultIcon; // 결과물 아이콘
 
-    private void Start()
-    {
-        // 크래프팅 시스템 
-    }
-
     // 레시피를 선택하면 해당 레시피에 맞는 재료 슬롯을 생성하고 UI를 업데이트
     public void SelectRecipe(RecipeBase recipe)
     {
         //recipe가 null이면 return;
         if (recipe == null) return;
 
-        // 슬롯을 누르면, 해당 슬롯에 할당된 레시피를 업데이트
+        // 슬롯을 누르면, 해당 슬롯에 할당된 레시피데이터를 업데이트
         curRecipe = recipe;
 
         // 현재 선택된 레시피에 따라 UI 업데이트
@@ -75,8 +70,6 @@ public class CraftingSystem : MonoBehaviour
             // 슬롯에 RecipeBase를 할당
             CraftSlot recipeSlot = slot.GetComponent<CraftSlot>();
             recipeSlot.SetRecipe(recipe);
-            // 슬롯 클릭 이벤트 등록
-            recipeSlot.OnClickButton();
         }
 
     }
@@ -94,11 +87,14 @@ public class CraftingSystem : MonoBehaviour
 
 
         // 현재 선택된 레시피가 null이 아니면 UI 업데이트
+        // curRecipe가 null이 아니니까 여기로 왔잖아
         if (curRecipe != null)
         {
             // 결과물 아이콘 업데이트
-            resultIcon.sprite = curRecipe.recipeIcon;
             resultIcon.gameObject.SetActive(true);
+            resultIcon.sprite = curRecipe.recipeIcon;
+            Debug.Log("[CraftingSystem] 현재 선택된 레시피: " + curRecipe.recipeName);
+            //출력 확인 됨
 
             // 재료 슬롯 업데이트 (재료 아이콘과 개수 표시. 나무2, 돌1 등)
             for (int i = 0; i < curRecipe.requiredItems.Length; i++)
@@ -107,16 +103,19 @@ public class CraftingSystem : MonoBehaviour
                 ItemData itemData = curRecipe.requiredItems[i];
                 int requiredCount = curRecipe.requiredItemAmounts[i];
 
+                Debug.LogWarning(Equals(itemData, null) ? "아이템 데이터가 null입니다." : $"{i}아이템: {itemData.itemName}, 필요 개수: {requiredCount}");
+
                 //재료 슬롯 생성(개수가 늘어날 때마다 추가 생성)
                 Instantiate(resourceSlotPrefab, ResourcesParent);
                 //생성된 슬롯에 지정된 재료들의 아이콘과 개수를 설정
 
                 // 슬롯 0번에 0번 아이템 데이터의 아이콘과 개수를 설정
+                // 재료 슬롯을 생성하거나 업데이트하는 로직
                 ResourceSlot slot = ResourcesParent.GetChild(i).GetComponent<ResourceSlot>();
                 slot.SetItem(itemData, requiredCount);
 
-                // 재료 슬롯을 생성하거나 업데이트하는 로직
-                // 예: ResourcesParent에 재료 아이콘과 개수를 표시하는 UI 요소를 추가
+                
+
 
             }
 
@@ -146,6 +145,15 @@ public class CraftingSystem : MonoBehaviour
         {
             // 빌드 레시피인 경우, ResourceManager에 추가
             // ResourceManager에 빌드 아이템 데이터와 개수를 추가
+            // 리소스 매니저가 필요
+            ResourceManager resourceManager = FindObjectOfType<ResourceManager>();
+            if(resourceManager != null)
+            {
+                //이미 재료 확인은 마친 상황에서 여기로 옴
+                // 리소스 매니저에 빌드 아이템 데이터와 개수를 추가
+                resourceManager.AddResource(buildRecipe.buildItemData.itemID, buildRecipe.buildItemAmount);
+                Debug.Log($"[CraftingSystem] 빌드 레시피 완료: {buildRecipe.buildItemData.name} x{buildRecipe.buildItemAmount}");
+            }
 
         }
         //else if (curRecipe is ToolRecipe toolRecipe)

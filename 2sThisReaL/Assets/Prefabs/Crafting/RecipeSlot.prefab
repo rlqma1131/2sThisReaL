@@ -334,13 +334,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 6347990996445972243}
+        m_TargetAssemblyTypeName: CraftSlot, Assembly-CSharp
+        m_MethodName: OnClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -375,9 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 3433548938757379498}
   makeCountText: {fileID: 5557797401797850516}
-  selectButton: {fileID: 2250740899508867674}
+  button: {fileID: 2250740899508867674}
   maxCount: 0
-  button: {fileID: 0}
 --- !u!1 &3945031241531442995
 GameObject:
   m_ObjectHideFlags: 0

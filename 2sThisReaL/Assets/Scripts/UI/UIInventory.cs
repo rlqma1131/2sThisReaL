@@ -284,6 +284,7 @@ public class UIInventory : MonoBehaviour
 
         equipment = GameManager.Instance.Player.GetComponent<Equipment>();
 
+        GameManager.Instance.uiInventory = GameObject.Find("UIInventory").GetComponent<UIInventory>(); //만약 UIInventory가 할당되지 않았다면 찾아서 할당;
         inventoryWindow.SetActive(false);
         controller.inventory += Toggle;
 
