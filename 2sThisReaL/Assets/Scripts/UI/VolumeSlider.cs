@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class VolumeSlider : MonoBehaviour
+public class SettingSceneUI : MonoBehaviour
 {
     public Slider volumeSlider;
     public TMP_InputField volumeInputField;
+    public GameObject SettingPanel;
 
     private bool isUpdating = false;
 
@@ -46,5 +48,10 @@ public class VolumeSlider : MonoBehaviour
         }
 
         isUpdating = false;
+    }
+
+    public void BacktoNormalState()
+    {
+        SettingPanel.SetActive(false);
     }
 }
