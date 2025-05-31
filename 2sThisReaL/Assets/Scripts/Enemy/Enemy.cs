@@ -13,7 +13,7 @@ public enum AIState
     Dead
 }
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, idamagable
 {
 
     [Header("Stats")]
@@ -33,19 +33,21 @@ public class Enemy : MonoBehaviour
     public float minWanderWaitTime;
     public float maxWanderWaitTime;
 
-    [Header("Combat")]
+    [Header("Attack Setting")]
     public int damage;
     public float attackRate;
     private float lastAttackTime;
     public float attackDistance;
+    public SnowballProjectile snowballProjectile;
+
+    [Header("Spawn Effect")]
+    [SerializeField] private GameObject spawnEffectPrefab;
 
     private float playerDistance;
-
-    public float fieldOfView = 120f; // 시야각
+    private float fieldOfView = 120f; // 시야각
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
-    public SnowballProjectile snowballProjectile;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
+        animator.SetTrigger("Spawn");
         if (agent.isOnNavMesh)
             SetState(AIState.Wandering);
     }
@@ -203,6 +206,16 @@ public class Enemy : MonoBehaviour
             SetState(AIState.Dead);
         }
     }
+    public void takephygicaldamage(int damage)
+    {
+        Debug.Log($"피해 {damage} 입음");
+        health -= damage;
+        StartCoroutine(DamageFlash());
+        if (health <= 0 && aiState != AIState.Dead)
+        {
+            SetState(AIState.Dead);
+        }
+    }
     // 몬스터가 데미지 입을 시 반짝임
     IEnumerator DamageFlash()
     {
@@ -261,8 +274,17 @@ public class Enemy : MonoBehaviour
 
     void TooFarfromPlayer()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) < 150f)
+        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 150f)
             Destroy(gameObject);
+        Debug.Log($"너무 멀어서 사라지겠습니다 슝");
+    }
+
+    public void OnSpawn()
+    {
+        if (spawnEffectPrefab != null)
+        {
+            Instantiate(spawnEffectPrefab, transform.position, Quaternion.identity, transform);
+        }
     }
 
     void OnMouseEnter()

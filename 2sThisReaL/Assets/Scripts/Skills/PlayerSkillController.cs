@@ -37,6 +37,7 @@ public class PlayerSkillController : MonoBehaviour
     {
         foreach (Skill skill in skills)
         {
+            skill.UpdateCooldownUI();
             if (Input.GetKeyDown(skill.activationKey) && skill.IsReady())
             {
                 ActivateSkill(skill);
