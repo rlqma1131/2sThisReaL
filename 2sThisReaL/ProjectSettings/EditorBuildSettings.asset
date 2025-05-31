@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GenderSelect.unity
-    guid: 6d1cc27361f7b41468c2aa11f9efbfc8
-  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: a715c50b24e781343bccab7e48449018
+  - enabled: 1
+    path: Assets/Scenes/GenderSelect.unity
+    guid: 6d1cc27361f7b41468c2aa11f9efbfc8
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HappyEndingScene.unity
     guid: 809036c588cb9a34a9353784d2965cf6
-  - enabled: 1
-    path: Assets/Scenes/SettingScene.unity
-    guid: 2464b4256caa113498fcca0396211c87
   m_configObjects: {}
