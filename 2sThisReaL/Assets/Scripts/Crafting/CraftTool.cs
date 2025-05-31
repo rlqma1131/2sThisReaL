@@ -5,6 +5,7 @@ using UnityEngine;
 public class CraftTool : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject craftingUI; //제작 UI 오브젝트
+    private CraftingSystem craftingSystem; //크래프팅 시스템 참조
     private bool craftMode;
 
 
@@ -39,6 +40,7 @@ public class CraftTool : MonoBehaviour, IInteractable
         if (craftMode)
         {
             craftingUI.SetActive(true); //제작 UI 활성화
+            craftingSystem = FindObjectOfType<CraftingSystem>(); //크래프팅 시스템 참조
             Cursor.SetCursor(craftingCursor, Vector2.zero, CursorMode.Auto); //커서 변경
             Cursor.lockState = CursorLockMode.None; // 커서 자유 이동
             Cursor.visible = true;
@@ -51,6 +53,8 @@ public class CraftTool : MonoBehaviour, IInteractable
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); //커서 초기화
             Cursor.lockState = CursorLockMode.Locked; // 커서 잠금
             Cursor.visible = false; // 커서 숨김
+
+            craftingSystem.Reset(); //크래프팅 시스템 초기화
         }
     }
 }

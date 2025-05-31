@@ -240,8 +240,14 @@ public class UIInventory : MonoBehaviour
 
     void RemoveSelectedItem()
     {
+        if (!selectedItem.item.isStackable)
+        {
+            // 장비는 수량 유지
+            selectedItem.quantity = 1;
+        }
 
         selectedItem.quantity--;
+
 
         // 아이템 수량이 0일 때 삭제
         if (selectedItem.quantity <= 0)
@@ -257,11 +263,7 @@ public class UIInventory : MonoBehaviour
             selectedItem = null;
             ClearSelectedItemWindow();
         }
-        if (!selectedItem.item.isStackable)
-        {
-            // 장비는 수량 유지
-            selectedItem.quantity = 1;
-        }
+
         UpdateUI();
     }
 
