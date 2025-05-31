@@ -230,6 +230,14 @@ public class Enemy : MonoBehaviour
     }
     void Dead()
     {
+        for(int i = 0; i < dropOnDeath.Length; i++)
+        {
+            ItemData item = dropOnDeath[i];
+            if (dropOnDeath[i] != null)
+            {
+                Instantiate(item.dropPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            }
+        }
         agent.isStopped = true;
         animator.SetTrigger("Dead");
         StartCoroutine(SinkIntoGround());   // 스르륵 땅 속으로 가라앉기
