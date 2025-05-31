@@ -33,19 +33,21 @@ public class Enemy : MonoBehaviour
     public float minWanderWaitTime;
     public float maxWanderWaitTime;
 
-    [Header("Combat")]
+    [Header("Attack Setting")]
     public int damage;
     public float attackRate;
     private float lastAttackTime;
     public float attackDistance;
+    public SnowballProjectile snowballProjectile;
+
+    [Header("Spawn Effect")]
+    [SerializeField] private GameObject spawnEffectPrefab;
 
     private float playerDistance;
-
-    public float fieldOfView = 120f; // 시야각
+    private float fieldOfView = 120f; // 시야각
 
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
-    public SnowballProjectile snowballProjectile;
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         if (agent.isOnNavMesh)
+            animator.SetTrigger("Spawn");
             SetState(AIState.Wandering);
     }
 
@@ -263,6 +266,14 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) < 150f)
             Destroy(gameObject);
+    }
+
+    public void OnSpawn()
+    {
+        if (spawnEffectPrefab != null)
+        {
+            Instantiate(spawnEffectPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     void OnMouseEnter()

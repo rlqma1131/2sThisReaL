@@ -84,7 +84,8 @@ MonoBehaviour:
   damage: 8
   attackRate: 2
   attackDistance: 2.5
-  fieldOfView: 120
+  snowballProjectile: {fileID: 0}
+  spawnEffectPrefab: {fileID: 7986504087968017091, guid: 12a56ee4630040c4eb17ae9707ed4cef, type: 3}
 --- !u!65 &6390951275873360799
 BoxCollider:
   m_ObjectHideFlags: 0
