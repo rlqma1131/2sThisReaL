@@ -64,7 +64,7 @@ public class CraftSlot : MonoBehaviour
     private int GetItemCountInInventory(ItemData itemData)
     {
         if (inventory == null)
-            inventory = GameObject.Find("UIInventory").GetComponent<UIInventory>();
+            inventory = GameManager.Instance.uiInventory;
 
         int total = 0;
         foreach (var slot in inventory.slots)
@@ -128,7 +128,6 @@ public class CraftSlot : MonoBehaviour
             if (craftingSystem != null)
             {
                 craftingSystem.SelectRecipe(curRecipeData);
-                craftingSystem.UpdateRecipeUI();
             }
         }
     }
