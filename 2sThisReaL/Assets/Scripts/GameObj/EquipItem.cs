@@ -23,4 +23,5 @@ public class EquipItem : ItemData
 
     public int attackPower; // 무기가 아니라도 공격력이 있는 아이템은 공격력 설정 가능 (기본값 0)
     public float attackDistance; // 공격 거리
+
 }

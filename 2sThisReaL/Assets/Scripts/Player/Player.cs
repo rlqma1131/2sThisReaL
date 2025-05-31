@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public Action additem;
 
-    public ItemData itemData;
+    public List<ItemData> itemQueue = new List<ItemData>();
 
     private void Awake()
     {
