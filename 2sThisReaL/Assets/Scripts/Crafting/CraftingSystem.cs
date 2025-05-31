@@ -43,6 +43,25 @@ public class CraftingSystem : MonoBehaviour
 
     UIInventory inventory; // UI 인벤토리 참조
 
+    public void Reset()
+    {
+        // 크래프팅 시스템 초기화
+        recipes.Clear(); // 레시피 목록 초기화
+        curRecipe = null; // 현재 선택된 레시피 초기화
+        resultIcon.sprite = null; // 결과물 아이콘 초기화
+        resultIcon.gameObject.SetActive(false); // 결과물 아이콘 비활성화
+        // UI 슬롯 초기화
+        foreach (Transform child in recipeSlotParent)
+        {
+            Destroy(child.gameObject); // 기존 레시피 슬롯 제거
+        }
+        foreach (Transform child in ResourcesParent)
+        {
+            Destroy(child.gameObject); // 기존 재료 슬롯 제거
+        }
+
+    }
+
     // 레시피를 선택하면 해당 레시피에 맞는 재료 슬롯을 생성하고 UI를 업데이트
     public void SelectRecipe(RecipeBase recipe)
     {
@@ -51,7 +70,18 @@ public class CraftingSystem : MonoBehaviour
 
         // 슬롯을 누르면, 해당 슬롯에 할당된 레시피데이터를 업데이트
         curRecipe = recipe;
-        UpdateRecipeUI();
+
+        ResourceSlotReset(); // 재료 슬롯 초기화
+
+    }
+
+    void ResourceSlotReset()
+    {
+        foreach (Transform child in ResourcesParent)
+        {
+            Destroy(child.gameObject);
+        }
+        UpdateRecipeUI(); // 재료 슬롯 초기화 후 UI 업데이트
     }
 
     public void SetRecipeUI()
@@ -74,10 +104,6 @@ public class CraftingSystem : MonoBehaviour
     public void UpdateRecipeUI()
     {
 
-        foreach (Transform child in ResourcesParent)
-        {
-            Destroy(child.gameObject);
-        }
 
         // 현재 선택된 레시피가 null이 아니면 UI 업데이트
         // curRecipe가 null이 아니니까 여기로 왔잖아
@@ -86,8 +112,6 @@ public class CraftingSystem : MonoBehaviour
             // 결과물 아이콘 업데이트
             resultIcon.gameObject.SetActive(true);
             resultIcon.sprite = curRecipe.recipeIcon;
-            Debug.Log("[CraftingSystem] 현재 선택된 레시피: " + curRecipe.recipeName);
-            //출력 확인 됨
 
             // 재료 슬롯 업데이트 (재료 아이콘과 개수 표시. 나무2, 돌1 등)
             for (int i = 0; i < curRecipe.requiredItems.Length; i++)
@@ -99,15 +123,10 @@ public class CraftingSystem : MonoBehaviour
                 Debug.LogWarning(Equals(itemData, null) ? "아이템 데이터가 null입니다." : $"{i}아이템: {itemData.itemName}, 필요 개수: {requiredCount}");
                 //StartCoroutine("ResetResourceSlot"); // 재료 슬롯 초기화
                 //재료 슬롯 생성(개수가 늘어날 때마다 추가 생성)
-                Instantiate(resourceSlotPrefab, ResourcesParent);
+                GameObject slotObj =  Instantiate(resourceSlotPrefab, ResourcesParent);
                 //생성된 슬롯에 지정된 재료들의 아이콘과 개수를 설정
-
-                // 슬롯 0번에 0번 아이템 데이터의 아이콘과 개수를 설정
-                // 재료 슬롯을 생성하거나 업데이트하는 로직
-                ResourceSlot slot = ResourcesParent.GetChild(i).GetComponent<ResourceSlot>();
-                slot.SetItem(itemData, requiredCount);           
-
-
+                ResourceSlot slot = slotObj.GetComponent<ResourceSlot>();
+                slot.SetItem(itemData, requiredCount); 
             }
 
             //CraftSlot의 maxCount가 1이상이면, 제작 버튼 활성화
@@ -125,8 +144,16 @@ public class CraftingSystem : MonoBehaviour
     public void OnCraft()
     {
         if (curRecipe == null) return;
+        // 제작 완료 했으니, CraftSlot에서 maxCount를 재설정
+        CraftSlot craftSlot = FindObjectOfType<CraftSlot>();
 
-        // 인벤토리에서 재료가 충분한지 확인 - CraftSlot에서 재료를 확인하는 로직이 필요        
+        if (craftSlot.maxCount <= 0)
+        {
+            Debug.Log($"[CraftingSystem] 제작 가능한 개수가 0입니다. 제작을 진행할 수 없습니다.");
+            return; // 제작 가능한 개수가 0이면 아무 작업도 하지 않음
+        }
+
+        // 인벤토리에서 재료가 충분한지 확인 - CraftSlot에서 재료를 확인하는 로직이 필요
 
         // 현재 레시피에 따라 크래프팅 실행
         // 결과물이 BuildItem이면 ResourceManager에 추가
@@ -135,6 +162,8 @@ public class CraftingSystem : MonoBehaviour
         if (curRecipe is BuildCraftRecipe buildRecipe)
         {
             inventory = GameManager.Instance.uiInventory;
+
+
 
             // 빌드 레시피인 경우, ResourceManager에 추가
             // ResourceManager에 빌드 아이템 데이터와 개수를 추가
@@ -175,6 +204,10 @@ public class CraftingSystem : MonoBehaviour
         //    Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookingRecipe.resultItem.itemName} x{cookingRecipe.resultAmount}");
         //}
 
+        
+        craftSlot.SetRecipe(curRecipe); // 현재 레시피를 다시 설정하여 maxCount를 업데이트
+
+
     }
 
 
@@ -182,7 +215,14 @@ public class CraftingSystem : MonoBehaviour
     {
         // 빌드 레시피 버튼을 클릭할 경우, 빌드 레시피배열을 레시피에 할당하고 SetRecipeUI를 호출
         curRecipe = null; // 현재 선택된 레시피 초기화
+        // 리스트를 비우기
         recipes.Clear(); // 레시피 목록 초기화
+        // 생성된 슬롯 모두 제거
+
+        foreach (Transform child in recipeSlotParent)
+        {
+            Destroy(child.gameObject);
+        }
 
         recipes = buildCraftRecipes.Cast<RecipeBase>().ToList(); // 빌드 레시피를 레시피 목록에 할당
         SetRecipeUI(); // 레시피 UI 업데이트
