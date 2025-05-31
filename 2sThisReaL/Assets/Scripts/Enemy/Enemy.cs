@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
+        animator.SetTrigger("Spawn");
         if (agent.isOnNavMesh)
             SetState(AIState.Wandering);
     }
@@ -263,15 +264,16 @@ public class Enemy : MonoBehaviour
 
     void TooFarfromPlayer()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) < 150f)
+        if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) > 150f)
             Destroy(gameObject);
+        Debug.Log($"너무 멀어서 사라지겠습니다 슝");
     }
 
     public void OnSpawn()
     {
         if (spawnEffectPrefab != null)
         {
-            Instantiate(spawnEffectPrefab, transform.position, Quaternion.identity);
+            Instantiate(spawnEffectPrefab, transform.position, Quaternion.identity, transform);
         }
     }
 
