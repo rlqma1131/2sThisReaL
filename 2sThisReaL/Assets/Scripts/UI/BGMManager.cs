@@ -7,8 +7,12 @@ public class BGMManager : MonoBehaviour
 
     public AudioClip musicA;
     public AudioClip musicB;
+    public AudioClip musicC;
+
+    private bool isInMusicZone = false;
 
     private AudioSource audioSource;
+    private Transform player;
 
     void Awake()
     {
@@ -49,7 +53,34 @@ public class BGMManager : MonoBehaviour
                 break;
         }
     }
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name != "MainScene") return;
 
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+                player = playerObj.transform;
+            return;
+        }
+
+        Vector3 pos = player.position;
+
+        // 특정 위치 범위 (예: x:5~10, z:10~15)
+        bool isInZone = pos.x >= -394 && pos.x <= -34 && pos.z >= 334 && pos.z <= 600;
+
+        if (isInZone && !isInMusicZone)
+        {
+            PlayMusic(musicC);
+            isInMusicZone = true;
+        }
+        else if (!isInZone && isInMusicZone)
+        {
+            PlayMusic(musicB);
+            isInMusicZone = false;
+        }
+    }
     public void PlayMusic(AudioClip clip)
     {
         if (audioSource.clip == clip) return;

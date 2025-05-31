@@ -20528,7 +20528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   startTime: 0.4
-  dayLength: 30
+  dayLength: 600
   noon: {x: 90, y: 0, z: 0}
   dayText: {fileID: 1777361102}
   sun: {fileID: 127786529}
