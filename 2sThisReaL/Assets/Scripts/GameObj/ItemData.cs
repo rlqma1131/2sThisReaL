@@ -22,7 +22,7 @@ public class ItemData : ScriptableObject
     public Sprite itemIcon; // 아이템 아이콘
     [TextArea(3, 5)] // 인스펙터에서 여러 줄로 입력 가능
     public string itemDescription; // 아이템 설명
-    public List<ItemType> ItemType; // 아이템 타입 다중 설정 가능
+    public List<ItemType> itemType; // 아이템 타입 다중 설정 가능
 
     [Header("인벤토리 설정")]
     public bool isStackable = true; // 겹치기 가능 여부 (기본값 true), 도구나 무기에서는 false로 변경
