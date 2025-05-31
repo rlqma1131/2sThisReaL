@@ -157,7 +157,7 @@ public class UIInventory : MonoBehaviour
         selectedItemStatName.text = "";
         selectedItemStatValue.text = "";
 
-        if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
+        if (selectedItem.item.itemType.Contains(ItemType.Consumable))
         {
             ConsumeItem item = selectedItem.item as ConsumeItem;
 
@@ -168,17 +168,16 @@ public class UIInventory : MonoBehaviour
             }
         }
 
-
-
-        useButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Consumable));
-        equipButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Equipable) && !slots[index].equipped);
-        unEquipButton.SetActive(selectedItem.item.ItemType.Contains(ItemType.Equipable) && slots[index].equipped);
-        dropButton.SetActive(true);
+        bool isEquipable = selectedItem.item.itemType.Contains(ItemType.Equipable);
+        useButton.SetActive(selectedItem.item.itemType.Contains(ItemType.Consumable));
+        equipButton.SetActive(isEquipable && !selectedItem.equipped);
+        unEquipButton.SetActive(isEquipable && selectedItem.equipped);
+        dropButton.SetActive(!selectedItem.equipped);
     }
 
     public void OnUseButton()
     {
-        if (selectedItem.item.ItemType.Contains(ItemType.Consumable))
+        if (selectedItem.item.itemType.Contains(ItemType.Consumable))
         {
             ConsumeItem item = selectedItem.item as ConsumeItem;
             if (item == null) return;
@@ -206,6 +205,7 @@ public class UIInventory : MonoBehaviour
     public void OnEquipButton()
     {
         selectedItem.equipped = true;
+        slots[selectedItemIndex].equipped = true;
 
         if (selectedItem.item is EquipItem equipItem)
         {
@@ -213,14 +213,16 @@ public class UIInventory : MonoBehaviour
         }
 
         UpdateUI();
+        SelectItem(selectedItemIndex);
     }
 
     public void OnUnEquipButton()
     {
-        selectedItem.equipped = true;
+        selectedItem.equipped = false;
+        slots[selectedItemIndex].equipped = false;
         if (selectedItem.item is EquipItem equipItem)
         {
-            equipment.EquipNew(equipItem);
+            equipment.UnEquip();
         }
         UpdateUI();
         SelectItem(selectedItemIndex);
@@ -264,7 +266,7 @@ public class UIInventory : MonoBehaviour
     }
     public void UnEquip(int index)
     {
-        slots[index].equipped = true;
+        slots[index].equipped = false;
         UpdateUI();
     }
     IEnumerator WaitForGameManager()
