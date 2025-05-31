@@ -7,16 +7,19 @@ using UnityEngine.UI;
 public class ResourceSlot : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
-    [SerializeField] private TextMeshProUGUI makeCountText; // 제작 가능한 개수 표시용 텍스트
+    [SerializeField] private TextMeshProUGUI makeCountText; // 제작에 필요한 개수 표시용 텍스트
 
     [SerializeField] private GameObject resourceIcon; // 재료 아이콘 UI 오브젝트
 
+    // 재료 슬롯은 이미 저장되어있는 상수를 그대로 사용하여 아이콘과 개수표시
     public void SetItem(ItemData data, int count)
     {
         iconImage.sprite = data.itemIcon;
-        makeCountText.text = count >= 1 ? count.ToString() : string.Empty;
-        resourceIcon.SetActive(data != null); // 아이템이 null이 아닐 때만 아이콘 표시
+        makeCountText.text = count.ToString(); // 제작에 필요한 재료 개수 표시, 필요한 아이템만 인스턴스됨
+        resourceIcon.SetActive(true); // 재료 아이콘 활성화
 
+        // 만약 가지고 있는 재료가 필요로 하는 재료 수보다 적다면, text는 붉은색으로 icon은 0.4f 투명도
+        // 색상은 0, 224/255f, 1f, 1f -> 재료 개수 확인 하는 곳에서 작성할 것
     }
 
 }
