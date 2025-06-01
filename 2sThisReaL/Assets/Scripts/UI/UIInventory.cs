@@ -81,6 +81,34 @@ public class UIInventory : MonoBehaviour
         }
     }
 
+    //제작 아이템 추가용 함수
+    public void AddCraftItem(ItemData item, int Amount)
+    {
+        // 아이템이 이미 존재하는지 확인
+        // 존재하면 수량만 증가시키고 return
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == item)
+            {
+                slots[i].quantity += Amount;
+                slots[i].Set();
+                return;
+            }
+        }
+        // 빈 슬롯 찾기
+        ItemSlot emptySlot = GetEmptySlot();
+        // 빈 슬롯이 있을 때
+        if (emptySlot != null)
+        {
+            emptySlot.item = item;
+            emptySlot.quantity = Amount;
+            emptySlot.Set();
+            return;
+        }
+        // 빈 슬롯 마저 없을 때
+        ThrowItem(item);
+    }
+
     public void AddItem()
     {
         List<ItemData> queue = GameManager.Instance.Player.itemQueue;

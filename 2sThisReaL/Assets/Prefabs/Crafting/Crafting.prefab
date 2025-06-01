@@ -706,6 +706,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b79522e5999799e4da6a2316e4a45755, type: 2}
   - {fileID: 11400000, guid: f51dfeff6d768694fa26fdc4417a3a41, type: 2}
   - {fileID: 11400000, guid: 6a252afca39e42746b01da02887ea9d1, type: 2}
+  cookingRecipes:
+  - {fileID: 11400000, guid: 561251c608afd0940966120798446041, type: 2}
+  - {fileID: 11400000, guid: bbef1e1ca413c774bb42423947aca6ec, type: 2}
+  - {fileID: 11400000, guid: 001df7d2f81f04a43b56004c7d76c888, type: 2}
+  - {fileID: 11400000, guid: 8c49a0908fc6ba748b684c5f1cd0ddfc, type: 2}
+  toolRecipes:
+  - {fileID: 11400000, guid: 2bdb007389c65774f820a045ec18926e, type: 2}
+  - {fileID: 11400000, guid: 0bdf92d5f94b5c04a99b8f2108e8d51b, type: 2}
+  - {fileID: 11400000, guid: 948a5e2af945e724c9fbb1f6bee79738, type: 2}
+  - {fileID: 11400000, guid: cfc5385d962e3d14fb293a0f3389d705, type: 2}
   BuildRecipeBtn: {fileID: 3428084590811818347}
   CooktRecipeBtn: {fileID: 3840925676418883078}
   ToolRecipeBtn: {fileID: 3118890515490210790}

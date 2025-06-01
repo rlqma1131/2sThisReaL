@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3576739295885983959}
   - component: {fileID: 5324431738803048831}
   - component: {fileID: 9127602835537728721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AppleJuice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2225262790606754965}
   - component: {fileID: 6973033854286374909}
   - component: {fileID: 1203608141633198981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tool-pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 707433034171705154}
   - component: {fileID: 4618523548095192237}
   - component: {fileID: 7880096914602775802}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_PickAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

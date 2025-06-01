@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a5c7ca0ddefcc04cabc3818cea7fde3, type: 3}
-  m_Name: AppleJuiceRecipe
+  m_Name: CandyRecipe
   m_EditorClassIdentifier: 
-  recipeName: "\uC0AC\uACFC\uC8FC\uC2A4"
-  recipeIcon: {fileID: -223477013, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  recipeName: "\uC0AC\uD0D5"
+  recipeIcon: {fileID: 2008020810, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
   requiredItems:
   - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
-  requiredItemAmounts: 03000000
-  consumableData: {fileID: 11400000, guid: c1b6f55540766f3478db1218b8ea9a24, type: 2}
+  - {fileID: 11400000, guid: 74535f9965fc44544a182a09209af3bb, type: 2}
+  requiredItemAmounts: 0100000001000000
+  consumableData: {fileID: 11400000, guid: 8470d8af441d3c947bc047b50094da7d, type: 2}
   cookItemAmount: 2

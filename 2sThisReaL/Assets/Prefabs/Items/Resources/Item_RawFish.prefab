@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5398760067214293080}
   - component: {fileID: 6255956753087794332}
   - component: {fileID: 6141579099568515745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fish_Raw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7388802966013017926}
   - component: {fileID: 7912095665441850870}
   - component: {fileID: 6577039272986928830}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_RawFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 162.18481, y: 0.49999952, z: 195.92139}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5398760067214293080}

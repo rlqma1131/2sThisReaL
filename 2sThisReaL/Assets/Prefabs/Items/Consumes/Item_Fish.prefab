@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 326760556848985457}
   - component: {fileID: 8226887431347799315}
   - component: {fileID: 3152543843916976600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 162.18481, y: 0.49999952, z: 195.92139}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6362258961801058513}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6362258961801058513}
   - component: {fileID: 7751695603984525659}
   - component: {fileID: 6952352778692870346}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fish_Cooked
   m_TagString: Untagged
   m_Icon: {fileID: 0}

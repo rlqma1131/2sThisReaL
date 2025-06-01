@@ -18,8 +18,8 @@ public class CraftingSystem : MonoBehaviour
     [Header("제작 레시피 설정")]
     public List<RecipeBase> recipes; // 크래프팅 레시피 목록 <빈 리스트에 아래에 선택된 레시피를 추가하며 사용
     public List<BuildCraftRecipe> buildCraftRecipes; // 빌드 크래프트 레시피 목록
-    // public List<CookingRecipe> cookingRecipes; // 요리 레시피 목록
-    // public List<ToolRecipe> toolRecipes; // 도구 레시피 목록
+    public List<CookCraftRecipe> cookingRecipes; // 요리 레시피 목록
+    public List<ToolCraftRecipe> toolRecipes; // 도구 레시피 목록
 
     [Header("크래프팅 버튼")]
     [SerializeField] private Button BuildRecipeBtn; // 크래프팅 버튼
@@ -183,10 +183,6 @@ public class CraftingSystem : MonoBehaviour
 
         if (curRecipe is BuildCraftRecipe buildRecipe)
         {
-            
-
-
-
             // 빌드 레시피인 경우, ResourceManager에 추가
             // ResourceManager에 빌드 아이템 데이터와 개수를 추가
             // 리소스 매니저가 필요
@@ -214,19 +210,35 @@ public class CraftingSystem : MonoBehaviour
             OnBuildButton(); 
 
         }
-        //else if (curRecipe is ToolRecipe toolRecipe)
-        //{
-        //    // 도구 레시피인 경우, 인벤토리에 추가
-        //    UIInventory.Instance.AddItem(toolRecipe.resultItem, toolRecipe.resultAmount);
-        //    Debug.Log($"[CraftingSystem] 도구 레시피 완료: {toolRecipe.resultItem.itemName} x{toolRecipe.resultAmount}");
-        //}
-        //else if (curRecipe is CookingRecipe cookingRecipe)
-        //{
-        //    // 요리 레시피인 경우, 인벤토리에 추가
-        //    UIInventory.Instance.AddItem(cookingRecipe.resultItem, cookingRecipe.resultAmount);
-        //    Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookingRecipe.resultItem.itemName} x{cookingRecipe.resultAmount}");
-        //}
-
+        else if(curRecipe is CookCraftRecipe cookRecipe)
+        {
+           inventory.AddCraftItem(cookRecipe.consumableData, cookRecipe.cookItemAmount);
+            Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookRecipe.consumableData.itemName} x{cookRecipe.cookItemAmount}");
+            // 요리 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
+            for (int i = 0; i < cookRecipe.requiredItems.Length; i++)
+            {
+                ItemData itemData = cookRecipe.requiredItems[i];
+                int requiredCount = cookRecipe.requiredItemAmounts[i];
+                //UIInventory에서 해당 아이템의 개수를 가져와서 소모
+                inventory.RemoveItem(itemData, requiredCount);
+            }
+            OnCookButton();
+        }
+        else if (curRecipe is ToolCraftRecipe toolRecipe)
+        {
+            // 도구 레시피인 경우, 인벤토리에 추가
+            inventory.AddCraftItem(toolRecipe.toolData, toolRecipe.toolItemAmount);
+            Debug.Log($"[CraftingSystem] 도구 레시피 완료: {toolRecipe.toolData.itemName} x{toolRecipe.toolItemAmount}");
+            // 도구 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
+            for (int i = 0; i < toolRecipe.requiredItems.Length; i++)
+            {
+                ItemData itemData = toolRecipe.requiredItems[i];
+                int requiredCount = toolRecipe.requiredItemAmounts[i];
+                //UIInventory에서 해당 아이템의 개수를 가져와서 소모
+                inventory.RemoveItem(itemData, requiredCount);
+            }
+            OnToolButton();
+        }
     }
 
 
@@ -250,11 +262,35 @@ public class CraftingSystem : MonoBehaviour
     public void OnCookButton()
     {
         // 요리 레시피 버튼을 클릭할 경우, 요리 레시피를 레시피에 할당하고 SetRecipeUI를 호출
+        curRecipe = null; // 현재 선택된 레시피 초기화
+        // 리스트를 비우기
+        recipes.Clear(); // 레시피 목록 초기화
+        // 생성된 슬롯 모두 제거
+
+        foreach (Transform child in recipeSlotParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        recipes = cookingRecipes.Cast<RecipeBase>().ToList(); // 요리 레시피를 레시피 목록에 할당
+        SetRecipeUI(); // 레시피 UI 업데이트
     }
 
     public void OnToolButton()
     {
         // 도구 레시피 버튼을 클릭할 경우, 도구 레시피를 레시피에 할당하고 SetRecipeUI를 호출
+        curRecipe = null; // 현재 선택된 레시피 초기화
+                          // 리스트를 비우기
+        recipes.Clear(); // 레시피 목록 초기화
+                         // 생성된 슬롯 모두 제거
+
+        foreach (Transform child in recipeSlotParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        recipes = toolRecipes.Cast<RecipeBase>().ToList(); // 도구 레시피를 레시피 목록에 할당
+        SetRecipeUI(); // 레시피 UI 업데이트
     }
 
 

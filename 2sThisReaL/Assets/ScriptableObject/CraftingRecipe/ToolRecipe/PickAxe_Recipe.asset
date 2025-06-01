@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2226a727e60a9b54e968010cbe17615a, type: 3}
+  m_Name: PickAxe_Recipe
+  m_EditorClassIdentifier: 
+  recipeName: "\uACE1\uAD2D\uC774\uC81C\uC791"
+  recipeIcon: {fileID: -1008186695, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  requiredItems:
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
+  requiredItemAmounts: 0100000001000000
+  toolData: {fileID: 11400000, guid: 8047aa65bbf4bed4aaa9445450ff1c83, type: 2}
+  toolItemAmount: 1

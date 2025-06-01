@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1236219528969368008}
   - component: {fileID: 1398917309104455026}
   - component: {fileID: 5882161308436289926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tool-axe-upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8479373790157342804}
   - component: {fileID: 138589521555422142}
   - component: {fileID: 1303099994561668148}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_BattleAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

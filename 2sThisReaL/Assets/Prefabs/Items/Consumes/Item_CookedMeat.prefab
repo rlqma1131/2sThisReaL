@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4478272075543258016}
   - component: {fileID: 870921609172044523}
   - component: {fileID: 6621592326425572444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: meat-cooked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1127609670285042719}
   - component: {fileID: 1581489934753844344}
   - component: {fileID: 5754130676301369573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_CookedMeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
