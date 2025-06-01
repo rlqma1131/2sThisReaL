@@ -170,20 +170,16 @@ public class BuildingSystem : MonoBehaviour
         if (lastMouseWorldPos == null || Vector3.Distance(lastMouseWorldPos.Value, position.Value) > 0.01f)
         {
             lastMouseWorldPos = position;
-
             currentPreview.SetPreviewPosition(position.Value);
 
             Collider col = ((MonoBehaviour)currentPreview).GetComponent<Collider>();
-            if (col != null)
+            if (col != null && Input.GetKey(KeyCode.C))  // 누를 때만 스냅
             {
                 Bounds previewBounds = col.bounds;
                 Vector3? snapped = SnapToNearestSurface(previewBounds);
 
-                // 스냅 대상이 있을 경우에만 위치 보정
                 if (snapped.HasValue)
-                {
                     currentPreview.SetPreviewPosition(snapped.Value);
-                }
             }
         }
 
@@ -244,7 +240,7 @@ public class BuildingSystem : MonoBehaviour
             for (int i = 0; i < 6; i++)
             {
                 float dist = Vector3.Distance(placedFaces[i], previewFaces[i]);
-                if (dist < minDistance && dist < 1f)
+                if (dist < minDistance && dist < 0.3f)
                 {
                     minDistance = dist;
                     Vector3 offset = placedFaces[i] - previewFaces[i];
