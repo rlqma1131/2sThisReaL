@@ -6,8 +6,8 @@ public class SpawnZone : MonoBehaviour
     public GameObject zonePrefab;
 
     [Header("SpawnZone Size")]
-    public int gridSizeX = 10;
-    public int gridSizeZ = 10;
+    private int gridSizeX = 10;
+    private int gridSizeZ = 10;
     public float spacing;
 
     private Vector3 startPosition = Vector3.zero;

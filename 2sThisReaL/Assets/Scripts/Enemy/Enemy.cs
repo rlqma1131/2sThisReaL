@@ -212,7 +212,6 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public void TakePhygicalDamage(int damage)
     {
-        Debug.Log($"피해 {damage} 입음");
         health -= damage;
         StartCoroutine(DamageFlash());
         if (health <= 0 && aiState != AIState.Dead)

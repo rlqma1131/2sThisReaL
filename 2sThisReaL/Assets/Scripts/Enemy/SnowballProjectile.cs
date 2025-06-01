@@ -5,8 +5,7 @@ public class SnowballProjectile : MonoBehaviour
 {
     public GameObject SnowballPrefab;
     public float power;
-    public float lifeTime = 3f;
-    public int damage = 20;
+    private int damage = 20;
     public void Shoot(Transform EnemyTransform)
     {
         Debug.Log("Shoot Snowball Projectile");

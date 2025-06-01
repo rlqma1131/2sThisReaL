@@ -72,12 +72,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d216fd62d40e1547abb43e9cbcd5b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   walkSpeed: 2
   runSpeed: 6
   dropOnDeath:
   - {fileID: 11400000, guid: 68ed04397fbd6ce4d8e5e18dab6ce365, type: 2}
   - {fileID: 11400000, guid: 68ed04397fbd6ce4d8e5e18dab6ce365, type: 2}
+  - {fileID: 11400000, guid: 6abeccddb78bbe743879d56840095c80, type: 2}
+  - {fileID: 11400000, guid: 6abeccddb78bbe743879d56840095c80, type: 2}
   detectDistance: 30
   minWanderDistance: 3
   maxWanderDistance: 7
