@@ -20,7 +20,7 @@
 
 
 # 프로젝트 소개
-## 게임 시작
+## 🏃‍♂️ 게임 시작
 ![image](https://github.com/user-attachments/assets/6112c705-e8da-44cd-9840-7a2acf14f26e)
 
 ## 캐릭터 선택   
@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/55c5ff58-cf9c-4d06-818c-bd8349ac9346
 > 남성/여성 중 원하는 캐릭터를 선택할 수 있습니다.   
 > 선택한 캐릭터는 서로 다른 모습을 가집니다.   
 
-## 상호작용
+## 🤝 상호작용
 
 ### 아이템 줍기
 
@@ -64,7 +64,7 @@ https://github.com/user-attachments/assets/7310d081-27c8-4fdc-ad26-89d84420a959
 > [E] 키를 눌러 아이템을 줍거나, 제작을 하거나, NPC와 대화를 하는 등 상호작용이 가능합니다.   
 > NPC와의 대화에서 어떤 대답을 하느냐에 따라 얻을 수 있는 아이템이 달라집니다.   
 
-## Condition
+## 🥶 Condition
 
 ![image](https://github.com/user-attachments/assets/f0f5b71f-08c5-4033-973d-13022669c441)
 
@@ -89,7 +89,7 @@ https://github.com/user-attachments/assets/895203f1-2fe8-4eae-9412-dec9d281ee8e
 >> Hunger/Thirsty가 0이 되면 HP가 크게 깎입니다.   
 >> Temperature가 너무 낮거나 높아지면 HP가 깎입니다.
 
-# 스킬
+## ⚔️ 스킬
 
 
 
@@ -101,7 +101,7 @@ https://github.com/user-attachments/assets/2e44bbd3-790b-4bfe-a30c-39f2c8c16052
 > 긱 스킬은 공격력과 쿨타임을 가지고 있습니다.
 > 스킬은 스태미나를 소모합니다.
 
-## 자원 채집
+## 🪓 자원 채집
 
 
 
@@ -114,7 +114,7 @@ https://github.com/user-attachments/assets/547a8cd8-93af-462c-bfdc-7e34955e4718
 > 자원이 생성될 위치(영상 좌측, 녹색 BoxCollider)에 Player나 Enemy가 존재할 경우, 자원의 생성 시간이 지연됩니다.   
 >> 해당 범위에 Player나 Enemy가 없을 때까지 지속적으로 지연시킵니다.
 
-## 인벤토리
+## 🎒 인벤토리
 
 
 
@@ -126,7 +126,7 @@ https://github.com/user-attachments/assets/58a4ccdf-772d-47fe-acea-0e5969168be1
 > 자원 채집, 제작대에서 제작한 아이템들을 보관합니다.
 > 장비 아이템의 장비/해제와 소비 아이템를 사용하는 기능을 수행합니다.
 
-## 제작
+## 🛠️ 제작
 
 https://github.com/user-attachments/assets/3a2ae859-ac83-4c60-8f6d-59c3f2bf767d
 
@@ -137,7 +137,7 @@ https://github.com/user-attachments/assets/3a2ae859-ac83-4c60-8f6d-59c3f2bf767d
 > 사용한 아이템은 소모되며, 그에 따라 다른 레시피들도 제작 가능 여부가 업데이트 됩니다.
 
 
-## 적 Enemy
+## 💀 적 Enemy
 
 https://github.com/user-attachments/assets/3c90388e-bf3b-4164-8443-0e631bfabe7a
 
@@ -148,7 +148,7 @@ https://github.com/user-attachments/assets/3c90388e-bf3b-4164-8443-0e631bfabe7a
 > 에너미가 사망할 경우 몇 가지의 아이템을 드랍합니다.   
 > AI Navigation을 이용하여, Enemy는 Player를 추적하고 갈 수 있는 길에서만 생성 및 이동합니다.   
 
-## 건축모드
+## 🏗️ 건축모드
 
 
 
