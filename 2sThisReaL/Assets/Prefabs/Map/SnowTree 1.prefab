@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.02, y: 10, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2800089104421110613}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 8027918567965685397}
   m_Layer: 8
   m_Name: snowTree (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,8 +192,11 @@ MonoBehaviour:
   baseItemsToGive:
   - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
   - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: 74535f9965fc44544a182a09209af3bb, type: 2}
+  - {fileID: 11400000, guid: a61de53bab0243f4d999f73023c95676, type: 2}
   quantityPerHit: 1
   capacity: 10
   respawnTime: 30
-  decayStamina: 0
+  decayStamina: -10
   gatherType: 0
