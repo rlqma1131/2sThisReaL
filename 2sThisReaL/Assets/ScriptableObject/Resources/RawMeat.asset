@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d966495b901b1f46b77b2d824543f77, type: 3}
+  m_Name: RawMeat
+  m_EditorClassIdentifier: 
+  itemID: 5
+  itemName: "\uC0DD\uACE0\uAE30"
+  itemIcon: {fileID: 1831567352, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  itemDescription: "\uAD7D\uC9C0 \uC54A\uC740 \uC0DD\uACE0\uAE30 \uC785\uB2C8\uB2E4.\n\uADF8\uB0E5
+    \uBA39\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+  itemType: 00000000
+  isStackable: 1
+  maxStackSize: 20
+  dropPrefab: {fileID: 7945419865300437390, guid: 83cdb6470f29f2c41854443af6ca535d, type: 3}

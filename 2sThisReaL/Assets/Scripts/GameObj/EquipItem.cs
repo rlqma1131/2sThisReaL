@@ -6,7 +6,8 @@ public enum GatherType
 {
     //벌목, 채광
     Lumbering,//벌목 -목재류 수급
-    Mining // 채광 - 광물 수급
+    Mining, // 채광 - 광물 수급
+    None // 자원 채집 없음
 }
 
 [CreateAssetMenu(fileName = "EquipableItem", menuName = "New Item/Equipable")]

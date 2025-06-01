@@ -179,10 +179,11 @@ public class CraftingSystem : MonoBehaviour
         // 현재 레시피에 따라 크래프팅 실행
         // 결과물이 BuildItem이면 ResourceManager에 추가
         // 결과물이 ToolRecipe나 CookingRecipe이면 인벤토리에 추가
+        inventory = GameManager.Instance.uiInventory;
 
         if (curRecipe is BuildCraftRecipe buildRecipe)
         {
-            inventory = GameManager.Instance.uiInventory;
+            
 
 
 

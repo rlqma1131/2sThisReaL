@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d966495b901b1f46b77b2d824543f77, type: 3}
+  m_Name: RawFish
+  m_EditorClassIdentifier: 
+  itemID: 6
+  itemName: "\uC0DD\uC120"
+  itemIcon: {fileID: 285043536, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  itemDescription: "\uC2E0\uC120\uD55C \uC0DD\uC120\uC785\uB2C8\uB2E4.\n\uADF8\uB0E5
+    \uBA39\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+  itemType: 00000000
+  isStackable: 1
+  maxStackSize: 20
+  dropPrefab: {fileID: 8963502903241907205, guid: a754037ee6ac4b949a97ab9564d01006, type: 3}

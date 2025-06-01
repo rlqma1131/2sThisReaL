@@ -10,6 +10,7 @@ public class CraftSlot : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI makeCountText; // 제작 가능한 개수 표시용 텍스트
+    [SerializeField] private TextMeshProUGUI objectAmount; // 제작할 아이템의 1회 생산 시 만들어지는 개수 표시용 텍스트
     [SerializeField] private Button button; // 슬롯 버튼
     public int maxCount; // 제작 가능한 최대 개수
 
@@ -45,6 +46,28 @@ public class CraftSlot : MonoBehaviour
             // 레시피 데이터가 있다면 레시피의 아이콘과 현재 제작 가능한 개수를 표시
             iconImage.sprite = curRecipeData.recipeIcon;
             iconImage.gameObject.SetActive(true); // 아이콘 활성화
+
+            // 제작할 아이템의 1회 생산 시 만들어지는 개수 표시
+            // BuildItem은 buildItemAmount, CookRecipe는 cookItemAmount, ToolRecipe는 toolItemAmount 등으로 설정
+            // 현재 레시피가 어떤 레시피냐에 따라 할당하는 내용이 달라짐
+
+            if (curRecipeData is BuildCraftRecipe buildCraftRecipe)
+            {
+                objectAmount.text = "x"+buildCraftRecipe.buildItemAmount.ToString(); // 빌드 아이템의 개수 표시
+            }
+            else if (curRecipeData is CookCraftRecipe cookRecipe)
+            {
+                objectAmount.text = "x"+cookRecipe.cookItemAmount.ToString(); // 요리 아이템의 개수 표시
+            }
+            else if (curRecipeData is ToolCraftRecipe toolRecipe)
+            {
+                objectAmount.text = "x"+toolRecipe.toolItemAmount.ToString(); // 도구 아이템의 개수 표시
+            }
+            else
+            {
+                objectAmount.text = "1"; // 기본값으로 1로 설정
+            }
+
 
             //제작 가능한 개수 계산 필요
             maxCount = GetMaxCount(); // 현재 레시피에 따라 제작 가능한 최대 개수 계산

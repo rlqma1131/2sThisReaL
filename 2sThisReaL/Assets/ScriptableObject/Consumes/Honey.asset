@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1b65f44ddb8d3469776cd921456dbd, type: 3}
+  m_Name: Honey
+  m_EditorClassIdentifier: 
+  itemID: 2002
+  itemName: "\uAFC0"
+  itemIcon: {fileID: 1827574760, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  itemDescription: "\uBC8C\uC5D0\uAC8C\uC11C \uC5BB\uC5B4\uB0B8 \uAFC0\uC785\uB2C8\uB2E4.
+    \uB098\uBB34\uB098 \uB3CC\uC5D0\uC11C\uB3C4 \uC885\uC885 \uC5BB\uC744 \uC218
+    \uC788\uC2B5\uB2C8\uB2E4."
+  itemType: 03000000
+  isStackable: 1
+  maxStackSize: 20
+  dropPrefab: {fileID: 4463293593726873750, guid: a540862d5d25c8b489d470018bb071bd, type: 3}
+  consumableData:
+  - consumableType: 0
+    consumableAmount: 30
+  - consumableType: 2
+    consumableAmount: 50
+  - consumableType: 1
+    consumableAmount: -10

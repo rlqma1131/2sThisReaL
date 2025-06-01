@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e813fd3f400bbd242b6627e3f0c0fc75, type: 3}
+  m_Name: Battle_Axe
+  m_EditorClassIdentifier: 
+  itemID: 1002
+  itemName: "\uC804\uD22C\uB3C4\uB07C"
+  itemIcon: {fileID: 772681039, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  itemDescription: "\uC804\uD22C\uC6A9 \uB3C4\uB07C\uC785\uB2C8\uB2E4. \uC804\uD22C\uC6A9\uC774\uAE30
+    \uB54C\uBB38\uC5D0 \uBC8C\uBAA9\uC5D0\uB294 \uC801\uD569\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  itemType: 02000000
+  isStackable: 0
+  maxStackSize: 20
+  dropPrefab: {fileID: 2593763712239589424, guid: 552e168412289974ba7b68dd10f69ff3, type: 3}
+  isEquipable: 1
+  equipItem: {fileID: 88457755756309383, guid: 6ef24c2b13bcc144a9ef76d8e08dd20b, type: 3}
+  canGathering: 0
+  getType: 2
+  attackPower: 18
+  attackDistance: 3

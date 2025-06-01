@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1b65f44ddb8d3469776cd921456dbd, type: 3}
+  m_Name: Fish_Cooked
+  m_EditorClassIdentifier: 
+  itemID: 2503
+  itemName: "\uC0DD\uC120\uAD6C\uC774"
+  itemIcon: {fileID: 1657266646, guid: 3d96cbdb8c1da0a43a7163b3e95380f9, type: 3}
+  itemDescription: "\uAD6C\uC6B4 \uC0DD\uC120\uC785\uB2C8\uB2E4.\n\uD5C8\uAE30\uB97C
+    \uC5B4\uB290 \uC815\uB3C4 \uCC44\uC6CC\uC90D\uB2C8\uB2E4."
+  itemType: 0100000003000000
+  isStackable: 1
+  maxStackSize: 20
+  dropPrefab: {fileID: 467239987106423047, guid: 4cb19b3566534ab4aa9863e9db65f42b, type: 3}
+  consumableData:
+  - consumableType: 0
+    consumableAmount: 80
+  - consumableType: 2
+    consumableAmount: 80
