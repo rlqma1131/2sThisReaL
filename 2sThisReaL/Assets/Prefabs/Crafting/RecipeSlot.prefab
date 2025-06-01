@@ -333,19 +333,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8200086574216534573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6347990996445972243}
-        m_TargetAssemblyTypeName: CraftSlot, Assembly-CSharp
-        m_MethodName: OnClickButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4686058442340463213
 MonoBehaviour:
   m_ObjectHideFlags: 0

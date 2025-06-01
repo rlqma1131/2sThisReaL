@@ -67,37 +67,37 @@ public class ConditionManager : MonoBehaviour
             }
         }
 
-        //if (scene.name == "MainScene")
-        //{
-        //    GameObject conditionObj = GameObject.Find("Condition");
-        //    if (conditionObj != null)
-        //    {
-        //        conditionObj.SetActive(true);
-        //    }
+        if (scene.name == "MainScene")
+        {
+            // 🔧 Conditions 오브젝트 다시 켜기
+            gameObject.SetActive(true); // ← ConditionManager는 Conditions 오브젝트에 붙어있음
 
-        //    // 초기화도 여기서 안전하게 가능
-        //    ResetCondition();
-        //}
+            GameObject conditionObj = transform.Find("Condition")?.gameObject;
+            if (conditionObj != null)
+            {
+                conditionObj.SetActive(true);
+            }
+            
+            // 초기화도 여기서 안전하게 가능
+            ResetCondition();
+        }
     }
-    //public void ResetCondition()
-    //{
-    //    count = 0;
+    public void ResetCondition()
+    {
+        count = 1;
+    
+        curHp = maxHp;
+        curStamina = maxStamina;
+        curHunger = maxHunger;
+        curThirsty = maxThirsty;
+        curTemperature = Mathf.Clamp((maxTemperature + minTemperature) / 2f, minTemperature, maxTemperature);
+    
+        // UI 다시 활성화
+        if (Condition != null)
+        {
+            Condition.gameObject.SetActive(true);
+        }
 
-    //    curHp = maxHp;
-    //    curStamina = maxStamina;
-    //    curHunger = maxHunger;
-    //    curThirsty = maxThirsty;
-    //    curTemperature = Mathf.Clamp((maxTemperature + minTemperature) / 2f, minTemperature, maxTemperature);
-
-    //    if (Condition != null)
-    //    {
-    //        Condition.gameObject.SetActive(true); // UI가 꺼져있다면 켬
-    //    }
-
-    //    GameObject conditionUI = GameObject.Find("Condition");
-    //    if (conditionUI != null)
-    //    {
-    //        conditionUI.SetActive(true); // UI 트리 복구
-    //    }
-    //}
+        gameObject.SetActive(true); // Conditions 다시 켜기
+    }
 }

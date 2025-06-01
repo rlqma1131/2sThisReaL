@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6080a97db2af801479074395a3bdc822, type: 3}
+  m_Name: Column_Recipe
+  m_EditorClassIdentifier: 
+  recipeName: column
+  recipeIcon: {fileID: 21300000, guid: f9ccabc5a7c1d324d83ac444e612a989, type: 3}
+  requiredItems:
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  requiredItemAmounts: 05000000
+  buildItemData: {fileID: 11400000, guid: 5a2691de5a649434c95b7e45c3f74d51, type: 2}
+  buildItemAmount: 1

@@ -367,12 +367,12 @@ GameObject:
   m_Component:
   - component: {fileID: 964385388368936423}
   - component: {fileID: 5865870716712774680}
-  - component: {fileID: 4480522273327078803}
   - component: {fileID: 3676708738044219411}
   - component: {fileID: 409982646118052531}
+  - component: {fileID: 3771159366798894773}
   m_Layer: 0
   m_Name: Yeti
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,7 +411,13 @@ MonoBehaviour:
   health: 40
   walkSpeed: 2
   runSpeed: 3.5
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
+  - {fileID: 11400000, guid: 08ea41f2ad830044682c180909413103, type: 2}
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
+  - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
   detectDistance: 30
   minWanderDistance: 5
   maxWanderDistance: 15
@@ -422,27 +428,6 @@ MonoBehaviour:
   attackDistance: 20
   snowballProjectile: {fileID: 3209717709361457961, guid: 117ea3575341ed640a7181ea3bef2843, type: 3}
   spawnEffectPrefab: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
---- !u!95 &4480522273327078803
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4825891124374161140}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54ac9a36d3567bc4385d1a4e5c4bb71a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &3676708738044219411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -458,7 +443,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -486,6 +471,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &3771159366798894773
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825891124374161140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 383497f22f77ea84d972928a7e8ecea1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5386480647716401282
 GameObject:
   m_ObjectHideFlags: 0

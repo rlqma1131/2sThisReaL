@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 1.5f;
     [SerializeField] private Vector3 crouchCenter = new Vector3(0f, 1f, 0f);
 
+    public bool isInputBlocked = false; // 입력이 잠겨있는지 여부
+
 
     private void Awake()
     {
@@ -85,6 +87,10 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(MoveCoroutine(3, 10));
                 // 밑에 함수 2 ~ 5초 후에 실행 되게끔
                 
+            }
+            else if (isInputBlocked)
+            {
+                return; // 입력이 잠겨있으면 아무 동작도 하지 않음
             }
             else
             {

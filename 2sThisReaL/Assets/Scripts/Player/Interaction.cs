@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -50,17 +50,18 @@ public class Interaction : MonoBehaviour
                     //SetPromptText();
                 }
             }
+            else
+            {
+                curInteractGameObject = null;
+                curInteractable = null;
+            }
+
             if (rayOrigin == null)
             {
                 Debug.LogWarning("rayOrigin is null!");
                 return;
             }
-            //else
-            //{
-            //    curInteractGameObject = null;
-            //    curInteractable = null;
-            //    prompText.gameObject.SetActive(false);
-            //}
+
         }
     }
     void CreateRayOrigin()

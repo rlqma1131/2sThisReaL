@@ -14,6 +14,11 @@ public class CraftSlot : MonoBehaviour
     public int maxCount; // 제작 가능한 최대 개수
 
     private RecipeBase curRecipeData;
+    //읽기전용 레시피 프로퍼티
+    public RecipeBase CurRecipeData
+    {
+        get { return curRecipeData; }
+    }
     private int slotIndex; // 슬롯의 순서
     private bool isAvailable; // 제작 가능한 아이템이면 Alpha 1, 제작 불가능한 아이템이면 Alpha 0.4로 표시
 
@@ -64,7 +69,7 @@ public class CraftSlot : MonoBehaviour
     private int GetItemCountInInventory(ItemData itemData)
     {
         if (inventory == null)
-            inventory = GameObject.Find("UIInventory").GetComponent<UIInventory>();
+            inventory = GameManager.Instance.uiInventory;
 
         int total = 0;
         foreach (var slot in inventory.slots)
@@ -84,8 +89,7 @@ public class CraftSlot : MonoBehaviour
         if(inventory == null)
             inventory = GameManager.Instance.uiInventory; // UIInventory가 할당되지 않았다면 GameManager에서 가져옴
 
-                                                          //inventory = GameObject.Find("UIInventory").GetComponent<UIInventory>(); //만약 UIInventory가 할당되지 않았다면 찾아서 할당
-
+     
 
         // 현재 레시피의 requiredItems와 requiredItemAmounts를 사용하여 제작 가능한 최대 개수를 계산
         // 가령 돌이 2개 나무가 1개 필요하고 돌 5개 나무가 3개 있다면, (가진 아이템 수/필요개수)를 각각 계산
@@ -128,7 +132,6 @@ public class CraftSlot : MonoBehaviour
             if (craftingSystem != null)
             {
                 craftingSystem.SelectRecipe(curRecipeData);
-                craftingSystem.UpdateRecipeUI();
             }
         }
     }

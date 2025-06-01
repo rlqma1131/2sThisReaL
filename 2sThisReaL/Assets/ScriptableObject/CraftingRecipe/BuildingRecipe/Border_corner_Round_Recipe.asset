@@ -16,5 +16,6 @@ MonoBehaviour:
   recipeIcon: {fileID: 21300000, guid: e53d79a78619cb04bb571429bfefe577, type: 3}
   requiredItems:
   - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
-  requiredItemAmounts: 02000000
+  requiredItemAmounts: 04000000
   buildItemData: {fileID: 11400000, guid: dd6fb09a64c39a3429952b214c7256d1, type: 2}
+  buildItemAmount: 1
