@@ -18,13 +18,6 @@ public class CraftTool : MonoBehaviour, IInteractable
         craftingUI.SetActive(false); //제작 UI 비활성화
     }
 
-    private void Update()
-    {
-        if (craftMode)
-        {
-            GameManager.Instance.Player.controller.curMovementInput = Vector2.zero;
-        }
-    }
 
     //제작대에 다가가서 상호작용을 하면 
     public string GetInteractPrompt()
@@ -44,8 +37,9 @@ public class CraftTool : MonoBehaviour, IInteractable
             Cursor.SetCursor(craftingCursor, Vector2.zero, CursorMode.Auto); //커서 변경
             Cursor.lockState = CursorLockMode.None; // 커서 자유 이동
             Cursor.visible = true;
+            GameManager.Instance.Player.controller.isInputBlocked = true; // 플레이어 입력 차단
 
-                        
+
         }
         else
         {
@@ -53,6 +47,7 @@ public class CraftTool : MonoBehaviour, IInteractable
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); //커서 초기화
             Cursor.lockState = CursorLockMode.Locked; // 커서 잠금
             Cursor.visible = false; // 커서 숨김
+            GameManager.Instance.Player.controller.isInputBlocked = false; // 플레이어 입력 차단 해제
 
             craftingSystem.Reset(); //크래프팅 시스템 초기화
         }
