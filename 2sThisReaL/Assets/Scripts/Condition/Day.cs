@@ -46,7 +46,10 @@ public class Day : MonoBehaviour
     // Gradient : UnityEngine에 정의된 class로 시간에 따른 색상의 변화를 다루는 구조
     // Intensity : 조명이나 효과의 밝기, 강도 등을 나타내는
 
-    // Start is called before the first frame update
+    [Header("Time UI Icons")]
+    [SerializeField] private GameObject sunIcon;  // 해 아이콘
+    [SerializeField] private GameObject moonIcon; // 달 아이콘
+
     void Start()
     {
         timeRate = 1.0f / dayLength;
@@ -57,7 +60,7 @@ public class Day : MonoBehaviour
 
         StartCoroutine(StartDayCoroutin(3));
     }
-    // Update is called once per frame
+
     void Update()
     {
         // time에 timeRate를 계속해서 더해주고 하루(1.0)가 끝나면 0으로 루프(time %= 1.0f )
@@ -68,6 +71,8 @@ public class Day : MonoBehaviour
 
         RenderSettings.ambientIntensity = lightIntensityMultiplier.Evaluate(time);
         RenderSettings.reflectionIntensity = reflectionIntensityMultiplier.Evaluate(time);
+
+        UpdateTimeIcons();
 
         if (time < prevTime)
         {
@@ -83,6 +88,21 @@ public class Day : MonoBehaviour
             }
         }
         prevTime = time;
+    }
+
+    private void UpdateTimeIcons()
+    {
+        // 낮 시간대
+        if (time >= 0.25f && time <= 0.75f)
+        {
+            if (sunIcon != null) sunIcon.SetActive(true);
+            if (moonIcon != null) moonIcon.SetActive(false);
+        }
+        else
+        {
+            if (sunIcon != null) sunIcon.SetActive(false);
+            if (moonIcon != null) moonIcon.SetActive(true);
+        }
     }
 
     private void UpdateLight(Light _lightSourec , Gradient _gradient , AnimationCurve _curve)
