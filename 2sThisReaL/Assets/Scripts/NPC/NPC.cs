@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour, IInteractable
     private Collider npcCollider;
     private bool hasTalked = false;
     public NpcType npcType;
+    public bool HasTalked => hasTalked;
 
     private void Start()
     {

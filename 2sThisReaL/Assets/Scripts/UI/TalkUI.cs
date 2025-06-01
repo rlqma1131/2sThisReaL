@@ -83,7 +83,11 @@ public class TalkUI : MonoBehaviour
         }
 
         playerImageObject.SetActive(true);
-        npcImageObject.SetActive(true);
+
+        if (npc.HasTalked)
+            npcImageObject.SetActive(false);
+        else
+            npcImageObject.SetActive(true);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -263,7 +267,8 @@ public class TalkUI : MonoBehaviour
         {
             dialogueText.StartDialogue(new string[]
             {
-            "[싸늘하다. 이미 늦었다. 숨소리가 멎어있다.]"
+            "[싸늘하다. 이미 늦었다. 숨소리가 멎어있다.]",
+            "......"
             });
 
             StartCoroutine(CloseAfterDialogue());
