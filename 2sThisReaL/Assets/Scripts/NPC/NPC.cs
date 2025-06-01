@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public string GetInteractPrompt()
     {
-        return "[E] 확인하기";
+        return "확인하기";
     }
 
     public void OnInteract()
