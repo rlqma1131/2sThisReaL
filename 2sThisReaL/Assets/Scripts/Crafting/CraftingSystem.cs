@@ -163,8 +163,13 @@ public class CraftingSystem : MonoBehaviour
             Debug.LogError("[CraftingSystem] 선택된 레시피에 해당하는 CraftSlot을 찾을 수 없습니다.");
             return;
         }
+
+        //현재 선택된 레시피의 maxCount를 가져옴
+        craftSlot.GetMaxCount(); // 현재 레시피에 따라 제작 가능한 최대 개수 계산
+
         if (craftSlot.maxCount <= 0)
         {
+            
             Debug.Log($"[CraftingSystem] 제작 가능한 개수가 0입니다. 제작을 진행할 수 없습니다.");
             return; // 제작 가능한 개수가 0이면 아무 작업도 하지 않음
         }
@@ -205,6 +210,7 @@ public class CraftingSystem : MonoBehaviour
 
 
             }
+            OnBuildButton(); 
 
         }
         //else if (curRecipe is ToolRecipe toolRecipe)
@@ -219,10 +225,6 @@ public class CraftingSystem : MonoBehaviour
         //    UIInventory.Instance.AddItem(cookingRecipe.resultItem, cookingRecipe.resultAmount);
         //    Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookingRecipe.resultItem.itemName} x{cookingRecipe.resultAmount}");
         //}
-
-        
-        craftSlot.SetRecipe(curRecipe); // 현재 레시피를 다시 설정하여 maxCount를 업데이트
-
 
     }
 
