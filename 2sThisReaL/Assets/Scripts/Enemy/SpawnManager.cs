@@ -7,10 +7,10 @@ public class SpawnerZone : MonoBehaviour
 {
     [SerializeField] private GameObject[] monsterPrefabs;
 
-    private float baseSpawnInterval = 10;
+    private float baseSpawnInterval = 6;
     private float intervalReductionPerDay = 1f;
-    private float minSpawnInterval = 8f;
-    private int maxMonsterCount = 3;
+    private float minSpawnInterval = 3f;
+    private int maxMonsterCount = 2;
 
     private float spawnRadius = 30; // 스폰영역 반지름
     private float obstacleCheckRadius = 2f;
