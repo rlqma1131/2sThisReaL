@@ -7,9 +7,9 @@ public class SpawnerZone : MonoBehaviour
 {
     [SerializeField] private GameObject[] monsterPrefabs;
 
-    private float baseSpawnInterval;
-    [SerializeField] private float intervalReductionPerDay = 1f;
-    [SerializeField] private float minSpawnInterval = 8f;
+    private float baseSpawnInterval = 10;
+    private float intervalReductionPerDay = 1f;
+    private float minSpawnInterval = 8f;
     private int maxMonsterCount = 3;
 
     private float spawnRadius = 30; // 스폰영역 반지름
@@ -17,7 +17,7 @@ public class SpawnerZone : MonoBehaviour
     private float minPlayerDistance = 25f;
     private float minFOVAngle = 45f;
 
-    private int maxTotalSpawnCount = 3;
+    private int maxTotalSpawnCount = 2;
     private int totalSpawnCount = 0;
 
     private Transform player;
@@ -98,12 +98,12 @@ public class SpawnerZone : MonoBehaviour
             if (angle < minFOVAngle)
                 continue;
 
-            // 주변에 Obstacle 태그가 있는 오브젝트가 있는지
+            // 주변에 Obstacle이나 몬스터오브젝트가 있는지
             Collider[] nearby = Physics.OverlapSphere(point, obstacleCheckRadius);
             bool canSpawn = true;
             foreach (var collider in nearby)
             {
-                if (collider.CompareTag("Obstacle"))
+                if (collider.CompareTag("Obstacle") || collider.CompareTag("Enemy"))
                 {
                     canSpawn = false;
                     break;

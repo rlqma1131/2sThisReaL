@@ -78,6 +78,8 @@ MonoBehaviour:
   dropOnDeath:
   - {fileID: 11400000, guid: 68ed04397fbd6ce4d8e5e18dab6ce365, type: 2}
   - {fileID: 11400000, guid: 68ed04397fbd6ce4d8e5e18dab6ce365, type: 2}
+  - {fileID: 11400000, guid: 6abeccddb78bbe743879d56840095c80, type: 2}
+  - {fileID: 11400000, guid: 6abeccddb78bbe743879d56840095c80, type: 2}
   detectDistance: 30
   minWanderDistance: 3
   maxWanderDistance: 7

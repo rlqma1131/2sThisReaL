@@ -77,6 +77,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
   - {fileID: 11400000, guid: 86eea5523d915684faf491a0629f79a3, type: 2}
   - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
   detectDistance: 30
   minWanderDistance: 5
   maxWanderDistance: 10
