@@ -2532,6 +2532,7 @@ MonoBehaviour:
   flashCooldown: 2
   crouchHeight: 1.5
   crouchCenter: {x: 0, y: 1, z: 0}
+  isInputBlocked: 0
 --- !u!114 &4694051424407660970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,6 +2799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f21f125f85685418a428111080ce82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiInventory: {fileID: 0}
 --- !u!114 &6413911649674083004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,7 +2830,7 @@ MonoBehaviour:
   dashCooldown: 3
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   audioSource: {fileID: -8710989944853037188}
   fireballClip: {fileID: 8300000, guid: 56b6d8d44f19d0e4a87839724c1c70e1, type: 3}
   dashClip: {fileID: 8300000, guid: ff382ab75326cb341ac9d5c53d3da2ca, type: 3}
