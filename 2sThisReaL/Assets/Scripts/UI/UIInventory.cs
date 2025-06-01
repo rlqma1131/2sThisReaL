@@ -33,6 +33,12 @@ public class UIInventory : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitForGameManager());
+        dropPosition = transform.Find("dropPosition");
+
+        if (dropPosition == null)
+        {
+            Debug.LogWarning("DropPosition not found! Make sure the child object is named correctly.");
+        }
     }
 
     // 선택한 아이템 표시할 정보창 Clear 함수
