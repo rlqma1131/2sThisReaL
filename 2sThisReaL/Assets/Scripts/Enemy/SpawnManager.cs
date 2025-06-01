@@ -8,7 +8,7 @@ public class SpawnerZone : MonoBehaviour
     [SerializeField] private GameObject[] monsterPrefabs;
 
     private float baseSpawnInterval = 6;
-    private float intervalReductionPerDay = 1f;
+    private float intervalReductionPerDay = 0.5f;
     private float minSpawnInterval = 3f;
     private int maxMonsterCount = 2;
 
