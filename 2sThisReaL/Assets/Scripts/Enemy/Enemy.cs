@@ -13,7 +13,7 @@ public enum AIState
     Dead
 }
 
-public class Enemy : MonoBehaviour, idamagable
+public class Enemy : MonoBehaviour, IDamageable
 {
 
     [Header("Stats")]
@@ -210,7 +210,7 @@ public class Enemy : MonoBehaviour, idamagable
             SetState(AIState.Dead);
         }
     }
-    public void takephygicaldamage(int damage)
+    public void TakePhygicalDamage(int damage)
     {
         Debug.Log($"피해 {damage} 입음");
         health -= damage;

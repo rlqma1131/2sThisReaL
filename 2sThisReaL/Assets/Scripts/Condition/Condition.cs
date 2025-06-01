@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public interface idamagable
+public interface IDamageable
 {
-    void takephygicaldamage(int damage);
+    void TakePhygicalDamage(int damage);
 }
 public class Condition : MonoBehaviour
 {

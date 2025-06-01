@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7634166654054640117}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3475035525724925007}
   - component: {fileID: 6182763131279219071}
   - component: {fileID: 1509586236822320746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5678452665812032734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4035358071942009396}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing2.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5330902457861581689}
   - component: {fileID: 4906344964259697882}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6672227327853486609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2765023945383659957}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MonsterArmature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3770208976716811095}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing2.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806486360246632269}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2261840523790605262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780128822459261306}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing2.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3031578708915637680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing2.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8135909333945927605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758344014856537291}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing1.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6618450600197651464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing1.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107669804613967958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

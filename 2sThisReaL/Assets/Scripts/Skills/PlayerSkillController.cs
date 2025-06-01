@@ -81,22 +81,27 @@ public class PlayerSkillController : MonoBehaviour
         Vector3 targetPos = startPos + dashDir * dashDistance;
 
         // 대시 시작 시 적 탐지
-        RaycastHit[] hits = Physics.SphereCastAll(startPos, 1f, dashDir, dashDistance, enemyLayer);
+        RaycastHit[] hits = Physics.SphereCastAll(startPos, 3f, dashDir, dashDistance, enemyLayer);
         foreach (var hit in hits)
         {
-            if (hit.collider.CompareTag("Enemy"))
+            Debug.Log($"Hit: {hit.collider.name}, Layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
+
+            var enemy = hit.collider.GetComponentInParent<IDamageable>();
+            if (enemy != null)
             {
-                if (hit.collider.TryGetComponent<idamagable>(out var enemy))
-                {
-                    enemy.takephygicaldamage(100);
-                }
+                Debug.Log("데미지 적용됨");
+                enemy.TakePhygicalDamage(100);
+            }
+            else
+            {
+                Debug.Log("데미지 적용 대상 아님");
             }
         }
 
         float elapsed = 0f;
         float checkRadius = 0.5f;
         float capsuleHeight = 2.0f;
-        float offsetY = 3.0f; // 캡슐 중심이 캐릭터 중앙쯤 되도록
+        float offsetY = 4.0f; // 캡슐 중심이 캐릭터 중앙쯤 되도록
 
         Vector3 lastValidPosition = transform.position;
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5594118398129334424}
   - component: {fileID: 3569275046891522879}
   - component: {fileID: 6104424054864403059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4698200879308322736}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MonsterArmature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5840256299271895845}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 91565338092097428}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5802090047605713673}
   - component: {fileID: 7346210142572168942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8818277331653743481}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 259420073645808342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7669651967770852529}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3448195861716856644}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7890769435623336649}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7536247054468569332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915427841633454870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5786753473747753066}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7502359716865115537}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

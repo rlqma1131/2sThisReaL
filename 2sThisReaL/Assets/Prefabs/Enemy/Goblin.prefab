@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2560783377397991539}
   - component: {fileID: 6390951275873360799}
   - component: {fileID: 8210744332085324266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5451089153143595470}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1625958939453425543}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3323266355588404130}
   - component: {fileID: 7003957153641117953}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin_Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3528616249896726145}
   - component: {fileID: 8595279972337032110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7594307631535822361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196484479439532572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8910050737481017872}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2785916099194932988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952887198494313903}
   - component: {fileID: 5365039970063862183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4138899185964586064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6436780091460595449}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MonsterArmature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789748830549113515}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246783685029007879}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head3_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7388461070341918129}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8396131314507198998}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyebrow.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
