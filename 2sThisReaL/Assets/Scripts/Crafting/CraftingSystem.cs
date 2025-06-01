@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -145,8 +146,23 @@ public class CraftingSystem : MonoBehaviour
     {
         if (curRecipe == null) return;
         // 제작 완료 했으니, CraftSlot에서 maxCount를 재설정
-        CraftSlot craftSlot = FindObjectOfType<CraftSlot>();
+        CraftSlot[] craftSlots = FindObjectsOfType<CraftSlot>();
 
+        CraftSlot craftSlot = null;
+        foreach (var slot in craftSlots)
+        {
+            if (slot.CurRecipeData == curRecipe) // CraftSlot에 Recipe 프로퍼티가 있다고 가정
+            {
+                craftSlot = slot;
+                break;
+            }
+        }
+
+        if (craftSlot == null)
+        {
+            Debug.LogError("[CraftingSystem] 선택된 레시피에 해당하는 CraftSlot을 찾을 수 없습니다.");
+            return;
+        }
         if (craftSlot.maxCount <= 0)
         {
             Debug.Log($"[CraftingSystem] 제작 가능한 개수가 0입니다. 제작을 진행할 수 없습니다.");

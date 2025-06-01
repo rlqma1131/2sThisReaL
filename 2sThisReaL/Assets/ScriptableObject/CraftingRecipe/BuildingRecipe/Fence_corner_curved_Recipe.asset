@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6080a97db2af801479074395a3bdc822, type: 3}
-  m_Name: Border_corner_Round_Recipe
+  m_Name: Fence_corner_curved_Recipe
   m_EditorClassIdentifier: 
-  recipeName: border-corner-round
-  recipeIcon: {fileID: 21300000, guid: e53d79a78619cb04bb571429bfefe577, type: 3}
+  recipeName: FenceCornerCurved
+  recipeIcon: {fileID: 21300000, guid: ded4c2da85e2e274289ceea444a52144, type: 3}
   requiredItems:
-  - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
-  requiredItemAmounts: 04000000
-  buildItemData: {fileID: 11400000, guid: dd6fb09a64c39a3429952b214c7256d1, type: 2}
+  - {fileID: 11400000, guid: fd1a8bc6f82761c4e818effb4b7e5d01, type: 2}
+  requiredItemAmounts: 08000000
+  buildItemData: {fileID: 11400000, guid: 9a97002d719b50d4d8571eb8b3e66a2b, type: 2}
   buildItemAmount: 1

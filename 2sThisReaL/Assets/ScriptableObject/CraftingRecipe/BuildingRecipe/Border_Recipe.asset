@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6080a97db2af801479074395a3bdc822, type: 3}
-  m_Name: Border_corner_Round_Recipe
+  m_Name: Border_Recipe
   m_EditorClassIdentifier: 
-  recipeName: border-corner-round
-  recipeIcon: {fileID: 21300000, guid: e53d79a78619cb04bb571429bfefe577, type: 3}
+  recipeName: border
+  recipeIcon: {fileID: 21300000, guid: 9284837f4f5b940438f3a03cde5af1c1, type: 3}
   requiredItems:
   - {fileID: 11400000, guid: e13a7bd39319c57469afd12db403a736, type: 2}
-  requiredItemAmounts: 04000000
-  buildItemData: {fileID: 11400000, guid: dd6fb09a64c39a3429952b214c7256d1, type: 2}
+  requiredItemAmounts: 03000000
+  buildItemData: {fileID: 11400000, guid: 6fb6295d0696eda4f96cca9f946fa475, type: 2}
   buildItemAmount: 1
