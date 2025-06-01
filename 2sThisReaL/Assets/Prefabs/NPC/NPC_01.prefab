@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5926149202030823490}
   - component: {fileID: 2082745110745796348}
   - component: {fileID: 5754744973334214391}
+  - component: {fileID: 1693345382360938781}
   m_Layer: 7
   m_Name: NPC_01
   m_TagString: Obstacle
@@ -60,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 68751260869930710}
   serializedVersion: 2
   m_LocalRotation: {x: -0.72163945, y: 0, z: 0, w: 0.69226915}
-  m_LocalPosition: {x: -1.3, y: -0.002, z: 38.6}
+  m_LocalPosition: {x: -1.18, y: 0.16, z: 38.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -97,7 +98,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68751260869930710}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.055, y: 1.62, z: 0.5}
@@ -146,8 +147,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9117413, y: 3.6785898, z: 1}
-  m_Center: {x: 0.34847164, y: 1.863995, z: -9.678001e-10}
+  m_Size: {x: 2.8495684, y: 4.5139375, z: 1}
+  m_Center: {x: 0.35436344, y: 1.9333401, z: -0.0000000018881243}
+--- !u!135 &1693345382360938781
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68751260869930710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &167023936252127856
 GameObject:
   m_ObjectHideFlags: 0

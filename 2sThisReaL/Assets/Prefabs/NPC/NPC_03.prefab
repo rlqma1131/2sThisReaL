@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 3820885734901618905}
   - component: {fileID: 140342479143611061}
   - component: {fileID: 7969767792815023525}
+  - component: {fileID: -407001175051734210}
   m_Layer: 7
   m_Name: NPC_03
   m_TagString: Obstacle
@@ -950,6 +951,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9930782, y: 3.8172202, z: 0.6027342}
   m_Center: {x: 0.28979445, y: 1.8925152, z: -0.19863224}
+--- !u!135 &-407001175051734210
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576172410238064980}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &4579580247704093482
 GameObject:
   m_ObjectHideFlags: 0
