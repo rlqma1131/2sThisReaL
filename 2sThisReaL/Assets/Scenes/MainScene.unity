@@ -248,8 +248,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &3919485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -450,8 +448,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &23253689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -524,8 +520,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &32167514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -598,8 +592,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &42220732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5814,8 +5806,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &95709624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6435,8 +6425,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &120244477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6509,8 +6497,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &121703777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6798,8 +6784,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &131802377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7020,8 +7004,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &146380266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7242,8 +7224,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &159009532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7316,8 +7296,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &165472526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7390,8 +7368,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &173850259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7620,8 +7596,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &206208654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7694,8 +7668,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &210091779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7768,8 +7740,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &212719792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7842,8 +7812,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &213063408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8566,8 +8534,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &270009335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8640,8 +8606,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &274597846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8834,8 +8798,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &284059047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8982,8 +8944,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &294952426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14446,8 +14406,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &406266398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14684,8 +14642,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &435828882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14758,8 +14714,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &442970686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14892,8 +14846,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &463743073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14966,8 +14918,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &475543626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15040,8 +14990,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &481155725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15114,8 +15062,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &496207066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15411,8 +15357,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &527923008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15661,8 +15605,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &535194410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15885,8 +15827,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &544574728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16181,8 +16121,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &574085668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16345,8 +16283,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &605664459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16493,8 +16429,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &633266402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17048,8 +16982,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &687947636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17174,8 +17106,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &692693447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17248,8 +17178,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &723832178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17322,8 +17250,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &727995172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17470,8 +17396,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &760923719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17678,8 +17602,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &793831828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17974,8 +17896,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &829946987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18048,8 +17968,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &832631942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18122,8 +18040,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &833568368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18270,8 +18186,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &853916992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18529,7 +18443,7 @@ Transform:
   m_GameObject: {fileID: 867491395}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 494.86, y: 0, z: 286.12}
+  m_LocalPosition: {x: 494.86, y: -0.672, z: 286.12}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18590,8 +18504,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &867992540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18771,8 +18683,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &884552688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18845,8 +18755,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &888211243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19087,8 +18995,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &916942311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19491,8 +19397,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &935663871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19565,8 +19469,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &957688607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19811,8 +19713,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &981984481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19885,8 +19785,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &985290302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19959,8 +19857,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &989000046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20033,8 +19929,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1009938418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20313,8 +20207,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1040116252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20387,8 +20279,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1042766097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20535,8 +20425,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1068313873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20683,8 +20571,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1091729129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20831,8 +20717,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1115405501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20905,8 +20789,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1121128298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21024,8 +20906,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1124639971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21619,8 +21499,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1161932872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21693,8 +21571,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1175161255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21989,8 +21865,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1202293638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22063,8 +21937,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1206776478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22137,8 +22009,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1214929918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22387,8 +22257,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1244696365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22563,8 +22431,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1260385798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22637,8 +22503,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1261507221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23478,8 +23342,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1298314271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23552,8 +23414,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1314528572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23752,8 +23612,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1316296571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23826,8 +23684,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1372701313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24272,8 +24128,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1413077561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24346,8 +24200,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1418503691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24642,8 +24494,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1430981844
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24716,8 +24566,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1435409377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24790,8 +24638,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1446815738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24938,8 +24784,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1467028985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25086,8 +24930,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1477974393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25851,8 +25693,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1554881161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26074,8 +25914,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1557578268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26185,8 +26023,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1574633773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26259,8 +26095,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1580304692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26333,8 +26167,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1601471745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26764,8 +26596,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1624234007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27190,8 +27020,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1652528888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27264,8 +27092,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1658966218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27338,8 +27164,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1662232186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27790,8 +27614,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1683002065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28160,8 +27982,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1726398023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28308,8 +28128,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1760379724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28382,8 +28200,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1765179468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28717,8 +28533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zonePrefab: {fileID: 159348528792816184, guid: 05886ad58d4f6284c982d42967629291, type: 3}
-  gridSizeX: 10
-  gridSizeZ: 10
   spacing: 80
 --- !u!4 &1791236738
 Transform:
@@ -29014,8 +28828,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1815105877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29687,8 +29499,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1860717846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29837,8 +29647,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1868355862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30637,8 +30445,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1958294455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30920,8 +30726,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1984328390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30994,8 +30798,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &1998620334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31068,8 +30870,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &2013576654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31290,8 +31090,6 @@ MonoBehaviour:
   - {fileID: 31757413683665792, guid: 691e0ea22a0265d40b0f030be34acb20, type: 3}
   - {fileID: 1003129362294830547, guid: b77691337511f734cb9ef4fcb5d17d63, type: 3}
   - {fileID: 4825891124374161140, guid: 94eff63ca45344347a0882dc4983be7c, type: 3}
-  intervalReductionPerDay: 0.5
-  minSpawnInterval: 5
 --- !u!65 &2036810689
 BoxCollider:
   m_ObjectHideFlags: 0
