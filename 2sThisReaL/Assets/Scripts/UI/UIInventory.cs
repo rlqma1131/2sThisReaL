@@ -33,6 +33,7 @@ public class UIInventory : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitForGameManager());
+        StartCoroutine(FindDropPosition());
     }
 
     // 선택한 아이템 표시할 정보창 Clear 함수
@@ -62,6 +63,23 @@ public class UIInventory : MonoBehaviour
         return inventoryWindow.activeInHierarchy;
     }
 
+    IEnumerator FindDropPosition()
+    {
+        int maxTries = 60; // 60프레임 = 약 1초
+        int currentTry = 0;
+
+        while (dropPosition == null && currentTry < maxTries)
+        {
+            dropPosition = transform.Find("dropPosition");
+            currentTry++;
+            yield return null;
+        }
+
+        if (dropPosition == null)
+        {
+            Debug.Log("DropPosition not found! Make sure the child object is named correctly.");
+        }
+    }
 
     public void AddItem()
     {
