@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ConditionManager.Instance.curStamina == 0)
             {
-                Debug.Log("점프할 힘이 없슈");
+                //Debug.Log("점프할 힘이 없슈");
                 _rigidbody.AddForce(Vector2.up * 0, ForceMode.Impulse);
             }
             else
@@ -305,7 +305,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsAttack", true);
             if (ConditionManager.Instance.curStamina <= 0)
             {
-                Debug.Log("스태미나가 부족하여 공격할 수 없습니다.");
+                //Debug.Log("스태미나가 부족하여 공격할 수 없습니다.");
                 animator.SetBool("IsAttack", false); // 좌클릭 뗌
                 return; // 스태미나가 없으면 공격 불가
             }
@@ -419,7 +419,7 @@ public class PlayerController : MonoBehaviour
 
                 if (triggerExitElapsed > 4f) // 불에서 벗어난 시간이 4초가 지나면
                 {
-                    Debug.Log("불꺼짐"); 
+                    //Debug.Log("불꺼짐"); 
                     break;
                 }
             }

@@ -37,7 +37,7 @@ public class CharacterManager : MonoBehaviour
     public void SetGender(GenderType gender)
     {
         SelectedGender = gender;
-        Debug.Log($"[CharacterManager] Gender set to: {gender}");
+        //Debug.Log($"[CharacterManager] Gender set to: {gender}");
     }
 
     public void SpawnPlayer(Vector3 spawnPosition)

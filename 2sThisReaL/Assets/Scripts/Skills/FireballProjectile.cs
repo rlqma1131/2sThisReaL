@@ -21,7 +21,7 @@ public class FireballProjectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Fireball hit enemy!");
+            //Debug.Log("Fireball hit enemy!");
 
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
