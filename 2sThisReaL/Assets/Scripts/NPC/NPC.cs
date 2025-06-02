@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     private Animator anim;
     private Collider npcCollider;
+    private float playerDistance;
     private bool hasTalked = false;
     public NpcType npcType;
     public bool HasTalked => hasTalked;
@@ -32,13 +33,18 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        if (!hasTalked)
+        playerDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position);
+
+        if (playerDistance < 10f)
         {
-            TalkUI.Instance?.OpenDialogue(this);
-        }
-        else
-        {
-            TalkUI.Instance?.ShowDeadDialogue();
+            if (!hasTalked)
+            {
+                TalkUI.Instance?.OpenDialogue(this);
+            }
+            else
+            {
+                TalkUI.Instance?.ShowDeadDialogue();
+            }
         }
     }
     public void MarkAsTalked()
