@@ -24,7 +24,7 @@ public class EquipTool : Equip
         // 도구 아이템 데이터가 반드시 설정되어 있으므로, 해당 아이템 Data에서 Distance에 따른 Raycast를 사용하여 자원/적을 탐지
         if (equipData == null)
         {
-            Debug.LogError("EquipTool: equipData is not set!");
+            //Debug.LogError("EquipTool: equipData is not set!");
             return;
         }
 
@@ -55,7 +55,7 @@ public class EquipTool : Equip
             // 자원 채집
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Resource") && equipData.canGathering)
             {
-                Debug.Log("자원 채집: " + hit.collider.name);
+                //Debug.Log("자원 채집: " + hit.collider.name);
                 ResourceObject resource = hit.collider.GetComponent<ResourceObject>();
                 if (resource != null)
                 {
@@ -66,7 +66,7 @@ public class EquipTool : Equip
             // 적 공격
             else if (hit.collider.CompareTag("Enemy") && equipData.attackPower > 0)
             {
-                Debug.Log("공격: " + hit.collider.name);
+                //Debug.Log("공격: " + hit.collider.name);
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
                 if (enemy != null)
                 {

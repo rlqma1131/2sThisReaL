@@ -193,7 +193,7 @@ public class Condition : MonoBehaviour
     {
         gm.curTemperature += delta;
         gm.curTemperature = Mathf.Clamp(gm.curTemperature, 0, gm.maxTemperature);
-        Debug.Log($"온도상승 : {gm.curTemperature}");
+        //Debug.Log($"온도상승 : {gm.curTemperature}");
         DepletionTemperature();
         UpdateTemperature();
     }
@@ -201,7 +201,7 @@ public class Condition : MonoBehaviour
     {
         if (gameManager == null || gameManager.Player == null)
         {
-            Debug.LogWarning("GameManager 또는 Player가 null입니다.");
+            //Debug.LogWarning("GameManager 또는 Player가 null입니다.");
             return;
         }
         Rigidbody rb = gameManager.Player.GetComponent<Rigidbody>();
@@ -230,7 +230,7 @@ public class Condition : MonoBehaviour
 
                 
                 time += Time.deltaTime;
-                Debug.Log($"시간체크 : {time}");
+                //Debug.Log($"시간체크 : {time}");
                 if (time >= 6)
                 {
                     IsDie();

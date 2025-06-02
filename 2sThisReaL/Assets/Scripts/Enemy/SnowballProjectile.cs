@@ -8,10 +8,10 @@ public class SnowballProjectile : MonoBehaviour
     private int damage = 20;
     public void Shoot(Transform EnemyTransform)
     {
-        Debug.Log("Shoot Snowball Projectile");
+        //Debug.Log("Shoot Snowball Projectile");
         Vector3 spawnOffset = EnemyTransform.forward * 1f + Vector3.up * 5.2f;
         GameObject snowball = Instantiate(SnowballPrefab, EnemyTransform.position + spawnOffset, transform.rotation);
-        Debug.Log("Snowball Spawned at: " + (EnemyTransform.position + spawnOffset));
+        //Debug.Log("Snowball Spawned at: " + (EnemyTransform.position + spawnOffset));
         Rigidbody rb = snowball.GetComponent<Rigidbody>();
         if (rb != null)
         {

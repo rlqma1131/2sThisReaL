@@ -16,7 +16,7 @@ public class CountText : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ConditionManager.Instance is null");
+            //Debug.LogWarning("ConditionManager.Instance is null");
         }
     }
     private void UpdataDay(float day)

@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
             if (ConditionManager.Instance.curStamina == 0)
             {
                 curMovementInput = Vector2.zero;
-                Debug.Log("스테미나가 바닥이라 움직일 수 없습니다.");
+                //Debug.Log("스테미나가 바닥이라 움직일 수 없습니다.");
                 StartCoroutine(MoveCoroutine(3, 10));
                 // 밑에 함수 2 ~ 5초 후에 실행 되게끔
                 
@@ -434,7 +434,7 @@ public class PlayerController : MonoBehaviour
 
                 // 데미지 받는거 실제로 적용
                 ConditionManager.Instance.Condition.HealHP(-dynamicDeltaHp);
-                Debug.Log("데미지");
+                //Debug.Log("데미지");
                 // 
                 tickCounter = 0f;
             }

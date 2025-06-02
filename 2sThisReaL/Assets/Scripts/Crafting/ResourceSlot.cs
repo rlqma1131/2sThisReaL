@@ -12,7 +12,7 @@ public class ResourceSlot : MonoBehaviour
     // 재료 슬롯은 이미 저장되어있는 상수를 그대로 사용하여 아이콘과 개수표시
     public void SetItem(ItemData data, int count)
     {
-        Debug.LogWarning($"{data.itemIcon.name} 아이콘 설정됨, 개수: {count}"); // 아이콘 설정 확인용 로그
+        //Debug.LogWarning($"{data.itemIcon.name} 아이콘 설정됨, 개수: {count}"); // 아이콘 설정 확인용 로그
         iconImage.sprite = data.itemIcon;
         
         iconImage.gameObject.SetActive(true); // 아이콘 활성화

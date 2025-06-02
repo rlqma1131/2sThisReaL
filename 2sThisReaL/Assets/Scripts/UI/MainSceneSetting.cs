@@ -11,7 +11,7 @@ public class MainSceneSetting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("p키 눌림");
+            //Debug.Log("p키 눌림");
             OnsetingPanel(); // P 키를 누르면 함수 호출
         }
     }

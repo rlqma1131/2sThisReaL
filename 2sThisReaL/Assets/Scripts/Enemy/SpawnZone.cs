@@ -17,7 +17,7 @@ public class SpawnZone : MonoBehaviour
     {
         if (zonePrefab == null)
         {
-            Debug.LogError("Zone 프리팹이 없어!");
+            //Debug.LogError("Zone 프리팹이 없어!");
             return;
         }
 

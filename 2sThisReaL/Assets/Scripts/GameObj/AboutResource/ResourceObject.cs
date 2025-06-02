@@ -39,7 +39,7 @@ public class ResourceObject : MonoBehaviour
             ConditionManager.Instance.Condition.DeltaStamina(decayStamina); // 아이템을 획득할 때마다 스태미나 감소
             if (ConditionManager.Instance.curStamina <= 0) break;
 
-            Debug.Log($"스태미나 감소: {decayStamina} ");
+            //Debug.Log($"스태미나 감소: {decayStamina} ");
 
             if (capacity <= 0) break; // 용량이 0 이하일 경우 더 이상 획득하지 않음
             // 아이템을 랜덤으로 선택

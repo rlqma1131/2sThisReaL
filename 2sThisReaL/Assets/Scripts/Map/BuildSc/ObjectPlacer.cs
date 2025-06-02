@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class ObjectPlacer : IObjectPlacer
         int itemID = buildable.GetItemID();
         if (!resourceManager.HasEnoughResources(itemID, cost))
         {
-            Debug.Log("Not enough resources to build");
+            //Debug.Log("Not enough resources to build");
             return;
         }
 

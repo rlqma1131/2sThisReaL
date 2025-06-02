@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +18,7 @@ public class EndingDoorController : MonoBehaviour
     {
         if (!hasOpened && other.CompareTag("Player"))
         {
-            Debug.Log("플레이어 충돌 감지됨!");
+            //Debug.Log("플레이어 충돌 감지됨!");
             hasOpened = true;
             animator.SetTrigger("Open");
             Invoke(nameof(TriggerFadeOut), delayBeforeFade);

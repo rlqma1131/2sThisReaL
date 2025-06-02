@@ -28,6 +28,6 @@ public class Player : MonoBehaviour
             yield return null;
         }
         GameManager.Instance.Init(this);
-        Debug.Log("Player에서 인스턴스 할당됨");
+        //Debug.Log("Player에서 인스턴스 할당됨");
     }
 }

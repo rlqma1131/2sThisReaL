@@ -53,7 +53,7 @@ public class SpawnerZone : MonoBehaviour
         {
             float adjustedInterval
             = Mathf.Max(minSpawnInterval, baseSpawnInterval - ConditionManager.Instance.count * intervalReductionPerDay);
-            Debug.Log($"{ConditionManager.Instance.count}");
+            //Debug.Log($"{ConditionManager.Instance.count}");
 
             yield return new WaitForSeconds(adjustedInterval);
             TrySpawnMonster();
@@ -74,7 +74,7 @@ public class SpawnerZone : MonoBehaviour
                 int index = GetMonsterIndex();
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0f);
                 Instantiate(monsterPrefabs[index], spawnPoint, randomRotation);
-                Debug.Log($"Spawned {monsterPrefabs[index].name} at {spawnPoint}");
+                //Debug.Log($"Spawned {monsterPrefabs[index].name} at {spawnPoint}");
                 totalSpawnCount++;
             }
         }

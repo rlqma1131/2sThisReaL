@@ -63,7 +63,7 @@ public class BuildingSystem : MonoBehaviour
                 mainCamera = player.GetComponentInChildren<Camera>();
                 if (playerController != null && mainCamera != null)
                 {
-                    Debug.Log("플레이어와 카메라를 성공적으로 할당했습니다.");
+                    //Debug.Log("플레이어와 카메라를 성공적으로 할당했습니다.");
                     yield break;
                 }
             }
@@ -72,7 +72,7 @@ public class BuildingSystem : MonoBehaviour
             yield return null; // 다음 프레임까지 대기
         }
 
-        Debug.LogWarning("플레이어를 찾을 수 없거나 카메라/컨트롤러가 없습니다.");
+        //Debug.LogWarning("플레이어를 찾을 수 없거나 카메라/컨트롤러가 없습니다.");
     }
     
     void Update()
@@ -272,7 +272,7 @@ public class BuildingSystem : MonoBehaviour
                 if (destructible != null)
                 {
                     destructible.DestroySelf();
-                    Debug.Log("[DestroyMode] 파괴됨: " + target.name);
+                    //Debug.Log("[DestroyMode] 파괴됨: " + target.name);
                 }
             }
         }

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,7 +33,7 @@ public class BasicPlacementValidator : IPlacementValidator
         // 바닥이나 기존 건축물 위가 아닌 경우
         if (!hasGroundBelow && !hasBuildingBelow)
         {
-            Debug.Log("No ground or building below");
+            //Debug.Log("No ground or building below");
             return false;
         }
 
@@ -48,7 +48,7 @@ public class BasicPlacementValidator : IPlacementValidator
         {
             if(!col.isTrigger)
             {
-                Debug.Log($"Obstacle detected: {col.name}");
+                //Debug.Log($"Obstacle detected: {col.name}");
                 return false;
             }
         }

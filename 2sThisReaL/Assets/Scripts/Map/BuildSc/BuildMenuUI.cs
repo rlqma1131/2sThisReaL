@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +17,9 @@ public class BuildMenuUI : MonoBehaviour
     void Start()
     {
         if (resourceManager == null)
-            Debug.LogError("[BuildMenuUI] ResourceManager 연결 안 됨");
+            //Debug.LogError("[BuildMenuUI] ResourceManager 연결 안 됨");
         if (buildingSystem == null)
-            Debug.LogError("[BuildMenuUI] BuildingSystem 연결 안 됨");
+            //Debug.LogError("[BuildMenuUI] BuildingSystem 연결 안 됨");
         
         PopulateMenu();
         buildPanel.SetActive(false);
@@ -47,7 +47,7 @@ public class BuildMenuUI : MonoBehaviour
                 buildPanel.SetActive(false);
                 buildingSystem.CancelCurrentPreview();
                 buildingSystem.SetSelectedBuildItem(capturedItem);
-                Debug.Log($"Clicked item: {capturedItem.name}");
+                //Debug.Log($"Clicked item: {capturedItem.name}");
             });
         }
     }
@@ -63,11 +63,11 @@ public class BuildMenuUI : MonoBehaviour
         {
             buildingSystem.CancelCurrentPreview();
             PopulateMenu();
-            Debug.Log("[BuildMenuUI] UI opened");
+            //Debug.Log("[BuildMenuUI] UI opened");
         }
         else
         {
-            Debug.Log("[BuildMenuUI] UI closed");
+            //Debug.Log("[BuildMenuUI] UI closed");
         }
     }
 

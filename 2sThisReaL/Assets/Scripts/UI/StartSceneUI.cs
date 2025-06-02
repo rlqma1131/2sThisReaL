@@ -24,13 +24,13 @@ public class SceneLoader : MonoBehaviour
 
     public void Credit()
     {
-        Debug.Log("크레딧 패널 활성화 시도!");
+        //Debug.Log("크레딧 패널 활성화 시도!");
         creditPanel.SetActive(true);
         startPanel.SetActive(false);
     }
     public void OutCredit()
     {
-        Debug.Log("크레딧 패널 활성화 시도!");
+        //Debug.Log("크레딧 패널 활성화 시도!");
         creditPanel.SetActive(false);
         startPanel.SetActive(true);
     }

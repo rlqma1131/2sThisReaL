@@ -77,7 +77,7 @@ public class UIInventory : MonoBehaviour
 
         if (dropPosition == null)
         {
-            Debug.Log("DropPosition not found! Make sure the child object is named correctly.");
+            //Debug.Log("DropPosition not found! Make sure the child object is named correctly.");
         }
     }
 

@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (currentTarget != null && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log($"[E 입력] {currentTarget.GetInteractPrompt()}");
+            //Debug.Log($"[E 입력] {currentTarget.GetInteractPrompt()}");
             currentTarget.OnInteract();
         }
     }
@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.TryGetComponent<IInteractable>(out var interactableObj))
             {
                 currentTarget = interactableObj;
-                Debug.Log("[상호작용 UI 표시 시도] " + interactableObj.GetInteractPrompt());
+                //Debug.Log("[상호작용 UI 표시 시도] " + interactableObj.GetInteractPrompt());
                 NPCInteract.Instance.Show(interactableObj.GetInteractPrompt());
                 return;
             }

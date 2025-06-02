@@ -252,7 +252,7 @@ public class Enemy : MonoBehaviour, IDamageable
             if (dropOnDeath[i] != null)
             {
                 Instantiate(item.dropPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-                Debug.Log($"아이템 {item.itemName} 드랍됨");
+                //Debug.Log($"아이템 {item.itemName} 드랍됨");
             }
         }
         agent.isStopped = true;

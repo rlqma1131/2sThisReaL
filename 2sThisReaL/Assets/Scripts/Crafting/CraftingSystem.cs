@@ -121,7 +121,7 @@ public class CraftingSystem : MonoBehaviour
                 ItemData itemData = curRecipe.requiredItems[i];
                 int requiredCount = curRecipe.requiredItemAmounts[i];
 
-                Debug.LogWarning(Equals(itemData, null) ? "아이템 데이터가 null입니다." : $"{i}아이템: {itemData.itemName}, 필요 개수: {requiredCount}");
+                //Debug.LogWarning(Equals(itemData, null) ? "아이템 데이터가 null입니다." : $"{i}아이템: {itemData.itemName}, 필요 개수: {requiredCount}");
                 //StartCoroutine("ResetResourceSlot"); // 재료 슬롯 초기화
                 //재료 슬롯 생성(개수가 늘어날 때마다 추가 생성)
                 GameObject slotObj =  Instantiate(resourceSlotPrefab, ResourcesParent);
@@ -160,7 +160,7 @@ public class CraftingSystem : MonoBehaviour
 
         if (craftSlot == null)
         {
-            Debug.LogError("[CraftingSystem] 선택된 레시피에 해당하는 CraftSlot을 찾을 수 없습니다.");
+            //Debug.LogError("[CraftingSystem] 선택된 레시피에 해당하는 CraftSlot을 찾을 수 없습니다.");
             return;
         }
 
@@ -170,7 +170,7 @@ public class CraftingSystem : MonoBehaviour
         if (craftSlot.maxCount <= 0)
         {
             
-            Debug.Log($"[CraftingSystem] 제작 가능한 개수가 0입니다. 제작을 진행할 수 없습니다.");
+            //Debug.Log($"[CraftingSystem] 제작 가능한 개수가 0입니다. 제작을 진행할 수 없습니다.");
             return; // 제작 가능한 개수가 0이면 아무 작업도 하지 않음
         }
 
@@ -192,7 +192,7 @@ public class CraftingSystem : MonoBehaviour
                 //이미 재료 확인은 마친 상황에서 여기로 옴
                 // 리소스 매니저에 빌드 아이템 데이터와 개수를 추가
                 resourceManager.AddResource(buildRecipe.buildItemData.itemID, buildRecipe.buildItemAmount);
-                Debug.Log($"[CraftingSystem] 빌드 레시피 완료: {buildRecipe.buildItemData.name} x{buildRecipe.buildItemAmount}");
+                //Debug.Log($"[CraftingSystem] 빌드 레시피 완료: {buildRecipe.buildItemData.name} x{buildRecipe.buildItemAmount}");
 
                 // 빌드 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
                 // 재료 아이템은 UIInventory에서 관리되며, resourceManager에는 제작된 오브젝트만 추가됨
@@ -213,7 +213,7 @@ public class CraftingSystem : MonoBehaviour
         else if(curRecipe is CookCraftRecipe cookRecipe)
         {
            inventory.AddCraftItem(cookRecipe.consumableData, cookRecipe.cookItemAmount);
-            Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookRecipe.consumableData.itemName} x{cookRecipe.cookItemAmount}");
+            //Debug.Log($"[CraftingSystem] 요리 레시피 완료: {cookRecipe.consumableData.itemName} x{cookRecipe.cookItemAmount}");
             // 요리 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
             for (int i = 0; i < cookRecipe.requiredItems.Length; i++)
             {
@@ -228,7 +228,7 @@ public class CraftingSystem : MonoBehaviour
         {
             // 도구 레시피인 경우, 인벤토리에 추가
             inventory.AddCraftItem(toolRecipe.toolData, toolRecipe.toolItemAmount);
-            Debug.Log($"[CraftingSystem] 도구 레시피 완료: {toolRecipe.toolData.itemName} x{toolRecipe.toolItemAmount}");
+            //Debug.Log($"[CraftingSystem] 도구 레시피 완료: {toolRecipe.toolData.itemName} x{toolRecipe.toolItemAmount}");
             // 도구 아이템이 추가되었으므로, 현재 레시피에서 필요한 재료를 소모시킴
             for (int i = 0; i < toolRecipe.requiredItems.Length; i++)
             {

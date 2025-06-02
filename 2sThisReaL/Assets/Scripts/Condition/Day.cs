@@ -76,7 +76,7 @@ public class Day : MonoBehaviour
 
         if (time < prevTime)
         {
-            Debug.Log("하루가 지남");
+            //Debug.Log("하루가 지남");
             _coditionManager.count++;
 
             UpdataDay(_coditionManager.count);

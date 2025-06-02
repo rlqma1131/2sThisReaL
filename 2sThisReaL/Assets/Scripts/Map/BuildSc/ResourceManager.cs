@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +27,7 @@ public class ResourceManager : MonoBehaviour, IResourceManager
         {
             itemCounts[itemID] -= amount;
             itemCounts[itemID] = Mathf.Max(0, itemCounts[itemID]);
-            Debug.Log($"[ResourceManager] 사용 후: {itemID} → {itemCounts[itemID]}개 남음");
+            //Debug.Log($"[ResourceManager] 사용 후: {itemID} → {itemCounts[itemID]}개 남음");
         }
     }
 

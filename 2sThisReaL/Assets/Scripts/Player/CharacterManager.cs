@@ -46,12 +46,12 @@ public class CharacterManager : MonoBehaviour
 
         if (prefab == null)
         {
-            Debug.LogError("[CharacterManager] Player prefab is null!");
+            //Debug.LogError("[CharacterManager] Player prefab is null!");
             return;
         }
 
         GameObject playerObj = Instantiate(prefab, spawnPosition, Quaternion.identity);
-        Debug.Log($"[CharacterManager] Player spawned at {spawnPosition}");
+        //Debug.Log($"[CharacterManager] Player spawned at {spawnPosition}");
 
         Player = playerObj.GetComponent<Player>();
 

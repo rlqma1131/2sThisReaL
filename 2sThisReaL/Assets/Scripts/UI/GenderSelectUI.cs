@@ -8,14 +8,14 @@ public class GenderSelectUI : MonoBehaviour
     public void OnSelectMale()
     {
         CharacterManager.Instance.SetGender(GenderType.Male);
-        Debug.Log("[UI] Male selected");
+        //Debug.Log("[UI] Male selected");
         SceneManager.LoadScene("MainScene"); // 실제 게임 씬 이름
     }
 
     public void OnSelectFemale()
     {
         CharacterManager.Instance.SetGender(GenderType.Female);
-        Debug.Log("[UI] Female selected");
+        //Debug.Log("[UI] Female selected");
         SceneManager.LoadScene("MainScene"); // 실제 게임 씬 이름
     }
 }

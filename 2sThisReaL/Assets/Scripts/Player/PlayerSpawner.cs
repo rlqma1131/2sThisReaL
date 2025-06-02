@@ -14,11 +14,11 @@ public class PlayerSpawner : MonoBehaviour
         if (CharacterManager.Instance != null)
         {
             CharacterManager.Instance.SpawnPlayer(spawnPosition);
-            Debug.Log("[PlayerSpawner] SpawnPlayer 호출 완료");
+            //Debug.Log("[PlayerSpawner] SpawnPlayer 호출 완료");
         }
         else
         {
-            Debug.LogError("[PlayerSpawner] CharacterManager.Instance가 null입니다");
+            //Debug.LogError("[PlayerSpawner] CharacterManager.Instance가 null입니다");
         }
     }
 }

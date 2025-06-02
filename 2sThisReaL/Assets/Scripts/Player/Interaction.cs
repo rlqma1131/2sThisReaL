@@ -44,7 +44,7 @@ public class Interaction : MonoBehaviour
                     curInteractable = hit.collider.GetComponent<IInteractable>();
                     if (curInteractable == null)
                     {
-                        Debug.LogWarning("Hit object  " + hit.collider.gameObject.name);
+                        //Debug.LogWarning("Hit object  " + hit.collider.gameObject.name);
                     }
 
                     //SetPromptText();
@@ -58,7 +58,7 @@ public class Interaction : MonoBehaviour
 
             if (rayOrigin == null)
             {
-                Debug.LogWarning("rayOrigin is null!");
+                //Debug.LogWarning("rayOrigin is null!");
                 return;
             }
 
@@ -97,7 +97,7 @@ public class Interaction : MonoBehaviour
         {
             if (curInteractable == null)
             {
-                Debug.LogWarning("No interactable object in range.");
+                //Debug.LogWarning("No interactable object in range.");
             }
             else
             {

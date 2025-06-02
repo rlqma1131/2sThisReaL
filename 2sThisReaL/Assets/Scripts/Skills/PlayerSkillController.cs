@@ -57,7 +57,7 @@ public class PlayerSkillController : MonoBehaviour
             case SkillType.DashAttack:
                 if (canDash)
                 {
-                    Debug.Log("DashAttack Activated!");
+                    //Debug.Log("DashAttack Activated!");
                     StartCoroutine(DashAttack());
                 }
                 break;
@@ -67,7 +67,7 @@ public class PlayerSkillController : MonoBehaviour
     {
         GameObject fireball = Instantiate(fireballPrefab, fireballSpawnPoint.position, transform.rotation);
         audioSource.PlayOneShot(fireballClip);
-        Debug.Log("Fireball Cast!");
+        //Debug.Log("Fireball Cast!");
     }
     IEnumerator DashAttack()
     {
@@ -84,17 +84,17 @@ public class PlayerSkillController : MonoBehaviour
         RaycastHit[] hits = Physics.SphereCastAll(startPos, 3f, dashDir, dashDistance, enemyLayer);
         foreach (var hit in hits)
         {
-            Debug.Log($"Hit: {hit.collider.name}, Layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
+            //Debug.Log($"Hit: {hit.collider.name}, Layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
 
             var enemy = hit.collider.GetComponentInParent<IDamageable>();
             if (enemy != null)
             {
-                Debug.Log("데미지 적용됨");
+                //Debug.Log("데미지 적용됨");
                 enemy.TakePhygicalDamage(100);
             }
             else
             {
-                Debug.Log("데미지 적용 대상 아님");
+                //Debug.Log("데미지 적용 대상 아님");
             }
         }
 
@@ -118,7 +118,7 @@ public class PlayerSkillController : MonoBehaviour
 
             if (hitWall)
             {
-                Debug.Log("벽에 닿아서 대시 중단됨");
+                //Debug.Log("벽에 닿아서 대시 중단됨");
                 break;
             }
 
