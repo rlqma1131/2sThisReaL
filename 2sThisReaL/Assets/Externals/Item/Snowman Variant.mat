@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snowman Variant
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: -8067726398312463513, guid: fd7afa3e998f3ec49801878eb89b51b3, type: 3}
+  m_Parent: {fileID: -1444460858095362738, guid: b9bba0cd85eba9e41ab408f9f9ac5aa3, type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
