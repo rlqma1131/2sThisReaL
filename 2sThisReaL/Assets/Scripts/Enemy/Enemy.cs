@@ -257,7 +257,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
         agent.isStopped = true;
         animator.SetTrigger("Dead");
-        StartCoroutine(SinkIntoGround());   // 스르륵 땅 속으로 가라앉기
+        StartCoroutine(SinkIntoGround());
     }
 
     IEnumerator SinkIntoGround()
